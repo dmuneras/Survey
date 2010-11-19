@@ -1,0 +1,12 @@
+<% title "Aspecto #{@question.aspect.name}" %>
+<br/>
+<p>
+  <h1><%= "#{@question.number}."%></h1>
+
+  <div class = "question-description"><%=h @question.description %>
+    <% for answer in @question.answers do %>
+      <br/><%= radio_button_tag "answers", answer.id %><%= answer.description%>
+    <% end %>	
+</div>
+</p>
+

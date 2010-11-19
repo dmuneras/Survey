@@ -1,0 +1,59 @@
+class UsersController < ApplicationController
+
+  def show
+    if not (current_user.nil?)
+      @company = Company.find(:params[:id])
+      @user = current_user
+    else
+      @user = User.find(params[:id])
+    end
+  end
+  
+  def new
+    @company = Company.find(:params[:id])
+    @user = @company.users.build
+  end
+
+  def create
+    @company = Company.find(:params[:id])
+    @user = @company.users.build(:params[:user])
+    if @user.save
+      flash[:notice] = "Successfully create user."
+      redirect_to @user
+    else
+      render :action => 'new'
+    end
+  end
+  
+  def edit
+    @company = Company.find(:params[:id])
+    @user = @company.users.find(params[:id])
+  end
+  
+  def update
+    @company = Company.find(:params[:id])
+    @user = @company.users.find(params[:id])
+    if @user.update_attributes(params[:user])
+      flash[:notice] = "Successfully updated user."
+      redirect_to @user
+    else
+      render :action => 'edit'
+    end
+  end
+  
+  def destroy
+    @company = Company.find(:params[:id])
+    @user = @company.users.find(params[:id])
+    @user.destroy
+    flash[:notice] = "Successfully destroyed user."
+    redirect_to root_url
+  end
+
+  private
+
+   def verification
+    @company = Company.find(params[:nit_company])
+    render :layout => false
+  end
+  
+end

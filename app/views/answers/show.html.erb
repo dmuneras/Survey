@@ -1,0 +1,24 @@
+<% title "Answer" %>
+
+<p>
+  <strong>Question:</strong>
+  <%=h @answer.question_id %>
+</p>
+<p>
+  <strong>Number:</strong>
+  <%=h @answer.number %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%=h @answer.description %>
+</p>
+<p>
+  <strong>Value:</strong>
+  <%=h @answer.value %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_answer_path(@answer) %> |
+  <%= link_to "Destroy", @answer, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", answers_path %>
+</p>

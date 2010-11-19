@@ -1,0 +1,20 @@
+<% title "Question" %>
+
+<p>
+  <strong>Number:</strong>
+  <%=h @question.number %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%=h @question.description %>
+</p>
+<p>
+  <strong>Aspect:</strong>
+  <%=h @question.aspect_id %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_question_path(@question) %> |
+  <%= link_to "Destroy", @question, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", questions_path %>
+</p>

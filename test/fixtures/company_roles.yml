@@ -1,0 +1,7 @@
+one:
+  role: MyString
+  hierarchy: 1
+
+two:
+  role: MyString
+  hierarchy: 1

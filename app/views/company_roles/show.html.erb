@@ -1,0 +1,16 @@
+<% title "Company Role" %>
+
+<p>
+  <strong>Role:</strong>
+  <%=h @company_role.role %>
+</p>
+<p>
+  <strong>Hierarchy:</strong>
+  <%=h @company_role.hierarchy %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_company_role_path(@company_role) %> |
+  <%= link_to "Destroy", @company_role, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", company_roles_path %>
+</p>

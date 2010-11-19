@@ -1,0 +1,22 @@
+<% title "Edita Empresa" %>
+<div class= "auxiliar" >
+<div class= "form">
+<%= render :partial => 'edit_form' %>
+<p>
+  <%= link_to "Mostrar", @company %> |
+  <%= link_to "Volver a la lista de empresas", companies_path %>
+</p>
+</div>
+
+<div class= "users_list">
+<% unless @company.users.nil? %>
+    <h2>Editar usuarios</h2>
+<% end %>
+<% for user in @company.users do %>
+    <% unless user.nil? %>
+        <%= link_to user.name, edit_user_path(user) %>
+    <% end %>
+<% end %>
+<p><%= link_to " Nuevo usuario", new_company_user_path(@company) %></p>
+</div>
+</div>

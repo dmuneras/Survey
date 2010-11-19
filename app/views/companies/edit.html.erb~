@@ -1,0 +1,17 @@
+<% title "Edit Company" %>
+
+<%= render :partial => 'edit_form' %>
+<% unless @company.users.nil? %>
+    <h2>Editar usuarios</h2>
+<% end %>
+<% for user in @company.users do %>
+    <% unless user.nil? %>
+        <%= link_to user.name, edit_user_path(user) %>
+    <% end %>
+<% end %>
+<p><%= link_to " nuevo usuario", new_company_user_path(@company) %></p>
+
+<p>
+  <%= link_to "Show", @company %> |
+  <%= link_to "View All", companies_path %>
+</p>

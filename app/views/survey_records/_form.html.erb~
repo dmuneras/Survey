@@ -1,0 +1,12 @@
+<% form_for @survey_record do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :answers %><br />
+    <%= f.text_field :answers %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

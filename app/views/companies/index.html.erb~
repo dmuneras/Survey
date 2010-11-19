@@ -1,0 +1,23 @@
+<% title "Companies" %>
+
+<table>
+  <tr>
+    <th>Nit</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Telephone</th>
+  </tr>
+  <% for company in @companies %>
+    <tr>
+      <td><%=h company.nit %></td>
+      <td><%=h company.name %></td>
+      <td><%=h company.email %></td>
+      <td><%=h company.telephone %></td>
+      <td><%= link_to "Show", company %></td>
+      <td><%= link_to "Edit", edit_company_path(company) %></td>
+      <td><%= link_to "Destroy", company, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Company", new_company_path %></p>

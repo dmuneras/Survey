@@ -1,0 +1,55 @@
+<% form_for @company do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :nit %><br />
+    <%= f.text_field :nit %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :telephone %><br />
+    <%= f.text_field :telephone %>
+  </p>
+  <h3>Usuarios de la compañia</h3>
+ <% f.fields_for :users do |builder|%>
+  <div class= "user_company">
+    <h3><%= "Usuario" %></h3>
+        <%= builder.error_messages %>
+      <p>
+         <%= builder.label :destroy_user%>
+        <%= builder.check_box :_destroy%>
+      </p>
+      <p>
+        <%= builder.label :username %><br />
+        <%= builder.text_field :username %>
+      </p>
+      <p>
+        <%= builder.label :name %><br />
+        <%= builder.text_field :name %>
+      </p>
+      <p>
+        <%= builder.label :last_name %><br />
+        <%= builder.text_field :last_name %>
+      </p>
+      <p>
+        <%= builder.label :email %><br />
+        <%= builder.text_field :email %>
+      </p>
+      <p>
+        <%= builder.label :password %><br />
+        <%= builder.password_field :password %>
+      </p>
+      <p>
+        <%= builder.label :password_confirmation %><br />
+        <%= builder.password_field :password_confirmation %>
+      </p>
+  </div>
+ <%end%>
+  <p><%= f.submit %></p>
+<% end %>

@@ -1,0 +1,4 @@
+<h3>Nit empresa</h3>
+<% fields_for @company, :url => {:controller => :users, :action => :verification}, :html => {:method => :get} do |f|%>
+    <%= text_field_tag :nit_company, params[:nit_company] %>
+ <% end %> 

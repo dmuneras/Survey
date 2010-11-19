@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title><%= h(yield(:title) || "Untitled") %></title>
+    <%= stylesheet_link_tag 'application', 'eafit' %>
+    <%= javascript_include_tag 'jquery.js' %>
+    <%= yield(:head) %>
+  </head>
+  <body>
+  <div id="out-container">
+
+
+
+    <!-- HEADER EAFIT -->
+    <div id="header_bg">
+      <div id="menu-subportales-bg">
+        <div id="menu-subportales">
+
+          <ul class="botones-subportales">
+            <li><a href="http://www.eafit.edu.co/investigacion">Investigaci&oacute;n</a></li>
+            <li class="linea-botones-subportales">|</li>
+            <li><a href="http://www.eafit.edu.co/cice">Cice</a></li>
+            <li class="linea-botones-subportales">|</li>
+            <li><a href="http://www.eafit.edu.co/cec">Educaci&oacute;n Continua</a></li>
+            <li class="linea-botones-subportales">|</li>
+            <li><a href="http://www.eafit.edu.co/idiomas">Idiomas</a></li>
+            <li class="linea-botones-subportales">|</li>
+            <li><a href="http://www.eafit.edu.co/cultura">Cultura</a></li>
+            <li class="linea-botones-subportales">|</li>
+            <li><a href="http://www.eafit.edu.co/biblioteca">Biblioteca</a></li>
+            <li class="linea-botones-subportales">|</li>
+            <li><a href="http://www.eafit.edu.co/international">International</a></li>
+          </ul>
+
+        </div>
+      </div>
+       <div id="header">
+        <div id="logo"></div>
+     </div>
+      </div>
+    </div>
+
+
+    
+    <div id="content">
+         <div class= "clear"></div>
+        <div id="user_nav">
+        <% if current_user %>
+          <%= link_to "Editar Perfil", edit_user_path(current_user) %> | 
+          <%= link_to "Terminar sesion", logout_path %>
+        <% else %>
+          <%= link_to "Pagina Principal ", root_url%> |
+          <%= link_to "Registrar empresa", new_company_path %> | 
+          <%= link_to "Iniciar sesion", login_path %>
+        <% end %>
+      </div>
+      <%- flash.each do |name, msg| -%>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <%- end -%>
+
+      <%- if show_title? -%>
+        <h1><%=h yield(:title) %></h1>
+      <%- end -%>
+
+      <%= yield %>
+    </div>
+
+  <div id="footer_bg">
+    <div id="footer">
+      <div id="info-contacto"><span class="amarillo">Universidad EAFIT</span><br />
+        L&iacute;nea de atenci&oacute;n al usuario<br />
+        Medell&iacute;n: (57) (4) - 448 95 00<br />
+        Resto del pa&iacute;s: 01 8000 515 900<br />
+        Conmutador: (57) (4) - 2619500<br />
+        Correo: admisiones.registro@eafit.edu.co<br />
+        Direcci&oacute;n: Carrera 49 N&deg; 7 Sur - 50<br />
+        Medell&iacute;n - Colombia - Suram&eacute;rica<br />
+        Copyright 2010 &reg; <br />
+        Todos los Derechos Reservados</div>
+
+        <!--<div class="lista-footer">
+          <ul class="botones-footer">
+            <li class="amarillo">Alianzas</li>
+            <li><a href="http://www.colombiaaprende.edu.co" target="_blank">Colombia Aprende</a></li>
+            <li><a href="http://www.colombiaespasion.com" target="_blank">Colombia es Pasión</a></li>
+            <li><a href="http://www.medellincomovamos.org" target="_blank">Medellín cómo vamos</a></li>
+            <li><a href="http://www.faae.org.co" target="_blank">FAAE</a></li>
+            <li><a href="http://www.birdantioquia.org.co" target="_blank">Bird Antioquia</a></li>
+            <li><a href="http://www.universia.net.co" target="_blank">Universia</a></li>
+            <li><a href="http://www.ruana.edu.co" target="_blank">Ruana</a></li>
+            <li><a href="http://www.renata.edu.co" target="_blank">Renata</a></li>
+            <li><a href="http://www.cis.org.co" target="_blank">Cis</a></li>
+
+          </ul>
+        </div>-->
+        <div class= "lista-footers">
+            <li class="amarillo">Servicios Web</li>
+            <div class="lista-footer">
+              <ul class="botones-footer">
+                <li><a href="http://blogs.eafit.edu.co" target="_blank">Blogs EAFIT</a></li>
+                <li><a href="http://www.eafit.edu.co/servicios-en-linea/eafit-virtual/Paginas/inicio.aspx" target="_blank">EAFIT virtual</a></li>
+                <li><a href="/servicios-en-linea/aplicaciones-web/Paginas/aplicaciones-web.aspx" target="_blank">Aplicaciones Web</a></li>
+                <li><a href="http://portus.eafit.edu.co" target="_blank">Correo Web</a></li>
+                <li><a href="http://www.eafit.edu.co/ulises" target="_blank">Ulises</a></li>
+              </ul>
+            </div>
+            <div class="lista-footer">
+              <ul class = "botones-footer">
+                <li><a href="http://interactiva.eafit.edu.co" target="_blank">EAFIT Interactiva</a></li>
+                <li><a href="http://entrenos.eafit.edu.co" target="_blank">Intranet Entrenos</a></li>
+                <li><a href="http://www.eafit.edu.co/agencia-noticias" target="_blank">Agencia de Noticias</a></li>
+                <li><a href="http://envivo.eafit.edu.co" target="_blank">Canal Envivo</a></li>
+                <li><a href="http://acustica.eafit.edu.co" target="_blank">Emisora Acústica</a></li>
+              </ul>
+           </div>
+       </div>
+
+        <!--<div class="lista-footer">
+          <ul class="botones-footer">
+
+            <li class="amarillo">Contáctenos</li>
+            <li><a href="/institucional/contacto/Paginas/contacto-eafit.aspx" target="_blank">Contacto</a></li>
+            <li><a href="http://www2.eafit.edu.co/bisu" target="_blank">Sugerencias</a></li>
+            <li><a href="http://www.eafit.edu.co/registro" target="_blank">Suscríbase</a></li>
+            <li><a href="/servicios-en-linea/Paginas/directorio-redes-sociales.aspx" target="_blank">Directorio de redes sociales</a></li>
+            <li><a href="http://www.elempleo.com/sitios_empresariales/eafit/index.asp" target="_blank">Trabaje con nosotros</a><a href="#"></a></li>
+          </ul>
+        </div> -->
+      </div>
+      <div id="linea-footer"></div>
+    </div>
+
+    <!-- FIN FOOTER EAFIT -->
+
+  </body>
+</html>

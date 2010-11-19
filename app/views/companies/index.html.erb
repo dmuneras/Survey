@@ -1,0 +1,15 @@
+<% title "Empresas" %>
+  <% for company in @companies %>
+   <div class= "company">
+      <h3><%= "Nombre: #{company.name}" %></h3>
+      <p><strong>NIT de la empresa:</strong>
+	 <%= company.nit%>
+      </p>
+       <p><strong>Correo electronico:</strong>
+	 <%= company.email%>
+      </p>
+      <% if can? :read, company %>
+        <p><%= link_to "Información de la Empresa", company %></p>
+      <% end %>
+    </div>
+  <% end %>

@@ -1,0 +1,11 @@
+one:
+  nit: 1
+  name: MyString
+  email: MyString
+  telephone: MyString
+
+two:
+  nit: 1
+  name: MyString
+  email: MyString
+  telephone: MyString

@@ -1,0 +1,19 @@
+<% title "Company Roles" %>
+
+<table>
+  <tr>
+    <th>Role</th>
+    <th>Hierarchy</th>
+  </tr>
+  <% for company_role in @company_roles %>
+    <tr>
+      <td><%=h company_role.role %></td>
+      <td><%=h company_role.hierarchy %></td>
+      <td><%= link_to "Show", company_role %></td>
+      <td><%= link_to "Edit", edit_company_role_path(company_role) %></td>
+      <td><%= link_to "Destroy", company_role, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Company Role", new_company_role_path %></p>

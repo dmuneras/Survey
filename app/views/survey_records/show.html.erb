@@ -1,0 +1,16 @@
+<% title "Survey Record" %>
+
+<p>
+  <strong>User:</strong>
+  <%=h @survey_record.user_id %>
+</p>
+<p>
+  <strong>Answers:</strong>
+  <%=h @survey_record.answers %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_survey_record_path(@survey_record) %> |
+  <%= link_to "Destroy", @survey_record, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", survey_records_path %>
+</p>

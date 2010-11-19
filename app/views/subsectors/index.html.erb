@@ -1,0 +1,17 @@
+<% title "Subsectors" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% for subsector in @subsectors %>
+    <tr>
+      <td><%=h subsector.name %></td>
+      <td><%= link_to "Show", subsector %></td>
+      <td><%= link_to "Edit", edit_subsector_path(subsector) %></td>
+      <td><%= link_to "Destroy", subsector, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Subsector", new_subsector_path %></p>

@@ -1,0 +1,12 @@
+<% title "Subsector" %>
+
+<p>
+  <strong>Name:</strong>
+  <%=h @subsector.name %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_subsector_path(@subsector) %> |
+  <%= link_to "Destroy", @subsector, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", subsectors_path %>
+</p>
