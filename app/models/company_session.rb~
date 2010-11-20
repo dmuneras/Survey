@@ -1,0 +1,3 @@
+class CompanySession < Authlogic::Session::Base
+  login_field :name
+end
