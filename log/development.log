@@ -23458,3 +23458,262 @@ Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:40:43) [GET
 Rendering template within layouts/application
 Rendering companies/index
 Completed in 53ms (View: 29, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:48:17) [GET]
+  Parameters: {"controller"=>"companies", "action"=>"index"}
+  [4;36;1mCompany Load (0.5ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+
+ActionView::TemplateError (incompatible character encodings: ASCII-8BIT and UTF-8) on line #71 of app/views/layouts/application.html.erb:
+68:         <h1><%=h yield(:title) %></h1>
+69:       <%- end -%>
+70: 
+71:       <%= yield %>
+72:     </div>
+73: 
+74:   <div id="footer_bg">
+
+    app/views/layouts/application.html.erb:71
+    <internal:prelude>:10:in `synchronize'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (17.8ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:48:27) [GET]
+  Parameters: {"controller"=>"companies", "action"=>"index"}
+  [4;35;1mCompany Load (0.5ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+
+ActionView::TemplateError (incompatible character encodings: ASCII-8BIT and UTF-8) on line #71 of app/views/layouts/application.html.erb:
+68:         <h1><%=h yield(:title) %></h1>
+69:       <%- end -%>
+70: 
+71:       <%= yield %>
+72:     </div>
+73: 
+74:   <div id="footer_bg">
+
+    app/views/layouts/application.html.erb:71
+    <internal:prelude>:10:in `synchronize'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (17.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:48:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 57ms (View: 39, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#new (for 127.0.0.1 at 2010-11-20 15:49:01) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+
+NameError (uninitialized constant CompanySessionsController):
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (38.2ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#new (for 127.0.0.1 at 2010-11-20 15:49:06) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+
+NameError (uninitialized constant CompanySessionsController):
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (34.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:50:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 79ms (View: 16, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#new (for 127.0.0.1 at 2010-11-20 15:50:47) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+
+NameError (uninitialized constant CompanySessionsController):
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (34.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSubsectors (20101028224950)
+Migrating to CreateCompanies (20101028225506)
+Migrating to CreateUsers (20101028231020)
+Migrating to AddColumnNitCompanyToUser (20101029001323)
+Migrating to AddColumnCompanyIdToUser (20101029002354)
+Migrating to AddColumnSubsectorIdToCompany (20101029002524)
+Migrating to AddLastSurveyToCompany (20101112235300)
+Migrating to CreateCompanyRoles (20101113000745)
+Migrating to CreateSurveyRecords (20101113002156)
+Migrating to CreateQuestions (20101113003456)
+Migrating to CreateAspects (20101113003846)
+Migrating to CreateStates (20101113004229)
+Migrating to CreateAnswers (20101113004428)
+Migrating to CreateSessions (20101117160000)
+Migrating to CreateSurveys (20101118154439)
+Migrating to AddSurveyIdToQuestion (20101118154557)
+Migrating to AddCommentToSurveyRecord (20101120164326)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "survey_records" ADD "comment" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101120164326')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("answers")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("aspects")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("companies")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("company_roles")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("questions")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("states")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("subsectors")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("survey_records")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("surveys")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:51:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 77ms (View: 66, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#new (for 127.0.0.1 at 2010-11-20 15:51:22) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+
+NameError (uninitialized constant CompanySessionsController):
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (36.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:52:07) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 58ms (View: 39, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#new (for 127.0.0.1 at 2010-11-20 15:52:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+
+NameError (uninitialized constant CompanySessionsController):
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (38.0ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:55:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.5ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 58ms (View: 40, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#new (for 127.0.0.1 at 2010-11-20 15:55:37) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+
+NameError (uninitialized constant CompanySessionsController):
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/kike/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (38.0ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)

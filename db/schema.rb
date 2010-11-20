@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(:version => 20101120194337) do
     t.string   "answers"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "comment"
   end
 
   create_table "surveys", :force => true do |t|
