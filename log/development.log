@@ -23458,3 +23458,31 @@ Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:40:43) [GET
 Rendering template within layouts/application
 Rendering companies/index
 Completed in 53ms (View: 29, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 15:50:27) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 195ms (View: 69, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 15:50:30) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 51ms (View: 27, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 15:50:36) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 143ms (View: 29, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 15:50:38) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 51ms (View: 27, DB: 0) | 200 OK [http://localhost/admin_company]
