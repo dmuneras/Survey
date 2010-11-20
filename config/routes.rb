@@ -10,7 +10,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :user_sessions
   map.resources :companies ,:has_many => :users, :shallow => true
   map.resources :subsectors
-
+  map.resources :surveys, :member => {:next_question => :get}
+  
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

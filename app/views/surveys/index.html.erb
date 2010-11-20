@@ -1,17 +1,9 @@
-<% title "Surveys" %>
+<% title "Encuesta" %>
 
-<table>
-  <tr>
-    <th>Name</th>
-  </tr>
-  <% for survey in @surveys %>
-    <tr>
-      <td><%=h survey.name %></td>
-      <td><%= link_to "Show", survey %></td>
-      <td><%= link_to "Edit", edit_survey_path(survey) %></td>
-      <td><%= link_to "Destroy", survey, :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
-  <% end %>
-</table>
+<br />
 
-<p><%= link_to "New Survey", new_survey_path %></p>
+<h2>Términos y condiciones</h2>
+
+<p>Para comenzar la encuesta bla bla bla</p>
+
+<%= button_to "Acepto", {:action => :show}, {:method => :get} %>
