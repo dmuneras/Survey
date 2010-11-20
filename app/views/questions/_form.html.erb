@@ -14,9 +14,9 @@
   </p>
  
   <div class = "answers">
-  <% f.fields_for :answers do |builder| %>
-     <%= render 'answers/answer_form', :f => builder %>
-  <% end %>
+    <% f.fields_for :answers do |builder| %>
+      <%= render 'answers/answer_form', :f => builder %>
+    <% end %>
   </div> 
   <p><%= f.submit %></p>
   

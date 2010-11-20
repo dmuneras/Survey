@@ -8,15 +8,11 @@ class AnswersController < ApplicationController
   end
   
   def new
-  #   @question = Question.find(params[:question_id])
-  #   @answer = @question.answers.build
-  @answer = Answer.new
+    @answer = Answer.new
   end
   
   def create
-    # @question = Question.find(params[:question_id])
-    # @answer = @question.answers.build(params[:answer])
-    @answer = Answer.new(params[:answer])
+     @answer = Answer.new(params[:answer])
     if @answer.save
       flash[:notice] = "Successfully created answer."
       redirect_to @answer

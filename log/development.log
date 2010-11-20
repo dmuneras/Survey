@@ -20234,3 +20234,552 @@ Processing UserSessionsController#new (for 127.0.0.1 at 2010-11-20 09:29:38) [GE
 Rendering template within layouts/application
 Rendering user_sessions/new
 Completed in 41ms (View: 17, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing QuestionsController#new (for 127.0.0.1 at 2010-11-20 09:31:31) [GET]
+  Parameters: {"action"=>"new", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/new
+Rendered answers/_answer_form (6.0ms)
+Rendered answers/_answer_form (4.2ms)
+Rendered answers/_answer_form (4.1ms)
+Rendered questions/_form (31.1ms)
+Completed in 101ms (View: 78, DB: 0) | 200 OK [http://localhost/questions/new]
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2010-11-20 09:32:06) [POST]
+  Parameters: {"commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"questions", "question"=>{"number"=>"2", "answers_attributes"=>{"0"=>{"number"=>"2", "_destroy"=>"0", "description"=>"es una "}, "1"=>{"number"=>"2", "_destroy"=>"0", "description"=>"hola mundo"}, "2"=>{"number"=>"2", "_destroy"=>"0", "description"=>"esta genial"}}, "aspect_id"=>"2", "description"=>"es una buena pregunts"}}
+WARNING: Can't mass-assign these protected attributes: answers_attributes
+  [4;36;1mQuestion Create (0.6ms)[0m   [0;1mINSERT INTO "questions" ("number", "created_at", "aspect_id", "updated_at", "survey_id", "description") VALUES(2, '2010-11-20 14:32:06', 2, '2010-11-20 14:32:06', NULL, 'es una buena pregunts')[0m
+Redirected to http://localhost:3000/questions/3
+Completed in 24ms (DB: 1) | 302 Found [http://localhost/questions]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2010-11-20 09:32:06) [GET]
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"questions"}
+  [4;35;1mQuestion Load (0.4ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 3) [0m
+  [4;36;1mAspect Load (0.2ms)[0m   [0;1mSELECT * FROM "aspects" WHERE ("aspects"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering questions/show
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "aspects" WHERE ("aspects"."id" = 2) [0m
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #1 of app/views/questions/show.html.erb:
+1: <% title "Aspecto #{@question.aspect.name}" %>
+2: <br/>
+3: <p>
+4:   <h1><%= "#{@question.number}."%></h1>
+
+    app/views/questions/show.html.erb:1
+
+Rendered rescues/_trace (68.3ms)
+Rendered rescues/_request_and_response (2.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2010-11-20 09:32:54) [GET]
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"questions"}
+  [4;36;1mQuestion Load (0.4ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 3) [0m
+  [4;35;1mAspect Load (0.3ms)[0m   [0mSELECT * FROM "aspects" WHERE ("aspects"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering questions/show
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "aspects" WHERE ("aspects"."id" = 2) [0m
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #1 of app/views/questions/show.html.erb:
+1: <% title "Aspecto #{@question.aspect.name}" %>
+2: <br/>
+3: <p>
+4:   <h1><%= "#{@question.number}."%></h1>
+
+    app/views/questions/show.html.erb:1
+
+Rendered rescues/_trace (69.1ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2010-11-20 09:32:58) [POST]
+  Parameters: {"commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"questions", "question"=>{"number"=>"2", "answers_attributes"=>{"0"=>{"number"=>"2", "_destroy"=>"0", "description"=>"es una "}, "1"=>{"number"=>"2", "_destroy"=>"0", "description"=>"hola mundo"}, "2"=>{"number"=>"2", "_destroy"=>"0", "description"=>"esta genial"}}, "aspect_id"=>"2", "description"=>"es una buena pregunts"}}
+WARNING: Can't mass-assign these protected attributes: answers_attributes
+  [4;35;1mQuestion Create (0.4ms)[0m   [0mINSERT INTO "questions" ("number", "created_at", "aspect_id", "updated_at", "survey_id", "description") VALUES(2, '2010-11-20 14:32:58', 2, '2010-11-20 14:32:58', NULL, 'es una buena pregunts')[0m
+Redirected to http://localhost:3000/questions/4
+Completed in 22ms (DB: 0) | 302 Found [http://localhost/questions]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2010-11-20 09:32:58) [GET]
+  Parameters: {"action"=>"show", "id"=>"4", "controller"=>"questions"}
+  [4;36;1mQuestion Load (0.4ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 4) [0m
+  [4;35;1mAspect Load (0.3ms)[0m   [0mSELECT * FROM "aspects" WHERE ("aspects"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering questions/show
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "aspects" WHERE ("aspects"."id" = 2) [0m
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #1 of app/views/questions/show.html.erb:
+1: <% title "Aspecto #{@question.aspect.name}" %>
+2: <br/>
+3: <p>
+4:   <h1><%= "#{@question.number}."%></h1>
+
+    app/views/questions/show.html.erb:1
+
+Rendered rescues/_trace (71.9ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mQuestion Load (1.2ms)[0m   [0;1mSELECT * FROM "questions" ORDER BY questions.id DESC LIMIT 1[0m
+  [4;35;1mQuestion Load (1.0ms)[0m   [0mSELECT * FROM "questions" ORDER BY questions.id DESC LIMIT 1[0m
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM "answers" WHERE ("answers".question_id = 4) [0m
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2010-11-20 09:40:23) [GET]
+  Parameters: {"action"=>"show", "id"=>"4", "controller"=>"questions"}
+  [4;35;1mQuestion Load (0.4ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 4) [0m
+  [4;36;1mAspect Load (0.3ms)[0m   [0;1mSELECT * FROM "aspects" WHERE ("aspects"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering questions/show
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "aspects" WHERE ("aspects"."id" = 2) [0m
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #1 of app/views/questions/show.html.erb:
+1: <% title "Aspecto #{@question.aspect.name}" %>
+2: <br/>
+3: <p>
+4:   <h1><%= "#{@question.number}."%></h1>
+
+    app/views/questions/show.html.erb:1
+
+Rendered rescues/_trace (165.2ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#new (for 127.0.0.1 at 2010-11-20 09:41:36) [GET]
+  Parameters: {"action"=>"new", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/new
+Rendered answers/_answer_form (12.8ms)
+Rendered answers/_answer_form (11.0ms)
+Rendered answers/_answer_form (7.1ms)
+Rendered questions/_form (48.7ms)
+Completed in 123ms (View: 74, DB: 0) | 200 OK [http://localhost/questions/new]
+  [4;35;1mQuestion Load (0.9ms)[0m   [0mSELECT * FROM "questions" ORDER BY questions.id DESC LIMIT 1[0m
+  [4;36;1mAnswer Load (0.3ms)[0m   [0;1mSELECT * FROM "answers" WHERE ("answers".question_id = 4) [0m
+  [4;35;1mQuestion Load (0.9ms)[0m   [0mSELECT * FROM "questions" ORDER BY questions.id DESC LIMIT 1[0m
+
+
+Processing QuestionsController#new (for 127.0.0.1 at 2010-11-20 09:41:58) [GET]
+  Parameters: {"action"=>"new", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/new
+Rendered answers/_answer_form (7.4ms)
+Rendered answers/_answer_form (7.3ms)
+Rendered answers/_answer_form (7.0ms)
+Rendered questions/_form (31.7ms)
+Completed in 162ms (View: 137, DB: 0) | 200 OK [http://localhost/questions/new]
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2010-11-20 09:42:26) [POST]
+  Parameters: {"commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"questions", "question"=>{"number"=>"4", "answers_attributes"=>{"0"=>{"answers"=>{"number"=>"4", "_destroy"=>"0", "description"=>"muy buenos dias"}}, "1"=>{"answers"=>{"number"=>"", "_destroy"=>"0", "description"=>""}}, "2"=>{"answers"=>{"number"=>"", "_destroy"=>"0", "description"=>""}}}, "aspect_id"=>"2", "description"=>"muy buenos dias"}}
+WARNING: Can't mass-assign these protected attributes: answers_attributes
+  [4;36;1mQuestion Create (0.4ms)[0m   [0;1mINSERT INTO "questions" ("number", "created_at", "aspect_id", "updated_at", "survey_id", "description") VALUES(4, '2010-11-20 14:42:26', 2, '2010-11-20 14:42:26', NULL, 'muy buenos dias')[0m
+Redirected to http://localhost:3000/questions/5
+Completed in 25ms (DB: 0) | 302 Found [http://localhost/questions]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2010-11-20 09:42:26) [GET]
+  Parameters: {"action"=>"show", "id"=>"5", "controller"=>"questions"}
+  [4;35;1mQuestion Load (0.4ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 5) [0m
+  [4;36;1mAspect Load (0.2ms)[0m   [0;1mSELECT * FROM "aspects" WHERE ("aspects"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering questions/show
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "aspects" WHERE ("aspects"."id" = 2) [0m
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #1 of app/views/questions/show.html.erb:
+1: <% title "Aspecto #{@question.aspect.name}" %>
+2: <br/>
+3: <p>
+4:   <h1><%= "#{@question.number}."%></h1>
+
+    app/views/questions/show.html.erb:1
+
+Rendered rescues/_trace (73.6ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2010-11-20 09:44:06) [GET]
+  Parameters: {"action"=>"show", "id"=>"5", "controller"=>"questions"}
+  [4;36;1mQuestion Load (0.4ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 5) [0m
+  [4;35;1mAspect Load (0.2ms)[0m   [0mSELECT * FROM "aspects" WHERE ("aspects"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering questions/show
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "aspects" WHERE ("aspects"."id" = 2) [0m
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #1 of app/views/questions/show.html.erb:
+1: <% title "Aspecto #{@question.aspect.name}" %>
+2: <br/>
+3: <p>
+4:   <h1><%= "#{@question.number}."%></h1>
+
+    app/views/questions/show.html.erb:1
+
+Rendered rescues/_trace (68.5ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2010-11-20 09:44:27) [POST]
+  Parameters: {"commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"questions", "question"=>{"number"=>"4", "answers_attributes"=>{"0"=>{"answers"=>{"number"=>"4", "_destroy"=>"0", "description"=>"muy buenos dias"}}, "1"=>{"answers"=>{"number"=>"", "_destroy"=>"0", "description"=>""}}, "2"=>{"answers"=>{"number"=>"", "_destroy"=>"0", "description"=>""}}}, "aspect_id"=>"2", "description"=>"muy buenos dias"}}
+WARNING: Can't mass-assign these protected attributes: answers_attributes
+  [4;35;1mQuestion Create (0.4ms)[0m   [0mINSERT INTO "questions" ("number", "created_at", "aspect_id", "updated_at", "survey_id", "description") VALUES(4, '2010-11-20 14:44:27', 2, '2010-11-20 14:44:27', NULL, 'muy buenos dias')[0m
+Redirected to http://localhost:3000/questions/6
+Completed in 25ms (DB: 0) | 302 Found [http://localhost/questions]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2010-11-20 09:44:27) [GET]
+  Parameters: {"action"=>"show", "id"=>"6", "controller"=>"questions"}
+  [4;36;1mQuestion Load (0.4ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 6) [0m
+  [4;35;1mAspect Load (0.2ms)[0m   [0mSELECT * FROM "aspects" WHERE ("aspects"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering questions/show
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "aspects" WHERE ("aspects"."id" = 2) [0m
+
+ActionView::TemplateError (undefined method `name' for nil:NilClass) on line #1 of app/views/questions/show.html.erb:
+1: <% title "Aspecto #{@question.aspect.name}" %>
+2: <br/>
+3: <p>
+4:   <h1><%= "#{@question.number}."%></h1>
+
+    app/views/questions/show.html.erb:1
+
+Rendered rescues/_trace (68.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mAspect Load (0.8ms)[0m   [0;1mSELECT * FROM "aspects" ORDER BY aspects.id DESC LIMIT 1[0m
+  [4;35;1mAspect Create (0.6ms)[0m   [0mINSERT INTO "aspects" ("name", "created_at", "updated_at") VALUES('2', '2010-11-20 14:48:10', '2010-11-20 14:48:10')[0m
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2010-11-20 09:48:14) [GET]
+  Parameters: {"action"=>"show", "id"=>"6", "controller"=>"questions"}
+  [4;35;1mQuestion Load (0.4ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 6) [0m
+  [4;36;1mAspect Load (0.4ms)[0m   [0;1mSELECT * FROM "aspects" WHERE ("aspects"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering questions/show
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM "answers" WHERE ("answers".question_id = 6) [0m
+Completed in 56ms (View: 34, DB: 1) | 200 OK [http://localhost/questions/6]
+  [4;36;1mQuestion Load (1.0ms)[0m   [0;1mSELECT * FROM "questions" ORDER BY questions.id DESC LIMIT 1[0m
+  [4;35;1mQuestion Load (1.0ms)[0m   [0mSELECT * FROM "questions" ORDER BY questions.id DESC LIMIT 1[0m
+  [4;36;1mAnswer Load (0.4ms)[0m   [0;1mSELECT * FROM "answers" WHERE ("answers".question_id = 6) [0m
+
+
+Processing QuestionsController#new (for 127.0.0.1 at 2010-11-20 09:54:49) [GET]
+  Parameters: {"action"=>"new", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/new
+
+ActionView::TemplateError (undefined local variable or method `builder' for #<ActionView::Base:0xb6f01bb0>) on line #3 of app/views/answers/_answer_form.html.erb:
+1: <div class = "answer">
+2:   <h3>Respuestas</h3>
+3:   <p><%= builder.label :number, "Número de pregunta" %><br/>
+4:   <%= builder.text_field :number %></p>
+5:   <p><%= builder.label :description, "Texto de la respuesta" %><br/>
+6:   <%= builder.text_field :description %></p>
+
+    app/views/answers/_answer_form.html.erb:3
+    app/views/questions/_form.html.erb:18
+    app/views/questions/_form.html.erb:17
+    app/views/questions/_form.html.erb:1
+    app/views/questions/new.html.erb:3
+
+Rendered rescues/_trace (115.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#new (for 127.0.0.1 at 2010-11-20 09:54:53) [GET]
+  Parameters: {"action"=>"new", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/new
+
+ActionView::TemplateError (undefined local variable or method `builder' for #<ActionView::Base:0xb6f0f8c8>) on line #3 of app/views/answers/_answer_form.html.erb:
+1: <div class = "answer">
+2:   <h3>Respuestas</h3>
+3:   <p><%= builder.label :number, "Número de pregunta" %><br/>
+4:   <%= builder.text_field :number %></p>
+5:   <p><%= builder.label :description, "Texto de la respuesta" %><br/>
+6:   <%= builder.text_field :description %></p>
+
+    app/views/answers/_answer_form.html.erb:3
+    app/views/questions/_form.html.erb:18
+    app/views/questions/_form.html.erb:17
+    app/views/questions/_form.html.erb:1
+    app/views/questions/new.html.erb:3
+
+Rendered rescues/_trace (111.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#new (for 127.0.0.1 at 2010-11-20 09:55:37) [GET]
+  Parameters: {"action"=>"new", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/new
+Rendered answers/_answer_form (5.6ms)
+Rendered questions/_form (22.8ms)
+Completed in 73ms (View: 47, DB: 0) | 200 OK [http://localhost/questions/new]
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2010-11-20 09:55:56) [POST]
+  Parameters: {"commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"questions", "question"=>{"number"=>"10", "answers_attributes"=>{"0"=>{"number"=>"2", "_destroy"=>"0", "description"=>"sdfsfg"}}, "aspect_id"=>"1", "description"=>"dsafa"}}
+WARNING: Can't mass-assign these protected attributes: answers_attributes
+  [4;36;1mQuestion Create (0.4ms)[0m   [0;1mINSERT INTO "questions" ("number", "created_at", "aspect_id", "updated_at", "survey_id", "description") VALUES(10, '2010-11-20 14:55:56', 1, '2010-11-20 14:55:56', NULL, 'dsafa')[0m
+Redirected to http://localhost:3000/questions/7
+Completed in 28ms (DB: 0) | 302 Found [http://localhost/questions]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2010-11-20 09:55:56) [GET]
+  Parameters: {"action"=>"show", "id"=>"7", "controller"=>"questions"}
+  [4;35;1mQuestion Load (0.4ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 7) [0m
+  [4;36;1mAspect Load (0.4ms)[0m   [0;1mSELECT * FROM "aspects" WHERE ("aspects"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering questions/show
+  [4;35;1mAnswer Load (0.3ms)[0m   [0mSELECT * FROM "answers" WHERE ("answers".question_id = 7) [0m
+Completed in 71ms (View: 38, DB: 1) | 200 OK [http://localhost/questions/7]
+  [4;35;1mQuestion Load (1.0ms)[0m   [0mSELECT * FROM "questions" ORDER BY questions.id DESC LIMIT 1[0m
+  [4;36;1mQuestion Load (0.9ms)[0m   [0;1mSELECT * FROM "questions" ORDER BY questions.id DESC LIMIT 1[0m
+  [4;35;1mAnswer Load (0.4ms)[0m   [0mSELECT * FROM "answers" WHERE ("answers".question_id = 7) [0m
+  [4;36;1mAnswer Load (0.9ms)[0m   [0;1mSELECT * FROM "answers" ORDER BY answers.id DESC LIMIT 1[0m
+
+
+Processing AnswersController#new (for 127.0.0.1 at 2010-11-20 10:02:42) [GET]
+  Parameters: {"action"=>"new", "controller"=>"answers"}
+Rendering template within layouts/application
+Rendering answers/new
+
+ActionView::TemplateError (undefined method `answers_path' for #<ActionView::Base:0xb6ef6f80>) on line #1 of app/views/answers/_form.html.erb:
+1: <% form_for @answer do |f| %>
+2:   <%= f.error_messages %>
+3:   <p>
+4:     <%= f.label :question_id %><br />
+
+    app/views/answers/_form.html.erb:1
+    app/views/answers/new.html.erb:3
+
+Rendered rescues/_trace (84.7ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AnswersController#new (for 127.0.0.1 at 2010-11-20 10:05:11) [GET]
+  Parameters: {"action"=>"new", "controller"=>"answers"}
+
+ActiveRecord::RecordNotFound (Couldn't find Question without an ID):
+  app/controllers/answers_controller.rb:11:in `new'
+
+Rendered rescues/_trace (58.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing AnswersController#new (for 127.0.0.1 at 2010-11-20 10:05:17) [GET]
+  Parameters: {"action"=>"new", "controller"=>"answers"}
+
+ActiveRecord::RecordNotFound (Couldn't find Question without an ID):
+  app/controllers/answers_controller.rb:11:in `new'
+
+Rendered rescues/_trace (66.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2010-11-20 10:05:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"answers"}
+  [4;36;1mAnswer Load (1.3ms)[0m   [0;1mSELECT * FROM "answers" [0m
+Rendering template within layouts/application
+Rendering answers/index
+Completed in 59ms (View: 46, DB: 1) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#new (for 127.0.0.1 at 2010-11-20 10:05:24) [GET]
+  Parameters: {"action"=>"new", "controller"=>"answers"}
+
+ActiveRecord::RecordNotFound (Couldn't find Question without an ID):
+  app/controllers/answers_controller.rb:11:in `new'
+
+Rendered rescues/_trace (147.2ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (not_found)
+
+
+Processing AnswersController#new (for 127.0.0.1 at 2010-11-20 10:06:22) [GET]
+  Parameters: {"action"=>"new", "controller"=>"answers"}
+Rendering template within layouts/application
+Rendering answers/new
+Rendered answers/_form (9.3ms)
+Completed in 48ms (View: 35, DB: 0) | 200 OK [http://localhost/answers/new]
+
+
+Processing AnswersController#create (for 127.0.0.1 at 2010-11-20 10:07:16) [POST]
+  Parameters: {"commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"answers", "answer"=>{"number"=>"3", "question_id"=>"1", "value"=>"2", "description"=>"sdfgdsfv"}}
+
+ActiveRecord::RecordNotFound (Couldn't find Question without an ID):
+  app/controllers/answers_controller.rb:17:in `create'
+
+Rendered rescues/_trace (70.7ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (not_found)
+
+
+Processing AnswersController#create (for 127.0.0.1 at 2010-11-20 10:09:19) [POST]
+  Parameters: {"commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"answers", "answer"=>{"number"=>"3", "question_id"=>"1", "value"=>"2", "description"=>"sdfgdsfv"}}
+
+ActiveRecord::RecordNotFound (Couldn't find Question without an ID):
+  app/controllers/answers_controller.rb:17:in `create'
+
+Rendered rescues/_trace (62.8ms)
+Rendered rescues/_request_and_response (2.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2010-11-20 10:12:31) [GET]
+  Parameters: {"action"=>"index", "controller"=>"answers"}
+  [4;36;1mAnswer Load (1.5ms)[0m   [0;1mSELECT * FROM "answers" [0m
+Rendering template within layouts/application
+Rendering answers/index
+Completed in 95ms (View: 81, DB: 1) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#new (for 127.0.0.1 at 2010-11-20 10:12:33) [GET]
+  Parameters: {"action"=>"new", "controller"=>"answers"}
+Rendering template within layouts/application
+Rendering answers/new
+Rendered answers/_form (10.6ms)
+Completed in 157ms (View: 145, DB: 0) | 200 OK [http://localhost/answers/new]
+
+
+Processing AnswersController#create (for 127.0.0.1 at 2010-11-20 10:12:57) [POST]
+  Parameters: {"commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"answers", "answer"=>{"number"=>"3", "question_id"=>"1", "value"=>"2", "description"=>"dwidsfnfidsnfion"}}
+
+ActiveRecord::RecordNotFound (Couldn't find Question without an ID):
+  app/controllers/answers_controller.rb:15:in `create'
+
+Rendered rescues/_trace (60.6ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (not_found)
+
+
+Processing AnswersController#create (for 127.0.0.1 at 2010-11-20 10:14:36) [POST]
+  Parameters: {"commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"answers", "answer"=>{"number"=>"3", "question_id"=>"1", "value"=>"2", "description"=>"dwidsfnfidsnfion"}}
+
+ActiveRecord::RecordNotFound (Couldn't find Question without an ID):
+  app/controllers/answers_controller.rb:15:in `create'
+
+Rendered rescues/_trace (160.0ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (not_found)
+
+
+Processing AnswersController#create (for 127.0.0.1 at 2010-11-20 10:19:41) [POST]
+  Parameters: {"commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"answers", "answer"=>{"number"=>"3", "question_id"=>"1", "value"=>"2", "description"=>"dwidsfnfidsnfion"}}
+
+ActiveRecord::RecordNotFound (Couldn't find Question without an ID):
+  app/controllers/answers_controller.rb:15:in `create'
+
+Rendered rescues/_trace (60.1ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (not_found)
+
+
+Processing AnswersController#create (for 127.0.0.1 at 2010-11-20 10:19:57) [POST]
+  Parameters: {"commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"answers", "answer"=>{"number"=>"3", "question_id"=>"1", "value"=>"2", "description"=>"dwidsfnfidsnfion"}}
+
+NameError (uninitialized constant AnswersController::Answers):
+  app/controllers/answers_controller.rb:15:in `create'
+
+Rendered rescues/_trace (162.9ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AnswersController#create (for 127.0.0.1 at 2010-11-20 10:20:21) [POST]
+  Parameters: {"commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"answers", "answer"=>{"number"=>"3", "question_id"=>"1", "value"=>"2", "description"=>"dwidsfnfidsnfion"}}
+  [4;35;1mSQL (1.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `build' for #<Class:0xb6ed0a38>):
+  app/controllers/answers_controller.rb:15:in `create'
+
+Rendered rescues/_trace (62.0ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AnswersController#create (for 127.0.0.1 at 2010-11-20 10:20:32) [POST]
+  Parameters: {"commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"answers", "answer"=>{"number"=>"3", "question_id"=>"1", "value"=>"2", "description"=>"dwidsfnfidsnfion"}}
+  [4;36;1mAnswer Create (0.6ms)[0m   [0;1mINSERT INTO "answers" ("question_id", "number", "created_at", "updated_at", "value", "description") VALUES(1, 3, '2010-11-20 15:20:32', '2010-11-20 15:20:32', 2, 'dwidsfnfidsnfion')[0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.save):
+  app/controllers/answers_controller.rb:16:in `create'
+
+Rendered rescues/_trace (164.8ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AnswersController#create (for 127.0.0.1 at 2010-11-20 10:20:37) [POST]
+  Parameters: {"commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"answers", "answer"=>{"number"=>"3", "question_id"=>"1", "value"=>"2", "description"=>"dwidsfnfidsnfion"}}
+  [4;35;1mAnswer Create (0.4ms)[0m   [0mINSERT INTO "answers" ("question_id", "number", "created_at", "updated_at", "value", "description") VALUES(1, 3, '2010-11-20 15:20:37', '2010-11-20 15:20:37', 2, 'dwidsfnfidsnfion')[0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.save):
+  app/controllers/answers_controller.rb:16:in `create'
+
+Rendered rescues/_trace (66.8ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AnswersController#create (for 127.0.0.1 at 2010-11-20 10:21:09) [POST]
+  Parameters: {"commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"answers", "answer"=>{"number"=>"3", "question_id"=>"1", "value"=>"2", "description"=>"dwidsfnfidsnfion"}}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.save):
+  app/controllers/answers_controller.rb:16:in `create'
+
+Rendered rescues/_trace (159.1ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AnswersController#create (for 127.0.0.1 at 2010-11-20 10:21:15) [POST]
+  Parameters: {"commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"answers", "answer"=>{"number"=>"3", "question_id"=>"1", "value"=>"2", "description"=>"dwidsfnfidsnfion"}}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.save):
+  app/controllers/answers_controller.rb:16:in `create'
+
+Rendered rescues/_trace (60.8ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AnswersController#create (for 127.0.0.1 at 2010-11-20 10:21:40) [POST]
+  Parameters: {"commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"answers", "answer"=>{"number"=>"3", "question_id"=>"1", "value"=>"2", "description"=>"dwidsfnfidsnfion"}}
+  [4;36;1mAnswer Create (0.4ms)[0m   [0;1mINSERT INTO "answers" ("question_id", "number", "created_at", "updated_at", "value", "description") VALUES(1, 3, '2010-11-20 15:21:40', '2010-11-20 15:21:40', 2, 'dwidsfnfidsnfion')[0m
+Redirected to http://localhost:3000/answers/5
+Completed in 606ms (DB: 0) | 302 Found [http://localhost/answers]
+
+
+Processing AnswersController#show (for 127.0.0.1 at 2010-11-20 10:21:40) [GET]
+  Parameters: {"action"=>"show", "id"=>"5", "controller"=>"answers"}
+  [4;35;1mAnswer Load (0.5ms)[0m   [0mSELECT * FROM "answers" WHERE ("answers"."id" = 5) [0m
+Rendering template within layouts/application
+Rendering answers/show
+Completed in 153ms (View: 127, DB: 0) | 200 OK [http://localhost/answers/5]
+  [4;35;1mAnswer Load (1.0ms)[0m   [0mSELECT * FROM "answers" ORDER BY answers.id DESC LIMIT 1[0m
+  [4;36;1mAnswer Load (0.9ms)[0m   [0;1mSELECT * FROM "answers" ORDER BY answers.id DESC LIMIT 1[0m
+  [4;35;1mQuestion Load (0.8ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 1) [0m

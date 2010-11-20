@@ -1,8 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :surveys
 
-  
-  map.resources :questions, :has_may => :answers, :shallow => true
+  map.resources :answers 
+  map.resources :questions
   map.resources :survey_records
   map.resources :company_roles
   map.login "login", :controller => "user_sessions", :action => "new"
