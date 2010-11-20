@@ -12,7 +12,8 @@ ActionController::Routing::Routes.draw do |map|
   map.logout_company "logout_company", :controller => "company_sessions", :action => "destroy"
   map.resources :companies ,:has_many => :users, :shallow => true
   map.resources :subsectors
-
+  map.resources :surveys, :member => {:next_question => :get}
+  
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

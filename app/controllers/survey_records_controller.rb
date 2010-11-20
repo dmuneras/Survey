@@ -12,13 +12,18 @@ class SurveyRecordsController < ApplicationController
   end
   
   def create
-    @survey_record = SurveyRecord.new(params[:survey_record])
-    if @survey_record.save
-      flash[:notice] = "Successfully created survey record."
-      redirect_to @survey_record
-    else
-      render :action => 'new'
-    end
+    logger.info(params[:comment])
+    @survey_record = SurveyRecord.create(:user_id => current_user,
+                                         :answers => session[:answers],
+                                         :comment => params[:comment])
+    redirect_to :action => :index
+    # @survey_record = SurveyRecord.new(params[:survey_record])
+    # if @survey_record.save
+    #   flash[:notice] = "Successfully created survey record."
+    #   redirect_to @survey_record
+    # else
+    #   render :action => 'new'
+    # end
   end
   
   def edit

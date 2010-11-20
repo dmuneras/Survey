@@ -1,8 +1,7 @@
-<% form_for @survey_record do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label :answers %><br />
-    <%= f.text_field :answers %>
-  </p>
-  <p><%= f.submit %></p>
+<% form_tag(:action => :create) do %>
+ 
+<%= text_area_tag :comment, nil, {:cols => 40, :rows => 20} %><br />
+
+<%= submit_tag "Enviar" %>
+
 <% end %>
