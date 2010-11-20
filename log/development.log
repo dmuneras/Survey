@@ -20806,3 +20806,2655 @@ Processing UserSessionsController#new (for 192.168.0.103 at 2010-11-20 10:36:10)
 Rendering template within layouts/application
 Rendering user_sessions/new
 Completed in 44ms (View: 19, DB: 0) | 200 OK [http://192.168.0.104/login]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 12:37:31) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (1.5ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 189ms (View: 162, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing QuestionsController#new (for 127.0.0.1 at 2010-11-20 12:37:37) [GET]
+  Parameters: {"action"=>"new", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/new
+Rendered questions/_form (9.5ms)
+Completed in 71ms (View: 46, DB: 0) | 200 OK [http://localhost/questions/new]
+  [4;36;1mSQL (1.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSubsectors (20101028224950)
+Migrating to CreateCompanies (20101028225506)
+Migrating to CreateUsers (20101028231020)
+Migrating to AddColumnNitCompanyToUser (20101029001323)
+Migrating to AddColumnCompanyIdToUser (20101029002354)
+Migrating to AddColumnSubsectorIdToCompany (20101029002524)
+Migrating to AddLastSurveyToCompany (20101112235300)
+Migrating to CreateCompanyRoles (20101113000745)
+Migrating to CreateSurveyRecords (20101113002156)
+Migrating to CreateQuestions (20101113003456)
+Migrating to CreateAspects (20101113003846)
+Migrating to CreateStates (20101113004229)
+Migrating to CreateAnswers (20101113004428)
+Migrating to CreateSessions (20101117160000)
+Migrating to CreateSurveys (20101118154439)
+Migrating to AddSurveyIdToQuestion (20101118154557)
+Migrating to AddPasswordToCompany (20101120173942)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mALTER TABLE "companies" ADD "crypted_password" varchar(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "companies" ADD "password_salt" varchar(255)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "companies" ADD "persistence_token" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101120173942')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("answers")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("aspects")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("companies")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("company_roles")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("questions")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("states")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("subsectors")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("survey_records")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("surveys")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+
+
+Processing QuestionsController#new (for 127.0.0.1 at 2010-11-20 12:46:30) [GET]
+  Parameters: {"action"=>"new", "controller"=>"questions"}
+Rendering template within layouts/application
+Rendering questions/new
+Rendered questions/_form (9.1ms)
+Completed in 207ms (View: 64, DB: 0) | 200 OK [http://localhost/questions/new]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 12:46:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (1.4ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 80ms (View: 60, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 12:47:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (1.5ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 62ms (View: 48, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 12:48:01) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+
+ActionView::TemplateError (undefined method `name' for #<CompanySession: no credentials provided>) on line #7 of app/views/company_sessions/new.html.erb:
+4:   <%= f.error_messages %>
+5:   <p>
+6:     <%= f.label :name %><br />
+7:     <%= f.text_field :name %>
+8:   </p>
+9:   <p>
+10:     <%= f.label :password %><br />
+
+    app/views/company_sessions/new.html.erb:7
+    app/views/company_sessions/new.html.erb:3
+
+Rendered rescues/_trace (78.1ms)
+Rendered rescues/_request_and_response (2.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 12:48:53) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+
+ActionView::TemplateError (undefined method `name' for #<CompanySession: no credentials provided>) on line #7 of app/views/company_sessions/new.html.erb:
+4:   <%= f.error_messages %>
+5:   <p>
+6:     <%= f.label :name %><br />
+7:     <%= f.text_field :name %>
+8:   </p>
+9:   <p>
+10:     <%= f.label :password %><br />
+
+    app/views/company_sessions/new.html.erb:7
+    app/views/company_sessions/new.html.erb:3
+
+Rendered rescues/_trace (76.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 12:49:17) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+
+ActionView::TemplateError (undefined method `name' for #<CompanySession: no credentials provided>) on line #7 of app/views/company_sessions/new.html.erb:
+4:   <%= f.error_messages %>
+5:   <p>
+6:     <%= f.label :name %><br />
+7:     <%= f.text_field :name %>
+8:   </p>
+9:   <p>
+10:     <%= f.label :password %><br />
+
+    app/views/company_sessions/new.html.erb:7
+    app/views/company_sessions/new.html.erb:3
+
+Rendered rescues/_trace (80.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 12:49:21) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+
+ActionView::TemplateError (undefined method `name' for #<CompanySession: no credentials provided>) on line #7 of app/views/company_sessions/new.html.erb:
+4:   <%= f.error_messages %>
+5:   <p>
+6:     <%= f.label :name %><br />
+7:     <%= f.text_field :name %>
+8:   </p>
+9:   <p>
+10:     <%= f.label :password %><br />
+
+    app/views/company_sessions/new.html.erb:7
+    app/views/company_sessions/new.html.erb:3
+
+Rendered rescues/_trace (178.3ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-11-20 12:53:51) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 41ms (View: 17, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 12:55:15) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 59ms (View: 34, DB: 0) | 200 OK [http://localhost/admin_company]
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 12:57:08) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+
+ActionView::TemplateError (undefined method `name' for #<CompanySession: no credentials provided>) on line #7 of app/views/company_sessions/new.html.erb:
+4:   <%= f.error_messages %>
+5:   <p>
+6:     <%= f.label :name %><br />
+7:     <%= f.text_field :name %>
+8:   </p>
+9:   <p>
+10:     <%= f.label :password %><br />
+
+    app/views/company_sessions/new.html.erb:7
+    app/views/company_sessions/new.html.erb:3
+
+Rendered rescues/_trace (76.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSubsectors (20101028224950)
+Migrating to CreateCompanies (20101028225506)
+Migrating to CreateUsers (20101028231020)
+Migrating to AddColumnNitCompanyToUser (20101029001323)
+Migrating to AddColumnCompanyIdToUser (20101029002354)
+Migrating to AddColumnSubsectorIdToCompany (20101029002524)
+Migrating to AddLastSurveyToCompany (20101112235300)
+Migrating to CreateCompanyRoles (20101113000745)
+Migrating to CreateSurveyRecords (20101113002156)
+Migrating to CreateQuestions (20101113003456)
+Migrating to CreateAspects (20101113003846)
+Migrating to CreateStates (20101113004229)
+Migrating to CreateAnswers (20101113004428)
+Migrating to CreateSessions (20101117160000)
+Migrating to CreateSurveys (20101118154439)
+Migrating to AddSurveyIdToQuestion (20101118154557)
+Migrating to AddPasswordToCompany (20101120173942)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("answers")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("aspects")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("companies")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("company_roles")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("questions")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("states")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("subsectors")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("survey_records")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("surveys")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 13:06:44) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+
+ActionView::TemplateError (undefined method `name' for #<CompanySession: no credentials provided>) on line #7 of app/views/company_sessions/new.html.erb:
+4:   <%= f.error_messages %>
+5:   <p>
+6:     <%= f.label :name %><br />
+7:     <%= f.text_field :name %>
+8:   </p>
+9:   <p>
+10:     <%= f.label :password %><br />
+
+    app/views/company_sessions/new.html.erb:7
+    app/views/company_sessions/new.html.erb:3
+
+Rendered rescues/_trace (78.1ms)
+Rendered rescues/_request_and_response (2.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 13:11:29) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+
+ActionView::TemplateError (undefined method `company_sessions_path' for #<ActionView::Base:0xb6ceda68>) on line #3 of app/views/company_sessions/new.html.erb:
+1: <% title "New Company Session" %>
+2: 
+3: <% form_for @company_session do |f| %>
+4:   <%= f.error_messages %>
+5:   <p>
+6:     <%= f.label :name %><br />
+
+    app/views/company_sessions/new.html.erb:3
+
+Rendered rescues/_trace (82.2ms)
+Rendered rescues/_request_and_response (2.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 13:13:03) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+
+ActionView::TemplateError (undefined method `name' for #<CompanySession: no credentials provided>) on line #7 of app/views/company_sessions/new.html.erb:
+4:   <%= f.error_messages %>
+5:   <p>
+6:     <%= f.label :name %><br />
+7:     <%= f.text_field :name %>
+8:   </p>
+9:   <p>
+10:     <%= f.label :password %><br />
+
+    app/views/company_sessions/new.html.erb:7
+    app/views/company_sessions/new.html.erb:3
+
+Rendered rescues/_trace (76.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 13:20:16) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 60ms (View: 35, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 13:20:27) [POST]
+  Parameters: {"company_session"=>{"name"=>"CONTRA", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (0.4ms)[0m   [0;1mSELECT * FROM "companies" WHERE (LOWER("companies".email) = 'contra') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 301ms (View: 46, DB: 0) | 200 OK [http://localhost/company_sessions]
+  [4;35;1mCompany Load (1.2ms)[0m   [0mSELECT * FROM "companies" ORDER BY companies.id DESC LIMIT 1[0m
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 13:20:53) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (1.0ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 61ms (View: 39, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-11-20 13:20:58) [GET]
+  Parameters: {"action"=>"show", "id"=>"31", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 31) [0m
+Rendering template within layouts/application
+Rendering companies/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users".company_id = 31) [0m
+Completed in 163ms (View: 43, DB: 1) | 200 OK [http://localhost/companies/31]
+
+
+Processing CompaniesController#edit (for 127.0.0.1 at 2010-11-20 13:21:01) [GET]
+  Parameters: {"action"=>"edit", "id"=>"31", "controller"=>"companies"}
+  [4;36;1mCompany Load (5.9ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 31) [0m
+Rendering template within layouts/application
+Rendering companies/edit
+Rendered companies/_edit_form (12.6ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users".company_id = 31) [0m
+Completed in 73ms (View: 46, DB: 6) | 200 OK [http://localhost/companies/31/edit]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 13:21:27) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 185ms (View: 155, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 13:21:32) [POST]
+  Parameters: {"company_session"=>{"name"=>"EAFIT", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 64ms (View: 36, DB: 0) | 200 OK [http://localhost/company_sessions]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 13:22:17) [POST]
+  Parameters: {"company_session"=>{"name"=>"EAFIT", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 64ms (View: 36, DB: 0) | 200 OK [http://localhost/company_sessions]
+
+
+Processing CompaniesController#new (for 127.0.0.1 at 2010-11-20 13:22:32) [GET]
+  Parameters: {"action"=>"new", "controller"=>"companies"}
+Rendering template within layouts/application
+Rendering companies/new
+Rendered companies/_form (12.5ms)
+Completed in 73ms (View: 49, DB: 0) | 200 OK [http://localhost/companies/new]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 13:22:33) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (1.1ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 52ms (View: 29, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-11-20 13:22:36) [GET]
+  Parameters: {"action"=>"show", "id"=>"31", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 31) [0m
+Rendering template within layouts/application
+Rendering companies/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".company_id = 31) [0m
+Completed in 169ms (View: 145, DB: 1) | 200 OK [http://localhost/companies/31]
+
+
+Processing CompaniesController#edit (for 127.0.0.1 at 2010-11-20 13:22:39) [GET]
+  Parameters: {"action"=>"edit", "id"=>"31", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 31) [0m
+Rendering template within layouts/application
+Rendering companies/edit
+Rendered companies/_edit_form (16.4ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".company_id = 31) [0m
+Completed in 70ms (View: 46, DB: 1) | 200 OK [http://localhost/companies/31/edit]
+
+
+Processing CompaniesController#update (for 127.0.0.1 at 2010-11-20 13:22:46) [PUT]
+  Parameters: {"company"=>{"name"=>"EAFIT", "password_confirmation"=>"[FILTERED]", "nit"=>"2", "telephone"=>"26669342", "password"=>"[FILTERED]", "email"=>"eafit.edu.co"}, "commit"=>"Save changes", "action"=>"update", "_method"=>"put", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "id"=>"31", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 31) [0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT "companies".id FROM "companies" WHERE ("companies"."persistence_token" = '317bc0196a4015a5ed313f887e350159c0c10534b803883a97be9087d2024e30ec30d423df43aa75f67ece71c3e17656bca087b16185ae2367638b704869502f' AND "companies".id <> 31) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering companies/edit
+Rendered companies/_edit_form (21.0ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users".company_id = 31) [0m
+Completed in 82ms (View: 46, DB: 1) | 200 OK [http://localhost/companies/31]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 13:24:06) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 208ms (View: 71, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 13:24:39) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.9ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 64ms (View: 42, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-11-20 13:24:42) [GET]
+  Parameters: {"action"=>"show", "id"=>"31", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.8ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 31) [0m
+Rendering template within layouts/application
+Rendering companies/show
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".company_id = 31) [0m
+Completed in 155ms (View: 45, DB: 1) | 200 OK [http://localhost/companies/31]
+
+
+Processing CompaniesController#edit (for 127.0.0.1 at 2010-11-20 13:24:46) [GET]
+  Parameters: {"action"=>"edit", "id"=>"31", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 31) [0m
+Rendering template within layouts/application
+Rendering companies/edit
+Rendered companies/_edit_form (14.6ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".company_id = 31) [0m
+Completed in 71ms (View: 49, DB: 1) | 200 OK [http://localhost/companies/31/edit]
+
+
+Processing CompaniesController#update (for 127.0.0.1 at 2010-11-20 13:24:55) [PUT]
+  Parameters: {"company"=>{"name"=>"EAFIT", "password_confirmation"=>"[FILTERED]", "nit"=>"2", "telephone"=>"26669342", "password"=>"[FILTERED]", "email"=>"eafit.edu.co"}, "commit"=>"Save changes", "action"=>"update", "_method"=>"put", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "id"=>"31", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 31) [0m
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT "companies".id FROM "companies" WHERE ("companies"."persistence_token" = '9dedcc2b022f6f7ee85da1dc1f8d6d24def17cff3eea6a0afdc6d664a708d863bc45d0ad9d3899d172014c3d5ffad1f282c2f84b2af4f0f10a45c03b841923b5' AND "companies".id <> 31) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering companies/edit
+Rendered companies/_edit_form (23.6ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users".company_id = 31) [0m
+Completed in 182ms (View: 147, DB: 1) | 200 OK [http://localhost/companies/31]
+
+
+Processing CompaniesController#update (for 127.0.0.1 at 2010-11-20 13:26:42) [PUT]
+  Parameters: {"company"=>{"name"=>"EAFIT", "password_confirmation"=>"[FILTERED]", "nit"=>"2", "telephone"=>"26669342", "password"=>"[FILTERED]", "email"=>"eafit.edu.co"}, "commit"=>"Save changes", "action"=>"update", "_method"=>"put", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "id"=>"31", "controller"=>"companies"}
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `attr_accesible' for #<Class:0xb6dfdbc4>):
+  app/models/company.rb:4
+  app/controllers/companies_controller.rb:29:in `update'
+
+Rendered rescues/_trace (70.1ms)
+Rendered rescues/_request_and_response (2.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompaniesController#update (for 127.0.0.1 at 2010-11-20 13:27:35) [PUT]
+  Parameters: {"company"=>{"name"=>"EAFIT", "password_confirmation"=>"[FILTERED]", "nit"=>"2", "telephone"=>"26669342", "password"=>"[FILTERED]", "email"=>"eafit.edu.co"}, "commit"=>"Save changes", "action"=>"update", "_method"=>"put", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "id"=>"31", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 31) [0m
+WARNING: Can't mass-assign these protected attributes: name, password_confirmation, nit, telephone, email
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."persistence_token" = '069ea24635eedaffe00bdbb040f90bc4f328a82635b19c61c13974795d9daa10b1de0b177234c10f1a5bfb950845191480e51becb573489351ab0f7891b66739' AND "companies".id <> 31) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering companies/edit
+Rendered companies/_edit_form (34.5ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".company_id = 31) [0m
+Completed in 206ms (View: 174, DB: 1) | 200 OK [http://localhost/companies/31]
+
+
+Processing CompaniesController#update (for 127.0.0.1 at 2010-11-20 13:28:08) [PUT]
+  Parameters: {"company"=>{"name"=>"EAFIT", "password_confirmation"=>"[FILTERED]", "nit"=>"2", "telephone"=>"26669342", "password"=>"[FILTERED]", "email"=>"eafit.edu.co"}, "commit"=>"Save changes", "action"=>"update", "_method"=>"put", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "id"=>"31", "controller"=>"companies"}
+
+SyntaxError (/home/daniel/Documentos/ProyectosRails/Survey/app/models/company.rb:4: syntax error, unexpected tSYMBEG
+  attr_accessible :password. :password_confirmation
+                              ^):
+  app/controllers/companies_controller.rb:29:in `update'
+
+Rendered rescues/_trace (66.1ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompaniesController#edit (for 127.0.0.1 at 2010-11-20 13:29:11) [GET]
+  Parameters: {"action"=>"edit", "id"=>"31", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 31) [0m
+Rendering template within layouts/application
+Rendering companies/edit
+Rendered companies/_edit_form (12.8ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".company_id = 31) [0m
+Completed in 132ms (View: 108, DB: 1) | 200 OK [http://localhost/companies/31/edit]
+
+
+Processing CompaniesController#update (for 127.0.0.1 at 2010-11-20 13:29:22) [PUT]
+  Parameters: {"company"=>{"name"=>"EAFIT", "password_confirmation"=>"[FILTERED]", "nit"=>"2", "telephone"=>"26669342", "password"=>"[FILTERED]", "email"=>"eafit.edu.co"}, "commit"=>"Save changes", "action"=>"update", "_method"=>"put", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "id"=>"31", "controller"=>"companies"}
+  [4;35;1mCompany Load (5.9ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 31) [0m
+WARNING: Can't mass-assign these protected attributes: name, nit, telephone, email
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT "companies".id FROM "companies" WHERE ("companies"."persistence_token" = '50d8a47fbd6431e7f89912a39f0d6f44a78c61e99028be2793bb9328dcb43504665f7d194f88eabb0643c0c71c8292804d21e937ee9bfcb96d418070a24421b2' AND "companies".id <> 31) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering companies/edit
+Rendered companies/_edit_form (31.2ms)
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users".company_id = 31) [0m
+Completed in 107ms (View: 67, DB: 7) | 200 OK [http://localhost/companies/31]
+
+
+Processing CompaniesController#update (for 127.0.0.1 at 2010-11-20 13:29:31) [PUT]
+  Parameters: {"company"=>{"name"=>"EAFIT", "password_confirmation"=>"[FILTERED]", "nit"=>"2", "telephone"=>"26669342", "password"=>"[FILTERED]", "email"=>"a@eafit.edu.co"}, "commit"=>"Save changes", "action"=>"update", "_method"=>"put", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "id"=>"31", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 31) [0m
+WARNING: Can't mass-assign these protected attributes: name, nit, telephone, email
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."persistence_token" = 'f4600cad0a93db3bc2562f97a4e91d57ff0fccd0cc237f68fdf7458376e7e47c87a0df4d395ca524230538bcc8411b17d0a4e59e2ccc0eeb13019888332e1728' AND "companies".id <> 31) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering companies/edit
+Rendered companies/_edit_form (35.4ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".company_id = 31) [0m
+Completed in 114ms (View: 82, DB: 1) | 200 OK [http://localhost/companies/31]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 13:29:53) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.9ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 58ms (View: 34, DB: 1) | 200 OK [http://localhost/companies/]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-11-20 13:29:57) [GET]
+  Parameters: {"action"=>"show", "id"=>"31", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 31) [0m
+Rendering template within layouts/application
+Rendering companies/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users".company_id = 31) [0m
+Completed in 55ms (View: 32, DB: 1) | 200 OK [http://localhost/companies/31]
+
+
+Processing CompaniesController#edit (for 127.0.0.1 at 2010-11-20 13:30:00) [GET]
+  Parameters: {"action"=>"edit", "id"=>"31", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 31) [0m
+Rendering template within layouts/application
+Rendering companies/edit
+Rendered companies/_edit_form (12.8ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users".company_id = 31) [0m
+Completed in 145ms (View: 122, DB: 1) | 200 OK [http://localhost/companies/31/edit]
+
+
+Processing CompaniesController#update (for 127.0.0.1 at 2010-11-20 13:30:17) [PUT]
+  Parameters: {"company"=>{"name"=>"EAFIT", "password_confirmation"=>"[FILTERED]", "nit"=>"2", "telephone"=>"26669342", "password"=>"[FILTERED]", "email"=>"eafit@eafit.edu.co"}, "commit"=>"Save changes", "action"=>"update", "_method"=>"put", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "id"=>"31", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 31) [0m
+WARNING: Can't mass-assign these protected attributes: name, nit, telephone, email
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."persistence_token" = '5cd88feec635c63800ad9e871368baef5901cb843a1c96f56178394c9ec064e7a7a537b4e76b02c609d96eb4f9253f46a03e2d9f91b9e706feaf89810eada5ec' AND "companies".id <> 31) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering companies/edit
+Rendered companies/_edit_form (17.1ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".company_id = 31) [0m
+Completed in 81ms (View: 49, DB: 1) | 200 OK [http://localhost/companies/31]
+
+
+Processing CompaniesController#update (for 127.0.0.1 at 2010-11-20 13:30:37) [PUT]
+  Parameters: {"company"=>{"name"=>"EAFIT", "password_confirmation"=>"[FILTERED]", "nit"=>"2", "telephone"=>"26669342", "password"=>"[FILTERED]", "email"=>"eafit.edu.co"}, "commit"=>"Save changes", "action"=>"update", "_method"=>"put", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "id"=>"31", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 31) [0m
+WARNING: Can't mass-assign these protected attributes: name, nit, telephone
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT "companies".id FROM "companies" WHERE ("companies"."persistence_token" = '2ba91dc47a276942b144a63bc79b541f4747f2120dd0268f77b07165bd481e53cbccb1bed810e04f6856898def836e926cb806887e55c39e079e3906a590095b' AND "companies".id <> 31) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering companies/edit
+Rendered companies/_edit_form (17.1ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users".company_id = 31) [0m
+Completed in 75ms (View: 43, DB: 1) | 200 OK [http://localhost/companies/31]
+
+
+Processing CompaniesController#update (for 127.0.0.1 at 2010-11-20 13:31:10) [PUT]
+  Parameters: {"company"=>{"name"=>"EAFIT", "password_confirmation"=>"[FILTERED]", "nit"=>"2", "telephone"=>"26669342", "password"=>"[FILTERED]", "email"=>"eafit.edu.co"}, "commit"=>"Save changes", "action"=>"update", "_method"=>"put", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "id"=>"31", "controller"=>"companies"}
+  [4;36;1mCompany Load (1.1ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 31) [0m
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."persistence_token" = 'f778b3b222c54aebf9b87155fbf2f5c56191a57c57828061bb77f095456470685254e51c7bef84bc0579a10fb9bc20b39894fb9bba9df1fd54635d06711d1988' AND "companies".id <> 31) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering companies/edit
+Rendered companies/_edit_form (16.4ms)
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".company_id = 31) [0m
+Completed in 89ms (View: 55, DB: 2) | 200 OK [http://localhost/companies/31]
+
+
+Processing CompaniesController#update (for 127.0.0.1 at 2010-11-20 13:31:22) [PUT]
+  Parameters: {"company"=>{"name"=>"EAFIT", "nit"=>"2", "telephone"=>"26669342", "email"=>"f@eafit.edu.co"}, "commit"=>"Save changes", "action"=>"update", "_method"=>"put", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "id"=>"31", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 31) [0m
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT "companies".id FROM "companies" WHERE (LOWER("companies"."email") = 'f@eafit.edu.co' AND "companies".id <> 31) LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."persistence_token" = '9cea6bcf4317c2b93ed6f75735a2fab5c04b056f1f0a009f2c3793bea6dcb6301c99c81f92333995b8e8a605bc11d9ce6d11a02616f1e30a9c566b514136e536' AND "companies".id <> 31) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering companies/edit
+Rendered companies/_edit_form (17.7ms)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".company_id = 31) [0m
+Completed in 304ms (View: 46, DB: 1) | 200 OK [http://localhost/companies/31]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 13:32:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.9ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 196ms (View: 79, DB: 1) | 200 OK [http://localhost/companies/]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-11-20 13:32:57) [GET]
+  Parameters: {"action"=>"show", "id"=>"30", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 30) [0m
+Rendering template within layouts/application
+Rendering companies/show
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".company_id = 30) [0m
+Completed in 72ms (View: 48, DB: 1) | 200 OK [http://localhost/companies/30]
+
+
+Processing CompaniesController#new (for 127.0.0.1 at 2010-11-20 13:33:01) [GET]
+  Parameters: {"action"=>"new", "controller"=>"companies"}
+Rendering template within layouts/application
+Rendering companies/new
+Rendered companies/_form (13.4ms)
+Completed in 157ms (View: 49, DB: 0) | 200 OK [http://localhost/companies/new]
+
+
+Processing CompaniesController#new (for 127.0.0.1 at 2010-11-20 13:33:36) [GET]
+  Parameters: {"action"=>"new", "controller"=>"companies"}
+Rendering template within layouts/application
+Rendering companies/new
+Rendered companies/_form (14.7ms)
+Completed in 62ms (View: 41, DB: 0) | 200 OK [http://localhost/companies/new]
+
+
+Processing CompaniesController#create (for 127.0.0.1 at 2010-11-20 13:34:34) [POST]
+  Parameters: {"company"=>{"name"=>"eafitos", "password_confirmation"=>"[FILTERED]", "nit"=>"12", "telephone"=>"234567", "password"=>"[FILTERED]", "email"=>"eafit@edu.co"}, "commit"=>"Registrar", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE (LOWER("companies"."email") = 'eafit@edu.co') LIMIT 1[0m
+  [4;36;1mCompany Load (0.1ms)[0m   [0;1mSELECT "companies".id FROM "companies" WHERE ("companies"."persistence_token" = '67a5070a01256d5314f5906785a981756bec1c8ec5a66a30de5f0475e9f1e96374150464e7b614436b70e4c0aa81d9cc6c7a108f7ff64c9892447863a8662e5d') LIMIT 1[0m
+  [4;35;1mCompany Create (0.6ms)[0m   [0mINSERT INTO "companies" ("name", "created_at", "crypted_password", "nit", "updated_at", "last_survey", "password_salt", "persistence_token", "telephone", "subsector_id", "email") VALUES('eafitos', '2010-11-20 18:34:35', 'dd91a726b29c59f63004577beb97f8b90037a54cbebf52e7eb157ad32515fe7e9adcfd483b0893e638850aef0a6dbfd589844fcf9eaf82aac2ea07f81e9c7738', 12, '2010-11-20 18:34:35', NULL, 'DrfXxScovgawwT4epSa', '67a5070a01256d5314f5906785a981756bec1c8ec5a66a30de5f0475e9f1e96374150464e7b614436b70e4c0aa81d9cc6c7a108f7ff64c9892447863a8662e5d', '234567', NULL, 'eafit@edu.co')[0m
+Redirected to http://localhost:3000/companies/32
+Completed in 294ms (DB: 1) | 302 Found [http://localhost/companies]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-11-20 13:34:35) [GET]
+  Parameters: {"action"=>"show", "id"=>"32", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 32) [0m
+Rendering template within layouts/application
+Rendering companies/show
+  [4;35;1mUser Load (10.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users".company_id = 32) [0m
+Completed in 161ms (View: 127, DB: 11) | 200 OK [http://localhost/companies/32]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 13:34:54) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 59ms (View: 33, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 13:35:01) [POST]
+  Parameters: {"company_session"=>{"name"=>"eafitos", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (0.4ms)[0m   [0;1mSELECT * FROM "companies" WHERE (LOWER("companies".email) = 'eafitos') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 60ms (View: 32, DB: 0) | 200 OK [http://localhost/company_sessions]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 13:35:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (1.2ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 80ms (View: 45, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 13:35:25) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 52ms (View: 28, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 13:35:36) [POST]
+  Parameters: {"company_session"=>{"name"=>"eafitos", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (0.5ms)[0m   [0;1mSELECT * FROM "companies" WHERE (LOWER("companies".email) = 'eafitos') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 165ms (View: 138, DB: 1) | 200 OK [http://localhost/company_sessions]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 13:36:30) [POST]
+  Parameters: {"company_session"=>{"name"=>"eafitos", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (0.4ms)[0m   [0;1mSELECT * FROM "companies" WHERE (LOWER("companies".email) = 'eafitos') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 352ms (View: 64, DB: 0) | 200 OK [http://localhost/company_sessions]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 13:36:35) [POST]
+  Parameters: {"company_session"=>{"name"=>"eafitos", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;35;1mCompany Load (0.4ms)[0m   [0mSELECT * FROM "companies" WHERE (LOWER("companies".email) = 'eafitos') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 100ms (View: 70, DB: 0) | 200 OK [http://localhost/company_sessions]
+
+
+Processing CompanySessionsController#index (for 127.0.0.1 at 2010-11-20 13:37:13) [GET]
+  Parameters: {"action"=>"index", "controller"=>"company_sessions"}
+
+ActionController::UnknownAction (No action responded to index. Actions: create, destroy, and new):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-20 13:37:17) [GET]
+
+ActionController::RoutingError (No route matches "/company_session" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 13:37:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (1.1ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 121ms (View: 81, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 13:37:25) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 148ms (View: 38, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 13:39:11) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 184ms (View: 65, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 13:42:13) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 52ms (View: 27, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 13:42:41) [POST]
+  Parameters: {"company_session"=>{"name"=>"eafit", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" WHERE (LOWER("companies".email) = 'eafit') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 306ms (View: 45, DB: 0) | 200 OK [http://localhost/company_sessions]
+
+
+Processing CompaniesController#new (for 127.0.0.1 at 2010-11-20 13:43:24) [GET]
+  Parameters: {"action"=>"new", "controller"=>"companies"}
+Rendering template within layouts/application
+Rendering companies/new
+Rendered companies/_form (15.7ms)
+Completed in 174ms (View: 65, DB: 0) | 200 OK [http://localhost/companies/new]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 13:45:38) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 62ms (View: 36, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 13:45:48) [POST]
+  Parameters: {"company_session"=>{"name"=>"EAFIT", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT * FROM "companies" WHERE (LOWER("companies".email) = 'eafit') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 190ms (View: 162, DB: 0) | 200 OK [http://localhost/company_sessions]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 13:46:36) [POST]
+  Parameters: {"company_session"=>{"name"=>"EAFIT", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (0.4ms)[0m   [0;1mSELECT * FROM "companies" WHERE (LOWER("companies".email) = 'eafit') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 66ms (View: 35, DB: 0) | 200 OK [http://localhost/company_sessions]
+
+
+Processing CompanySessionsController#index (for 127.0.0.1 at 2010-11-20 13:46:40) [GET]
+  Parameters: {"action"=>"index", "controller"=>"company_sessions"}
+
+ActionController::UnknownAction (No action responded to index. Actions: create, destroy, and new):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-20 13:46:42) [GET]
+
+ActionController::RoutingError (No route matches "/company_session" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 13:46:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (1.1ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 63ms (View: 38, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 13:46:50) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 50ms (View: 26, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 13:47:02) [POST]
+  Parameters: {"company_session"=>{"name"=>"EAFIT", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" WHERE (LOWER("companies".email) = 'eafit') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 170ms (View: 43, DB: 0) | 200 OK [http://localhost/company_sessions]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 13:47:20) [POST]
+  Parameters: {"company_session"=>{"name"=>"EAFIT", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;35;1mCompany Load (0.4ms)[0m   [0mSELECT * FROM "companies" WHERE (LOWER("companies".email) = 'eafit') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 70ms (View: 42, DB: 0) | 200 OK [http://localhost/company_sessions]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-11-20 13:47:31) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 42ms (View: 17, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-11-20 13:47:36) [POST]
+  Parameters: {"commit"=>"Save changes", "user_session"=>{"username"=>"asd", "password"=>"[FILTERED]"}, "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".username) = 'asd') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 45ms (View: 14, DB: 0) | 200 OK [http://localhost/user_sessions]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 13:51:52) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (1.1ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 57ms (View: 35, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-11-20 13:51:59) [GET]
+  Parameters: {"action"=>"show", "id"=>"31", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 31) [0m
+Rendering template within layouts/application
+Rendering companies/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users".company_id = 31) [0m
+Completed in 165ms (View: 143, DB: 1) | 200 OK [http://localhost/companies/31]
+
+
+Processing CompaniesController#edit (for 127.0.0.1 at 2010-11-20 13:52:02) [GET]
+  Parameters: {"action"=>"edit", "id"=>"31", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 31) [0m
+Rendering template within layouts/application
+Rendering companies/edit
+Rendered companies/_edit_form (14.9ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users".company_id = 31) [0m
+Completed in 75ms (View: 52, DB: 1) | 200 OK [http://localhost/companies/31/edit]
+
+
+Processing CompaniesController#update (for 127.0.0.1 at 2010-11-20 13:52:13) [PUT]
+  Parameters: {"company"=>{"name"=>"EAFIT", "password_confirmation"=>"[FILTERED]", "nit"=>"2", "telephone"=>"26669342", "password"=>"[FILTERED]", "email"=>"eanfit.edu.co"}, "commit"=>"Save changes", "action"=>"update", "_method"=>"put", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "id"=>"31", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 31) [0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE (LOWER("companies"."email") = 'eanfit.edu.co' AND "companies".id <> 31) LIMIT 1[0m
+  [4;36;1mCompany Load (0.1ms)[0m   [0;1mSELECT "companies".id FROM "companies" WHERE ("companies"."persistence_token" = '42f4bf9221ea8b68ca1fa74045eacddc60ac99a7e1fc06417e4435711033c31f2f71fa76983f09c3ea3b6c819d9a2409a3e853db4c34266ef1fafcde5310ac98' AND "companies".id <> 31) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering companies/edit
+Rendered companies/_edit_form (18.8ms)
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users".company_id = 31) [0m
+Completed in 80ms (View: 45, DB: 1) | 200 OK [http://localhost/companies/31]
+
+
+Processing CompaniesController#new (for 127.0.0.1 at 2010-11-20 13:52:30) [GET]
+  Parameters: {"action"=>"new", "controller"=>"companies"}
+Rendering template within layouts/application
+Rendering companies/new
+Rendered companies/_form (13.5ms)
+Completed in 58ms (View: 36, DB: 0) | 200 OK [http://localhost/companies/new]
+
+
+Processing CompaniesController#create (for 127.0.0.1 at 2010-11-20 13:52:50) [POST]
+  Parameters: {"company"=>{"name"=>"carlos", "password_confirmation"=>"[FILTERED]", "nit"=>"23", "telephone"=>"1243", "password"=>"[FILTERED]", "email"=>"c@c.com"}, "commit"=>"Registrar", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT "companies".id FROM "companies" WHERE (LOWER("companies"."email") = 'c@c.com') LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."persistence_token" = '248c7ab0143c03665280eeec8dff0600c6c77df46f7fee13ae829acbede12fa3253b5e5b1e2e4dd2b452652c9a04eb51c3476fdfb9b5fd3ae5bc740c61befc0c') LIMIT 1[0m
+  [4;36;1mCompany Load (0.6ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."persistence_token" = '67a5070a01256d5314f5906785a981756bec1c8ec5a66a30de5f0475e9f1e96374150464e7b614436b70e4c0aa81d9cc6c7a108f7ff64c9892447863a8662e5d') LIMIT 1[0m
+  [4;35;1mCompany Create (0.6ms)[0m   [0mINSERT INTO "companies" ("name", "created_at", "crypted_password", "nit", "updated_at", "last_survey", "password_salt", "persistence_token", "telephone", "subsector_id", "email") VALUES('carlos', '2010-11-20 18:52:50', '0c7881c4272eedffe02355368c4f6d7075bf3ba8d67a29faa81a255beacfab35e2f89e7764c28d89c443c8d5376c7611e877b8d190b5a18e23b9bd53c2aaa413', 23, '2010-11-20 18:52:50', NULL, 'oyEb9ePSaOJVqk3UJpUN', '248c7ab0143c03665280eeec8dff0600c6c77df46f7fee13ae829acbede12fa3253b5e5b1e2e4dd2b452652c9a04eb51c3476fdfb9b5fd3ae5bc740c61befc0c', '1243', NULL, 'c@c.com')[0m
+Redirected to http://localhost:3000/companies/33
+Completed in 49ms (DB: 2) | 302 Found [http://localhost/companies]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-11-20 13:52:50) [GET]
+  Parameters: {"action"=>"show", "id"=>"33", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 33) [0m
+Rendering template within layouts/application
+Rendering companies/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users".company_id = 33) [0m
+Completed in 155ms (View: 134, DB: 1) | 200 OK [http://localhost/companies/33]
+
+
+Processing CompaniesController#edit (for 127.0.0.1 at 2010-11-20 13:54:58) [GET]
+  Parameters: {"action"=>"edit", "id"=>"33", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 33) [0m
+Rendering template within layouts/application
+Rendering companies/edit
+Rendered companies/_edit_form (14.6ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users".company_id = 33) [0m
+Completed in 67ms (View: 43, DB: 1) | 200 OK [http://localhost/companies/33/edit]
+
+
+Processing CompaniesController#update (for 127.0.0.1 at 2010-11-20 13:55:06) [PUT]
+  Parameters: {"company"=>{"name"=>"carlos", "password_confirmation"=>"[FILTERED]", "nit"=>"23", "telephone"=>"1243", "password"=>"[FILTERED]", "email"=>"c@c.com"}, "commit"=>"Save changes", "action"=>"update", "_method"=>"put", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "id"=>"33", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 33) [0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."persistence_token" = '94d503552f638825832947e834af1402effb429df4143045a1a58b335872ff220f16a99c2492e14944128448f125cb560f157567d8a0162fdec5126a5ddab3d7' AND "companies".id <> 33) LIMIT 1[0m
+  [4;36;1mCompany Load (0.6ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."persistence_token" = '67a5070a01256d5314f5906785a981756bec1c8ec5a66a30de5f0475e9f1e96374150464e7b614436b70e4c0aa81d9cc6c7a108f7ff64c9892447863a8662e5d') LIMIT 1[0m
+  [4;35;1mCompany Update (0.4ms)[0m   [0mUPDATE "companies" SET "persistence_token" = '94d503552f638825832947e834af1402effb429df4143045a1a58b335872ff220f16a99c2492e14944128448f125cb560f157567d8a0162fdec5126a5ddab3d7', "updated_at" = '2010-11-20 18:55:06', "password_salt" = '02mR07J01FGyCGniL9f7', "crypted_password" = '43fe3f5048158de6b7a875aa775e8dc5574b5deb2bc05d45ec3fbacbd52e4585c26c38b3ffd34b75ca1d33cddb3f05b0477f7a3a494d7ff1160bc1ea83b34fe5' WHERE "id" = 33[0m
+Redirected to http://localhost:3000/companies/33
+Completed in 55ms (DB: 2) | 302 Found [http://localhost/companies/33]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-11-20 13:55:06) [GET]
+  Parameters: {"action"=>"show", "id"=>"33", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.8ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 33) [0m
+Rendering template within layouts/application
+Rendering companies/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users".company_id = 33) [0m
+Completed in 59ms (View: 35, DB: 1) | 200 OK [http://localhost/companies/33]
+
+
+Processing CompaniesController#edit (for 127.0.0.1 at 2010-11-20 13:55:46) [GET]
+  Parameters: {"action"=>"edit", "id"=>"33", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 33) [0m
+Rendering template within layouts/application
+Rendering companies/edit
+Rendered companies/_edit_form (35.9ms)
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users".company_id = 33) [0m
+Completed in 207ms (View: 85, DB: 1) | 200 OK [http://localhost/companies/33/edit]
+
+
+Processing CompaniesController#update (for 127.0.0.1 at 2010-11-20 13:56:04) [PUT]
+  Parameters: {"company"=>{"name"=>"carlos", "password_confirmation"=>"[FILTERED]", "nit"=>"23", "telephone"=>"1243", "password"=>"[FILTERED]", "email"=>"c@c.com"}, "commit"=>"Save changes", "action"=>"update", "_method"=>"put", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "id"=>"33", "controller"=>"companies"}
+  [4;36;1mCompany Load (1.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 33) [0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."persistence_token" = 'dcd61385aa73a343e7cf8a005b0904408f192e27c212b4c13859968fa8a1880b6bcab5ab10052b6c0c56a7093a073deadf4fbda3f82d8f2f0ad3c9b785342224' AND "companies".id <> 33) LIMIT 1[0m
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."persistence_token" = '67a5070a01256d5314f5906785a981756bec1c8ec5a66a30de5f0475e9f1e96374150464e7b614436b70e4c0aa81d9cc6c7a108f7ff64c9892447863a8662e5d') LIMIT 1[0m
+  [4;35;1mCompany Update (0.6ms)[0m   [0mUPDATE "companies" SET "persistence_token" = 'dcd61385aa73a343e7cf8a005b0904408f192e27c212b4c13859968fa8a1880b6bcab5ab10052b6c0c56a7093a073deadf4fbda3f82d8f2f0ad3c9b785342224', "updated_at" = '2010-11-20 18:56:04', "password_salt" = 'am41tL1zKVk5hD2CWIL1', "crypted_password" = 'b0b30c698b21b7eb016fb68df09bcda702e050ec7e87f0a93668a11427bee21f4fe23cd36699248da58620b3fa312d110c4e6f738fc2073629df95f2135080fa' WHERE "id" = 33[0m
+Redirected to http://localhost:3000/companies/33
+Completed in 58ms (DB: 3) | 302 Found [http://localhost/companies/33]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-11-20 13:56:04) [GET]
+  Parameters: {"action"=>"show", "id"=>"33", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 33) [0m
+Rendering template within layouts/application
+Rendering companies/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users".company_id = 33) [0m
+Completed in 154ms (View: 131, DB: 1) | 200 OK [http://localhost/companies/33]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 13:57:07) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 58ms (View: 34, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 13:57:35) [POST]
+  Parameters: {"company_session"=>{"name"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" WHERE (LOWER("companies".email) = 'carlos') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 309ms (View: 44, DB: 0) | 200 OK [http://localhost/company_sessions]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 14:00:58) [POST]
+  Parameters: {"company_session"=>{"name"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT * FROM "companies" WHERE (LOWER("companies".email) = 'carlos') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 72ms (View: 37, DB: 0) | 200 OK [http://localhost/company_sessions]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 14:02:45) [POST]
+  Parameters: {"company_session"=>{"name"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (0.4ms)[0m   [0;1mSELECT * FROM "companies" WHERE (LOWER("companies".email) = 'carlos') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 70ms (View: 39, DB: 0) | 200 OK [http://localhost/company_sessions]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 14:03:10) [POST]
+  Parameters: {"company_session"=>{"name"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 233ms (View: 91, DB: 0) | 200 OK [http://localhost/company_sessions]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 14:03:20) [POST]
+  Parameters: {"company_session"=>{"name"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (0.4ms)[0m   [0;1mSELECT * FROM "companies" WHERE (LOWER("companies".email) = 'carlos') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 308ms (View: 41, DB: 0) | 200 OK [http://localhost/company_sessions]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 14:04:14) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (1.4ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 244ms (View: 81, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 14:04:16) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+
+ActionView::TemplateError (undefined method `name' for #<CompanySession: no credentials provided>) on line #7 of app/views/company_sessions/new.html.erb:
+4:   <%= f.error_messages %>
+5:   <p>
+6:     <%= f.label :name %><br />
+7:     <%= f.text_field :name %>
+8:   </p>
+9:   <p>
+10:     <%= f.label :password %><br />
+
+    app/views/company_sessions/new.html.erb:7
+    app/views/company_sessions/new.html.erb:3
+
+Rendered rescues/_trace (173.3ms)
+Rendered rescues/_request_and_response (2.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 14:04:39) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 56ms (View: 29, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 14:05:07) [POST]
+  Parameters: {"company_session"=>{"name"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (0.4ms)[0m   [0;1mSELECT * FROM "companies" WHERE (LOWER("companies".email) = 'carlos') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 372ms (View: 95, DB: 0) | 200 OK [http://localhost/company_sessions]
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 14:09:07) [POST]
+  Parameters: {"company_session"=>{"name"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #3 of app/views/company_sessions/new.html.erb:
+1: <% title "New Company Session" %>
+2: 
+3: <% form_for @company_session do |f| %>
+4:   <%= f.error_messages %>
+5:   <p>
+6:     <%= f.label :name %><br />
+
+    app/views/company_sessions/new.html.erb:3
+    app/controllers/company_sessions_controller.rb:13:in `create'
+
+Rendered rescues/_trace (78.9ms)
+Rendered rescues/_request_and_response (3.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 14:09:24) [POST]
+  Parameters: {"company_session"=>{"name"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #3 of app/views/company_sessions/new.html.erb:
+1: <% title "New Company Session" %>
+2: 
+3: <% form_for @company_session do |f| %>
+4:   <%= f.error_messages %>
+5:   <p>
+6:     <%= f.label :name %><br />
+
+    app/views/company_sessions/new.html.erb:3
+    app/controllers/company_sessions_controller.rb:13:in `create'
+
+Rendered rescues/_trace (175.1ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 14:10:06) [POST]
+  Parameters: {"company_session"=>{"name"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+Redirected to http://localhost:3000/
+Completed in 6ms (DB: 0) | 302 Found [http://localhost/company_sessions]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 14:10:06) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (1.3ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 101ms (View: 63, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 14:11:10) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 61ms (View: 33, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 14:11:14) [POST]
+  Parameters: {"company_session"=>{"name"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 61ms (View: 32, DB: 0) | 200 OK [http://localhost/company_sessions]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-11-20 14:13:54) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 82ms (View: 51, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-11-20 14:13:56) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 34ms (View: 10, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-11-20 14:14:25) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 43ms (View: 18, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-11-20 14:14:28) [POST]
+  Parameters: {"commit"=>"Save changes", "user_session"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}, "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".username) = 'daniel') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 178ms (View: 14, DB: 0) | 200 OK [http://localhost/user_sessions]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-11-20 14:14:39) [POST]
+  Parameters: {"commit"=>"Save changes", "user_session"=>{"username"=>"daniel1", "password"=>"[FILTERED]"}, "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".username) = 'daniel1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 56ms (View: 15, DB: 1) | 200 OK [http://localhost/user_sessions]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-11-20 14:14:44) [POST]
+  Parameters: {"commit"=>"Save changes", "user_session"=>{"username"=>"daniel1", "password"=>"[FILTERED]"}, "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".username) = 'daniel1') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 34ms (DB: 1) | 302 Found [http://localhost/user_sessions]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 14:14:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (1.4ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '38') LIMIT 1[0m
+Completed in 176ms (View: 146, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-11-20 14:15:16) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '38') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 51ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 14:15:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (1.3ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 91ms (View: 68, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-11-20 14:15:18) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 44ms (View: 19, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-11-20 14:15:24) [POST]
+  Parameters: {"commit"=>"Save changes", "user_session"=>{"username"=>"dainel", "password"=>"[FILTERED]"}, "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".username) = 'dainel') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 184ms (View: 14, DB: 1) | 200 OK [http://localhost/user_sessions]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-11-20 14:15:40) [POST]
+  Parameters: {"commit"=>"Save changes", "user_session"=>{"username"=>"daniel1", "password"=>"[FILTERED]"}, "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".username) = 'daniel1') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 40ms (DB: 1) | 302 Found [http://localhost/user_sessions]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 14:15:40) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (1.4ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '38') LIMIT 1[0m
+Completed in 63ms (View: 38, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-11-20 14:15:49) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '38') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 33ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 14:15:49) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (1.4ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 58ms (View: 34, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 14:15:52) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 124ms (View: 68, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 14:16:03) [POST]
+  Parameters: {"company_session"=>{"name"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" WHERE (LOWER("companies".email) = 'carlos') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 71ms (View: 39, DB: 0) | 200 OK [http://localhost/company_sessions]
+  [4;35;1mCompany Load (1.2ms)[0m   [0mSELECT * FROM "companies" ORDER BY companies.id DESC LIMIT 1[0m
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 14:18:02) [POST]
+  Parameters: {"company_session"=>{"name"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT * FROM "companies" WHERE (LOWER("companies".email) = 'carlos') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 90ms (View: 55, DB: 0) | 200 OK [http://localhost/company_sessions]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 14:18:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 54ms (View: 28, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 14:18:14) [POST]
+  Parameters: {"company_session"=>{"name"=>"EAFIT", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 181ms (View: 149, DB: 0) | 200 OK [http://localhost/company_sessions]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 14:18:20) [POST]
+  Parameters: {"company_session"=>{"name"=>"EAFIT", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" WHERE (LOWER("companies".email) = 'eafit') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 70ms (View: 40, DB: 0) | 200 OK [http://localhost/company_sessions]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 14:18:27) [POST]
+  Parameters: {"company_session"=>{"name"=>"EAFIT", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;35;1mCompany Load (0.4ms)[0m   [0mSELECT * FROM "companies" WHERE (LOWER("companies".email) = 'eafit') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 71ms (View: 43, DB: 0) | 200 OK [http://localhost/company_sessions]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 14:18:33) [POST]
+  Parameters: {"company_session"=>{"name"=>"", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 65ms (View: 37, DB: 0) | 200 OK [http://localhost/company_sessions]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 14:18:45) [POST]
+  Parameters: {"company_session"=>{"name"=>"", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 63ms (View: 36, DB: 0) | 200 OK [http://localhost/company_sessions]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 14:18:52) [POST]
+  Parameters: {"company_session"=>{"name"=>"dsf", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 175ms (View: 148, DB: 0) | 200 OK [http://localhost/company_sessions]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 14:19:16) [POST]
+  Parameters: {"company_session"=>{"name"=>"carlos", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" WHERE (LOWER("companies".email) = 'carlos') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 98ms (View: 60, DB: 0) | 200 OK [http://localhost/company_sessions]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 14:19:43) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (1.3ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 57ms (View: 34, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-11-20 14:19:47) [GET]
+  Parameters: {"action"=>"show", "id"=>"30", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 30) [0m
+Rendering template within layouts/application
+Rendering companies/show
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users".company_id = 30) [0m
+Completed in 76ms (View: 51, DB: 1) | 200 OK [http://localhost/companies/30]
+
+
+Processing CompaniesController#edit (for 127.0.0.1 at 2010-11-20 14:19:49) [GET]
+  Parameters: {"action"=>"edit", "id"=>"30", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 30) [0m
+Rendering template within layouts/application
+Rendering companies/edit
+Rendered companies/_edit_form (15.6ms)
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users".company_id = 30) [0m
+Completed in 79ms (View: 55, DB: 1) | 200 OK [http://localhost/companies/30/edit]
+
+
+Processing CompaniesController#update (for 127.0.0.1 at 2010-11-20 14:19:58) [PUT]
+  Parameters: {"company"=>{"name"=>"UNE", "password_confirmation"=>"[FILTERED]", "nit"=>"1", "telephone"=>"3414694", "password"=>"[FILTERED]", "email"=>"une@une.co"}, "commit"=>"Save changes", "action"=>"update", "_method"=>"put", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "id"=>"30", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.8ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 30) [0m
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."persistence_token" = '5e566eed8aa63e8a83557e1d67539576a35e70c4a93cf3ae21a8c64b8f34ea5c6514d6e265e01c147d203e9ccc1e19dac6a6fb8adf68c6a2289957f8da74e822' AND "companies".id <> 30) LIMIT 1[0m
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."persistence_token" = '67a5070a01256d5314f5906785a981756bec1c8ec5a66a30de5f0475e9f1e96374150464e7b614436b70e4c0aa81d9cc6c7a108f7ff64c9892447863a8662e5d') LIMIT 1[0m
+  [4;35;1mCompany Update (0.6ms)[0m   [0mUPDATE "companies" SET "persistence_token" = '5e566eed8aa63e8a83557e1d67539576a35e70c4a93cf3ae21a8c64b8f34ea5c6514d6e265e01c147d203e9ccc1e19dac6a6fb8adf68c6a2289957f8da74e822', "updated_at" = '2010-11-20 19:19:58', "password_salt" = 'ZKCivUGcsynAoxhVj534', "crypted_password" = '2b596aa4270f4fd915efe89af9372d24114d8798af6b691dce50f6691215b0f8aae90eaa53223be64d887d636e58c3254e908b80dbb81e29080e5a91d2defedd' WHERE "id" = 30[0m
+Redirected to http://localhost:3000/companies/30
+Completed in 54ms (DB: 2) | 302 Found [http://localhost/companies/30]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-11-20 14:19:59) [GET]
+  Parameters: {"action"=>"show", "id"=>"30", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 30) [0m
+Rendering template within layouts/application
+Rendering companies/show
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users".company_id = 30) [0m
+Completed in 69ms (View: 42, DB: 1) | 200 OK [http://localhost/companies/30]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 14:20:07) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 52ms (View: 28, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 14:20:16) [POST]
+  Parameters: {"company_session"=>{"name"=>"UNE", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (0.4ms)[0m   [0;1mSELECT * FROM "companies" WHERE (LOWER("companies".email) = 'une') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 75ms (View: 44, DB: 0) | 200 OK [http://localhost/company_sessions]
+  [4;36;1mCompany Load (1.2ms)[0m   [0;1mSELECT * FROM "companies" ORDER BY companies.id DESC LIMIT 1[0m
+  [4;35;1mCompany Load (11.0ms)[0m   [0mSELECT * FROM "companies" ORDER BY companies.id DESC LIMIT 1[0m
+  [4;36;1mCompany Load (1.2ms)[0m   [0;1mSELECT * FROM "companies" ORDER BY companies.id DESC LIMIT 1[0m
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 14:31:48) [POST]
+  Parameters: {"company_session"=>{"name"=>"UNE", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;35;1mCompany Load (0.4ms)[0m   [0mSELECT * FROM "companies" WHERE (LOWER("companies".email) = 'une') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 88ms (View: 56, DB: 0) | 200 OK [http://localhost/company_sessions]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 14:31:54) [POST]
+  Parameters: {"company_session"=>{"name"=>"", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 164ms (View: 35, DB: 0) | 200 OK [http://localhost/company_sessions]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 14:31:58) [POST]
+  Parameters: {"company_session"=>{"name"=>"", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 65ms (View: 37, DB: 0) | 200 OK [http://localhost/company_sessions]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 14:32:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (1.3ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 55ms (View: 32, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 14:32:10) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 63ms (View: 31, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 14:32:10) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 53ms (View: 28, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 14:32:18) [POST]
+  Parameters: {"company_session"=>{"name"=>"EAFIT", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 195ms (View: 166, DB: 0) | 200 OK [http://localhost/company_sessions]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 14:32:25) [POST]
+  Parameters: {"company_session"=>{"name"=>"EAFIT", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT * FROM "companies" WHERE (LOWER("companies".email) = 'eafit') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 65ms (View: 35, DB: 0) | 200 OK [http://localhost/company_sessions]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 14:32:57) [POST]
+  Parameters: {"company_session"=>{"name"=>"EAFIT", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" WHERE (LOWER("companies".email) = 'eafit') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 87ms (View: 58, DB: 0) | 200 OK [http://localhost/company_sessions]
+  [4;36;1mSQL (1.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (64.9ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSubsectors (20101028224950)
+Migrating to CreateCompanies (20101028225506)
+Migrating to CreateUsers (20101028231020)
+Migrating to AddColumnNitCompanyToUser (20101029001323)
+Migrating to AddColumnCompanyIdToUser (20101029002354)
+Migrating to AddColumnSubsectorIdToCompany (20101029002524)
+Migrating to AddLastSurveyToCompany (20101112235300)
+Migrating to CreateCompanyRoles (20101113000745)
+Migrating to CreateSurveyRecords (20101113002156)
+Migrating to CreateQuestions (20101113003456)
+Migrating to CreateAspects (20101113003846)
+Migrating to CreateStates (20101113004229)
+Migrating to CreateAnswers (20101113004428)
+Migrating to CreateSessions (20101117160000)
+Migrating to CreateSurveys (20101118154439)
+Migrating to AddSurveyIdToQuestion (20101118154557)
+Migrating to AddPasswordToCompany (20101120173942)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("answers")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("aspects")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("companies")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("company_roles")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("questions")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("states")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("subsectors")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("survey_records")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("surveys")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mCompany Load (2.5ms)[0m   [0mSELECT * FROM "companies" [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.9ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSubsectors (20101028224950)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCREATE TABLE "subsectors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101028224950')[0m
+Migrating to CreateCompanies (20101028225506)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nit" integer, "name" varchar(255), "email" varchar(255), "telephone" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101028225506')[0m
+Migrating to CreateUsers (20101028231020)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "name" varchar(255), "last_name" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101028231020')[0m
+Migrating to AddColumnNitCompanyToUser (20101029001323)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mALTER TABLE "users" ADD "nit_company" integer[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101029001323')[0m
+Migrating to AddColumnCompanyIdToUser (20101029002354)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mALTER TABLE "users" ADD "company_id" integer[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101029002354')[0m
+Migrating to AddColumnSubsectorIdToCompany (20101029002524)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mALTER TABLE "companies" ADD "subsector_id" integer[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101029002524')[0m
+Migrating to AddLastSurveyToCompany (20101112235300)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mALTER TABLE "companies" ADD "last_survey" integer[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101112235300')[0m
+Migrating to CreateCompanyRoles (20101113000745)
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCREATE TABLE "company_roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "role" varchar(255), "hierarchy" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101113000745')[0m
+Migrating to CreateSurveyRecords (20101113002156)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "survey_records" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "answers" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101113002156')[0m
+Migrating to CreateQuestions (20101113003456)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "number" integer, "description" varchar(255), "aspect_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101113003456')[0m
+Migrating to CreateAspects (20101113003846)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "aspects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101113003846')[0m
+Migrating to CreateStates (20101113004229)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "states" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101113004229')[0m
+Migrating to CreateAnswers (20101113004428)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCREATE TABLE "answers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "question_id" integer, "number" integer, "description" varchar(255), "value" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101113004428')[0m
+Migrating to CreateSessions (20101117160000)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101117160000')[0m
+Migrating to CreateSurveys (20101118154439)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCREATE TABLE "surveys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101118154439')[0m
+Migrating to AddSurveyIdToQuestion (20101118154557)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mALTER TABLE "questions" ADD "survey_id" integer[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101118154557')[0m
+Migrating to AddPasswordToCompany (20101120173942)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mALTER TABLE "companies" ADD "crypted_password" varchar(255)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "companies" ADD "password_salt" varchar(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "companies" ADD "persistence_token" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101120173942')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("answers")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("aspects")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("companies")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("company_roles")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("questions")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("sessions")[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("states")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("subsectors")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("survey_records")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("surveys")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" [0m
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 14:40:08) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 111ms (View: 72, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#new (for 127.0.0.1 at 2010-11-20 14:40:12) [GET]
+  Parameters: {"action"=>"new", "controller"=>"companies"}
+Rendering template within layouts/application
+Rendering companies/new
+Rendered companies/_form (16.9ms)
+Completed in 72ms (View: 51, DB: 0) | 200 OK [http://localhost/companies/new]
+
+
+Processing CompaniesController#create (for 127.0.0.1 at 2010-11-20 14:40:32) [POST]
+  Parameters: {"company"=>{"name"=>"une", "password_confirmation"=>"[FILTERED]", "nit"=>"1", "telephone"=>"23456", "password"=>"[FILTERED]", "email"=>"une@une.com"}, "commit"=>"Registrar", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE (LOWER("companies"."email") = 'une@une.com') LIMIT 1[0m
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT "companies".id FROM "companies" WHERE ("companies"."persistence_token" = '556315446681102613d2909f215f5792982309164d0b8030044e9a72c72aa08602ff06fa324c7543b6696b490a1e651068c7c090170bb39048fa432fbae92b00') LIMIT 1[0m
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."persistence_token" = '67a5070a01256d5314f5906785a981756bec1c8ec5a66a30de5f0475e9f1e96374150464e7b614436b70e4c0aa81d9cc6c7a108f7ff64c9892447863a8662e5d') LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 32) LIMIT 1[0m
+  [4;35;1mCompany Create (0.6ms)[0m   [0mINSERT INTO "companies" ("name", "created_at", "crypted_password", "nit", "updated_at", "last_survey", "password_salt", "persistence_token", "telephone", "subsector_id", "email") VALUES('une', '2010-11-20 19:40:33', '6943fea92fd76a191f598b69ac23f26081800c3cc1e58a5c36edd4f4793b821fdfe8eb6ccd5bdfceff2e96a0ad375e54a01733877c7cfc4c1a6b1e32abb1afa9', 1, '2010-11-20 19:40:33', NULL, 'LwG4KLei4rK3pNzKh4o', '556315446681102613d2909f215f5792982309164d0b8030044e9a72c72aa08602ff06fa324c7543b6696b490a1e651068c7c090170bb39048fa432fbae92b00', '23456', NULL, 'une@une.com')[0m
+Redirected to http://localhost:3000/companies/1
+Completed in 200ms (DB: 2) | 302 Found [http://localhost/companies]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-11-20 14:40:33) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering companies/show
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users".company_id = 1) [0m
+Completed in 68ms (View: 43, DB: 1) | 200 OK [http://localhost/companies/1]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 14:40:37) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 57ms (View: 34, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 14:40:45) [POST]
+  Parameters: {"company_session"=>{"name"=>"une", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" WHERE (LOWER("companies".email) = 'une') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 175ms (View: 148, DB: 0) | 200 OK [http://localhost/company_sessions]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 14:41:34) [POST]
+  Parameters: {"company_session"=>{"name"=>"", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 67ms (View: 38, DB: 0) | 200 OK [http://localhost/company_sessions]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 14:41:39) [POST]
+  Parameters: {"company_session"=>{"name"=>"", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 82ms (View: 51, DB: 0) | 200 OK [http://localhost/company_sessions]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 14:41:48) [POST]
+  Parameters: {"company_session"=>{"name"=>"une", "password"=>"[FILTERED]"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;35;1mCompany Load (0.4ms)[0m   [0mSELECT * FROM "companies" WHERE (LOWER("companies".email) = 'une') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 66ms (View: 35, DB: 0) | 200 OK [http://localhost/company_sessions]
+  [4;35;1mSQL (1.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.4ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSubsectors (20101028224950)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "subsectors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101028224950')[0m
+Migrating to CreateCompanies (20101028225506)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "companies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nit" integer, "name" varchar(255), "email" varchar(255), "telephone" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101028225506')[0m
+Migrating to CreateUsers (20101028231020)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "name" varchar(255), "last_name" varchar(255), "email" varchar(255), "crypted_password" varchar(255), "password_salt" varchar(255), "persistence_token" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101028231020')[0m
+Migrating to AddColumnNitCompanyToUser (20101029001323)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mALTER TABLE "users" ADD "nit_company" integer[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101029001323')[0m
+Migrating to AddColumnCompanyIdToUser (20101029002354)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mALTER TABLE "users" ADD "company_id" integer[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101029002354')[0m
+Migrating to AddColumnSubsectorIdToCompany (20101029002524)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mALTER TABLE "companies" ADD "subsector_id" integer[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101029002524')[0m
+Migrating to AddLastSurveyToCompany (20101112235300)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mALTER TABLE "companies" ADD "last_survey" integer[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101112235300')[0m
+Migrating to CreateCompanyRoles (20101113000745)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "company_roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "role" varchar(255), "hierarchy" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101113000745')[0m
+Migrating to CreateSurveyRecords (20101113002156)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "survey_records" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "answers" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101113002156')[0m
+Migrating to CreateQuestions (20101113003456)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCREATE TABLE "questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "number" integer, "description" varchar(255), "aspect_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101113003456')[0m
+Migrating to CreateAspects (20101113003846)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "aspects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101113003846')[0m
+Migrating to CreateStates (20101113004229)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "states" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101113004229')[0m
+Migrating to CreateAnswers (20101113004428)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "answers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "question_id" integer, "number" integer, "description" varchar(255), "value" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101113004428')[0m
+Migrating to CreateSessions (20101117160000)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101117160000')[0m
+Migrating to CreateSurveys (20101118154439)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "surveys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101118154439')[0m
+Migrating to AddSurveyIdToQuestion (20101118154557)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mALTER TABLE "questions" ADD "survey_id" integer[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101118154557')[0m
+Migrating to AddPasswordToCompany (20101120173942)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mALTER TABLE "companies" ADD "crypted_password" varchar(255)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "companies" ADD "password_salt" varchar(255)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "companies" ADD "persistence_token" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101120173942')[0m
+Migrating to AddLoginToCompany (20101120194337)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mALTER TABLE "companies" ADD "login" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101120194337')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("answers")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("aspects")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("companies")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("company_roles")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("questions")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("sessions")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("states")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("subsectors")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("survey_records")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("surveys")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateSubsectors (20101028224950)
+Migrating to CreateCompanies (20101028225506)
+Migrating to CreateUsers (20101028231020)
+Migrating to AddColumnNitCompanyToUser (20101029001323)
+Migrating to AddColumnCompanyIdToUser (20101029002354)
+Migrating to AddColumnSubsectorIdToCompany (20101029002524)
+Migrating to AddLastSurveyToCompany (20101112235300)
+Migrating to CreateCompanyRoles (20101113000745)
+Migrating to CreateSurveyRecords (20101113002156)
+Migrating to CreateQuestions (20101113003456)
+Migrating to CreateAspects (20101113003846)
+Migrating to CreateStates (20101113004229)
+Migrating to CreateAnswers (20101113004428)
+Migrating to CreateSessions (20101117160000)
+Migrating to CreateSurveys (20101118154439)
+Migrating to AddSurveyIdToQuestion (20101118154557)
+Migrating to AddPasswordToCompany (20101120173942)
+Migrating to AddLoginToCompany (20101120194337)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("answers")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("aspects")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("companies")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("company_roles")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("questions")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("states")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("subsectors")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("survey_records")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("surveys")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 14:45:50) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 101ms (View: 62, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#new (for 127.0.0.1 at 2010-11-20 14:46:08) [GET]
+  Parameters: {"action"=>"new", "controller"=>"companies"}
+Rendering template within layouts/application
+Rendering companies/new
+Rendered companies/_form (16.9ms)
+Completed in 80ms (View: 58, DB: 0) | 200 OK [http://localhost/companies/new]
+
+
+Processing CompaniesController#new (for 127.0.0.1 at 2010-11-20 14:47:08) [GET]
+  Parameters: {"action"=>"new", "controller"=>"companies"}
+Rendering template within layouts/application
+Rendering companies/new
+Rendered companies/_form (15.0ms)
+Completed in 66ms (View: 44, DB: 0) | 200 OK [http://localhost/companies/new]
+
+
+Processing CompaniesController#new (for 127.0.0.1 at 2010-11-20 14:47:45) [GET]
+  Parameters: {"action"=>"new", "controller"=>"companies"}
+Rendering template within layouts/application
+Rendering companies/new
+Rendered companies/_form (12.4ms)
+Completed in 57ms (View: 34, DB: 0) | 200 OK [http://localhost/companies/new]
+
+
+Processing CompaniesController#create (for 127.0.0.1 at 2010-11-20 14:48:11) [POST]
+  Parameters: {"company"=>{"name"=>"une", "password_confirmation"=>"[FILTERED]", "nit"=>"1", "telephone"=>"1324345", "password"=>"[FILTERED]", "login"=>"unete", "email"=>"une@une.com"}, "commit"=>"Registrar", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.3ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE (LOWER("companies"."email") = 'une@une.com') LIMIT 1[0m
+  [4;36;1mCompany Load (0.2ms)[0m   [0;1mSELECT "companies".id FROM "companies" WHERE (LOWER("companies"."login") = 'unete') LIMIT 1[0m
+  [4;35;1mCompany Load (0.2ms)[0m   [0mSELECT "companies".id FROM "companies" WHERE ("companies"."persistence_token" = 'bd8ce8e419afa4f6cef839f0dfd89b16d4bc322e0c599c35c1d13554b6af2793f5e8c397ef6423a361d9a378e6d9d09a4f78810570d0dc2dcf84afcd14293e6c') LIMIT 1[0m
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."persistence_token" = '556315446681102613d2909f215f5792982309164d0b8030044e9a72c72aa08602ff06fa324c7543b6696b490a1e651068c7c090170bb39048fa432fbae92b00') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."persistence_token" = '556315446681102613d2909f215f5792982309164d0b8030044e9a72c72aa08602ff06fa324c7543b6696b490a1e651068c7c090170bb39048fa432fbae92b00') LIMIT 1[0m
+  [4;36;1mCompany Create (0.6ms)[0m   [0;1mINSERT INTO "companies" ("name", "created_at", "crypted_password", "nit", "updated_at", "last_survey", "password_salt", "persistence_token", "telephone", "subsector_id", "login", "email") VALUES('une', '2010-11-20 19:48:11', '28a6e1588e0693ba704beb56d156031af65ae5ceab7db51e645621d2c27b71a99dda5e0448422f05d935752f5e9e22e71099885d564f24ee6a2c7014ad29a1da', 1, '2010-11-20 19:48:11', NULL, 'AzM11qcvFnbLkxFpN63u', 'bd8ce8e419afa4f6cef839f0dfd89b16d4bc322e0c599c35c1d13554b6af2793f5e8c397ef6423a361d9a378e6d9d09a4f78810570d0dc2dcf84afcd14293e6c', '1324345', NULL, 'unete', 'une@une.com')[0m
+Redirected to http://localhost:3000/companies/1
+Completed in 301ms (DB: 2) | 302 Found [http://localhost/companies]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-11-20 14:48:11) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering companies/show
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".company_id = 1) [0m
+Completed in 171ms (View: 145, DB: 1) | 200 OK [http://localhost/companies/1]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 14:48:15) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 61ms (View: 36, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 14:48:36) [POST]
+  Parameters: {"company_session"=>{"password"=>"[FILTERED]", "login"=>"unete"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;35;1mCompany Load (0.8ms)[0m   [0mSELECT * FROM "companies" WHERE (LOWER("companies".login) = 'unete') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 34ms (DB: 1) | 302 Found [http://localhost/company_sessions]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 14:48:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.8ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 68ms (View: 43, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:08:25) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+
+ActionView::TemplateError (undefined local variable or method `current_company' for #<ActionView::Base:0xb6da4678>) on line #58 of app/views/layouts/application.html.erb:
+55: 	  <%= link_to "Actualizar informacion de la empresa", admin_company_path %> |
+56:           <%= link_to "Iniciar sesion", login_path %>
+57:         <% end %>
+58:       <% if current_company %>
+59:       <% end %>
+60:       </div>
+61:       <%- flash.each do |name, msg| -%>
+
+    app/views/layouts/application.html.erb:58
+
+Rendered rescues/_trace (184.6ms)
+Rendered rescues/_request_and_response (2.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:09:25) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 56ms (View: 30, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:10:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 61ms (View: 39, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:11:11) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 65ms (View: 42, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:11:33) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 72ms (View: 43, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:14:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 61ms (View: 40, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#destroy (for 127.0.0.1 at 2010-11-20 15:14:31) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"company_sessions"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 48ms (DB: 1) | 302 Found [http://localhost/logout_company]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:14:32) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 50ms (View: 29, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:14:53) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 166ms (View: 143, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 15:14:56) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 64ms (View: 28, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 15:16:33) [POST]
+  Parameters: {"company_session"=>{"password"=>"[FILTERED]", "login"=>"unete"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (0.8ms)[0m   [0;1mSELECT * FROM "companies" WHERE (LOWER("companies".login) = 'unete') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 37ms (DB: 1) | 302 Found [http://localhost/company_sessions]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:16:33) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.8ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 61ms (View: 37, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:16:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (2.0ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 58ms (View: 34, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 15:16:44) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 152ms (View: 128, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 15:17:14) [POST]
+  Parameters: {"company_session"=>{"password"=>"[FILTERED]", "login"=>"unete"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;35;1mCompany Load (0.8ms)[0m   [0mSELECT * FROM "companies" WHERE (LOWER("companies".login) = 'unete') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 39ms (DB: 1) | 302 Found [http://localhost/company_sessions]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:17:14) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 55ms (View: 33, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:17:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 75ms (View: 50, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#destroy (for 127.0.0.1 at 2010-11-20 15:17:46) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 35ms (DB: 1) | 302 Found [http://localhost/logout_company]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:17:46) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 54ms (View: 32, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:17:53) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.8ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 58ms (View: 33, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#destroy (for 127.0.0.1 at 2010-11-20 15:18:59) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"company_sessions"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.destroy):
+  app/controllers/company_sessions_controller.rb:19:in `destroy'
+
+Rendered rescues/_trace (55.8ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:19:23) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 132ms (View: 55, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#destroy (for 127.0.0.1 at 2010-11-20 15:19:27) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"company_sessions"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.destroy):
+  app/controllers/company_sessions_controller.rb:19:in `destroy'
+
+Rendered rescues/_trace (60.2ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 15:19:35) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 56ms (View: 30, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 15:19:43) [POST]
+  Parameters: {"company_session"=>{"password"=>"[FILTERED]", "login"=>"unete"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE (LOWER("companies".login) = 'unete') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 38ms (DB: 1) | 302 Found [http://localhost/company_sessions]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:19:43) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 74ms (View: 35, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#destroy (for 127.0.0.1 at 2010-11-20 15:19:49) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (0.8ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 39ms (DB: 1) | 302 Found [http://localhost/logout_company]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:19:49) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 52ms (View: 29, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 15:20:47) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+
+ActionView::TemplateError (undefined method `text_password' for #<ActionView::Helpers::FormBuilder:0xb702102c>) on line #11 of app/views/company_sessions/new.html.erb:
+8:   </p>
+9:   <p>
+10:     <%= f.label :password %><br />
+11:     <%= f.text_password :password %>
+12:   </p>
+13:   <p><%= f.submit %></p>
+14: <% end %>
+
+    app/views/company_sessions/new.html.erb:11
+    app/views/company_sessions/new.html.erb:3
+
+Rendered rescues/_trace (73.4ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:20:52) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 50ms (View: 29, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#destroy (for 127.0.0.1 at 2010-11-20 15:20:56) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"company_sessions"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.destroy):
+  app/controllers/company_sessions_controller.rb:19:in `destroy'
+
+Rendered rescues/_trace (61.1ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:21:32) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 54ms (View: 31, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:21:34) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.8ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 359ms (View: 48, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:23:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.8ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 62ms (View: 40, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 15:23:25) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+
+ActionView::TemplateError (undefined method `text_password' for #<ActionView::Helpers::FormBuilder:0xb6d13114>) on line #11 of app/views/company_sessions/new.html.erb:
+8:   </p>
+9:   <p>
+10:     <%= f.label :password %><br />
+11:     <%= f.text_password :password %>
+12:   </p>
+13:   <p><%= f.submit %></p>
+14: <% end %>
+
+    app/views/company_sessions/new.html.erb:11
+    app/views/company_sessions/new.html.erb:3
+
+Rendered rescues/_trace (76.1ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 15:23:52) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 74ms (View: 48, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 15:24:02) [POST]
+  Parameters: {"company_session"=>{"password"=>"[FILTERED]", "login"=>"unete"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (0.8ms)[0m   [0;1mSELECT * FROM "companies" WHERE (LOWER("companies".login) = 'unete') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 174ms (DB: 1) | 302 Found [http://localhost/company_sessions]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:24:02) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 61ms (View: 36, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#destroy (for 127.0.0.1 at 2010-11-20 15:24:32) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 33ms (DB: 1) | 302 Found [http://localhost/logout_company]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:24:32) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 60ms (View: 35, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 15:24:36) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 53ms (View: 27, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 15:25:05) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 169ms (View: 144, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 15:25:08) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 60ms (View: 30, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 15:25:13) [POST]
+  Parameters: {"company_session"=>{"password"=>"[FILTERED]", "login"=>"unete"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE (LOWER("companies".login) = 'unete') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 36ms (DB: 1) | 302 Found [http://localhost/company_sessions]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:25:13) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.8ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 177ms (View: 40, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:25:34) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 67ms (View: 44, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:29:06) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.8ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+
+ActionView::TemplateError (undefined local variable or method `current_company' for #<ActionView::Base:0xb6ce95bc>) on line #57 of app/views/layouts/application.html.erb:
+54:           <%= link_to "Registrar empresa", new_company_path %> | 
+55:           <%= link_to "Iniciar sesion", login_path %> |
+56:         <% end %>
+57:       <% if current_company.nil? %>
+58:          <%= link_to "Actualizar informacion de la empresa", admin_company_path %>
+59:       <% else %>
+60: 	 <%= link_to "Salir de la empresa", logout_company_path %>
+
+    app/views/layouts/application.html.erb:57
+
+Rendered rescues/_trace (71.8ms)
+Rendered rescues/_request_and_response (3.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:29:30) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (23.8ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+
+ActionView::TemplateError (undefined local variable or method `current_company' for #<ActionView::Base:0xb6caae0c>) on line #57 of app/views/layouts/application.html.erb:
+54:           <%= link_to "Registrar empresa", new_company_path %> | 
+55:           <%= link_to "Iniciar sesion", login_path %> |
+56:         <% end %>
+57:       <% if current_company.nil? %>
+58:          <%= link_to "Actualizar informacion de la empresa", admin_company_path %>
+59:       <% else %>
+60: 	 <%= link_to "Salir de la empresa", logout_company_path %>
+
+    app/views/layouts/application.html.erb:57
+
+Rendered rescues/_trace (72.1ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:29:41) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+
+ActionView::TemplateError (undefined local variable or method `current_company' for #<ActionView::Base:0xb6d249f0>) on line #57 of app/views/layouts/application.html.erb:
+54:           <%= link_to "Registrar empresa", new_company_path %> | 
+55:           <%= link_to "Iniciar sesion", login_path %> |
+56:         <% end %>
+57:       <% if current_company.nil? %>
+58:          <%= link_to "Actualizar informacion de la empresa", admin_company_path %>
+59:       <% else %>
+60: 	 <%= link_to "Salir de la empresa", logout_company_path %>
+
+    app/views/layouts/application.html.erb:57
+
+Rendered rescues/_trace (69.1ms)
+Rendered rescues/_request_and_response (2.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:30:33) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (22.7ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 173ms (View: 51, DB: 23) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:30:43) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 64ms (View: 36, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:30:46) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 163ms (View: 124, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#destroy (for 127.0.0.1 at 2010-11-20 15:30:50) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (0.8ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 39ms (DB: 1) | 302 Found [http://localhost/logout_company]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:30:50) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 54ms (View: 31, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 15:31:00) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 153ms (View: 38, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 15:31:08) [POST]
+  Parameters: {"company_session"=>{"password"=>"[FILTERED]", "login"=>"unete"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (0.8ms)[0m   [0;1mSELECT * FROM "companies" WHERE (LOWER("companies".login) = 'unete') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 263ms (DB: 1) | 302 Found [http://localhost/company_sessions]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:31:08) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.8ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 59ms (View: 35, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#destroy (for 127.0.0.1 at 2010-11-20 15:31:35) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 36ms (DB: 1) | 302 Found [http://localhost/logout_company]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:31:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 57ms (View: 33, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 15:32:19) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 53ms (View: 27, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 15:32:25) [POST]
+  Parameters: {"company_session"=>{"password"=>"[FILTERED]", "login"=>"unete"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE (LOWER("companies".login) = 'unete') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 34ms (DB: 1) | 302 Found [http://localhost/company_sessions]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:32:25) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 60ms (View: 36, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-11-20 15:32:30) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 59ms (View: 35, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-11-20 15:32:50) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.8ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering companies/show
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users".company_id = 1) [0m
+Completed in 71ms (View: 46, DB: 1) | 200 OK [http://localhost/companies/1]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-11-20 15:32:55) [GET]
+  Parameters: {"action"=>"new", "company_id"=>"1", "controller"=>"users"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (14.7ms)
+Completed in 77ms (View: 37, DB: 1) | 200 OK [http://localhost/companies/1/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-11-20 15:33:11) [POST]
+  Parameters: {"commit"=>"Crear usuario", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "company_id"=>"1", "controller"=>"users", "user"=>{"name"=>"daniel", "password_confirmation"=>"[FILTERED]", "username"=>"dmuneras", "last_name"=>"Munera", "password"=>"[FILTERED]", "email"=>"dmunera119@gmail.com"}}
+  [4;35;1mCompany Load (0.8ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'dmunera119@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."username") = 'dmuneras') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'ebc0727c5576a2539c3355ae617763a6f11793fefdb3092e97ceb1bcdb02b0d23bf86fb30f2b3101b71eb156ceaa5434fc9d5f6e5238d88eb89fdf862a4241a4') LIMIT 1[0m
+  [4;36;1mUser Create (0.7ms)[0m   [0;1mINSERT INTO "users" ("name", "created_at", "crypted_password", "updated_at", "username", "nit_company", "password_salt", "last_name", "persistence_token", "company_id", "email") VALUES('daniel', '2010-11-20 20:33:11', '61a924e9f1ef6ec48d64c74d6866fc24d6ee81c894390511044ba8c8d6b00c86a79ac307e4d22576f514710a27c3b852a5871def7247e1d0cd09fac59fa54fac', '2010-11-20 20:33:11', 'dmuneras', 1, 'V4WuZDX83tVnrWDjZBmQ', 'Munera', 'ebc0727c5576a2539c3355ae617763a6f11793fefdb3092e97ceb1bcdb02b0d23bf86fb30f2b3101b71eb156ceaa5434fc9d5f6e5238d88eb89fdf862a4241a4', 1, 'dmunera119@gmail.com')[0m
+Redirected to http://localhost:3000/companies/1
+Completed in 189ms (DB: 2) | 302 Found [http://localhost/companies/1/users]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-11-20 15:33:11) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering companies/show
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".company_id = 1) [0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ebc0727c5576a2539c3355ae617763a6f11793fefdb3092e97ceb1bcdb02b0d23bf86fb30f2b3101b71eb156ceaa5434fc9d5f6e5238d88eb89fdf862a4241a4') LIMIT 1[0m
+Completed in 72ms (View: 46, DB: 2) | 200 OK [http://localhost/companies/1]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-11-20 15:33:18) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"users"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_form (156.7ms)
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ebc0727c5576a2539c3355ae617763a6f11793fefdb3092e97ceb1bcdb02b0d23bf86fb30f2b3101b71eb156ceaa5434fc9d5f6e5238d88eb89fdf862a4241a4') LIMIT 1[0m
+Completed in 200ms (View: 178, DB: 1) | 200 OK [http://localhost/users/1/edit]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-11-20 15:37:37) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."persistence_token" = 'ebc0727c5576a2539c3355ae617763a6f11793fefdb3092e97ceb1bcdb02b0d23bf86fb30f2b3101b71eb156ceaa5434fc9d5f6e5238d88eb89fdf862a4241a4') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 55ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:37:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 55ms (View: 33, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#destroy (for 127.0.0.1 at 2010-11-20 15:38:05) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 40ms (DB: 1) | 302 Found [http://localhost/logout_company]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:38:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.8ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 129ms (View: 61, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:38:09) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 174ms (View: 143, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 15:38:36) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 57ms (View: 30, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-20 15:38:43) [POST]
+  Parameters: {"company_session"=>{"password"=>"[FILTERED]", "login"=>"unete"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"YSHdRmOxUGQbCldGfXl91r89YmHVr5u51/4U+GdSiD0=", "controller"=>"company_sessions"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE (LOWER("companies".login) = 'unete') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 36ms (DB: 1) | 302 Found [http://localhost/company_sessions]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:38:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 173ms (View: 38, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-11-20 15:38:55) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering companies/show
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".company_id = 1) [0m
+Completed in 69ms (View: 43, DB: 1) | 200 OK [http://localhost/companies/1]
+
+
+Processing CompanySessionsController#destroy (for 127.0.0.1 at 2010-11-20 15:39:03) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"company_sessions"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 34ms (DB: 1) | 302 Found [http://localhost/logout_company]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:39:03) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.8ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 56ms (View: 32, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 15:40:43) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.8ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 53ms (View: 29, DB: 1) | 200 OK [http://localhost/]

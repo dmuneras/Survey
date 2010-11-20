@@ -1,20 +1,27 @@
 <% form_for @company do |f| %>
   <%= f.error_messages %>
-  <p>
-    <%= f.label :nit %><br />
-    <%= f.text_field :nit %>
-  </p>
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :telephone %><br />
-    <%= f.text_field :telephone %>
-  </p>
+  <p><%= f.label :nit %><br />
+    <%= f.text_field :nit %> </p>
+
+  <p><%= f.label :name %><br />
+    <%= f.text_field :name %></p>
+  
+  <p><%= f.label :email %><br />
+    <%= f.text_field :email %></p>
+
+  <p><%= f.label :telephone %><br />
+    <%= f.text_field :telephone %></p>
+
+  
+  <p><%= f.label :login, "Login" %><br />
+    <%= f.text_field :login %></p>
+
+  <p><%= f.label :password, "Contraseña" %><br />
+    <%= f.password_field :password %></p>
+  
+  <p><%= f.label :password_confirmation, "Ingrese de nuevo su contraseña" %><br />
+    <%= f.password_field :password_confirmation %></p>
+
+
  <p><%= f.submit %></p>
 <% end %>

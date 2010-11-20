@@ -1,13 +1,15 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :company_sessions
+  map.resources :user_sessions
   map.resources :surveys
-
   map.resources :answers 
   map.resources :questions
   map.resources :survey_records
   map.resources :company_roles
   map.login "login", :controller => "user_sessions", :action => "new"
   map.logout "logout", :controller => "user_sessions", :action => "destroy"
-  map.resources :user_sessions
+  map.admin_company "admin_company", :controller => "company_sessions", :action => "new"
+  map.logout_company "logout_company", :controller => "company_sessions", :action => "destroy"
   map.resources :companies ,:has_many => :users, :shallow => true
   map.resources :subsectors
 

@@ -52,8 +52,13 @@
         <% else %>
           <%= link_to "Pagina Principal ", root_url%> |
           <%= link_to "Registrar empresa", new_company_path %> | 
-          <%= link_to "Iniciar sesion", login_path %>
+          <%= link_to "Iniciar sesion", login_path %> |
         <% end %>
+      <% if session[:current_company].nil? %>
+         <%= link_to "Actualizar informacion de la empresa", admin_company_path %>
+      <% else %>
+	 <%= link_to "Salir de la empresa", logout_company_path %>
+      <% end %>
       </div>
       <%- flash.each do |name, msg| -%>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>

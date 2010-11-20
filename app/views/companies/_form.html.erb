@@ -11,5 +11,16 @@
 
   <p><%= f.label :telephone, "Telefono" %><br />
     <%= f.text_field :telephone %></p>
+  
+    <p><%= f.label :login, "Login" %><br />
+    <%= f.text_field :login %></p>
+
+   <p><%= f.label :password, "Contraseña" %><br />
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation, "Ingrese de nuevo su contraseña" %><br />
+    <%= f.password_field :password_confirmation %>
+  </p>
   <p><%= f.submit "Registrar" %></p>
 <% end %>
