@@ -20155,3 +20155,82 @@ Rendering template within layouts/application
 Rendering surveys/index
   [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
 Completed in 93ms (View: 78, DB: 1) | 200 OK [http://localhost/surveys]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 09:21:10) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (1.6ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 182ms (View: 158, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2010-11-20 09:22:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"questions"}
+  [4;36;1mQuestion Load (1.4ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering template within layouts/application
+Rendering questions/index
+Completed in 184ms (View: 159, DB: 1) | 200 OK [http://localhost/questions]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2010-11-20 09:22:18) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"questions"}
+  [4;35;1mQuestion Load (0.5ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 1) [0m
+  [4;36;1mAspect Load (0.4ms)[0m   [0;1mSELECT * FROM "aspects" WHERE ("aspects"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering questions/show
+  [4;35;1mAnswer Load (0.7ms)[0m   [0mSELECT * FROM "answers" WHERE ("answers".question_id = 1) [0m
+Completed in 66ms (View: 43, DB: 2) | 200 OK [http://localhost/questions/1]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2010-11-20 09:22:19) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"questions"}
+  [4;36;1mQuestion Load (0.4ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 1) [0m
+  [4;35;1mAspect Load (0.4ms)[0m   [0mSELECT * FROM "aspects" WHERE ("aspects"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering questions/show
+  [4;36;1mAnswer Load (0.7ms)[0m   [0;1mSELECT * FROM "answers" WHERE ("answers".question_id = 1) [0m
+Completed in 149ms (View: 126, DB: 2) | 200 OK [http://localhost/questions/1]
+
+
+Processing QuestionsController#edit (for 127.0.0.1 at 2010-11-20 09:22:24) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"questions"}
+  [4;35;1mQuestion Load (0.5ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering questions/edit
+  [4;36;1mAnswer Load (0.7ms)[0m   [0;1mSELECT * FROM "answers" WHERE ("answers".question_id = 1) [0m
+Rendered answers/_answer_form (6.5ms)
+Rendered answers/_answer_form (4.3ms)
+Rendered questions/_form (40.8ms)
+Completed in 90ms (View: 75, DB: 1) | 200 OK [http://localhost/questions/1/edit]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 09:29:32) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (1.5ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 177ms (View: 153, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-20 09:29:34) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;35;1mCompany Load (1.3ms)[0m   [0mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 44ms (View: 32, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#new (for 127.0.0.1 at 2010-11-20 09:29:36) [GET]
+  Parameters: {"action"=>"new", "controller"=>"companies"}
+Rendering template within layouts/application
+Rendering companies/new
+Rendered companies/_form (9.6ms)
+Completed in 56ms (View: 44, DB: 0) | 200 OK [http://localhost/companies/new]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-11-20 09:29:38) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 41ms (View: 17, DB: 0) | 200 OK [http://localhost/login]
