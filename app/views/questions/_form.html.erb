@@ -12,12 +12,6 @@
     <%= f.label :aspect_id %><br />
     <%= f.text_field :aspect_id %>
   </p>
- 
-  <div class = "answers">
-    <% f.fields_for :answers do |builder| %>
-      <%= render 'answers/answer_form', :f => builder %>
-    <% end %>
-  </div> 
   <p><%= f.submit %></p>
   
 <% end %>
