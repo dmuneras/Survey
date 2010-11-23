@@ -23486,3 +23486,1002 @@ Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-20 15:50:38) 
 Rendering template within layouts/application
 Rendering company_sessions/new
 Completed in 51ms (View: 27, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-22 20:48:52) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 378ms (View: 168, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:19:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 167ms (View: 161, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-22 21:20:10) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 73ms (View: 42, DB: 1) | 200 OK [http://localhost/companies]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-11-22 21:20:13) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering companies/show
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".company_id = 1) [0m
+Completed in 159ms (View: 132, DB: 2) | 200 OK [http://localhost/companies/1]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:21:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 35ms (View: 31, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:24:08) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 44ms (View: 40, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:24:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 32ms (View: 26, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:24:59) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 36ms (View: 31, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:25:10) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 113ms (View: 108, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:26:25) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 51ms (View: 46, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:28:03) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 41ms (View: 36, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:28:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 36ms (View: 31, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:29:33) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 40ms (View: 36, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:30:54) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 34ms (View: 30, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:32:11) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 30ms (View: 25, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:32:30) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 32ms (View: 27, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#new (for 127.0.0.1 at 2010-11-22 21:32:45) [GET]
+  Parameters: {"action"=>"new", "controller"=>"companies"}
+Rendering template within layouts/application
+Rendering companies/new
+Rendered companies/_form (36.6ms)
+Completed in 199ms (View: 96, DB: 0) | 200 OK [http://localhost/companies/new]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-22 21:32:54) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 82ms (View: 41, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-22 21:33:00) [POST]
+  Parameters: {"company_session"=>{"password"=>"[FILTERED]", "login"=>"unete"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"8P4/eZP9aOeFMgzVpYAz6OA8zWUu0OzCCU9Ccx4cB3s=", "controller"=>"company_sessions"}
+  [4;35;1mCompany Load (0.8ms)[0m   [0mSELECT * FROM "companies" WHERE (LOWER("companies".login) = 'unete') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 340ms (DB: 1) | 302 Found [http://localhost/company_sessions]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:33:00) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 156ms (View: 146, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:34:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 55ms (View: 50, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:36:54) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 153ms (View: 148, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:36:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 49ms (View: 45, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:37:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 140ms (View: 136, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:38:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 51ms (View: 46, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:38:37) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 150ms (View: 145, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:39:15) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 49ms (View: 44, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:39:30) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 145ms (View: 140, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:40:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 50ms (View: 45, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:40:30) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 146ms (View: 141, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:40:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 50ms (View: 45, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:41:25) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 155ms (View: 150, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:41:43) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 58ms (View: 45, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:42:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 152ms (View: 147, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:42:47) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 49ms (View: 43, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:44:11) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 162ms (View: 157, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:44:47) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 46ms (View: 41, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:45:12) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 148ms (View: 143, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing SurveysController#index (for 127.0.0.1 at 2010-11-22 21:46:03) [GET]
+  Parameters: {"action"=>"index", "controller"=>"surveys"}
+  [4;36;1mSurvey Load (1.5ms)[0m   [0;1mSELECT * FROM "surveys" [0m
+Rendering template within layouts/application
+Rendering surveys/index
+Completed in 110ms (View: 79, DB: 2) | 200 OK [http://localhost/surveys]
+
+
+Processing SurveysController#new (for 127.0.0.1 at 2010-11-22 21:46:05) [GET]
+  Parameters: {"action"=>"new", "controller"=>"surveys"}
+Rendering template within layouts/application
+Rendering surveys/new
+Rendered surveys/_form (163.2ms)
+Completed in 227ms (View: 215, DB: 0) | 200 OK [http://localhost/surveys/new]
+
+
+Processing SurveyRecordsController#index (for 127.0.0.1 at 2010-11-22 21:46:14) [GET]
+  Parameters: {"action"=>"index", "controller"=>"survey_records"}
+  [4;35;1mSurveyRecord Load (0.8ms)[0m   [0mSELECT * FROM "survey_records" [0m
+Rendering template within layouts/application
+Rendering survey_records/index
+Completed in 105ms (View: 76, DB: 1) | 200 OK [http://localhost/survey_records]
+
+
+Processing SurveyRecordsController#new (for 127.0.0.1 at 2010-11-22 21:46:18) [GET]
+  Parameters: {"action"=>"new", "controller"=>"survey_records"}
+Rendering template within layouts/application
+Rendering survey_records/new
+Rendered survey_records/_form (331.1ms)
+Completed in 400ms (View: 386, DB: 0) | 200 OK [http://localhost/survey_records/new]
+
+
+Processing SurveyRecordsController#index (for 127.0.0.1 at 2010-11-22 21:46:22) [GET]
+  Parameters: {"action"=>"index", "controller"=>"survey_records"}
+  [4;36;1mSurveyRecord Load (0.8ms)[0m   [0;1mSELECT * FROM "survey_records" [0m
+Rendering template within layouts/application
+Rendering survey_records/index
+Completed in 53ms (View: 41, DB: 1) | 200 OK [http://localhost/survey_records]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:46:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 52ms (View: 46, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-22 21:47:24) [GET]
+
+ActionController::RoutingError (No route matches "/survey" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SurveysController#index (for 127.0.0.1 at 2010-11-22 21:47:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"surveys"}
+  [4;35;1mSurvey Load (0.8ms)[0m   [0mSELECT * FROM "surveys" [0m
+Rendering template within layouts/application
+Rendering surveys/index
+Completed in 175ms (View: 162, DB: 1) | 200 OK [http://localhost/surveys]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:50:24) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 48ms (View: 43, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:51:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 147ms (View: 142, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:51:50) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 50ms (View: 45, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:52:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 147ms (View: 143, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:52:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 50ms (View: 44, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:52:34) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 147ms (View: 143, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:53:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 58ms (View: 53, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:54:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 146ms (View: 142, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:55:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 52ms (View: 47, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:56:15) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 152ms (View: 148, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#index (for 127.0.0.1 at 2010-11-22 21:56:34) [GET]
+  Parameters: {"action"=>"index", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" [0m
+Rendering template within layouts/application
+Rendering companies/index
+Completed in 61ms (View: 35, DB: 1) | 200 OK [http://localhost/companies]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-11-22 21:56:38) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering companies/show
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".company_id = 1) [0m
+Completed in 66ms (View: 42, DB: 1) | 200 OK [http://localhost/companies/1]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:56:54) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 56ms (View: 50, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#new (for 127.0.0.1 at 2010-11-22 21:57:04) [GET]
+  Parameters: {"action"=>"new", "controller"=>"companies"}
+Rendering template within layouts/application
+Rendering companies/new
+Rendered companies/_form (17.0ms)
+Completed in 59ms (View: 38, DB: 0) | 200 OK [http://localhost/companies/new]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-22 21:57:12) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 59ms (View: 29, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:58:22) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 59ms (View: 54, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:58:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 173ms (View: 169, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:59:00) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 48ms (View: 44, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#destroy (for 127.0.0.1 at 2010-11-22 21:59:02) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"company_sessions"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 39ms (DB: 1) | 302 Found [http://localhost/logout_company]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:59:02) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 30ms (View: 26, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 21:59:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 40ms (View: 36, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 22:01:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 35ms (View: 29, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-22 22:01:07) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 52ms (View: 25, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-22 22:01:14) [POST]
+  Parameters: {"company_session"=>{"password"=>"[FILTERED]", "login"=>"unete"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"8P4/eZP9aOeFMgzVpYAz6OA8zWUu0OzCCU9Ccx4cB3s=", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (0.3ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."login" IS NULL) LIMIT 1[0m
+  [4;35;1mCompany Load (0.6ms)[0m   [0mSELECT * FROM "companies" WHERE (LOWER("companies".login) = 'unete') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 36ms (DB: 1) | 302 Found [http://localhost/company_sessions]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 22:01:14) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 57ms (View: 50, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#destroy (for 127.0.0.1 at 2010-11-22 22:01:23) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 33ms (DB: 1) | 302 Found [http://localhost/logout_company]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 22:01:23) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 28ms (View: 23, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 22:02:14) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 32ms (View: 27, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-22 22:02:19) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 51ms (View: 26, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-22 22:02:25) [POST]
+  Parameters: {"company_session"=>{"password"=>"[FILTERED]", "login"=>"unete"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"8P4/eZP9aOeFMgzVpYAz6OA8zWUu0OzCCU9Ccx4cB3s=", "controller"=>"company_sessions"}
+  [4;35;1mCompany Load (0.4ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."login" IS NULL) LIMIT 1[0m
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE (LOWER("companies".login) = 'unete') LIMIT 1[0m
+
+ActionController::ActionControllerError (Cannot redirect to nil!):
+  app/controllers/company_sessions_controller.rb:12:in `create'
+
+Rendered rescues/_trace (60.0ms)
+Rendered rescues/_request_and_response (2.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."login" = 'unete') LIMIT 1[0m
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-22 22:04:44) [POST]
+  Parameters: {"company_session"=>{"password"=>"[FILTERED]", "login"=>"unete"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"8P4/eZP9aOeFMgzVpYAz6OA8zWUu0OzCCU9Ccx4cB3s=", "controller"=>"company_sessions"}
+  [4;35;1mCompany Load (0.8ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."login" = 'unete') LIMIT 1[0m
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE (LOWER("companies".login) = 'unete') LIMIT 1[0m
+Redirected to http://localhost:3000/companies/1
+Completed in 40ms (DB: 1) | 302 Found [http://localhost/company_sessions]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-11-22 22:04:44) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.8ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering companies/show
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".company_id = 1) [0m
+Completed in 180ms (View: 155, DB: 2) | 200 OK [http://localhost/companies/1]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-22 22:06:01) [POST]
+  Parameters: {"company_session"=>{"password"=>"[FILTERED]", "login"=>"unete"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"8P4/eZP9aOeFMgzVpYAz6OA8zWUu0OzCCU9Ccx4cB3s=", "controller"=>"company_sessions"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."login" = 'unete') LIMIT 1[0m
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE (LOWER("companies".login) = 'unete') LIMIT 1[0m
+
+NoMethodError (undefined method `+@' for nil:NilClass):
+  app/controllers/company_sessions_controller.rb:11:in `create'
+
+Rendered rescues/_trace (55.3ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-22 22:06:42) [POST]
+  Parameters: {"company_session"=>{"password"=>"[FILTERED]", "login"=>"unete"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"8P4/eZP9aOeFMgzVpYAz6OA8zWUu0OzCCU9Ccx4cB3s=", "controller"=>"company_sessions"}
+  [4;35;1mCompany Load (0.8ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."login" = 'unete') LIMIT 1[0m
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE (LOWER("companies".login) = 'unete') LIMIT 1[0m
+
+NoMethodError (undefined method `+@' for "":String):
+  app/controllers/company_sessions_controller.rb:11:in `create'
+
+Rendered rescues/_trace (64.2ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-22 22:07:54) [POST]
+  Parameters: {"company_session"=>{"password"=>"[FILTERED]", "login"=>"unete"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"8P4/eZP9aOeFMgzVpYAz6OA8zWUu0OzCCU9Ccx4cB3s=", "controller"=>"company_sessions"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."login" = 'unete') LIMIT 1[0m
+  [4;36;1mCompany Load (0.6ms)[0m   [0;1mSELECT * FROM "companies" WHERE (LOWER("companies".login) = 'unete') LIMIT 1[0m
+Redirected to http://localhost:3000/companies/1
+Completed in 38ms (DB: 1) | 302 Found [http://localhost/company_sessions]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-11-22 22:07:54) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.8ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering companies/show
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".company_id = 1) [0m
+Completed in 64ms (View: 40, DB: 1) | 200 OK [http://localhost/companies/1]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-11-22 22:08:09) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering companies/show
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".company_id = 1) [0m
+Completed in 71ms (View: 44, DB: 2) | 200 OK [http://localhost/companies/1]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-11-22 22:09:47) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering companies/show
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".company_id = 1) [0m
+Completed in 65ms (View: 43, DB: 1) | 200 OK [http://localhost/companies/1]
+
+
+Processing CompanySessionsController#destroy (for 127.0.0.1 at 2010-11-22 22:10:02) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"company_sessions"}
+  [4;35;1mCompany Load (1.9ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 41ms (DB: 2) | 302 Found [http://localhost/logout_company]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 22:10:02) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 29ms (View: 24, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-22 22:10:14) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 49ms (View: 25, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-22 22:10:34) [POST]
+  Parameters: {"company_session"=>{"password"=>"[FILTERED]", "login"=>"unete"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"8P4/eZP9aOeFMgzVpYAz6OA8zWUu0OzCCU9Ccx4cB3s=", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (0.8ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."login" = 'unete') LIMIT 1[0m
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE (LOWER("companies".login) = 'unete') LIMIT 1[0m
+Redirected to http://localhost:3000/companies/1
+Completed in 41ms (DB: 2) | 302 Found [http://localhost/company_sessions]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-11-22 22:10:34) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"companies"}
+  [4;36;1mCompany Load (4.5ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering companies/show
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users".company_id = 1) [0m
+Completed in 69ms (View: 41, DB: 5) | 200 OK [http://localhost/companies/1]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-11-22 22:11:12) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering companies/show
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users".company_id = 1) [0m
+Completed in 60ms (View: 39, DB: 1) | 200 OK [http://localhost/companies/1]
+
+
+Processing CompanySessionsController#destroy (for 127.0.0.1 at 2010-11-22 22:11:15) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (1.5ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 42ms (DB: 1) | 302 Found [http://localhost/logout_company]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 22:11:15) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 31ms (View: 25, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-22 22:11:22) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 159ms (View: 131, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-22 22:11:33) [POST]
+  Parameters: {"company_session"=>{"password"=>"[FILTERED]", "login"=>"unete"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"8P4/eZP9aOeFMgzVpYAz6OA8zWUu0OzCCU9Ccx4cB3s=", "controller"=>"company_sessions"}
+
+ArgumentError (Unknown key(s): #<CompanySession:0xb6de1794>):
+  app/controllers/company_sessions_controller.rb:9:in `create'
+
+Rendered rescues/_trace (83.2ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-22 22:11:54) [POST]
+  Parameters: {"company_session"=>{"password"=>"[FILTERED]", "login"=>"unete"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"8P4/eZP9aOeFMgzVpYAz6OA8zWUu0OzCCU9Ccx4cB3s=", "controller"=>"company_sessions"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."login" = 'unete') LIMIT 1[0m
+  [4;36;1mCompany Load (0.6ms)[0m   [0;1mSELECT * FROM "companies" WHERE (LOWER("companies".login) = 'unete') LIMIT 1[0m
+Redirected to http://localhost:3000/companies/1
+Completed in 38ms (DB: 1) | 302 Found [http://localhost/company_sessions]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-11-22 22:11:54) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering companies/show
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".company_id = 1) [0m
+Completed in 67ms (View: 42, DB: 1) | 200 OK [http://localhost/companies/1]
+
+
+Processing CompanySessionsController#destroy (for 127.0.0.1 at 2010-11-22 22:12:28) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"company_sessions"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 34ms (DB: 1) | 302 Found [http://localhost/logout_company]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 22:12:28) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 29ms (View: 25, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-22 22:12:31) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 58ms (View: 29, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-22 22:12:36) [POST]
+  Parameters: {"company_session"=>{"password"=>"[FILTERED]", "login"=>"unete"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"8P4/eZP9aOeFMgzVpYAz6OA8zWUu0OzCCU9Ccx4cB3s=", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."login" = 'unete') LIMIT 1[0m
+  [4;35;1mCompany Load (0.6ms)[0m   [0mSELECT * FROM "companies" WHERE (LOWER("companies".login) = 'unete') LIMIT 1[0m
+Redirected to http://localhost:3000/companies/1
+Completed in 35ms (DB: 1) | 302 Found [http://localhost/company_sessions]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-11-22 22:12:36) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.9ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering companies/show
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users".company_id = 1) [0m
+Completed in 184ms (View: 157, DB: 2) | 200 OK [http://localhost/companies/1]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-11-22 22:13:18) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"users"}
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mCompany Load (0.8ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Completed in 90ms (View: 40, DB: 2) | 200 OK [http://localhost/users/1]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-11-22 22:13:24) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"companies"}
+  [4;36;1mCompany Load (0.7ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering companies/show
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users".company_id = 1) [0m
+Completed in 65ms (View: 41, DB: 1) | 200 OK [http://localhost/companies/1]
+
+
+Processing CompanySessionsController#destroy (for 127.0.0.1 at 2010-11-22 22:13:58) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"company_sessions"}
+  [4;36;1mCompany Load (1.0ms)[0m   [0;1mSELECT * FROM "companies" WHERE ("companies"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 38ms (DB: 1) | 302 Found [http://localhost/logout_company]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 22:13:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 29ms (View: 24, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 22:14:54) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 38ms (View: 33, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing CompaniesController#new (for 127.0.0.1 at 2010-11-22 22:14:59) [GET]
+  Parameters: {"action"=>"new", "controller"=>"companies"}
+Rendering template within layouts/application
+Rendering companies/new
+Rendered companies/_form (13.4ms)
+Completed in 59ms (View: 36, DB: 0) | 200 OK [http://localhost/companies/new]
+
+
+Processing CompanySessionsController#new (for 127.0.0.1 at 2010-11-22 22:15:04) [GET]
+  Parameters: {"action"=>"new", "controller"=>"company_sessions"}
+Rendering template within layouts/application
+Rendering company_sessions/new
+Completed in 51ms (View: 26, DB: 0) | 200 OK [http://localhost/admin_company]
+
+
+Processing CompanySessionsController#create (for 127.0.0.1 at 2010-11-22 22:15:13) [POST]
+  Parameters: {"company_session"=>{"password"=>"[FILTERED]", "login"=>"unete"}, "commit"=>"Save changes", "action"=>"create", "authenticity_token"=>"8P4/eZP9aOeFMgzVpYAz6OA8zWUu0OzCCU9Ccx4cB3s=", "controller"=>"company_sessions"}
+  [4;35;1mCompany Load (1.0ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."login" = 'unete') LIMIT 1[0m
+  [4;36;1mCompany Load (0.8ms)[0m   [0;1mSELECT * FROM "companies" WHERE (LOWER("companies".login) = 'unete') LIMIT 1[0m
+Redirected to http://localhost:3000/companies/1
+Completed in 141ms (DB: 2) | 302 Found [http://localhost/company_sessions]
+
+
+Processing CompaniesController#show (for 127.0.0.1 at 2010-11-22 22:15:13) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"companies"}
+  [4;35;1mCompany Load (0.8ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering companies/show
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users".company_id = 1) [0m
+Completed in 64ms (View: 40, DB: 1) | 200 OK [http://localhost/companies/1]
+
+
+Processing CompanySessionsController#destroy (for 127.0.0.1 at 2010-11-22 22:15:21) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"company_sessions"}
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 32ms (DB: 1) | 302 Found [http://localhost/logout_company]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 22:15:21) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 133ms (View: 129, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-11-22 22:15:25) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 64ms (View: 38, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-11-22 22:15:34) [POST]
+  Parameters: {"commit"=>"Save changes", "user_session"=>{"username"=>"daniel1", "password"=>"[FILTERED]"}, "action"=>"create", "authenticity_token"=>"8P4/eZP9aOeFMgzVpYAz6OA8zWUu0OzCCU9Ccx4cB3s=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".username) = 'daniel1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 44ms (View: 16, DB: 0) | 200 OK [http://localhost/user_sessions]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-11-22 22:15:45) [POST]
+  Parameters: {"commit"=>"Save changes", "user_session"=>{"username"=>"Daniel", "password"=>"[FILTERED]"}, "action"=>"create", "authenticity_token"=>"8P4/eZP9aOeFMgzVpYAz6OA8zWUu0OzCCU9Ccx4cB3s=", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".username) = 'daniel') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 161ms (View: 16, DB: 0) | 200 OK [http://localhost/user_sessions]
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-11-22 22:16:12) [POST]
+  Parameters: {"commit"=>"Save changes", "user_session"=>{"username"=>"dmuneras", "password"=>"[FILTERED]"}, "action"=>"create", "authenticity_token"=>"8P4/eZP9aOeFMgzVpYAz6OA8zWUu0OzCCU9Ccx4cB3s=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".username) = 'dmuneras') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 53ms (View: 17, DB: 1) | 200 OK [http://localhost/user_sessions]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-11-22 22:16:19) [POST]
+  Parameters: {"commit"=>"Save changes", "user_session"=>{"username"=>"dmuneras", "password"=>"[FILTERED]"}, "action"=>"create", "authenticity_token"=>"8P4/eZP9aOeFMgzVpYAz6OA8zWUu0OzCCU9Ccx4cB3s=", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".username) = 'dmuneras') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 33ms (DB: 1) | 302 Found [http://localhost/user_sessions]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 22:16:19) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Completed in 149ms (View: 143, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 22:17:34) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Completed in 39ms (View: 33, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-11-22 22:17:36) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (4.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 38ms (DB: 5) | 302 Found [http://localhost/logout]
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-11-22 22:17:36) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 135ms (DB: 1) | 302 Found [http://localhost/logout]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 22:17:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 31ms (View: 26, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing BaseController#index (for 127.0.0.1 at 2010-11-22 22:17:39) [GET]
+  Parameters: {"action"=>"index", "controller"=>"base"}
+Rendering template within layouts/application
+Rendering base/index
+Completed in 35ms (View: 28, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-11-22 22:17:41) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 139ms (View: 11, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-11-22 22:17:48) [POST]
+  Parameters: {"commit"=>"Save changes", "user_session"=>{"username"=>"dmuneras", "password"=>"[FILTERED]"}, "action"=>"create", "authenticity_token"=>"8P4/eZP9aOeFMgzVpYAz6OA8zWUu0OzCCU9Ccx4cB3s=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".username) = 'dmuneras') LIMIT 1[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."username" = 'dmuneras') LIMIT 1[0m
+Redirected to http://localhost:3000/users/1
+Completed in 40ms (DB: 2) | 302 Found [http://localhost/user_sessions]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-11-22 22:17:48) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"users"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Completed in 60ms (View: 25, DB: 1) | 200 OK [http://localhost/users/1]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-11-22 22:17:48) [POST]
+  Parameters: {"commit"=>"Save changes", "user_session"=>{"username"=>"dmuneras", "password"=>"[FILTERED]"}, "action"=>"create", "authenticity_token"=>"8P4/eZP9aOeFMgzVpYAz6OA8zWUu0OzCCU9Ccx4cB3s=", "controller"=>"user_sessions"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE (LOWER("users".username) = 'dmuneras') LIMIT 1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."username" = 'dmuneras') LIMIT 1[0m
+Redirected to http://localhost:3000/users/1
+Completed in 140ms (DB: 1) | 302 Found [http://localhost/user_sessions]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-11-22 22:17:48) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"users"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Completed in 64ms (View: 27, DB: 1) | 200 OK [http://localhost/users/1]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-11-22 22:19:01) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"users"}
+  [4;36;1mUser Load (1.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mCompany Load (0.7ms)[0m   [0mSELECT * FROM "companies" WHERE ("companies"."id" = 1) [0m
+Completed in 59ms (View: 24, DB: 3) | 200 OK [http://localhost/users/1]
+
+
+Processing SurveysController#index (for 127.0.0.1 at 2010-11-22 22:20:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"surveys"}
+  [4;36;1mSurvey Load (0.9ms)[0m   [0;1mSELECT * FROM "surveys" [0m
+Rendering template within layouts/application
+Rendering surveys/index
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+Completed in 68ms (View: 33, DB: 2) | 200 OK [http://localhost/surveys]

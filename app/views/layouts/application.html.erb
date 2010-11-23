@@ -48,15 +48,9 @@
         <div id="user_nav">
         <% if current_user %>
           <%= link_to "Editar Perfil", edit_user_path(current_user) %> | 
-          <%= link_to "Terminar sesion", logout_path %>
-        <% else %>
-          <%= link_to "Pagina Principal ", root_url%> |
-          <%= link_to "Registrar empresa", new_company_path %> | 
-          <%= link_to "Iniciar sesion", login_path %> |
+          <%= link_to "Terminar sesion", logout_path %>	  
         <% end %>
-      <% if session[:current_company].nil? %>
-         <%= link_to "Actualizar informacion de la empresa", admin_company_path %>
-      <% else %>
+      <% unless session[:current_company].nil? %>
 	 <%= link_to "Salir de la empresa", logout_company_path %>
       <% end %>
       </div>

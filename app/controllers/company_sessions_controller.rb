@@ -6,9 +6,10 @@ class CompanySessionsController < ApplicationController
   def create
     @company_session = CompanySession.new(params[:company_session])
     session[:current_company] = @company_session
+    @company = Company.find_by_login(@company_session.login)
     if @company_session.save
-      flash[:notice] = "Successfully created company session."
-      redirect_to root_url
+      flash[:notice] = "Has ingresado a editar la compañia"
+      redirect_to @company
     else
       render :action => 'new'
     end
@@ -18,7 +19,7 @@ class CompanySessionsController < ApplicationController
     @company_session = CompanySession.find(params[:id])
     @company_session.destroy
     session[:current_company] = nil
-    flash[:notice] = "Successfully destroyed company session."
+    flash[:notice] = "Has terminado la edicion de la compañia"
     redirect_to root_url
   end
 end

@@ -6,8 +6,9 @@ class UserSessionsController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
-      flash[:notice] = "Successfully created user session."
-      redirect_to root_url
+      @user = User.find_by_username(@user_session.username) 
+      flash[:notice] = "Has ingresado exitosamente."
+      redirect_to @user
     else
       render :action => 'new'
     end
@@ -16,7 +17,7 @@ class UserSessionsController < ApplicationController
   def destroy
     @user_session = UserSession.find(params[:id])
     @user_session.destroy
-    flash[:notice] = "Successfully destroyed user session."
+    flash[:notice] = "Vuelve prontoX."
     redirect_to root_url
   end
 end
