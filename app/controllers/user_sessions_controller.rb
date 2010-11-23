@@ -17,7 +17,7 @@ class UserSessionsController < ApplicationController
   def destroy
     @user_session = UserSession.find(params[:id])
     @user_session.destroy
-    flash[:notice] = "Vuelve prontoX."
+    flash[:notice] = "Vuelve pronto."
     redirect_to root_url
   end
 end
