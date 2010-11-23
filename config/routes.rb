@@ -13,6 +13,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :companies ,:has_many => :users, :shallow => true
   map.resources :subsectors
   map.resources :surveys, :member => {:next_question => :get}
+  map.resources :chart
   
   # The priority is based upon order of creation: first created -> highest priority.
 
