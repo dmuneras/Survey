@@ -1,10 +1,12 @@
 
 <div class= center>
-<div class="manejo">
-  <%= link_to "Editar", edit_company_path(@company) %> |
-  <%= link_to "Eliminar", @company, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "Agregar usuario", new_company_user_path(@company) %> 
-</div>
+<% if  session[:current_company] %>
+  <div class="manejo">
+    <%= link_to "Editar", edit_company_path(@company) %> |
+    <%= link_to "Eliminar", @company, :confirm => 'Are you sure?', :method => :delete %> |
+    <%= link_to "Agregar usuario", new_company_user_path(@company) %>
+  </div>
+<% end %>
 <h1><%= @company.name %></h1>
 <div class= "information">
     <h3>Información general</h3>

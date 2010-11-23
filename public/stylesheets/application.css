@@ -1,6 +1,12 @@
 body {
   background-color: #fff;
-  font-family: "Lucida Grande","Lucida Sans Unicode",Arial,Verdana,sans-serif;margin: 0px;min-width: 950px;height: 100%;font-size:12px;line-height: 18px;letter-spacing: 0px;
+  font-family: "Lucida Grande","Lucida Sans Unicode",Arial,Verdana,sans-serif;
+  margin: 0px;
+  min-width: 950px;
+  height: 100%;
+  font-size:12px;
+  line-height: 18px;
+  letter-spacing: 0px;
   font-size: 12px;
 }
 
@@ -24,7 +30,7 @@ a { color: #0000FF;}
 
 #flash_notice {
   background-color: #999;
-  border: solid 1px #FDB927;
+  border: solid 1px #E6E6FA;
 }
 
 #flash_error {
@@ -109,11 +115,15 @@ div#index{
 div#index div{
     padding:10px;
 }
+
+div#aux {
+    margin-left:45%;
+}
 div.index-companies{
     width:50%;
     float: left;
     height: 180px;
-    border-right:10px solid #A3A3A3;
+    border-right:5px solid #A3A3A3;
 }
 div.index-users{
    height:180px;
@@ -137,6 +147,7 @@ div#content a:hover {
 }
 
 /*CENTER*/
+
 div.users_list {
     float:right; 
     margin: 5px}

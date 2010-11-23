@@ -4,4 +4,8 @@ class User < ActiveRecord::Base
   has_many :survey_records
   acts_as_authentic  
   validates_presence_of :username
+
+  def full_name 
+    [name,last_name].join(" ") 
+  end
 end

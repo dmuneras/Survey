@@ -48,6 +48,7 @@
         <div id="user_nav">
         <% if current_user %>
 	  <%= link_to "Realizar encuesta", surveys_path %> |
+	  <%= link_to "Ver perfil", current_user %> |
           <%= link_to "Editar Perfil", edit_user_path(current_user) %> | 
           <%= link_to "Terminar sesion", logout_path %> 	  
         <% end %>
