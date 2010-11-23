@@ -1,24 +1,33 @@
+# -*- coding: utf-8 -*-
 class SurveysController < ApplicationController
   def index
-    @surveys = Survey.all
+    session[:current_question] = 0
+    session[:answers] = ""
   end
   
   def show
-    @survey = Survey.find(params[:id])
+    session[:answers] += params[:answer] + ';' if params[:answer]
+    @question = Question.find_by_number(next_question)
+    redirect_to :controller => :survey_records, :action => 'new' unless @question
   end
   
+  def next_question
+    session[:current_question] += 1
+  end
+
   def new
     @survey = Survey.new
   end
   
   def create
-    @survey = Survey.new(params[:survey])
-    if @survey.save
-      flash[:notice] = "Successfully created survey."
-      redirect_to @survey
-    else
-      render :action => 'new'
-    end
+    session[:answers] += params[:answer] + ','
+    render :action => 'show'
+    # if params[:number] == session[:current_question]
+    #   session[:answers] += params[:answer]      
+    #   render :action => 'show'
+    # else
+    #   flash[:notice] = "¡Oigan a este!"
+    # end    
   end
   
   def edit

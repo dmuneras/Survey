@@ -1,4 +1,4 @@
 class SurveyRecord < ActiveRecord::Base
-  attr_accessible :user_id, :answers
+  belongs_to :user
   has_many :questions
 end

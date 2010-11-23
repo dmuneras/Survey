@@ -9,7 +9,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20101120194337) do
+=======
+ActiveRecord::Schema.define(:version => 20101120164326) do
+>>>>>>> company
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
