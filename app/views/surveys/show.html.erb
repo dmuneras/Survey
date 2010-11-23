@@ -1,10 +1,23 @@
 <% title "Encuesta" %>
 
-<strong><%= @question.number %></strong>
-<p><%= @question.description %></p>
+<strong>Aspecto: </strong>
+<%= @question.aspect.name %>
+<br /><br />
+
+<strong><%= @question.number %>. </strong>
+<em><%= @question.description %></em>
+
 <% form_tag do %>
-<% for  answer in @question.answers do %>
-<%= radio_button_tag 'answer', answer.id %><%= answer.description %><br />
+<% first = true %>
+<% for  answer in @answers do %>
+<% if first %>
+<p><%= radio_button_tag 'answer', answer.id, :checked => true %><%= answer.description %></p>
+<% first = false %>
+<% else %>
+<p><%= radio_button_tag 'answer', answer.id %><%= answer.description %></p>
 <% end %>
-<%= submit_tag "Siguiente", :number => @question.number %> 
+
+<% end %>
+<br />
+<%= submit_tag "Siguiente" %> 
 <% end %>

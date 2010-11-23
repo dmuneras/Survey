@@ -2,17 +2,26 @@
 class SurveysController < ApplicationController
   def index
     session[:current_question] = 0
-    session[:answers] = ""
+    session[:answers] = []
   end
   
   def show
-    session[:answers] += params[:answer] + ';' if params[:answer]
-    @question = Question.find_by_number(next_question)
-    redirect_to :controller => :survey_records, :action => 'new' unless @question
+    if params[:answer]
+      session[:answers][Answer.find(params[:answer]).question.number-1] = params[:answer] 
+      @question = Question.find_by_number(next_question)
+    else
+      @question = Question.find_by_number(1)
+    end
+    if @question
+      @answers = @question.answers.sort{|a,b| a.number <=> b.number}
+      @type = @question.type
+    else
+      redirect_to :controller => :survey_records, :action => 'new'
+    end    
   end
   
   def next_question
-    session[:current_question] += 1
+    session[:current_question] = Answer.find(params[:answer]).question.number + 1
   end
 
   def new
@@ -20,14 +29,8 @@ class SurveysController < ApplicationController
   end
   
   def create
-    session[:answers] += params[:answer] + ','
-    render :action => 'show'
-    # if params[:number] == session[:current_question]
-    #   session[:answers] += params[:answer]      
-    #   render :action => 'show'
-    # else
-    #   flash[:notice] = "¡Oigan a este!"
-    # end    
+    # session[:answers] += params[:answer] + ','
+    # render :action => 'show'
   end
   
   def edit

@@ -14,7 +14,7 @@ class SurveyRecordsController < ApplicationController
   def create
     logger.info(params[:comment])
     @survey_record = SurveyRecord.create(:user_id => current_user,
-                                         :answers => session[:answers],
+                                         :answers => session[:answers].join(';'),
                                          :comment => params[:comment])
     redirect_to :action => :index
     # @survey_record = SurveyRecord.new(params[:survey_record])
