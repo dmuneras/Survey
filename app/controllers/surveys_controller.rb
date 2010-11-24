@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 class SurveysController < ApplicationController
 
-  before_filter :is_logged?|
+  before_filter :is_logged?
   
   def index
     session[:answers] = []
