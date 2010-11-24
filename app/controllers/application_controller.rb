@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Filters added to this controller apply to all controllers in the application.
 # Likewise, all the methods added will be available for all controllers.
 
@@ -26,4 +27,12 @@ class ApplicationController < ActionController::Base
   def current_company
     return session[:current_company]
   end
+
+  def is_logged?
+    unless current_user
+      flash[:notice] = "No se ha logueado aún"
+      redirect_to login_path
+    end
+  end
+
 end

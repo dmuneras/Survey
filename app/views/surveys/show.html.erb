@@ -1,10 +1,15 @@
 <% title "Encuesta" %>
 
-<strong><%= @question.number %></strong>
-<p><%= @question.description %></p>
+<strong>Aspecto: </strong>
+<%= @question.aspect.name %>
+<br /><br />
+
+<strong><%= @question.number %>. </strong>
+<em><%= @question.description %></em>
+
 <% form_tag do %>
-<% for  answer in @question.answers do %>
-<%= radio_button_tag 'answer', answer.id %><%= answer.description %><br />
-<% end %>
-<%= submit_tag "Siguiente", :number => @question.number %> 
+
+<%= render :partial => @question.category %>
+
+<%= submit_tag "Siguiente" %> 
 <% end %>

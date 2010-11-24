@@ -1,18 +1,35 @@
 # -*- coding: utf-8 -*-
 class SurveysController < ApplicationController
+
+  before_filter :is_logged?|
+  
   def index
-    session[:current_question] = 0
-    session[:answers] = ""
+    session[:answers] = []
   end
   
   def show
-    session[:answers] += params[:answer] + ';' if params[:answer]
-    @question = Question.find_by_number(next_question)
-    redirect_to :controller => :survey_records, :action => 'new' unless @question
+    if params[:answer]
+      @current_question = Answer.find(params[:answer]).question
+      assign_answer
+      @question = Question.find_by_number(next_question)
+    else
+      @question = Question.find_by_number(1)
+    end
+    if @question
+      @answers = @question.answers.sort{|a,b| a.number <=> b.number}
+      @type = @question.type
+      logger.info(@type)
+    else
+      redirect_to :controller => :survey_records, :action => 'new'
+    end    
   end
   
+  def assign_answer
+    session[:answers][@current_question.number-1] = params[:answer]
+  end
+
   def next_question
-    session[:current_question] += 1
+    @current_question.number + 1
   end
 
   def new
@@ -20,14 +37,8 @@ class SurveysController < ApplicationController
   end
   
   def create
-    session[:answers] += params[:answer] + ','
-    render :action => 'show'
-    # if params[:number] == session[:current_question]
-    #   session[:answers] += params[:answer]      
-    #   render :action => 'show'
-    # else
-    #   flash[:notice] = "¡Oigan a este!"
-    # end    
+    # session[:answers] += params[:answer] + ','
+    # render :action => 'show'
   end
   
   def edit
