@@ -5,12 +5,14 @@
     <th>Number</th>
     <th>Description</th>
     <th>Aspect</th>
+    <th>Category</th>
   </tr>
   <% for question in @questions %>
     <tr>
       <td><%=h question.number %></td>
       <td><%=h question.description %></td>
       <td><%=h question.aspect_id %></td>
+      <td><%=h question.category %></td>
       <td><%= link_to "Show", question %></td>
       <td><%= link_to "Edit", edit_question_path(question) %></td>
       <td><%= link_to "Destroy", question, :confirm => 'Are you sure?', :method => :delete %></td>

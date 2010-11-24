@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(:version => 20101122220210) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "survey_id"
-    t.string   "type"
+    t.string   "category"
   end
 
   create_table "sessions", :force => true do |t|

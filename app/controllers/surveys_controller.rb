@@ -1,13 +1,16 @@
 # -*- coding: utf-8 -*-
 class SurveysController < ApplicationController
+
+  before_filter :is_logged?|
+  
   def index
-    session[:current_question] = 0
     session[:answers] = []
   end
   
   def show
     if params[:answer]
-      session[:answers][Answer.find(params[:answer]).question.number-1] = params[:answer] 
+      @current_question = Answer.find(params[:answer]).question
+      assign_answer
       @question = Question.find_by_number(next_question)
     else
       @question = Question.find_by_number(1)
@@ -15,13 +18,18 @@ class SurveysController < ApplicationController
     if @question
       @answers = @question.answers.sort{|a,b| a.number <=> b.number}
       @type = @question.type
+      logger.info(@type)
     else
       redirect_to :controller => :survey_records, :action => 'new'
     end    
   end
   
+  def assign_answer
+    session[:answers][@current_question.number-1] = params[:answer]
+  end
+
   def next_question
-    session[:current_question] = Answer.find(params[:answer]).question.number + 1
+    @current_question.number + 1
   end
 
   def new

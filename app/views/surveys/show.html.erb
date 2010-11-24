@@ -8,16 +8,8 @@
 <em><%= @question.description %></em>
 
 <% form_tag do %>
-<% first = true %>
-<% for  answer in @answers do %>
-<% if first %>
-<p><%= radio_button_tag 'answer', answer.id, :checked => true %><%= answer.description %></p>
-<% first = false %>
-<% else %>
-<p><%= radio_button_tag 'answer', answer.id %><%= answer.description %></p>
-<% end %>
 
-<% end %>
-<br />
+<%= render :partial => @question.category %>
+
 <%= submit_tag "Siguiente" %> 
 <% end %>

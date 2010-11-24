@@ -5,5 +5,5 @@ class Question < ActiveRecord::Base
   accepts_nested_attributes_for :answers, :reject_if => lambda { |a| a[:description].blank? }, :allow_destroy => true
   belongs_to :aspect
   belongs_to :survey
-  attr_accessible :number, :description, :aspect_id
+  attr_accessible :number, :description, :aspect_id, :category
 end
