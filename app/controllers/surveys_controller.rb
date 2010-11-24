@@ -17,10 +17,8 @@ class SurveysController < ApplicationController
     end
     if @question
       @answers = @question.answers.sort{|a,b| a.number <=> b.number}
-      @type = @question.type
-      logger.info(@type)
     else
-      redirect_to :controller => :survey_records, :action => 'new'
+      redirect_to new_survey_record_path
     end    
   end
   
