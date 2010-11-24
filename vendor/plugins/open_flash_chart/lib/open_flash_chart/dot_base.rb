@@ -19,7 +19,7 @@ module OpenFlashChart
 
   class HollowDot < DotBase
     def initialize(value=nil, args={})
-      super 'hollow_dot', value, args
+      super 'hollow-dot', value, args
     end
   end
   

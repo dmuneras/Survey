@@ -3,7 +3,7 @@ module OpenFlashChart
   class LineOnShow < Base
     def initialize(type, cascade, delay)
       @type    = type
-      @cascade = cascade.to_F
+      @cascade = cascade.to_f
       @delay   = delay.to_f
     end
   end

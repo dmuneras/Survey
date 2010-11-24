@@ -1,3 +1,6 @@
+require 'open_flash_chart/area_base'
+require 'open_flash_chart/area_hollow'
+require 'open_flash_chart/area_line'
 require 'open_flash_chart/base'
 require 'open_flash_chart/bar_base'
 require 'open_flash_chart/bar'
