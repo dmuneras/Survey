@@ -1,0 +1,12 @@
+<% first = true %>
+<ul>
+<% for  answer in @answers do %>
+<% if first %>
+<li><%= radio_button_tag 'answer', answer.id, :checked => true %><%= answer.description %></li>
+<% first = false %>
+<% else %>
+<li><%= radio_button_tag 'answer', answer.id %><%= answer.description %></li>
+<% end %>
+<% end %>
+</ul>
+<br />
