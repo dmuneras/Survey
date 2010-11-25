@@ -25,6 +25,7 @@ class SurveysController < ApplicationController
   end
   
   def assign_answer_to(question)
+    # session[:answers][question.number-1] = params[:answer]
     if params[:answer].class == Array
       session[:answers][question.number-1] = params[:answer].join(',')
     elsif params[:answer].class == HashWithIndifferentAccess
