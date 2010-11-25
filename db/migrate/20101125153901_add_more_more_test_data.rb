@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-class AddMoreTestData < ActiveRecord::Migration
+class AddMoreMoreTestData < ActiveRecord::Migration
  def self.up
     Question.delete_all
     Answer.delete_all
@@ -109,9 +109,53 @@ class AddMoreTestData < ActiveRecord::Migration
                   :description => 'Objetivos del proyecto',
                   :value => 1)
 
+   Question.create(:number => 5,
+                   :description => %{A continuación se muestran 2 situaciones extremas con relación a los <strong>benficios de los productos; seleccione en la escala</strong> el escenario que corresponda con la situación actual de la empresa},
+                   :aspect_id => Aspect.last.id,
+                   :category => 'scale')
+
+   QuestionScale.create(:question_id => Question.last.id,
+                        :lower => %{Los productos presentan diferenciadores genéricos similares a los de la competencia},
+                        :higher => %{Los productos ofrecen aspectos diferenciadores claves, presentan beneficios únicos al tenerlos o usarlos})
+
+   Answer.create(:number => 1,
+                 :question_id => Question.last.id,
+                 :description => '3',
+                 :value => 1)
+
+   Answer.create(:number => 2,
+                 :question_id => Question.last.id,
+                 :description => '2',
+                 :value => 2)
+
+   Answer.create(:number => 3,
+                 :question_id => Question.last.id,
+                 :description => '1',
+                 :value => 2)
+
+   Answer.create(:number => 4,
+                 :question_id => Question.last.id,
+                 :description => '0',
+                 :value => 3)
+
+   Answer.create(:number => 5,
+                 :question_id => Question.last.id,
+                 :description => '1',
+                 :value => 4)
+
+   Answer.create(:number => 6,
+                 :question_id => Question.last.id,
+                 :description => '2',
+                 :value => 4)
+
+   Answer.create(:number => 7,
+                 :question_id => Question.last.id,
+                 :description => '3',
+                 :value => 5)
+
    Aspect.create(:name => 'Aspectos de la estructura de la organización')
    
-   Question.create(:number => 5,
+   Question.create(:number => 6,
                    :description => %{Con respecto a la toma de decisiones en el proceso de diseño y desarrollo de productos, señale de los siguientes aspectos el que más se acerca a la situaciín actual de su empresa},
                    :aspect_id => Aspect.last.id,
                    :category => 'nested')
@@ -150,4 +194,5 @@ class AddMoreTestData < ActiveRecord::Migration
   end 
 
 end
+
 

@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  lower: MyString
+  higher: MyString
+  question_id: 1
+
+two:
+  lower: MyString
+  higher: MyString
+  question_id: 1

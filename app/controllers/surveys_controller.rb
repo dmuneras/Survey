@@ -17,6 +17,7 @@ class SurveysController < ApplicationController
     end
     if @question
       @subquestions = @question.subquestions
+      @scale = @question.question_scale
       @answers = @question.answers.sort{|a,b| a.number <=> b.number}
     else
       redirect_to new_survey_record_path
@@ -24,7 +25,6 @@ class SurveysController < ApplicationController
   end
   
   def assign_answer_to(question)
-    logger.info(params[:answer].class.to_s)
     if params[:answer].class == Array
       session[:answers][question.number-1] = params[:answer].join(',')
     elsif params[:answer].class == HashWithIndifferentAccess

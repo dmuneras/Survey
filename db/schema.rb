@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101124235812) do
+ActiveRecord::Schema.define(:version => 20101125153901) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
@@ -44,6 +44,14 @@ ActiveRecord::Schema.define(:version => 20101124235812) do
   create_table "company_roles", :force => true do |t|
     t.string   "role"
     t.integer  "hierarchy"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "question_scales", :force => true do |t|
+    t.string   "lower"
+    t.string   "higher"
+    t.integer  "question_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
