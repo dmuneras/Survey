@@ -6,7 +6,7 @@ class AddTestData < ActiveRecord::Migration
     Aspect.delete_all
     Aspect.create(:name => 'Aspectos Estratégicos')
     Question.create(:number => 1,
-                    :description =>
+s                    :description =>
                     %{A continuación se muestran 5 enunciados con respecto a la misión y la visión; seleccione el que mejor describa la situación actual de su empresa},                    
                     :category => 'unique',
                     :aspect_id => Aspect.last.id)

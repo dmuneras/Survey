@@ -24,8 +24,15 @@ class SurveysController < ApplicationController
   end
   
   def assign_answer_to(question)
+    logger.info(params[:answer].class.to_s)
     if params[:answer].class == Array
-      session[:answer][question.number-1] = params[:answer].join(',')
+      session[:answers][question.number-1] = params[:answer].join(',')
+    elsif params[:answer].class == HashWithIndifferentAccess
+      ans = []
+      params[:answer].each do |a, b|
+        ans << b
+      end
+      session[:answers][question.number-1] = ans.join(',')
     else
       session[:answers][question.number-1] = params[:answer]
     end
