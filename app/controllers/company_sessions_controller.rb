@@ -5,9 +5,9 @@ class CompanySessionsController < ApplicationController
   
   def create
     @company_session = CompanySession.new(params[:company_session])
-    session[:current_company] = @company_session
-    @company = Company.find_by_login(@company_session.login)
     if @company_session.save
+       session[:current_company] = @company_session
+       @company = Company.find_by_login(@company_session.login)
       flash[:notice] = "Has ingresado a editar la compañia"
       redirect_to @company
     else

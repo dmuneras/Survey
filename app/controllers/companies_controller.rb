@@ -14,6 +14,7 @@ class CompaniesController < ApplicationController
   def create
     @company = Company.new(params[:company])
     if @company.save
+      session[:current_company] = @company
       flash[:notice] = "Successfully created company."
       redirect_to @company
     else
