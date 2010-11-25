@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <th></th>
+    <% for answer in @answers do %>
+    <th><%= answer.description %></th>
+    <% end %>
+    <th></th>
+  </tr>
+  <tr>
+    <th><%= @scale.lower %></th>
+    <% for answer in @answers do %>
+    <td><%= radio_button_tag 'answer', answer.id %></td>
+    <% end %>
+    <th><%= @scale.higher %></th>
+  </tr>
+</table>

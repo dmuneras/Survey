@@ -1,0 +1,14 @@
+<table>
+  <th></th>
+  <% for answer in @answers do %>
+  <th><%= answer.description %></th>
+  <% end %>
+  <% for subquestion in @subquestions do %>
+  <tr>
+    <td><%= @question.number %>.<%= subquestion.number %>. <%= subquestion.description %></td>
+    <% for answer in @answers do %>
+    <td><%= radio_button_tag "answer[#{subquestion.id}]", answer.id %></td>
+    <% end %>
+  </tr>
+  <% end %>  
+</table>

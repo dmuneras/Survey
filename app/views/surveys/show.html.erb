@@ -10,6 +10,7 @@
 <% form_tag do %>
 
 <%= render :partial => @question.category %>
+<%= hidden_field_tag 'question', @question.id %>
 
 <%= submit_tag "Siguiente" %> 
 <% end %>
