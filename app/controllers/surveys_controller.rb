@@ -8,28 +8,31 @@ class SurveysController < ApplicationController
   end
   
   def show
-    if params[:answer]
-      @current_question = Answer.find(params[:answer]).question
-      assign_answer
-      @question = Question.find_by_number(next_question)
+    if params[:question]
+      current_question = Question.find(params[:question])
+      assign_answer_to current_question
+      @question = Question.find_by_number(next_question_of current_question)
     else
       @question = Question.find_by_number(1)
     end
     if @question
+      @subquestions = @question.subquestions
       @answers = @question.answers.sort{|a,b| a.number <=> b.number}
-      @type = @question.type
-      logger.info(@type)
     else
-      redirect_to :controller => :survey_records, :action => 'new'
+      redirect_to new_survey_record_path
     end    
   end
   
-  def assign_answer
-    session[:answers][@current_question.number-1] = params[:answer]
+  def assign_answer_to(question)
+    if params[:answer].class == Array
+      session[:answer][question.number-1] = params[:answer].join(',')
+    else
+      session[:answers][question.number-1] = params[:answer]
+    end
   end
 
-  def next_question
-    @current_question.number + 1
+  def next_question_of(question)
+    question.number + 1
   end
 
   def new
