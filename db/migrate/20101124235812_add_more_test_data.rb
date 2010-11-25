@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-class AddTestData < ActiveRecord::Migration
-  def self.up
+class AddMoreTestData < ActiveRecord::Migration
+ def self.up
     Question.delete_all
     Answer.delete_all
     Aspect.delete_all
     Aspect.create(:name => 'Aspectos Estratégicos')
     Question.create(:number => 1,
-s                    :description =>
+                    :description =>
                     %{A continuación se muestran 5 enunciados con respecto a la misión y la visión; seleccione el que mejor describa la situación actual de su empresa},                    
                     :category => 'unique',
                     :aspect_id => Aspect.last.id)
@@ -98,19 +98,56 @@ s                    :description =>
 
     Answer.create(:number => 1,
                   :question_id => Question.last.id,
-                  :description => 'Mercado objetivo')
+                  :description => 'Mercado objetivo',
+                  :value => 1)
     Answer.create(:number => 2,
                   :question_id => Question.last.id,
-                  :description => 'Beneficios del producto')
+                  :description => 'Beneficios del producto',
+                  :value => 1)
     Answer.create(:number => 3,
                   :question_id => Question.last.id,
-                  :description => 'Objetivos del proyecto')
-    
+                  :description => 'Objetivos del proyecto',
+                  :value => 1)
+
+   Aspect.create(:name => 'Aspectos de la estructura de la organización')
+   
+   Question.create(:number => 5,
+                   :description => %{Con respecto a la toma de decisiones en el proceso de diseño y desarrollo de productos, señale de los siguientes aspectos el que más se acerca a la situaciín actual de su empresa},
+                   :aspect_id => Aspect.last.id,
+                   :category => 'nested')
+
+   Subquestion.create(:number => 1,
+                      :description => 'Para dar prioridad a los proyectos',
+                      :question_id => Question.last.id)
+   Subquestion.create(:number => 2,
+                      :description => 'Para asignar recursos',
+                      :question_id => Question.last.id)
+   Subquestion.create(:number => 3,
+                      :description => 'Para decidir el tiempo de desarrollo de los productos',
+                      :question_id => Question.last.id)
+
+   Answer.create(:number => 1,
+                 :question_id => Question.last.id,
+                 :description => 'No es posible identificar un responsable',
+                 :value => 1)
+
+   Answer.create(:number => 2,
+                 :question_id => Question.last.id,
+                 :description => 'Una persona (jefe) de las áreas',
+                 :value => 2)
+
+   Answer.create(:number => 3,
+                 :question_id => Question.last.id,
+                 :description => 'La dirección de la empresa',
+                 :value => 3)
+
   end
 
   def self.down
     Question.delete_all
     Answer.delete_all
     Aspect.delete_all
-  end
+  end 
+
 end
+

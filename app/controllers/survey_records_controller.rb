@@ -12,18 +12,35 @@ class SurveyRecordsController < ApplicationController
   end
   
   def create
-    logger.info(params[:comment])
+    # aspect_average = {}
+    # for answer in session[:answers] do
+    #   if answer.class == Array
+    #     aspect = Answer.find(answer.first).question.aspect.id
+    #     aspect_average[aspect] ||= 0
+    #     aspect_average[aspect] += answer.size * 100 / Question.find(Answer.find(answer.first).question_id).answers.size
+    #     answer.join(',')
+    #   elsif answer.class == HashWithIndifferentAccess
+    #     aspect = Answer.find(answer.first.second).question.aspect.id
+    #     aspect_average[aspect] ||= 0
+    #     new_ans = []
+    #     answer.each do |a,b|
+    #       aspect_average[aspect] += Answer.find(b).value
+    #       new_ans << b
+    #     end
+    #     answer = new_ans.join(',')
+    #   else
+    #     aspect_average[Answer.find(answer).question.aspect.id] ||= 0
+    #     aspect_average[Answer.find(answer).question.aspect.id] += Answer.find(answer).value
+    #   end
+    # end
+    # aspect_average.each do |a,b|
+    #   b /= Aspect.find(a).questions.size
+    #   logger.info("average of #{a} = #{b}")
+    # end
     @survey_record = SurveyRecord.create(:user_id => current_user,
                                          :answers => session[:answers].join(';'),
                                          :comment => params[:comment])
     redirect_to :action => :index
-    # @survey_record = SurveyRecord.new(params[:survey_record])
-    # if @survey_record.save
-    #   flash[:notice] = "Successfully created survey record."
-    #   redirect_to @survey_record
-    # else
-    #   render :action => 'new'
-    # end
   end
   
   def edit
