@@ -1,16 +1,18 @@
-<% title "New Company Session" %>
+<div class = "login">
+  <h1>Ingreso actualización de la compañia</h1>
 
-<% form_for @company_session do |f| %>
+  <% form_for @company_session do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :login %><br />
+    <%= f.label :login,"Ingrese login de la empresa" %><br />
     <%= f.text_field :login %>
   </p>
   <p>
-    <%= f.label :password %><br />
+    <%= f.label :password, "Ingrese contraseña de la empresa" %><br />
     <%= f.password_field :password %>
   </p>
-  <p><%= f.submit %></p>
-<% end %>
+  <p><%= f.submit "Ingresar"%></p>
+  <% end %>
+</div>
 
 

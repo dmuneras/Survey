@@ -1,16 +1,17 @@
-<% title "Ingreso Usuario" %>
-
-<% form_for @user_session do |f| %>
+<div class= "login">
+  <h1>Ingreso Usuario</h1>
+  <% form_for @user_session do |f| %>
   <%= f.error_messages %>
-  <p>
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
-  </p>
-  <p>
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </p>
-  <p><%= f.submit %></p>
-<% end %>
+    <p>
+      <%= f.label :username, "Ingrese nombre de usuario" %><br />
+      <%= f.text_field :username %>
+    </p>
+    <p>
+      <%= f.label :password, "Ingrese contraseña" %><br />
+      <%= f.password_field :password %>
+    </p>
+    <p><%= f.submit "Ingresar" %></p>
+    <% end %>
+</div>
 
 
