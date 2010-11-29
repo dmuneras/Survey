@@ -1,5 +1,6 @@
 class ChartController < ApplicationController
 
+  before_filter :is_logged?
   def show
     respond_to do |wants|
       wants.html {
