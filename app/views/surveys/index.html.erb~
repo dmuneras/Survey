@@ -1,0 +1,9 @@
+<% title "Encuesta" %>
+
+<br />
+
+<h2>Como funciona esta encuesta</h2>
+
+<p></p>
+
+<%= button_to "Acepto", {:action => :show}, {:method => :get} %>
