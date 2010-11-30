@@ -12,6 +12,14 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
+  def hash_to_string(h)
+    str = []
+    h.each do |a,b|
+      str << "#{a},#{b}"
+    end
+    str = str.join(';')
+  end
+
   private
   
   def current_user_session

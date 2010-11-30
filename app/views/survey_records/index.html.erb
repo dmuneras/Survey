@@ -4,12 +4,14 @@
   <tr>
     <th>User</th>
     <th>Answers</th>
+    <th>Averages</th>
     <th>Comment</th>
   </tr>
   <% for survey_record in @survey_records %>
     <tr>
       <td><%=h survey_record.user_id %></td>
       <td><%=h survey_record.answers %></td>
+      <td><%=h survey_record.averages %></td>
       <td><%=h survey_record.comment %></td>
       <td><%= link_to "Show", survey_record %></td>
       <td><%= link_to "Edit", edit_survey_record_path(survey_record) %></td>

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101125153901) do
+ActiveRecord::Schema.define(:version => 20101129173104) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20101125153901) do
     t.string   "password_salt"
     t.string   "persistence_token"
     t.string   "login"
+    t.string   "averages"
   end
 
   create_table "company_roles", :force => true do |t|
@@ -102,6 +103,7 @@ ActiveRecord::Schema.define(:version => 20101125153901) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "comment"
+    t.string   "averages"
   end
 
   create_table "surveys", :force => true do |t|
