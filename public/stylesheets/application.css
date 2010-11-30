@@ -192,14 +192,7 @@ div.answer{
     width:260px;
 }
 
-/*CHART*/
-div#graph{
-    margin-top:50px;
-    margin-left:20%;
-}
-
 div.result h1 { 
-    padding:50px;
     text-align:center;
 }
 
