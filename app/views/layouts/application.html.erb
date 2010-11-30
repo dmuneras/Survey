@@ -4,7 +4,7 @@
   <head>
     <title><%= h(yield(:title) || "Untitled") %></title>
     <%= stylesheet_link_tag 'application', 'eafit' %>
-    <%= javascript_include_tag :all %>
+    <%= javascript_include_tag "jquery.js", "application.js", "swfobject.js","jquery.tools.min.js" %>
     <%= yield(:head) %>
   </head>
   <body>
@@ -41,21 +41,40 @@
       </div>
     </div>
 
-
-    
-    <div id="content">
-         <div class= "clear"></div>
-        <div id="user_nav">
-        <% if current_user %>
-	  <%= link_to "Realizar encuesta", surveys_path %> |
-	  <%= link_to "Ver perfil", current_user %> |
-          <%= link_to "Editar Perfil", edit_user_path(current_user) %> | 
-          <%= link_to "Terminar sesion", logout_path %> 	  
-        <% end %>
-      <% unless session[:current_company].nil? %>
-	 <%= link_to "Salir de la empresa", logout_company_path %>
+  <div class= "clear"></div>
+  <div id= "index">
+    <p><%= link_to "Pagina principal", root_url%></p>
+    <div class = "index-companies">
+      <% if current_user.nil? %>
+        <h3>Empresa</h3>
+        <% if current_company %>
+          <p><%= link_to "Editar empresa", edit_company_path(current_company)%></p>
+	  <p><%= link_to "Agregar usuario", new_company_user_path(current_company) %></p>
+	  <p><%= link_to "Eliminar",  current_company, :confirm => 'Esta seguro?', :method => :delete %>
+          <p><%= link_to "Salir de la empresa", logout_company_path %></p>
+        <% else %>
+	  <p><%= link_to "Registrar empresa", new_company_path %></p>
+          <p><%= link_to "Actualizar informacion de la empresa", admin_company_path %></p>
       <% end %>
-      </div>
+     <% end %>
+    </div>
+
+    <div class= "index-users">
+      <% if current_company.nil? %>
+         <h3>Usuario</h3>
+         <% if current_user %>
+            <p><%= link_to "Realizar encuesta", surveys_path %></p>
+	    <p><%= link_to "Ver perfil", current_user %></p>
+	    <p><%= link_to "Ver empresa del usuario", company_path(current_user.company)%>
+            <p><%= link_to "Editar Perfil", edit_user_path(current_user) %></p> 
+            <p><%= link_to "Terminar sesion", logout_path %></p> 	  
+         <% else %>
+            <p><%= link_to "Iniciar sesion", login_path, :class => "modalInput", :rel => "#prompt" %></p> 
+         <% end %>
+      <% end %>
+    </div>
+  </div>  
+  <div id="content">
       <%- flash.each do |name, msg| -%>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <%- end -%>

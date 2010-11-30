@@ -33,7 +33,7 @@ a { color: #0000FF;}
 }
 
 #flash_error {
-  background-color: #FCC;
+  background-color: rgba(192,192,192,0.4);
   border: solid 1px #C66;
 }
 
@@ -75,17 +75,6 @@ a { color: #0000FF;}
   list-style: disc;
 }
 
-#user_nav { 
-    float: right;
-    font-size: 14px;
-}
-#user_nav a {
-    color:#333333;
-    text-decoration:none;
-}
-#user_nav a:hover {
-    text-decoration:underline
-}
 div.clear {
     clear:both;
 }
@@ -105,38 +94,30 @@ div.auxiliar {
 }
 
 /*INDEX*/
-div#introduction{
-    float:right;
-    width:70%;
-    margin-top:10px;
-}
 div#index{
+    margin-top:20px;
+    margin-left:20px;
     background-color: rgba(192,192,192,0.4);
     height:250px;
-    margin-bottom:20px;
+    width:250px;
     float:left;
     padding:10px;
 }
-div#index div{
-    padding:10px;
-}
 
-div#aux {
-    margin-left:45%;
-}
 
 /*CONTENT*/
 div#content{
-    margin-left:20px;
-    width:90%;
-    min-height:250px;
+    margin-left:10px;
+    width:75%;
+    min-height:400px;
+    float: right;
 }
-div#content  a {
+div#index  a {
     color:#000 !important;
     font-size:15px; 
     text-decoration:none;
 } 
-div#content a:hover {
+div#index a:hover {
     text-decoration:underline;
 }
 
@@ -159,7 +140,7 @@ div.center a:hover {
 }
 div.center{
     margin-top:40px;
-    margin-left:30%;
+    margin-left:20%;
     text-align:left;
     width:500px;
     height:250px;
@@ -181,7 +162,7 @@ div.company{
 
 /*LOGINS*/
 div.login{
-    margin-left:40%;
+    margin-left:20%;
 }
 div.loging h1{
     text-align:center:
@@ -209,3 +190,4 @@ div.result h1 {
     padding:50px;
     text-align:center;
 }
+

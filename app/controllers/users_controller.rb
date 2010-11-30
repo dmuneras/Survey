@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     @user = @company.users.build(params[:user])
     @user.nit_company = @company.nit
     if @user.save
-      flash[:notice] = "Successfully create user."
+      flash[:notice] = "Se ha creado un nuevo usuario #{@user.full_name}."
       redirect_to company_path(@company)
     else
       render :action => 'new'
@@ -32,7 +32,8 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
-      flash[:notice] = "Successfully updated user."
+      flash[:notice] = "Los datos de #{@user.full_name} han sido actualizados."
+      redirect_to @user
     else
       render :action => 'edit'
     end

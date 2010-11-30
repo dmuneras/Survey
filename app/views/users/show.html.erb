@@ -17,9 +17,3 @@
   <%=h @user.email %>
 </p>
 
-<p>
-  <%= link_to "Editar", edit_user_path(@user) %> |
-  <%= link_to "Eliminar",@user , :confirm => 'Are you sure?', :method => :delete %>|
-  <%= link_to "Empresa del usuario", @user.company%>
-
-</p>
