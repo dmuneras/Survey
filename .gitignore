@@ -1,6 +1,4 @@
-<<<<<<< HEAD:.gitignore
 *.log
-=======
 *~
 *ldap_user.rb
 todo
@@ -15,4 +13,4 @@ log/*.log
 db/*.sqlite3
 log/*
 
->>>>>>> nav:.gitignore
+
