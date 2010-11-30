@@ -46,4 +46,14 @@ class ChartController < ApplicationController
     end
   end
 
+  def to_hash(str)
+    str = str.split(';')
+    elem_hash = {}
+    for elem in str do
+      tup = elem.split(',')
+      elem_hash[tup[0].to_i] = tup[1].to_f
+    end
+    elem_hash
+  end
+
 end

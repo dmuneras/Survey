@@ -16,8 +16,12 @@ class SurveysController < ApplicationController
       @question = Question.find_by_number(1)
     end
     if @question
-      @subquestions = @question.subquestions
-      @scale = @question.question_scale
+      if @question.category == 'nested'
+        @subquestions = @question.subquestions
+      end
+      if @question.category == 'scale'
+        @scale = @question.question_scale
+      end
       @answers = @question.answers.sort{|a,b| a.number <=> b.number}
     else
       redirect_to new_survey_record_path
@@ -25,18 +29,18 @@ class SurveysController < ApplicationController
   end
   
   def assign_answer_to(question)
-    # session[:answers][question.number-1] = params[:answer]
-    if params[:answer].class == Array
-      session[:answers][question.number-1] = params[:answer].join(',')
-    elsif params[:answer].class == HashWithIndifferentAccess
-      ans = []
-      params[:answer].each do |a, b|
-        ans << b
-      end
-      session[:answers][question.number-1] = ans.join(',')
-    else
-      session[:answers][question.number-1] = params[:answer]
-    end
+    session[:answers][question.number-1] = params[:answer]
+    # if params[:answer].class == Array
+    #   session[:answers][question.number-1] = params[:answer].join(',')
+    # elsif params[:answer].class == HashWithIndifferentAccess
+    #   ans = []
+    #   params[:answer].each do |a, b|
+    #     ans << b
+    #   end
+    #   session[:answers][question.number-1] = ans.join(',')
+    # else
+    #   session[:answers][question.number-1] = params[:answer]
+    # end
   end
 
   def next_question_of(question)

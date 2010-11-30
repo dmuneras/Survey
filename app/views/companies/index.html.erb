@@ -8,7 +8,10 @@
        <p><strong>Correo electronico:</strong>
 	 <%= company.email%>
       </p>
-      <% if can? :read, company %>
+       <p><strong>Promedios:</strong>
+	 <%= company.averages %>
+       </p>
+       <% if can? :read, company %>
         <p><%= link_to "Información de la Empresa", company %></p>
       <% end %>
     </div>
