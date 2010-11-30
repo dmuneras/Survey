@@ -125,7 +125,14 @@ div#content{
     min-height:400px;
     float: right;
 }
-
+div#content a {
+    color:#333333 !important;
+    font-size:15px; 
+    text-decoration:none;
+}
+div#content a:hover {
+    text-decoration:underline;
+}
 /*CENTER*/
 
 div.users_list {

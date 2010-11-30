@@ -17,9 +17,9 @@ class UsersController < ApplicationController
     @company = Company.find(params[:company_id])
     @user = @company.users.build(params[:user])
     @user.nit_company = @company.nit
-    if @user.save
-      flash[:notice] = "Se ha creado un nuevo usuario #{@user.full_name}."
-      redirect_to company_path(@company)
+    if @user.save_without_session_maintenance
+      flash[:notice] = "Se ha creado un nuevo usuario llamado #{@user.full_name}."
+      redirect_to root_url 
     else
       render :action => 'new'
     end
@@ -43,7 +43,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     flash[:notice] = "Successfully destroyed user."
-    redirect_to root_url
+    redirect_to :back
   end
 
   private
