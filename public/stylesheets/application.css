@@ -94,14 +94,27 @@ div.auxiliar {
 }
 
 /*INDEX*/
+
+div#all-index{
+
+}
 div#index{
     margin-top:20px;
     margin-left:20px;
     background-color: rgba(192,192,192,0.4);
-    height:250px;
-    width:250px;
+    -moz-border-radius: 15px;
+    height:240px;
+    width:240px;
     float:left;
     padding:10px;
+}
+div#index  a {
+    color:#000 !important;
+    font-size:15px; 
+    text-decoration:none;
+} 
+div#index a:hover {
+    text-decoration:underline;
 }
 
 
@@ -111,14 +124,6 @@ div#content{
     width:75%;
     min-height:400px;
     float: right;
-}
-div#index  a {
-    color:#000 !important;
-    font-size:15px; 
-    text-decoration:none;
-} 
-div#index a:hover {
-    text-decoration:underline;
 }
 
 /*CENTER*/

@@ -1,7 +1,14 @@
-<<<<<<< HEAD
-*.log
+*~
+*ldap_user.rb
+todo
+*.BACKUP*
+*.BASE*
+*.LOCAL*
+*.REMOTE*
+log/*.log
+*.sqlite3
+*.orig
+*#
+db/*.sqlite3
+log/*
 
-=======
-*.log
-
->>>>>>> company
