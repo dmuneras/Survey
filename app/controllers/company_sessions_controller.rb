@@ -9,7 +9,7 @@ class CompanySessionsController < ApplicationController
        @current_company = Company.find_by_login(@company_session.login)
        session[:current_company] = @current_company.id 
        flash[:notice] = "Has ingresado a editar la compañia, si desea llenar la encuesta debe salir de la compañia"
-       redirect_to root_url
+       redirect_to @current_company
     else
       render :action => 'new'
     end

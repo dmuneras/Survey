@@ -6,7 +6,7 @@ class UserSessionsController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
-      @user = User.find_by_username(@user_session.username) 
+      @user = User.find_by_username(@user_session.username)
       flash[:notice] = "Has ingresado exitosamente."
       redirect_to @user
     else

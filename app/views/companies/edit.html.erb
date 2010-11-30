@@ -3,8 +3,6 @@
 <div class= "form">
 <%= render :partial => 'edit_form' %>
 <p>
-  <%= link_to "Mostrar", @company %> |
-  <%= link_to "Volver a la lista de empresas", companies_path %>
 </p>
 </div>
 
@@ -14,7 +12,8 @@
 <% end %>
 <% for user in @company.users do %>
     <% unless user.nil? %>
-        <%= link_to user.name, edit_user_path(user) %>
+        <p><%= link_to user.name, edit_user_path(user) %> |
+	<%= link_to "Eliminar",user,:confirm => 'Esta seguro?', :method => :delete%></p>
     <% end %>
 <% end %>
 <p><%= link_to " Nuevo usuario", new_company_user_path(@company) %></p>
