@@ -1,4 +1,4 @@
-# -*- coding: undecided -*-
+# -*- coding: utf-8 -*-
 class Company < ActiveRecord::Base
   acts_as_authentic  
   has_many :users , :dependent => :destroy
@@ -13,6 +13,7 @@ class Company < ActiveRecord::Base
     total_users = 0
     for user in self.users do
       latest_survey = user.survey_records.last
+      next unless latest_survey
       user_avgs = latest_survey.averages.split(';')
       user_avgs.each do |avg|
         tup = avg.split(',')
