@@ -1,59 +1,34 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :company_sessions
+
+  #-> Definicion de las rutas del proyecto. POSDATA: todo esta dentro del path_names porque deseamos que las rutas fueran
+      #en español.
+
+  map.with_options :path_names => {:new => 'nuevo', :show => 'mostrar', :edit => 'editar',:create => 'crear'} do |r|
+
+    #definicion de la ruta anidad /empresa/usuarios
+    r.resources :companies,:as=> 'empresas' do |company|
+      company.resources :users, :as => 'usuarios', 
+        :path_names => {:new => 'nuevo', :edit => 'editar', :create => 'crear'}, :shallow => true 
+    end
+    r.resources :surveys,    :as => 'encuestas'
+    r.resources :surveys,    :member => {:next_question => :get}
+    r.resources :answers,    :as => 'respuestas' 
+    r.resources :questions,  :as => 'preguntas'
+    r.resources :subsectors, :as => 'subsectores'
+    r.resources :chart,      :as => 'resultados'
+  end
   map.resources :user_sessions
-  map.resources :surveys
-  map.resources :answers 
-  map.resources :questions
+  map.resources :company_sessions
   map.resources :survey_records
-  map.resources :company_roles
-  map.login "login", :controller => "user_sessions", :action => "new"
+  map.login  "login",  :controller => "user_sessions", :action => "new"
   map.logout "logout", :controller => "user_sessions", :action => "destroy"
-  map.admin_company "admin_company", :controller => "company_sessions", :action => "new"
+  map.admin_company "admin_company",   :controller => "company_sessions", :action => "new"
   map.logout_company "logout_company", :controller => "company_sessions", :action => "destroy"
-  map.resources :companies ,:has_many => :users, :shallow => true
-  map.resources :subsectors
-  map.resources :surveys, :member => {:next_question => :get}
-  map.resources :chart
   
-  # The priority is based upon order of creation: first created -> highest priority.
-
-  # Sample of regular route:
-  #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'
-  # Keep in mind you can assign values other than :controller and :action
-
-  # Sample of named route:
-  #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
-  # This route can be invoked with purchase_url(:id => product.id)
-
-  # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   map.resources :products
-
-  # Sample resource route with options:
-  #   map.resources :products, :member => { :short => :get, :toggle => :post }, :collection => { :sold => :get }
-
-  # Sample resource route with sub-resources:
-  #   map.resources :products, :has_many => [ :comments, :sales ], :has_one => :seller
-  
-  # Sample resource route with more complex sub-resources
-  #   map.resources :products do |products|
-  #     products.resources :comments
-  #     products.resources :sales, :collection => { :recent => :get }
-  #   end
-
-  # Sample resource route within a namespace:
-  #   map.namespace :admin do |admin|
-  #     # Directs /admin/products/* to Admin::ProductsController (app/controllers/admin/products_controller.rb)
-  #     admin.resources :products
-  #   end
-
-  # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
+  #--> PAGINA INICIAL
   map.root :controller => 'base', :action => 'index'
 
-  # See how all your routes lay out with "rake routes"
-
-  # Install the default routes as the lowest priority.
-  # Note: These default routes make all actions in every controller accessible via GET requests. You should
-  # consider removing or commenting them out if you're using named routes and resources.
+  #-> Forma por defecto como rails conecta los urls.
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 end
