@@ -14,7 +14,7 @@ class AnswersController < ApplicationController
   def create
      @answer = Answer.new(params[:answer])
     if @answer.save
-      flash[:notice] = "Successfully created answer."
+      flash[:notice] = "Se ha creado una nueva respuesta."
       redirect_to @answer
     else
       render :action => 'new'
@@ -28,7 +28,7 @@ class AnswersController < ApplicationController
   def update
     @answer = Answer.find(params[:id])
     if @answer.update_attributes(params[:answer])
-      flash[:notice] = "Successfully updated answer."
+      flash[:notice] = "Se ha actualizado la respuesta."
       redirect_to @answer
     else
       render :action => 'edit'
@@ -38,7 +38,7 @@ class AnswersController < ApplicationController
   def destroy
     @answer = Answer.find(params[:id])
     @answer.destroy
-    flash[:notice] = "Successfully destroyed answer."
+    flash[:notice] = "Se ha eliminado la respuesta."
     redirect_to answers_url
   end
 end

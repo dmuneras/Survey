@@ -89,22 +89,35 @@ div.form{
     float:left;
     border-right:1px solid #A3A3A3;
 }
-div.auxiliar {
+
+div.auxiliar{
     width:650px;
+}
+div#logohdw img{
+    width:200px;
+    float:left;
 }
 
 /*INDEX*/
 
 div#all-index{
-    background-color:#000;
+    margin-top:12px;
+    margin-left:12px;
+    background-color:rgba(255,200,0,0.6);
+    -moz-border-radius: 15px;
+    width:210px;
+    height:210px;
+    float:left;
+    z-index:999;
 }
 div#index{
-    margin-top:20px;
-    margin-left:20px;
-    background-color: rgba(192,192,192,0.4);
-    -moz-border-radius: 15px;
-    height:240px;
-    width:240px;
+    margin-top:15px;
+    margin-left:15px;
+    background-color: rgba(192,192,192,0.9);
+    -moz-border-radius: 30px 80px 30px 80px;
+    text-align:center;
+    height:220px;
+    width:200px;
     float:left;
     padding:10px;
 }
@@ -120,7 +133,7 @@ div#index a:hover {
 
 /*CONTENT*/
 div#content{
-    margin-left:10px;
+    padding:15px;
     width:75%;
     min-height:400px;
     float: right;
