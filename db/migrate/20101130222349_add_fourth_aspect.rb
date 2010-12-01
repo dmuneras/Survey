@@ -227,6 +227,115 @@ class AddFourthAspect < ActiveRecord::Migration
       i += 1
     end
     
+    # Pregunta 17
+    Question.create(:number => 17,
+                    :aspect_id => Aspect.last.id,
+                    :description => %{A continuación se muestran 2 situaciones extremas en relación a la <strong>tecnología; seleccione en la escala</strong> el escenario que corresponda con la situación actual de su empresa},
+                    :category => 'scale')
+
+    QuestionScale.create(:question_id => Question.last.id,
+                         :lower => %{Los productos utilizan tecnología convencional, similar a la de la competencia},
+                         :higher => %{La tecnología utilizada hace posible proponer productos nuevos y diferenciados al mercado})
+
+    descs = [3,2,1,0,1,2,3]
+    vals = [1,2,2,3,4,4,5]
+
+    i = 1
+    for d in descs do
+      Answer.create(:number => i,
+                    :description => d.to_s,
+                    :value => vals[i-1],
+                    :question_id => Question.last.id)
+      i += 1
+    end
+
+    # Pregunta 18
+    Question.create(:number => 18,
+                    :aspect_id => Aspect.last.id,
+                    :description => %{A continuación se muestran 2 situaciones extremas con relación a la <strong>calidad técnica (confiabilidad, durabilidad, etc)</strong>; seleccione en la escala el escenario que corresponda con la situación actual de su empresa},
+                    :category => 'scale')
+
+    QuestionScale.create(:question_id => Question.last.id,
+                         :lower => %{La ingeniería involucrada en los productos es un diferenciador clave con respecto a la competencia},
+                         :higher => %{La ingeniería involucrada es similar a la competencia})
+
+    descs = [3,2,1,0,1,2,3]
+    vals = [5,4,4,3,2,2,1]
+
+    i = 1
+    for d in descs do
+      Answer.create(:number => i,
+                    :description => d,
+                    :value => vals[i-1],
+                    :question_id => Question.last.id)
+      i += 1
+    end
+
+    # Pregunta 19
+    Question.create(:number => 19,
+                    :aspect_id => Aspect.last.id,
+                    :description => %{A continuación se presentan 2 situaciones extremas con relación a la <strong>estética (formas, colores y texturas)</strong>; seleccione en la escala el escenario que corresponda con la situación actual de su empresa},
+                    :category => 'scale')
+
+    QuestionScale.create(:question_id => Question.last.id,
+                         :lower => %{La estética de los productos es similar a la de la competencia},
+                         :higher => %{Los aspectos estéticos de los productos son novedosos y constituyen un diferenciador clave frente a la competencia})
+
+    descs = [3,2,1,0,1,2,3]
+    vals = [1,2,2,3,4,4,5]
+
+    i = 1
+    for d in descs do
+      Answer.create(:number => i,
+                    :description => d,
+                    :question_id => Question.last.id,
+                    :value => vals[i-1])
+      i += 1
+    end
+
+    # Pregunta 20
+    Question.create(:number => 20,
+                    :aspect_id => Aspect.last.id,
+                    :description => %{A continuación se muestran 2 situaciones extremas con relación a <strong>usabilidad (relación usuario.producto)</strong>; seleccione en la escala el escenario que corresponda con la situación actual de su empresa},
+                    :category => 'scale')
+
+    QuestionScale.create(:question_id => Question.last.id,
+                         :lower => %{La interfaz o manera como los productos comunican la manera en que pueden ser utilizados constituyen un diferenciador clave frente a la competencia},
+                         :higher => %{La interfaz o manera como los productos comunican la manera en que pueden ser utilizados es similar al de la competencia})
+
+    descs = [3,2,1,0,1,2,3]
+    vals = [5,4,4,3,2,2,1]
+
+    i = 1
+    for d in descs do
+      Answer.create(:number => i,
+                    :description => d,
+                    :question_id => Question.last.id,
+                    :value => vals[i-1])
+      i += 1
+    end
+
+    # Pregunta 21
+    Question.create(:number => 21,
+                    :aspect_id => Aspect.last.id,
+                    :description => %{A continuación se muestran 2 situaciones extremas con relación a los <strong>materiales</strong>; seleccione en la escala el escenario que corresponda con la situación actual de su empresa},
+                    :category => 'scale')
+
+    QuestionScale.create(:question_id => Question.last.id,
+                         :lower => %{Los productos emplean materiales similares a los de la competencia},
+                         :higher => %{Los productos emplean materiales novedosos que constituyen un aspecto diferenciador frente a los productos de la competencia})
+
+    descs = [3,2,1,0,1,2,3]
+    vals = [1,2,2,3,4,4,5]
+
+    i = 1
+    for d in descs do
+      Answer.create(:number => i,
+                    :description => d,
+                    :value => vals[i-1],
+                    :question_id => Question.last.id)
+      i += 1
+    end
       
   end
 

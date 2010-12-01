@@ -9,7 +9,11 @@
   <tr>
     <th><%= @scale.lower %></th>
     <% for answer in @answers do %>
+    <% if answer.description == '0' %>
+    <td><%= radio_button_tag 'answer', answer.id, {:checked => true} %></td>
+    <% else %>
     <td><%= radio_button_tag 'answer', answer.id %></td>
+    <% end %>
     <% end %>
     <th><%= @scale.higher %></th>
   </tr>
