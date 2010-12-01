@@ -22,5 +22,8 @@
     <%= f.label :password_confirmation, "Ingrese de nuevo su contraseña" %><br />
     <%= f.password_field :password_confirmation %>
   </p>
+  <p>Subsector: 
+    <%= f.select (:subsector_id, @subsector_choice) %>
+  </p>
   <p><%= f.submit "Registrar" %></p>
 <% end %>

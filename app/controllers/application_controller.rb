@@ -4,6 +4,7 @@
 
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
+  include ApplicationHelper
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
   # Scrub sensitive parameters from your log
@@ -33,7 +34,7 @@ class ApplicationController < ActionController::Base
   end
 
   def is_logged?
-    unless current_user
+    unless current_user or current_company
       flash[:notice] = "No se ha logueado aún"
       redirect_to login_path
     end

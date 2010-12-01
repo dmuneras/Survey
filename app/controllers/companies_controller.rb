@@ -9,6 +9,11 @@ class CompaniesController < ApplicationController
   
   def new
     @company = Company.new
+    subsectors = Subsector.all
+    @subsector_choice = {}
+    for ss in subsectors do
+      @subsector_choice[ss.name] = ss.id
+    end
   end
   
   def create
