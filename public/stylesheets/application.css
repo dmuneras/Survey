@@ -106,7 +106,7 @@ div#all-index{
     background-color:rgba(255,200,0,0.6);
     -moz-border-radius: 15px;
     width:210px;
-    height:210px;
+    height:240px;
     float:left;
     z-index:999;
 }
@@ -116,7 +116,7 @@ div#index{
     background-color: rgba(192,192,192,0.9);
     -moz-border-radius: 30px 80px 30px 80px;
     text-align:center;
-    height:220px;
+    height:250px;
     width:200px;
     float:left;
     padding:10px;
@@ -186,11 +186,13 @@ div.company{
 }
 
 /*LOGINS*/
-div.login{
-    margin-left:20%;
-}
-div.loging h1{
-    text-align:center:
+div.login-content{
+     background-color: rgba(192,192,192,0.9);
+     -moz-border-radius: 15px;
+     width:400px;
+     height:300px;
+     padding:20px;
+     
 }
 /* QUESTION */
 div.question-description{
@@ -208,4 +210,5 @@ div.answer{
 div.result h1 { 
     text-align:center;
 }
+
 

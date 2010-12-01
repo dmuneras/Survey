@@ -1,7 +1,8 @@
-<div class= "login">
-  <h1>Ingreso Usuario</h1>
-  <% form_for @user_session do |f| %>
-  <%= f.error_messages %>
+<div class= "contentWrap" id= "login">
+  <div class ="login-content">
+    <h1>Ingreso Usuario</h1>
+    <% form_for @user_session do |f| %>
+    <%= f.error_messages %>
     <p>
       <%= f.label :username, "Ingrese nombre de usuario" %><br />
       <%= f.text_field :username %>
@@ -10,8 +11,10 @@
       <%= f.label :password, "Ingrese contraseña" %><br />
       <%= f.password_field :password %>
     </p>
-    <p><%= f.submit "Ingresar" %></p>
+    <p><%= f.submit "Ingresar" %> </p>
     <% end %>
+     <%= button_to "Cancelar", root_url %>
+  </div>
 </div>
 
 

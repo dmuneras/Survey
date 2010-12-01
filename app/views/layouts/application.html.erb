@@ -4,55 +4,48 @@
   <head>
     <title><%= h(yield(:title) || "Untitled") %></title>
     <%= stylesheet_link_tag 'application', 'eafit' %>
-    <%= javascript_include_tag "jquery.js", "application.js", "swfobject.js","jquery.tools.min.js" %>
+    <%= javascript_include_tag :all %>
     <%= yield(:head) %>
   </head>
+
   <body>
-  <div id="out-container">
+    <div id="out-container">
+      <!-- HEADER EAFIT -->
+      <div id="header_bg">
+	<div id="menu-subportales-bg">
+          <div id="menu-subportales">
 
-
-
-    <!-- HEADER EAFIT -->
-    <div id="header_bg">
-      <div id="menu-subportales-bg">
-        <div id="menu-subportales">
-
-          <ul class="botones-subportales">
-            <li><a href="http://www.eafit.edu.co/investigacion">Investigaci&oacute;n</a></li>
-            <li class="linea-botones-subportales">|</li>
-            <li><a href="http://www.eafit.edu.co/cice">Cice</a></li>
-            <li class="linea-botones-subportales">|</li>
-            <li><a href="http://www.eafit.edu.co/cec">Educaci&oacute;n Continua</a></li>
-            <li class="linea-botones-subportales">|</li>
-            <li><a href="http://www.eafit.edu.co/idiomas">Idiomas</a></li>
-            <li class="linea-botones-subportales">|</li>
-            <li><a href="http://www.eafit.edu.co/cultura">Cultura</a></li>
-            <li class="linea-botones-subportales">|</li>
-            <li><a href="http://www.eafit.edu.co/biblioteca">Biblioteca</a></li>
-            <li class="linea-botones-subportales">|</li>
-            <li><a href="http://www.eafit.edu.co/international">International</a></li>
-          </ul>
-
-        </div>
-      </div>
-       <div id="header">
-	<div id= "logohdw"><%= image_tag 'eafit/logoHDW.png'%> </div>
-        <div id="logo"></div>
-     </div>
-      </div>
+            <ul class="botones-subportales">
+              <li><a href="http://www.eafit.edu.co/investigacion">Investigaci&oacute;n</a></li>
+              <li class="linea-botones-subportales">|</li>
+              <li><a href="http://www.eafit.edu.co/cice">Cice</a></li>
+              <li class="linea-botones-subportales">|</li>
+              <li><a href="http://www.eafit.edu.co/cec">Educaci&oacute;n Continua</a></li>
+              <li class="linea-botones-subportales">|</li>
+              <li><a href="http://www.eafit.edu.co/idiomas">Idiomas</a></li>
+              <li class="linea-botones-subportales">|</li>
+              <li><a href="http://www.eafit.edu.co/cultura">Cultura</a></li>
+              <li class="linea-botones-subportales">|</li>
+              <li><a href="http://www.eafit.edu.co/biblioteca">Biblioteca</a></li>
+              <li class="linea-botones-subportales">|</li>
+              <li><a href="http://www.eafit.edu.co/international">International</a></li>
+            </ul>
+          </div>
+	</div>
+	<div id="header">
+	  <div id= "logohdw"><%= image_tag 'eafit/logoHDW.png'%> </div>
+          <div id="logo"></div>
+	</div>	
     </div>
-
-  <div class= "clear"></div>
-  <%= render :partial => 'layouts/index' %>
+  </div>
+  <div id= "user_nav"> <%= render :partial => 'layouts/index' %></div>
   <div id="content">
       <%- flash.each do |name, msg| -%>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <%- end -%>
-
       <%- if show_title? -%>
         <h1><%=h yield(:title) %></h1>
       <%- end -%>
-
       <%= yield %>
     </div>
 
@@ -90,23 +83,8 @@
               </ul>
            </div>
        </div>
-
-        <!--<div class="lista-footer">
-          <ul class="botones-footer">
-
-            <li class="amarillo">Contáctenos</li>
-            <li><a href="/institucional/contacto/Paginas/contacto-eafit.aspx" target="_blank">Contacto</a></li>
-            <li><a href="http://www2.eafit.edu.co/bisu" target="_blank">Sugerencias</a></li>
-            <li><a href="http://www.eafit.edu.co/registro" target="_blank">Suscríbase</a></li>
-            <li><a href="/servicios-en-linea/Paginas/directorio-redes-sociales.aspx" target="_blank">Directorio de redes sociales</a></li>
-            <li><a href="http://www.elempleo.com/sitios_empresariales/eafit/index.asp" target="_blank">Trabaje con nosotros</a><a href="#"></a></li>
-          </ul>
-        </div> -->
       </div>
       <div id="linea-footer"></div>
     </div>
-
-    <!-- FIN FOOTER EAFIT -->
-
   </body>
 </html>
