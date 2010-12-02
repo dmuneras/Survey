@@ -5,4 +5,12 @@
   </div>
 </div>
 
+
+<ol>
+  <% for aspect in @aspects do %>
+  <li><%= aspect.name %></li>
+  <% end %>
+</ol>
+
+<br />
 <%= link_to "Volver", :action => :index %>

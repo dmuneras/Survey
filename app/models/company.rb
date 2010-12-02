@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 class Company < ActiveRecord::Base
+  
+  include ApplicationHelper
+  
   acts_as_authentic  
   has_many :users , :dependent => :destroy
   belongs_to :subsector
@@ -7,8 +10,9 @@ class Company < ActiveRecord::Base
 
   # TODO no modifica cuando no está logueado CORREGIR
   def calculate_company_averages
-    # @company_session = CompanySession.new(self)
-    # @company_session.save
+    company_session = CompanySession.new(self)
+    company_session.save
+    
     company_avgs = {}
     total_users = 0
     for user in self.users do
@@ -22,26 +26,23 @@ class Company < ActiveRecord::Base
       end
       total_users += 1
     end
-    company_avgs = company_avgs.each {|a,b| company_avgs[a] = b / total_users}
+    company_avgs = company_avgs.each {|a,b| company_avgs[a] = b / total_users.to_f}
     company_avgs = hash_to_string company_avgs
     if update_attributes(:averages => company_avgs)
       logger.info("Success!")
     else
       logger.info("Fail :'(")
-    end
-    # @company_session.destroy
+    end    
+    company_session.destroy
   end
   private
   def default_values
-    self.averages = [0,0,0,0,0].join(';')
-  end
-  
-  def hash_to_string(h)
-    str = []
-    h.each do |a,b|
-      str << "#{a},#{b}"
+    avgs = {}
+    aspects = Aspect.all
+    for aspect in aspects do
+      avgs[aspect.id] = 0
     end
-    str = str.join(';')
+    self.averages = hash_to_string avgs
   end
-  
+    
 end
