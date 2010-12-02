@@ -19,7 +19,7 @@ class SurveyRecordsController < ApplicationController
         ans = Answer.find(answer.first)
         aspect = ans.question.aspect_id
         aspect_avg[aspect] ||= 0
-        aspect_avg[aspect] += answer.size * 100 / Answer.count(:conditions => {:question_id => ans.question_id})
+        aspect_avg[aspect] += answer.size * 5 / Answer.count(:conditions => {:question_id => ans.question_id})
         ans_to_save << answer.join(',')
       elsif answer.class == HashWithIndifferentAccess
         aspect = Answer.find(answer.first.second).question.aspect_id
@@ -52,12 +52,12 @@ class SurveyRecordsController < ApplicationController
     avg_to_save = avg_to_save.join(';')
     ans_to_save = ans_to_save.join(';')
 
-    @survey_record = SurveyRecord.create(:user_id => current_user,
+    @survey_record = SurveyRecord.create(:user_id => current_user.id,
                                          :answers => ans_to_save,
                                          :averages => avg_to_save,
                                          :comment => params[:comment])
     
-    Company.find(User.find(current_user).company_id).calculate_company_averages
+    current_user.company.calculate_company_averages
     redirect_to :action => :index
   end
   

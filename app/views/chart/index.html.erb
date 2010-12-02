@@ -1,14 +1,7 @@
 <% title 'Gráficos' %>
 <br />
-<h2>Pulse para mostrar el gráfico comparativo con la mejor empresa del subsector</h2>
-<%= button_to "Ver", { :action => :show, :id => 'best_subsector'}, { :method => :get } %>
-
-<h2>Pulse para mostrar el gráfico comparativo con la peor empresa del subsector</h2>
-<%= button_to "Ver", { :action => :show, :id => 'worst_subsector' }, { :method => :get } %>
-
-
-<h2>Pulse para mostrar el gráfico comparativo con la peor empresa del sector</h2>
-<%= button_to "Ver", { :action => :show, :id => 'best_sector' }, { :method => :get } %>
-
-<h2>Pulse para mostrar el gráfico comparativo con la peor empresa del sector</h2>
-<%= button_to "Ver", { :action => :show, :id => 'best_sector' }, { :method => :get } %>
+<% if current_company %>
+<%= render :partial => 'company' %>
+<% elsif current_user %>
+<%= render :partial => 'user' %>
+<% end %>
