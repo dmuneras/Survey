@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
 
-  #-> Definicion de las rutas del proyecto. POSDATA: todo esta dentro del path_names porque deseamos que las rutas fueran
-      #en español.
+ # -> Definicion de las rutas del proyecto. POSDATA: todo esta dentro del path_names porque deseamos que las rutas fueran
+ #     en español.
 
   map.with_options :path_names => {:new => 'nuevo', :show => 'mostrar', :edit => 'editar',:create => 'crear'} do |r|
 
