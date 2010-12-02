@@ -1,18 +1,25 @@
-<div class = "login">
-  <h1>Ingreso actualización de la compañia</h1>
+<div class= "contentWrap" id= "login">
+ <div class= "all-login">
+  <div class= "login-content">
+    <h1>Ingreso compañia</h1>
 
-  <% form_for @company_session do |f| %>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label :login,"Ingrese login de la empresa" %><br />
-    <%= f.text_field :login %>
-  </p>
-  <p>
-    <%= f.label :password, "Ingrese contraseña de la empresa" %><br />
-    <%= f.password_field :password %>
-  </p>
-  <p><%= f.submit "Ingresar"%></p>
-  <% end %>
+    <% form_for @company_session do |f| %>
+    <%= f.error_messages %>
+    <p>
+      <%= f.label :login,"Ingrese login de la empresa" %><br />
+      <%= f.text_field :login %>
+    </p>
+    <p>
+      <%= f.label :password, "Ingrese contraseña de la empresa" %><br />
+      <%= f.password_field :password %>
+    </p>
+    <div class= "options">
+      <div class= "submit"><%= f.submit "Ingresar"%></div>
+      <% end %>
+      <div class="cancel"><%= button_to "Cancelar", root_url %></div>
+    </div>
+  </div>
+ </div>
 </div>
 
 

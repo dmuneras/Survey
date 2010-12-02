@@ -1,25 +1,35 @@
-// $(".modalInput").overlay({
-// 	mask: {
-// 		color: '#ebecff',
-// 		loadSpeed: 200,
-// 		opacity: 0.9
-// 	},
 
-// 	closeOnClick: false,
-//         load:true
-// });
 
-// $("#prompt form").submit(function(e) {
+$(document).ready(function(){
+    $("#login").overlay({
+    	top: '10%',
+    	left: '25%',
+    	mask: {
+    	    color: '#000',
+    	    loadSpeed: 200,
+    	    opacity: 0.9
+    	},
+    	closeOnClick: false,
+	closeOnEsc: false,
+    	load: true
+    });
 
-// 	// close the overlay
-// 	triggers.eq(1).overlay().close();
+    // $(".modalDialog").overlay({
+    // 	top:'1%',
+    // 	mask:{
+    //         color:'#000',
+    //         loadSpeed: 200,
+    //         opacity: 0.9
+            
+    // 	},
+    // 	onBeforeLoad: function() {
+    //         var wrap = this.getOverlay().find(".contentWrap");
+    //         wrap.load(this.getTrigger().attr("href"));
+    //         this.getOverlay().appendTo("body");
 
-// 	// get user input
-// 	var input = $("input", this).val();
+    // 	},
+    // });
 
-// 	// do something with the answer
-// 	triggers.eq(1).html(input);
-
-// 	// do not submit the form
-// 	return e.preventDefault();
-// });
+   
+ 
+});
