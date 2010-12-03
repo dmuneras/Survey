@@ -45,6 +45,7 @@ class CompaniesController < ApplicationController
     @company = Company.find(params[:id])
     @company.destroy
     @company.users.destroy
+    session[:current_company] = nil
     flash[:notice] = "Se ha eliminado la empresa."
     redirect_to root_url
   end

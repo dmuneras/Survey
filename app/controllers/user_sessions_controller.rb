@@ -8,7 +8,11 @@ class UserSessionsController < ApplicationController
     if @user_session.save
       @user = User.find_by_username(@user_session.username)
       flash[:notice] = "Has ingresado exitosamente."
-      redirect_to @user
+      if @user.username == 'Administrador'
+        redirect_to companies_path
+      else
+         redirect_to @user
+      end
     else
       render :action => 'new'
     end

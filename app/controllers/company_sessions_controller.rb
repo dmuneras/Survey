@@ -8,8 +8,13 @@ class CompanySessionsController < ApplicationController
     if @company_session.save
        @current_company = Company.find_by_login(@company_session.login)
        session[:current_company] = @current_company.id 
-       flash[:notice] = "Has ingresado a editar la compañia, si desea llenar la encuesta debe salir de la compañia"
-       redirect_to @current_company
+       if @current_company.login == 'eafit'
+         flash[:notice] = "Bienvenido administrador del sitio. eres toda poderosa"
+         redirect_to companies_path
+       else
+         flash[:notice] = "Has ingresado a editar la compañia, si desea llenar la encuesta debe salir de la compañia"
+         redirect_to @current_company
+       end
     else
       render :action => 'new'
     end

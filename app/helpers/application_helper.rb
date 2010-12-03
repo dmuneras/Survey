@@ -1,6 +1,26 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
-  
+
+  def admin_company_user?(user)
+    unless user.nil?
+      if user.company.login == 'eafit'
+        return true
+      else
+        return false
+      end
+    end
+  end
+
+  def admin_company?(company)
+    unless company.nil?
+      if company.login == 'eafit'
+        return true
+      else
+        return false
+      end
+    end
+  end
+
   def current_company
     if session[:current_company]
       Company.find( session[:current_company]) 
@@ -24,5 +44,4 @@ module ApplicationHelper
     end
     return h
   end
-
 end
