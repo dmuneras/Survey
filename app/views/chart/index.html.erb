@@ -1,7 +1,9 @@
 <% title 'Gráficos' %>
 <br />
-<% if current_company %>
-<%= render :partial => 'company' %>
-<% elsif current_user %>
-<%= render :partial => 'user' %>
+<% if @company %>
+<%= render :partial => 'company',
+:locals => {:company => @company} %>
+<% elsif @user %>
+<%= render :partial => 'user',
+:locals => {:user => @user} %>
 <% end %>

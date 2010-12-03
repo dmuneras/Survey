@@ -1,5 +1,10 @@
+<% user = local_assigns[:user]%>
+
 <h2>Pulse para mostrar el gráfico comparativo a través del tiempo</h2>
-<%= button_to "Ver", { :action => :show, :id => 'user_time' }, { :method => :get } %>
+<%= button_to "Ver", {:action => :show, :id => "user_time_#{user.id}"}, {:method => :get} %>
 
 <h2>Pulse para mostrar el gráfico promedio</h2>
-<%= button_to "Ver", { :action => :show, :id => 'user_average' }, { :method => :get } %>
+<%= button_to "Ver", {:action => :show, :id => "user_average_#{user.id}"},{:method => :get}  %>
+
+<h2>Pulse para mostrar la tabla de las últimas respuestas</h2>
+<%= button_to "Ver", survey_record_path(user.survey_records.last), :method => :get %>

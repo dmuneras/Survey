@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class CompanySessionsController < ApplicationController
   def new
     @company_session = CompanySession.new
@@ -6,7 +7,7 @@ class CompanySessionsController < ApplicationController
   def create
     @company_session = CompanySession.new(params[:company_session])
     if @company_session.save
-       @current_company = Company.find_by_login(@company_session.login)
+      @current_company = Company.find_by_login(@company_session.login)
        session[:current_company] = @current_company.id 
        flash[:notice] = "Has ingresado a editar la compañia, si desea llenar la encuesta debe salir de la compañia"
        redirect_to @current_company
@@ -22,4 +23,5 @@ class CompanySessionsController < ApplicationController
     flash[:notice] = "Has terminado la edición de la compañia"
     redirect_to root_url
   end
+  
 end
