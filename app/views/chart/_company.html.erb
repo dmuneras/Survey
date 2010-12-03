@@ -4,11 +4,11 @@
 <%= button_to "Ver", {:action => :show, :id => "company_subbest_#{company.id}"}, {:method => :get} %>
 
 <h2>Pulse para mostrar el gráfico comparativo con la peor empresa del subsector</h2>
-<%= button_to "Ver", :action => :show, :id => "company_subworst_#{company.id}", {:method => :get} %>
+<%= button_to "Ver", {:action => :show, :id => "company_subworst_#{company.id}"}, {:method => :get} %>
 
 
 <h2>Pulse para mostrar el gráfico comparativo con la mejor empresa del sector</h2>
 <%= button_to "Ver", {:action => :show, :id => "company_best_#{company.id}"}, {:method => :get} %>
 
 <h2>Pulse para mostrar el gráfico comparativo con la peor empresa del sector</h2>
-<%= button_to "Ver", {:action => :show, :id => "company_worst_#{company.id}"}, {:method => get} %>
+<%= button_to "Ver", {:action => :show, :id => "company_worst_#{company.id}"}, {:method => :get} %>
