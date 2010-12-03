@@ -8,3 +8,6 @@
 
 <h2>Pulse para mostrar la tabla de las últimas respuestas</h2>
 <%= button_to "Ver", survey_record_path(user.survey_records.last), :method => :get %>
+
+<h2>Pulse para mostrar la tabla comparativa de últimas respuestas</h2>
+<%= button_to "Ver", :controller => :survey_records, :action => :compare, :id => user.id, :method => :get %>
