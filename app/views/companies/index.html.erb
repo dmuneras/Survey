@@ -11,8 +11,9 @@
        <p><strong>Promedios:</strong>
 	 <%= company.averages %>
        </p>
-       <% if can? :read, company %>
+       <% if admin_company?(current_company) or admin_company_user?(current_user) %>
         <p><%= link_to "Información de la Empresa", company %></p>
+        <p><%= link_to "Eliminar",  current_company, :confirm => 'Esta seguro?', :method => :delete %></p>
       <% end %>
     </div>
   <% end %>
