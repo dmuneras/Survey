@@ -9,11 +9,11 @@ class ChartController < ApplicationController
     type = split_params.first
     id = split_params.last
     if type == 'company' 
-      if current_company.id == id
+      if current_company.id == id.to_i
         @company = Company.find(id)
       end
     elsif type == 'user' 
-      if current_user and current_user.id.to_s == id.to_s
+      if current_user and current_user.id == id.to_i
         @user = User.find(id)        
       elsif current_company and User.find(id).company_id == current_company.id        
         @user = User.find(id)
@@ -30,10 +30,10 @@ class ChartController < ApplicationController
     if type == 'company'
       this_company = Company.find(id)
       if chart_type == 'subbest'
-        that_company = find_worst_company_in this_company.subsector.companies
+        that_company = find_best_company_in this_company.subsector.companies
         title = 'Compañía de más alto rendimiento en el subsector'
       elsif chart_type == 'subworst'
-        that_company = find_best_company_in this_company.subsector.companies
+        that_company = find_worst_company_in this_company.subsector.companies
         title = 'Compañía de más bajo rendimiento en el subsector'
       elsif chart_type == 'best'
         that_company = find_best_company_in Company.all
@@ -41,8 +41,11 @@ class ChartController < ApplicationController
       elsif chart_type == 'worst'
         that_company = find_worst_company_in Company.all
         title = 'Compañía de más bajo rendimiento en el sector'
-      end
-      generate_radar_chart title, (string_to_hash this_company.averages), (string_to_hash that_company.averages)
+      end      
+      to_compare = []
+      to_compare << this_company
+      to_compare << that_company
+      generate_radar_chart title, to_compare
     elsif type == 'user'
       this_user = User.find(id)
       if  chart_type == 'time'
@@ -65,24 +68,27 @@ class ChartController < ApplicationController
       wants.json {
         title = Title.new(the_title)
         chart = OpenFlashChart.new(title) do |c|
-          if survey_data.class == Hash
+          colours = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#00FFFF']
+          if survey_data.class == Hash            
             bar_values = []
+            i = 0
             survey_data.each do |asp, avg|
               bar_values << BarValue.new(avg, nil,
+                                         :colour => colours[i],
                                          :tip => Aspect.find(asp).name)
+              i += 1
             end
             c << BarGlass.new(:values => bar_values,
-                              :text => 'Promedios',
                               :on_show => BarOnShow.new('grow-up', 0.5, 0.5))
           else
-            colours = ['#FF0000', '#00FF00', '#0000FF']
             i = 0
             for survey in survey_data do
               bar_values = []
               averages = string_to_hash survey.averages
               averages.each do |asp, avg|
+                tip = "#{Aspect.find(asp).name}<br>#{survey.created_at}"
                 bar_values << BarValue.new(avg, nil,
-                                            :tip => Aspect.find(asp).name)
+                                            :tip => tip)
               end
               c << BarGlass.new(:values => bar_values,
                                 :text => survey.created_at,
@@ -105,7 +111,7 @@ class ChartController < ApplicationController
     end
   end
 
-  def generate_radar_chart(the_title, vals1, vals2)
+  def generate_radar_chart(the_title, companies)
     respond_to do |wants|
       wants.html {
         @graph = open_flash_chart_object(400,400,url_for(:action => 'show', :format => :json))
@@ -114,32 +120,27 @@ class ChartController < ApplicationController
         title = Title.new(the_title)
         chart = OpenFlashChart.new(title) do |c|
           c.set_bg_colour('#FFFFFF')
-          dot_values1 = []
-          dot_values2 = []
-
-          vals1.each do |asp, avg|
-            dot_values1 << DotValue.new(avg, '#000000',
-                                    :tip => Aspect.find(asp).name)
+          colours = ['#FF0000', '#0000FF', '#FFFF00', '#00FF00', '#00FFFF']
+          i = 0
+          for company in companies do
+            values = string_to_hash company.averages
+            dot_values = []
+            values.each do |asp, avg|
+              tip = "#{Aspect.find(asp).name}<br>#{company.name}"
+              dot_values << DotValue.new(avg, colours[i],
+                                         :tip => tip)
+            end
+            c << AreaBase.new(:width => 3,
+                              :colour => colours[i],
+                              :values => dot_values,
+                              :fill_alpha => 0.35,
+                              :dot_style => SolidDot.new(nil, :dot_size => 4),
+                              :text => company.name,
+                              :on_show => LineOnShow.new('explode', 0.5, 0.5),
+                              :loop => true)
+            i += 1
+                              
           end
-
-          vals2.each do |asp, avg|
-            dot_values2 << DotValue.new(avg, '#000000',
-                                    :tip => Aspect.find(asp).name)
-          end
-          c << AreaBase.new(:width => 3,
-                            :colour => '#FFF',
-                            :loop => true,
-                            :values => dot_values1,
-                            :fill_alpha => 0.35,
-                            :dot_style => SolidDot.new(nil, :dot_size => 4),
-                            :on_show => LineOnShow.new('explode', 0.5, 0.5))
-          c << AreaBase.new(:width => 2,
-                            :colour => '#FF0000',
-                            :loop => true,
-                            :values => dot_values2,
-                            :fill_alpha => 0.35,
-                            :dot_style => SolidDot.new(nil, :dot_size => 3),
-                            :on_show => LineOnShow.new('explode', 1.0, 1.0))
           spoke_labels = RadarSpokeLabels.new(Array.new(['1','2','3','4','5']))
           r = RadarAxis.new(5,
                             :colour => '#000',
@@ -153,7 +154,8 @@ class ChartController < ApplicationController
       }
     end
   end
-
+  
+  
   def find_worst_company_in (companies)
     worst = nil
     min = 101

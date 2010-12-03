@@ -7,24 +7,33 @@ class SurveyRecordsController < ApplicationController
     @survey_record = SurveyRecord.find(params[:id])
     @answers = @survey_record.answers.split(';').map{|ans| ans.split(',')}
   end
+
+  def compare
+    @user = User.find(params[:id])
+    @last_surveys = @user.last_surveys 2
+    @last_answers = []
+    @last_answers << @last_surveys.last.answers.split(';').map{|ans| ans.split(',')}
+    @last_answers << @last_surveys.first.answers.split(';').map{|ans| ans.split(',')}
+    @questions = Question.all(:order => 'number')
+  end
   
   def new
     @survey_record = SurveyRecord.new
   end
   
   def create
-    aspect_avg = {}
+    aspect_avg = []
     ans_to_save = []
     for answer in session[:answers] do
       if answer.class == Array
         ans = Answer.find(answer.first)
-        aspect = ans.question.aspect_id
-        aspect_avg[aspect] ||= 0
-        aspect_avg[aspect] += answer.size * 5 / Answer.count(:conditions => {:question_id => ans.question_id})
+        aspect = ans.question.aspect
+        aspect_avg[aspect.number-1] ||= 0
+        aspect_avg[aspect.number-1] += answer.size * 5 / Answer.count(:conditions => {:question_id => ans.question_id})
         ans_to_save << answer.join(',')
       elsif answer.class == HashWithIndifferentAccess
-        aspect = Answer.find(answer.first.second).question.aspect_id
-        aspect_avg[aspect] ||= 0
+        aspect = Answer.find(answer.first.second).question.aspect
+        aspect_avg[aspect.number-1] ||= 0
         ans = []
         sub_avg = 0
         answer.each do |sub,a|
@@ -32,12 +41,12 @@ class SurveyRecordsController < ApplicationController
           ans << a
         end
         sub_avg /= ans.size
-        aspect_avg[aspect] += sub_avg
+        aspect_avg[aspect.number-1] += sub_avg
         ans_to_save << ans.join(',')
       elsif answer
         ans = Answer.find(answer)
-        aspect_avg[ans.question.aspect_id] ||= 0
-        aspect_avg[ans.question.aspect_id] += ans.value
+        aspect_avg[ans.question.aspect.number-1] ||= 0
+        aspect_avg[ans.question.aspect.number-1] += ans.value
         ans_to_save << answer
       else 
         ans_to_save << ''
@@ -45,9 +54,10 @@ class SurveyRecordsController < ApplicationController
     end
 
     avg_to_save = []
-    aspect_avg.each do |asp, avg|
-      avg = avg.to_f / Question.count(:conditions => {:aspect_id => asp}).to_f
-      avg_to_save << "#{asp},#{avg}"
+    1.upto(aspect_avg.size) do |i|
+      aspect_id = Aspect.find_by_number(i).id
+      avg = aspect_avg[i-1] / Question.count(:conditions => {:aspect_id => aspect_id}).to_f
+      avg_to_save << "#{aspect_id},#{avg}"
     end
     
     avg_to_save = avg_to_save.join(';')
@@ -59,6 +69,7 @@ class SurveyRecordsController < ApplicationController
                                       :comment => params[:comment])
     if @survey_record. save
       current_user.company.calculate_company_averages
+      session[:answers] = []
     else
       flash[:notice] = 'Error al almacenar los resultados'      
     end    

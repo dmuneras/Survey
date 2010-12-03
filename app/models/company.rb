@@ -35,4 +35,40 @@ class Company < ActiveRecord::Base
   end
   
   
+  def self.find_worst_company_in (companies)
+    worst = nil
+    min = 101
+    for company in companies do
+      averages = string_to_hash company.averages
+      total_avg = 0
+      averages.each do |asp, avg|
+        total_avg += avg
+      end
+      total_avg /= averages.size
+      if total_avg < min
+        min = total_avg
+        worst = company
+      end
+    end
+    return worst
+  end
+
+  def self.find_best_company_in (companies)
+    best = nil
+    max = -1
+    for company in companies do
+      averages = string_to_hash company.averages
+      total_avg = 0
+      averages.each do |asp, avg|
+        total_avg += avg
+      end
+      total_avg /= averages.size
+      if total_avg > max
+        max = total_avg
+        best = company
+      end
+    end
+    return best
+  end
+ 
 end
