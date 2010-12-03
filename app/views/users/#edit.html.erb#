@@ -1,5 +1,0 @@
-<% h title "Editando el perfil de #{@user.full_name}" %>
-
-<%= render :partial => 'form' %>
-
-
