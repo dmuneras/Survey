@@ -3,7 +3,7 @@
   <h3>Usuario</h3>
     <% if current_user %>
       <p><%= link_to "Realizar encuesta", surveys_path %></p>
-      <p><%= link_to "Ver resultados", chart_index_path %></p>
+      <p><%= link_to "Ver resultados", :controller => :chart, :action => :index, :id => "user_#{current_user.id}" %></p>
       <p><%= link_to "Ver perfil", current_user %></p>
       <p><%= link_to "Ver empresa del usuario", company_path(current_user.company)%></p>
       <p><%= link_to "Editar Perfil", edit_user_path(current_user) %></p> 
