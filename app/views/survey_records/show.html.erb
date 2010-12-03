@@ -1,16 +1,50 @@
-<% title "Survey Record" %>
+<% title "Tabla de respuestas para #{current_user.full_name}" %>
 
-<p>
-  <strong>User:</strong>
-  <%=h @survey_record.user_id %>
-</p>
-<p>
-  <strong>Answers:</strong>
-  <%=h @survey_record.answers %>
-</p>
-
-<p>
-  <%= link_to "Edit", edit_survey_record_path(@survey_record) %> |
-  <%= link_to "Destroy", @survey_record, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", survey_records_path %>
-</p>
+<table>
+<tr>
+  <th>#</th>
+  <th>Pregunta</th>
+  <th>Respuesta</th>
+</tr>
+<% i = 1 %>
+<% for answer in @answers do %>
+<tr>
+  <td><%= i %></td>
+  <td>
+    <% question = Question.find_by_number(i) %>
+    <%= question.description %>
+    <% if question.category == 'nested' %>
+    <ul>
+      <% for subquestion in question.subquestions do %>
+      <li><%= subquestion.description %></li>
+      <% end %>
+    </ul>
+    <% elsif question.category == 'scale' %>
+    <% scale = question.question_scale %>
+    <dl>
+      <dt>Izquierda:</dt><dd><%= scale.lower %></dd>
+      <dt>Derecha:</dt><dd><%= scale.higher %></dd>
+    </dl>
+    <% end %>
+  </td>
+  <td>  
+    <% for ans in answer do %>
+    <ul>
+      <% break if ans.gsub(' ','').empty? %>
+      <% this_ans = Answer.find(ans) %>
+      <li><%= this_ans.description %>
+	<% if question.category == 'scale' %>
+	<% if this_ans.value < 3 %>
+	   <%= " - hacia la izquierda" %>
+	   <% elsif this_ans.value > 3 %>
+	<%= " -  hacia la derecha" %>
+	<% end %>
+	<% end %>
+      </li> 
+    </ul>
+    <% end %>  
+  </td>
+</tr>
+<% i += 1 %>
+<% end %>
+</table>

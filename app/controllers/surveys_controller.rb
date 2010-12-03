@@ -30,17 +30,6 @@ class SurveysController < ApplicationController
   
   def assign_answer_to(question)
     session[:answers][question.number-1] = params[:answer]
-    # if params[:answer].class == Array
-    #   session[:answers][question.number-1] = params[:answer].join(',')
-    # elsif params[:answer].class == HashWithIndifferentAccess
-    #   ans = []
-    #   params[:answer].each do |a, b|
-    #     ans << b
-    #   end
-    #   session[:answers][question.number-1] = ans.join(',')
-    # else
-    #   session[:answers][question.number-1] = params[:answer]
-    # end
   end
 
   def next_question_of(question)
@@ -52,8 +41,6 @@ class SurveysController < ApplicationController
   end
   
   def create
-    # session[:answers] += params[:answer] + ','
-    # render :action => 'show'
   end
   
   def edit
