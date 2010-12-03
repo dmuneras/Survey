@@ -4,7 +4,6 @@ class SurveyRecordsController < ApplicationController
   end
   
   def show
-    # @user = User.find(params[:id])
     @survey_record = SurveyRecord.find(params[:id])
     @answers = @survey_record.answers.split(';').map{|ans| ans.split(',')}
   end
