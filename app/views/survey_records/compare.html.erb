@@ -34,6 +34,11 @@
 	<% this_ans = Answer.find(ans) %>
 	<li>
 	  <%= this_ans.description %>
+	  <% if this_ans.description.to_i < 0 %>
+	     <%= " - hacia la izquierda" %>
+	     <% elsif this.ans.description.to_i > 0 %>
+	  <%= " - hacia la derecha" %>
+	     <% end %>
 	</li>
       </ul>
       <% end %>

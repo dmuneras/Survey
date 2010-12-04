@@ -6,7 +6,7 @@ class AddFourthAspect < ActiveRecord::Migration
     # Pregunta 8
     Question.create(:number => 8,
                     :aspect_id => Aspect.last.id,
-                    :description => %{A continuación se muestran 5 enunciados con respecto a la descripción general del plan de diseño y desarrollo de productos; seleccione el que mejor describa la situación actual de su empresa},
+                    :description => %{A continuación se muestran 5 enunciados con respecto a la descripción general del <dfn title="Una serie de tareas, pasos y fases disciplinadas y definidas que describen el significado por el cual una compañía repetitivamente convierte ideas iniciales en productos o servicios vendibles.">plan de diseño y desarrollo de productos</dfn>; seleccione el que mejor describa la situación actual de su empresa},
                     :category => 'unique')
 
     descs = []
@@ -35,18 +35,18 @@ class AddFourthAspect < ActiveRecord::Migration
                     :category => 'multiple')
 
     descs = []
-    descs << 'Mercado objetivo'
-    descs << 'Beneficios del producto'
-    descs << 'Objetivos del proyecto'
-    descs << 'Especificaciones de diseño'
-    descs << 'Cronograma'
-    descs << 'Metas comerciales'
-    descs << 'Análisis de viabilidad económica'
+    descs << %{<dfn title="Segmento del mercado al que está dirigido un bien, ya sea producto o servicio. Generalmente, se define en términos de edad, género o variables socioeconómicas.">Mercado objetivo</dfn>}
+    descs << %{<dfn title="Los beneficios son las necesidades del cliente satisfechas por las características o rasgos de un producto. Algunos rasgos son: tamaño, color, potencia, funcionalidad, diseño, horas de servicio y contenido estructural. Los beneficios son menos tangibles, pero siempre responden a la pregunta del cliente: ¿En qué me beneficia?">Beneficios del producto</dfn>}
+    descs << %{<dfn title="<dl><dt>Objetivo general:</dt><dd>Descripción objetiva y concisa que se pretende alcanzar con la intervención que se está planeando o ejecutando.</dd><dt>Objetivo específico:</dt><dd>Detalla, desglosa, y define con mayor precisión las metas que se pretende alcanzar.</dd></dl>">Objetivos del proyecto</dfn>}
+    descs << %{<dfn title="Planteamiento de objetivos de diseño y funciones, lo que debe lograr o hacer un diseño, especificaciones técnicas, económicas, de diseño, etc.">Especificaciones de diseño</dfn>}
+    descs << %{<dfn title="Calendario de trabajo, lista de todos los elementos terminales de un proyecto con sus fechas previstas de comienzo y final.">Cronograma</dfn>}
+    descs << %{<dfn title="Fin a que se dirigen las acciones o deseos de la compañía, son la base para el conjunto de metas de un negocio.">Metas comerciales</dfn>}
+    descs << %{<dfn title="Determinación en cuanto a la probabilidad de éxito y una descripción de cómo esa determinación fue alcanzada.">Análisis de viabilidad</dfn> económica}
     descs << 'Análisis de viabilidad técnica'
     descs << 'Análisis de viabilidad mercado'
-    descs << 'Definición del equipo de trabajo'
-    descs << 'Justificación'
-    descs << 'Definición del usuario'
+    descs << %{Definición del <dfn title="Se refiere a un conjunto de personas interrelacionadas que se van a organizar para llevar a cabo una determinada tarea.">equipo de trabajo</dfn>}
+    descs << %{<dfn title="Sustentar con argumentos convincentes la realización de un proyecto, es decir, señalar por qué y para qué se va a llevar a cabo señalando quiénes se benefician de él.">Justificación</dfn>}
+    descs << %{<dfn title="Clientes potenciales y reales. Hay que investigar cuáles son sus necesidades, deseos, hábitos de compra, capacidad de compra, etc.">Definición del usuario</dfn>}
     descs << 'Identificación de mercados'
     descs << 'Definición de clientes'
 
@@ -61,7 +61,7 @@ class AddFourthAspect < ActiveRecord::Migration
 
     # Pregunta 10
     Question.create(:number => 10,
-                    :description => %{A continuación se muestran 5 enunciados con respecto al plan de mercado de nuevos productos; seleccione el que mejor describa la situación actual de su empresa},
+                    :description => %{A continuación se muestran 5 enunciados con respecto al <dfn title="Documento escrito que detalla las acciones necesarias para alcanzar un objetivo específico de mercadeo.<ul><li>Describir y explicar la situación actual del producto.</li><li>Especificar los resultados esperados.</li><li>Identificar los recursos que se necesitarán.</li></ul>">plan de mercado</dfn> de nuevos productos; seleccione el que mejor describa la situación actual de su empresa},
                     :aspect_id => Aspect.last.id,
                     :category => 'unique')
 
@@ -91,7 +91,7 @@ class AddFourthAspect < ActiveRecord::Migration
                     
     descs = []
     descs << %{La empresa no tiene definido un proceso de diseño y desarrollo de nuevos productos}
-    descs << %{En la empresa está definida la estructura del proceso de diseño y desarrollo de nuevos productos, sin embargo esta no se encuentra documentada}
+    descs << %{En la empresa está definida la <dfn title="Se refiere a la distribución de las partes del proceso, es decir, todas las etapas que se llevan a cabo para analizar, sintetizar y evaluar todas las etapas del proceso.">estructura del proceso de diseño y desarrollo de nuevos productos</dfn>, sin embargo esta no se encuentra documentada}
     descs << %{En la empresa está definida la estructura del proceso de diseño y desarrollo de nuevos productos, solamente para algunos de los nuevos productos}
     descs << %{En la empresa está definida la estructura del proceso de diseño y desarrollo de nuevos productos, para todos y cada uno de estos, además se utilizan métodos y herramientas para el desarrollo del proceso de diseño y desarrollo de nuevos productos}
     descs << %{En la empresa está definida la estructura del proceso de diseño y desarrollo de nuevos productos, para todos y cada uno de estos, además se utlizan métodos y herramientas para el desarrollo del proceso de diseño y desarrollo de nuevos productos y la estructura es objeto de monitoreo periódico}
@@ -141,7 +141,7 @@ class AddFourthAspect < ActiveRecord::Migration
                     :category => 'unique')
 
     descs = []
-    descs << %{La empresa no tiene definido un modelo de gestión}
+    descs << %{La empresa no tiene definido un <dfn title="Programa oficial dentro de una empresa en donde el diseño es una actividad estratégica. Implica entender y comunicar la relevancia del diseño dentro de los objetivos a largo plazo y coordinar todos los recursos destinados a la actividad de diseño en todos los niveles y en todas las actividades que se realizan en la empresa para alcanzar los objetivos corporativos propuestos.">modelo de gestión</dfn>}
     descs << %{La empresa tiene definido un modelo de gestión, pero no está documentado}
     descs << %{La empresa tiene definido un modelo de gestión que lo utiliza cuando lo considera necesario y está documentado}
     descs << %{La empresa tiene definido un modelo de gestión para todos los procesos de diseño y desarrollo de productos y está documentado}
@@ -193,7 +193,7 @@ class AddFourthAspect < ActiveRecord::Migration
                          :lower => %{Los productos presentan diferenciadores genéricos similares a los de la competencia},
                          :higher => %{Los productos ofrecen aspectos diferenciadores claves, presentan beneficios únicos al tenerlos o usarlos})
     
-    descs = [3,2,1,0,1,2,3]
+    descs = [-3,-2,-1,0,1,2,3]
     vals = [1,2,2,3,4,4,5]
 
     i = 1
@@ -215,7 +215,7 @@ class AddFourthAspect < ActiveRecord::Migration
                          :lower => %{Los productos ofrecen nuevas soluciones a problemas de una manera interesante},
                          :higher => %{Los productos presentan funciones y precios similares la competencia})
 
-    descs = [3,2,1,0,1,2,3]
+    descs = [-3,-2,-1,0,1,2,3]
     vals = [5,4,4,3,2,2,1]
     
     i = 1
@@ -237,7 +237,7 @@ class AddFourthAspect < ActiveRecord::Migration
                          :lower => %{Los productos utilizan tecnología convencional, similar a la de la competencia},
                          :higher => %{La tecnología utilizada hace posible proponer productos nuevos y diferenciados al mercado})
 
-    descs = [3,2,1,0,1,2,3]
+    descs = [-3,-2,-1,0,1,2,3]
     vals = [1,2,2,3,4,4,5]
 
     i = 1
@@ -259,7 +259,7 @@ class AddFourthAspect < ActiveRecord::Migration
                          :lower => %{La ingeniería involucrada en los productos es un diferenciador clave con respecto a la competencia},
                          :higher => %{La ingeniería involucrada es similar a la competencia})
 
-    descs = [3,2,1,0,1,2,3]
+    descs = [-3,-2,-1,0,1,2,3]
     vals = [5,4,4,3,2,2,1]
 
     i = 1
@@ -281,7 +281,7 @@ class AddFourthAspect < ActiveRecord::Migration
                          :lower => %{La estética de los productos es similar a la de la competencia},
                          :higher => %{Los aspectos estéticos de los productos son novedosos y constituyen un diferenciador clave frente a la competencia})
 
-    descs = [3,2,1,0,1,2,3]
+    descs = [-3,-2,-1,0,1,2,3]
     vals = [1,2,2,3,4,4,5]
 
     i = 1
@@ -303,7 +303,7 @@ class AddFourthAspect < ActiveRecord::Migration
                          :lower => %{La interfaz o manera como los productos comunican la manera en que pueden ser utilizados constituyen un diferenciador clave frente a la competencia},
                          :higher => %{La interfaz o manera como los productos comunican la manera en que pueden ser utilizados es similar al de la competencia})
 
-    descs = [3,2,1,0,1,2,3]
+    descs = [-3,-2,-1,0,1,2,3]
     vals = [5,4,4,3,2,2,1]
 
     i = 1
@@ -325,7 +325,7 @@ class AddFourthAspect < ActiveRecord::Migration
                          :lower => %{Los productos emplean materiales similares a los de la competencia},
                          :higher => %{Los productos emplean materiales novedosos que constituyen un aspecto diferenciador frente a los productos de la competencia})
 
-    descs = [3,2,1,0,1,2,3]
+    descs = [-3,-2,-1,0,1,2,3]
     vals = [1,2,2,3,4,4,5]
 
     i = 1

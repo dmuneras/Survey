@@ -1,5 +1,6 @@
 
 
+
 $(document).ready(function(){
     $("#login").overlay({
     	top: '10%',
@@ -13,6 +14,11 @@ $(document).ready(function(){
 	closeOnEsc: false,
     	load: true
     });
+
+    // $(".aspect").hover(function() {
+    // 	ab = $(this).children().first();
+    // 	ab.replaceWith(ab[title]);
+    // });
 
     // $(".modalDialog").overlay({
     // 	top:'1%',
