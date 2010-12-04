@@ -11,11 +11,11 @@ class AddSecondAspect < ActiveRecord::Migration
 
 
     descs = []
-    descs << %{No existe un equipo de trabajo para el proceso de disño y desarrollo de productos. Las personas trabajan de manera independiente}
-    descs << %{Las personas que participan en el proceso de diseño y desarrollo de productos trabajan de manera secuencial e independiente y hay poca comunicación entre las diferentes áreas}
+    descs << %{No existe un equipo de trabajo para el proceso de diseño y desarrollo de productos. Las personas trabajan de manera independiente}
+    descs << %{Las personas que participan en el proceso de diseño y desarrollo de productos trabajan de manera <dfn title="Proceso, serie o sucesión de cosas que guardan entre sí cierta relación.">secuencial</dfn> e independiente y hay poca comunicación entre las diferentes áreas}
     descs << %{Las personas que participan en el proceso de diseño y desarrollo de productos trabajan en paralelo de manera independiente y se reúnen únicamente para coordinar acciones en el proceso}
-    descs << %{La empresa tiene un equipo de trabajo conformado por personas de diferentes áreas o departamentos que participan de manera paralela y no tiene dedicación exclusiva en el proceso}
-    descs << %{La empresa tiene un equipo de trabajo conformado por personas de diferentes áreas y disciplinas que se comunican e interrelacionan de manera permanente y se dedican exclusivamente a este proceso}
+    descs << %{La empresa tiene un equipo de trabajo conformado por personas de diferentes <dfn title="Las áreas de actividad, conocidas también como áreas de responsabilidad, departamentos o divisiones, están en relación directa con las funciones básicas que realiza la empresa a fin de lograr sus objetivos. Dichas áreas comprenden actividades, funciones y labores homogéneas.">áreas o departamentos</dfn> que participan de manera paralela y no tiene dedicación exclusiva en el proceso}
+    descs << %{La empresa tiene un equipo de trabajo conformado por personas de diferentes áreas y <dfn title="Profesión, doctrina, instrucción de una persona.">disciplinas</dfn> que se comunican e interrelacionan de manera permanente y se dedican exclusivamente a este proceso}
 
     vals = [1,2,3,4,5]
 
@@ -37,7 +37,7 @@ class AddSecondAspect < ActiveRecord::Migration
     descs = []
     descs << 'No es posible identificar un responsable'
     descs << 'Una persona (jefe) de las áreas'
-    descs << 'La dirección de la empresa'
+    descs << %{La <dfn title="Se refiere ala dirección de la compañía como gerencia, junta directiva.">dirección</dfn> de la empresa}
     descs << 'Los jefes de área'
     descs << 'Hay un equipo de desarrollo de productos encargado de la toma de decisiones'
 
@@ -59,7 +59,7 @@ class AddSecondAspect < ActiveRecord::Migration
     descs << 'Para tomar decisiones de continuar o abandonar los proyectos'
     descs << 'Para definir una alternativa de producto a desarrollar'
     descs << 'Para buscar solución a problemas de manufactura'
-    descs << 'Para buscar soluciones a problemas de desarrollo del mercado'
+    descs << %{Para buscar soluciones a problemas de desarrollo del <dfn title="Desde el punto de vista del marketing, el mercado está formado por todos los consumidores o compradores actuales y potenciales de un determinado producto.">mercado<dfn>}
 
     i = 1
     for desc in descs do
@@ -72,7 +72,7 @@ class AddSecondAspect < ActiveRecord::Migration
     # Pregunta 6
     Question.create(:number => 6,
                     :aspect_id => Aspect.last.id,
-                    :description => %{Señale con qué frecuencia se involucran especialistas externos que apoyen el proceso de diseño y desarrollo de productos a la empresa para el desarrollo de productos en su empresa},
+                    :description => %{Señale con qué frecuencia se involucran <dfn title="Personas externas a la compañía que son contratadas para la realización de actividades que involucran competencias o tiempo que la empresa no tiene.">especialistas externos</dfn> que apoyen el proceso de diseño y desarrollo de productos a la empresa para el desarrollo de productos en su empresa},
                     :category => 'unique')
 
     descs = []

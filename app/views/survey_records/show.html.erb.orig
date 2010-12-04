@@ -1,4 +1,32 @@
 <% title "Tabla de respuestas para #{@survey_record.user.full_name}" %>
+<<<<<<< HEAD
+<div class = "table">
+  <table>
+      <tr>
+	<th>Número</th>
+	<th>Pregunta</th>
+	<th>Respuesta</th>
+      </tr>
+    <% i = 1 %>
+    <%  @answers.each  do |answer| %>
+    <tr>
+      <td><%= i %></td>
+      <td>
+	<% question = Question.find_by_number(i) %>
+	<%= question.description %>
+	<% if question.category == 'nested' %>
+	<ul>
+	  <% for subquestion in question.subquestions do %>
+	  <li><%= subquestion.description %></li>
+	  <% end %>
+	</ul>
+	<% elsif question.category == 'scale' %>
+	<% scale = question.question_scale %>
+	<dl>
+	  <dt>Izquierda:</dt><dd><%= scale.lower %></dd>
+	  <dt>Derecha:</dt><dd><%= scale.higher %></dd>
+	</dl>
+=======
 
 <table>
 <tr>
@@ -39,6 +67,7 @@
 	   <% elsif this_ans.description.to_i > 0 %>
 	<%= " -  hacia la derecha" %>
 	<% end %>
+>>>>>>> definitions
 	<% end %>
       </td>
       <td>  
