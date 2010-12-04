@@ -1,0 +1,20 @@
+<% company = local_assigns[:company] %>
+
+<%= button_to "Gráfico comparativo con la mejor empresa del subsector", {:action => :show, :id => "company_subbest_#{company.id}"}, {:method => :get} %>
+
+<<<<<<< HEAD:app/views/chart/_company.html.erb
+<%= button_to "Gráfico comparativo con la peor empresa del subsector", :action => :show, :id => "company_subworst_#{company.id}", {:method => :get} %>
+=======
+<h2>Pulse para mostrar el gráfico comparativo con la peor empresa del subsector</h2>
+<%= button_to "Ver", {:action => :show, :id => "company_subworst_#{company.id}"}, {:method => :get} %>
+>>>>>>> master:app/views/chart/_company.html.erb
+
+
+<%= button_to "Gráfico comparativo con la mejor empresa del sector", {:action => :show, :id => "company_best_#{company.id}"}, {:method => :get} %>
+
+<<<<<<< HEAD:app/views/chart/_company.html.erb
+<%= button_to "Gráfico comparativo con la peor empresa del sector", {:action => :show, :id => "company_worst_#{company.id}"}, {:method => get} %>
+=======
+<h2>Pulse para mostrar el gráfico comparativo con la peor empresa del sector</h2>
+<%= button_to "Ver", {:action => :show, :id => "company_worst_#{company.id}"}, {:method => :get} %>
+>>>>>>> master:app/views/chart/_company.html.erb
