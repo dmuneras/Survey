@@ -1,8 +1,11 @@
 <% title "Encuesta" %>
-
-<strong>Aspecto: </strong>
-<%= @question.aspect.name %>
-<br /><br />
+<div id= "all-aspect">
+  <% for aspect in @aspects do %>
+     <div title =  "<%= "#{aspect.name}" %>" class="aspect" <%= 'id="current-aspect"' if aspect == @question.aspect %>>
+       <abbr  title = "<%= "#{aspect.name}" %>" ><%= aspect.number %></abbr>
+     </div>
+  <% end %>
+</div>
 
 <strong><%= @question.number %>. </strong>
 <em><%= @question.description %></em>

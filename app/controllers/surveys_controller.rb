@@ -8,6 +8,7 @@ class SurveysController < ApplicationController
   end
   
   def show
+    @aspects = Aspect.all
     if params[:question]
       current_question = Question.find(params[:question])
       assign_answer_to current_question
