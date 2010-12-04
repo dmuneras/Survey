@@ -6,7 +6,7 @@ class AddFifthAspect < ActiveRecord::Migration
     # Pregunta 22
     Question.create(:number => 22,
                     :aspect_id => Aspect.last.id,
-                    :description => %{A continuación se muestran 5 enunciados con relación al reconocimiento y remuneración sobre los logros alcanzados en el proceso de diseño y desarrollo de proyectos, productos y negocios; seleccione el que mejor describa la situación actual de su empresa},
+                    :description => %{A continuación se muestran 5 enunciados con relación al <dfn title="(Cualitativo) La acción de distinguir a una persona o cosa entre las demás como consecuencia de sus características y rasgos.">reconocimiento</dfn> y <dfn title="(Monetario) Es la contrapestación que recibe el trabajador por haber puesto a disposición del empleador su fuerza de trabajo.">remuneración</dfn> sobre los logros alcanzados en el proceso de diseño y desarrollo de proyectos, productos y negocios; seleccione el que mejor describa la situación actual de su empresa},
                     :category => 'unique')
 
     descs = []

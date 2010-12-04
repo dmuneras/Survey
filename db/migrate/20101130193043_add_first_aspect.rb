@@ -6,12 +6,12 @@ class AddFirstAspect < ActiveRecord::Migration
     Aspect.delete_all
     Subquestion.delete_all
     QuestionScale.delete_all
-    Aspect.create(:name => 'Aspectos Estratégicos')
+    Aspect.create(:name => 'Aspectos estratégicos')
     
     # Pregunta 1
     Question.create(:number => 1,
                     :description =>
-                    %{A continuación se muestran 5 enunciados con respecto a la misión y la visión; seleccione el que mejor describa la situación actual de su empresa},                    
+                    %{A continuación se muestran 5 enunciados con respecto a la <dfn title="La formulación de los propósitos de una organización que la distingue de otros negocios en cuanto al cubrimiento de sus opraciones, productos, mercados y el talento humano que soporta el logro de estos propósitos.">misión</dfn> y la <dfn title="Conjunto de ideas generales, que proveen el marco de referencia de lo que una empresa es y quiere ser en el futuro. No se expresa en términos numéricos, la define la alta dirección.">visión</dfn>; seleccione el que mejor describa la situación actual de su empresa},                    
                     :category => 'unique',
                     :aspect_id => Aspect.last.id)
     Answer.create(:number => 1,
@@ -38,7 +38,7 @@ class AddFirstAspect < ActiveRecord::Migration
     # Pregunta 2
     Question.create(:number => 2,
                     :description =>
-                    %{A continuación se muestran 5 enunciados con respecto a los objetivos estratégicos, seleccione el que mejor describa la situación actual de la empresa},
+                    %{A continuación se muestran 5 enunciados con respecto a los <dfn title="Factores integradores de la tarea de la alta gerencia y, por tanto, deberán reflejarse en los planes funcionales y oprativos de cada unidad estratégica de negocio.">objetivos estratégicos</dfn>, seleccione el que mejor describa la situación actual de la empresa},
                     :aspect_id => Aspect.last.id,
                     :category => 'unique')
 
@@ -67,7 +67,7 @@ class AddFirstAspect < ActiveRecord::Migration
     # Pregunta 3
     Question.create(:number => 3,
                     :description =>
-                    %{Con respecto a la existencia de un plan para el proceso de diseño y desarrollo de productos en su empresa},
+                    %{Con respecto a la existencia de un <dfn title="Una serie de tareas, pasos y fases disciplinadas y definidas que describen el significado por el cual una compañía repetitivamente convierte ideas iniciales en productos o servicios vendibles.">plan para el proceso de diseño y desarrollo de productos</dfn> en su empresa},
                     :aspect_id => Aspect.last.id,
                     :category => 'unique')
     

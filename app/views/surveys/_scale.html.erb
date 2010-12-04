@@ -2,7 +2,7 @@
   <tr>
     <th></th>
     <% for answer in @answers do %>
-    <th><%= answer.description %></th>
+    <th><%= answer.description.gsub('-','') %></th>
     <% end %>
     <th></th>
   </tr>

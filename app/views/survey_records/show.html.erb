@@ -34,9 +34,9 @@
       <% this_ans = Answer.find(ans) %>
       <li><%= this_ans.description %>
 	<% if question.category == 'scale' %>
-	<% if this_ans.value < 3 %>
+	<% if this_ans.description.to_i < 0 %>
 	   <%= " - hacia la izquierda" %>
-	   <% elsif this_ans.value > 3 %>
+	   <% elsif this_ans.description.to_i > 0 %>
 	<%= " -  hacia la derecha" %>
 	<% end %>
 	<% end %>
