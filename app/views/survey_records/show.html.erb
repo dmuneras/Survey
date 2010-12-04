@@ -1,44 +1,30 @@
 <% title "Tabla de respuestas para #{@survey_record.user.full_name}" %>
-
-<table>
-<tr>
-  <th>#</th>
-  <th>Pregunta</th>
-  <th>Respuesta</th>
-</tr>
-<% i = 1 %>
-<% for answer in @answers do %>
-<tr>
-  <td><%= i %></td>
-  <td>
-    <% question = Question.find_by_number(i) %>
-    <%= question.description %>
-    <% if question.category == 'nested' %>
-    <ul>
-      <% for subquestion in question.subquestions do %>
-      <li><%= subquestion.description %></li>
-      <% end %>
-    </ul>
-    <% elsif question.category == 'scale' %>
-    <% scale = question.question_scale %>
-    <dl>
-      <dt>Izquierda:</dt><dd><%= scale.lower %></dd>
-      <dt>Derecha:</dt><dd><%= scale.higher %></dd>
-    </dl>
-    <% end %>
-  </td>
-  <td>  
-    <% for ans in answer do %>
-    <ul>
-      <% break if ans.gsub(' ','').empty? %>
-      <% this_ans = Answer.find(ans) %>
-      <li><%= this_ans.description %>
-	<% if question.category == 'scale' %>
-	<% if this_ans.description.to_i < 0 %>
-	   <%= " - hacia la izquierda" %>
-	   <% elsif this_ans.description.to_i > 0 %>
-	<%= " -  hacia la derecha" %>
-	<% end %>
+<div class = "table">
+  <table>
+      <tr>
+	<th>Número</th>
+	<th>Pregunta</th>
+	<th>Respuesta</th>
+      </tr>
+    <% i = 1 %>
+    <%  @answers.each  do |answer| %>
+    <tr>
+      <td><%= i %></td>
+      <td>
+	<% question = Question.find_by_number(i) %>
+	<%= question.description %>
+	<% if question.category == 'nested' %>
+	<ul>
+	  <% for subquestion in question.subquestions do %>
+	  <li><%= subquestion.description %></li>
+	  <% end %>
+	</ul>
+	<% elsif question.category == 'scale' %>
+	<% scale = question.question_scale %>
+	<dl>
+	  <dt>Izquierda:</dt><dd><%= scale.lower %></dd>
+	  <dt>Derecha:</dt><dd><%= scale.higher %></dd>
+	</dl>
 	<% end %>
       </td>
       <td>  
@@ -63,3 +49,5 @@
     <% end %>
   </table>
 </div>
+
+

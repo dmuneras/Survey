@@ -67,7 +67,7 @@ class SurveyRecordsController < ApplicationController
                                       :answers => ans_to_save,
                                       :averages => avg_to_save,
                                       :comment => params[:comment])
-    if @survey_record. save
+    if @survey_record.save
       current_user.company.calculate_company_averages
       session[:answers] = []
     else
