@@ -111,7 +111,7 @@ class ChartController < ApplicationController
   def generate_radar_chart(the_title, companies)
     respond_to do |wants|
       wants.html {
-        @graph = open_flash_chart_object(600,600,url_for(:action => 'show', :format => :json))
+        @graph = open_flash_chart_object(800,400,url_for(:action => 'show', :format => :json))
       }
       wants.json {
         title = Title.new(the_title)

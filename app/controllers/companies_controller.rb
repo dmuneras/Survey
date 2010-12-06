@@ -1,5 +1,9 @@
 # -*- coding: undecided -*-
 class CompaniesController < ApplicationController
+  
+  before_filter :company_logged?, :except => [:index, :new, :create]
+  before_filter :admin_logged?, :only => :index
+
   def index
     @companies = Company.all
   end

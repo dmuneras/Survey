@@ -1,12 +1,16 @@
 # -*- coding: utf-8 -*-
 class UsersController < ApplicationController
 
+  before_filter :is_logged?
+  before_filter :company_logged?, :only => [:new, :create]
+
   def show
-    if current_user
-      @user = current_user
-    else
-      @user = User.find(params[:id])
-    end
+    @user = current_user || User.find(params[:id])
+    # if current_user
+    #   @user = current_user
+    # else
+    #   @user = User.find(params[:id])
+    # end
   end
   
   def new

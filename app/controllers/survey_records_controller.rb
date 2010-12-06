@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 class SurveyRecordsController < ApplicationController
+
+  before_filter :is_logged?
   
   def index
     @survey_records = SurveyRecord.all
@@ -7,16 +9,16 @@ class SurveyRecordsController < ApplicationController
   
   def show
     @survey_record = SurveyRecord.find(params[:id])
-    @answers = @survey_record.answers.split(';').map{|ans| ans.split(',')}
+    @answers = string_to_arrays @survey_record.answers
     @questions = Question.all(:order => 'number')
   end
 
   def compare
     @user = User.find(params[:id])
     @last_surveys = @user.last_surveys 2
-    @last_answers = []
-    @last_answers << @last_surveys[0].answers.split(';').map{|ans| ans.split(',')}
-    @last_answers << @last_surveys[1].answers.split(';').map{|ans| ans.split(',')} if @last_surveys[1]
+    @last_answers = @last_surveys.inject([]) do |ans, sur|
+      ans << string_to_arrays(sur.answers)
+    end
     @questions = Question.all(:order => 'number')
   end
   

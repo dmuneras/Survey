@@ -316,8 +316,7 @@ div#user-info {
 }
 
 div#welcome-user {    
-    margin-left: 20%;
-    margin-right: 20%;
+    margin: 2em 20% 0;
 }
 
 div#welcome-user p {
@@ -397,6 +396,25 @@ form span#send input {
 }
 
 /*COMPANY*/
+
+div#company-show {
+    margin: 1em 10% 2em 1em;
+}
+
+div#company-info {
+    width: 20%;
+    float: left;
+    margin-left: 1em;
+    margin-right: 3em;
+}
+
+div#welcome-company {
+    margin-left: 3em;
+}
+
+div#welcome-company p {
+    text-align: justify;
+}
 
 table#users-table {
     width: 80%;

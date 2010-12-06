@@ -6,7 +6,7 @@
   <p><%= link_to "Ver resultados", :controller => :chart, :action => :index, :id => "company_#{current_company.id}" %></p>  
   <p><%= link_to "Gestión de usuarios", show_users_company_path(current_company) %></p>
   <p><%= link_to "Editar información", edit_company_path(current_company)%></p>
-  <p><%= link_to "Eliminar",  current_company, :confirm => 'Esta seguro?', :method => :delete %></p>
+  <p><%= link_to "Eliminar",  current_company, :confirm => "¿Está seguro que desea elminar la cuenta de la empresa?", :method => :delete %></p>
   <p><%= link_to "Salir de la empresa", logout_company_path %></p>
   <% else %>
   <p><%= link_to "Registrar empresa", new_company_path %></p>

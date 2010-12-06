@@ -3,11 +3,7 @@
 
   <%= f.error_messages %>
   <dl>
-  
-    <dt><%= f.label :username, "Login" %></dt>
-    <dd><%= f.text_field :username %></dd>
-  
-  
+    
     <dt><%= f.label :name, "Nombre" %></dt>
     <dd><%= f.text_field :name %></dd>
   
@@ -22,7 +18,11 @@
     
     <dt><%= f.label :email, "Correo electrónico" %></dt>
     <dd><%= f.text_field :email %></dd>
-    
+  
+
+    <dt><%= f.label :username, "Usuario" %></dt>
+    <dd><%= f.text_field :username %></dd> 
+  
     
     <dt><%= f.label :password, "Contraseña" %></dt>
     <dd><%= f.password_field :password %></dd>
@@ -30,6 +30,6 @@
     <dt><%= f.label :password_confirmation, "Confirmar contraseña" %></dt>
     <dd><%= f.password_field :password_confirmation %></dt>
 </dl>
-<span id="send"><%= f.submit "Crear" %></span>
+<span id="send"><%= f.submit "Registrar" %></span>
 <% end %>
 <% end %>

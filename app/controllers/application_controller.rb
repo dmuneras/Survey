@@ -13,12 +13,12 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
+  def string_to_arrays(s)
+    s.split(';').map{|e| e.split(',')}
+  end
+
   def hash_to_string(h)
-    str = []
-    h.each do |a,b|
-      str << "#{a},#{b}"
-    end
-    str = str.join(';')
+    h.inject([]){|s,e| s << "#{e.first},#{e.last}"}.join(';')
   end
 
   private
@@ -33,9 +33,30 @@ class ApplicationController < ActionController::Base
     @current_user = current_user_session && current_user_session.record
   end
 
+  def admin_logged?
+    unless is_admin?
+      flash[:notice] = "No puede acceder a este recurso."
+      redirect_to root_url
+    end
+  end
+
+  def company_logged?
+    unless current_company or is_admin?
+      flash[:notice] = "No puede acceder a este recurso."
+      redirect_to root_url
+    end
+  end
+
+  def user_logged?
+    unless current_user or is_admin?
+      flash[:notice] = "No puede acceder a este recurso."
+      redirect_to root_url
+    end
+  end
+
   def is_logged?
     unless current_user or current_company
-      flash[:notice] = "No se ha logueado aún"
+      flash[:notice] = "No se ha logueado aún."
       redirect_to login_path
     end
   end

@@ -7,7 +7,7 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       @user = User.find_by_username(@user_session.username)
-      flash[:notice] = "Has ingresado exitosamente."
+      flash[:notice] = "Ha ingresado exitosamente."
       if @user.username == 'Administrador'
         redirect_to companies_path
       else
@@ -21,7 +21,7 @@ class UserSessionsController < ApplicationController
   def destroy
     @user_session = UserSession.find(params[:id])
     @user_session.destroy
-    flash[:notice] = "Vuelve pronto."
+    flash[:notice] = "Muchas gracias."
     redirect_to root_url
   end
 end

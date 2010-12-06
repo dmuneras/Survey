@@ -1,27 +1,20 @@
-
-<div class="center">
-  <h1><%= @company.name %></h1>
-  <div class= "information">
-    <h3>Información general</h3>
+<% title "#{@company.name}" %>
+<div id="company-show">
+  <div id="company-info">
     <p>
       <strong>Nit:</strong>
       <%=h @company.nit %>
     </p>
     <p>
-      <strong>Email:</strong>
+      <strong>Correo electrónico:</strong>
       <%=h @company.email %>
     </p>
     <p>
-      <strong>Telephone:</strong>
+      <strong>Teléfono:</strong>
       <%=h @company.telephone %>
     </p>
   </div>
-  <div class= "users_list">
-    <h3>Lista de usuarios</h3>
-    <% for user in @company.users do %>
-    <h3><%= link_to  user.name, user %></h3>
-    <% end %>
-    <%= link_to "Ver usuarios", show_users_company_path(@company) %>
+  <div id="welcome-company">
+    <p>Bienvenido al módulo de gestión de empresa. Para ver los resultados comparativos de las encuestas realizadas por los usuarios, diríjase a la opción <em>Ver resultados</em> del menú. Si desea ver la información de los usuarios registrados en la empresa, así como editar información de los mismos, puede ir a la opción <em>Gestión de usuarios</em>.</p>
   </div>
 </div>
-

@@ -1,24 +1,25 @@
 <% title "Tabla comparativa de respuestas para #{@user.full_name}" %>
-
-<table>
-  <tr>
-    <th>#</th>
-    <th>Pregunta</th>
-    <th>Penúltima respuesta</th>
-    <th>Última respuesta</th>
-  </tr>
-  <% @questions.zip(@last_answers[0], @last_answers[1]) do |q, a1, a2| %>
-  <tr> 
-    <td><%= q.number %></td>
-    <td><%= q.description %>
-      <%= question_additional_info q %>
-    </td>
-    <td>
-      <%= list_for_answers a1 %>
-    </td>
-    <td>
-      <%= list_for_answers a2 %>
-    </td>
-  </tr>
-  <% end %>
-</table>
+<div class="table">
+  <table>
+    <tr>
+      <th>#</th>
+      <th>Pregunta</th>
+      <th>Penúltima respuesta</th>
+      <th>Última respuesta</th>
+    </tr>
+    <% @questions.zip(@last_answers[0], @last_answers[1]) do |q, a1, a2| %>
+    <tr> 
+      <td><%= q.number %></td>
+      <td><%= q.description %>
+	<%= question_additional_info q %>
+      </td>
+      <td>
+	<%= list_for_answers a1 %>
+      </td>
+      <td>
+	<%= list_for_answers a2 %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

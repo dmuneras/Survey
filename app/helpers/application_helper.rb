@@ -32,21 +32,15 @@ module ApplicationHelper
   end
   
   def hash_to_string(h)
-    str = []
-    h.each do |a, b|
-      str << [a,b].join(',')
-    end
-    str.join(';')
+    h.inject([]){|s,e| s << "#{e.first},#{e.last}"}.join(';')
   end
 
   def string_to_hash(s)
-    h = {}
-    s = s.split(';')
-    for elem in s do
-      tup = elem.split(',')
-      h[tup[0]] = tup[1].to_f
+    s.split(';').inject({}) do |h, e| 
+      e = e.split(',')
+      h[e.first] = e.last.to_f
+      h
     end
-    return h
   end
 
 end

@@ -1,13 +1,12 @@
 <div class= "index-users">
   <% if current_company.nil? %>
   <h3>Usuario</h3>
-    <% if current_user %>
+    <% if current_user %>    
+      <p><%= link_to "Inicio", current_user %></p>
       <p><%= link_to "Realizar encuesta", surveys_path %></p>
-      <p><%= link_to "Encuesta de evaluación", evaluation_survey_path %></p>
       <p><%= link_to "Ver resultados", :controller => :chart, :action => :index, :id => "user_#{current_user.id}" %></p>
-      <p><%= link_to "Ver perfil", current_user %></p>
-      <p><%= link_to "Ver empresa del usuario", company_path(current_user.company)%></p>
-      <p><%= link_to "Editar Perfil", edit_user_path(current_user) %></p> 
+      <p><%= link_to "Encuesta de evaluación", current_user %></p>
+      <p><%= link_to "Editar perfil", edit_user_path(current_user) %></p> 
       <p><%= link_to "Terminar sesion", logout_path %></p> 	  
     <% else %>
       <p><%= link_to "Iniciar sesion", login_path,:rel => "#overlay", :class => "modalDialog" %></p> 
