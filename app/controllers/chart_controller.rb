@@ -68,33 +68,30 @@ class ChartController < ApplicationController
       wants.json {
         title = Title.new(the_title)
         chart = OpenFlashChart.new(title) do |c|
-          colours = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#00FFFF']
+          colours = ['#FF0000', '#FFFF00', '#0000FF', '#00FF00', '#00FFFF']
           if survey_data.class == Hash            
             bar_values = []
-            i = 0
-            survey_data.each do |asp, avg|
-              bar_values << BarValue.new(avg, nil,
-                                         :colour => colours[i],
-                                         :tip => Aspect.find(asp).name)
-              i += 1
+            survey_data.zip(colours) do |res, colour|
+              break unless res
+              bar_values << BarValue.new(res.last, nil,
+                                         :colour => colour,
+                                         :tip => Aspect.find(res.first).name)
             end
             c << BarGlass.new(:values => bar_values,
                               :on_show => BarOnShow.new('grow-up', 0.5, 0.5))
           else
-            i = 0
-            for survey in survey_data do
+            survey_data.zip(colours) do |survey, colour|
               bar_values = []
               averages = string_to_hash survey.averages
               averages.each do |asp, avg|
-                tip = "#{Aspect.find(asp).name}<br>#{survey.created_at}"
+                tip = "#{Aspect.find(asp).name}<br>#{survey.date}"
                 bar_values << BarValue.new(avg, nil,
                                             :tip => tip)
               end
               c << BarGlass.new(:values => bar_values,
-                                :text => survey.created_at,
-                                :colour => colours[i],
+                                :text => survey.date,
+                                :colour => colour,
                                 :on_show => BarOnShow.new('grow-up', 0.5, 0.5))
-              i += 1
             end
           end
           c.set_bg_colour('#FFFFFF')

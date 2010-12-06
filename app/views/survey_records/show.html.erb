@@ -6,46 +6,17 @@
 	<th>Pregunta</th>
 	<th>Respuesta</th>
       </tr>
-    <% i = 1 %>
-    <%  @answers.each  do |answer| %>
+    <%  @questions.zip(@answers) do |q, a| %>
     <tr>
-      <td><%= i %></td>
+      <td><%= q.number %></td>
       <td>
-	<% question = Question.find_by_number(i) %>
-	<%= question.description %>
-	<% if question.category == 'nested' %>
-	<ul>
-	  <% for subquestion in question.subquestions do %>
-	  <li><%= subquestion.description %></li>
-	  <% end %>
-	</ul>
-	<% elsif question.category == 'scale' %>
-	<% scale = question.question_scale %>
-	<dl>
-	  <dt>Izquierda:</dt><dd><%= scale.lower %></dd>
-	  <dt>Derecha:</dt><dd><%= scale.higher %></dd>
-	</dl>
-	<% end %>
+	<%= q.description %>
+	<%= question_additional_info q %>
       </td>
       <td>  
-	<% for ans in answer do %>
-	<ul>
-	  <% break if ans.gsub(' ','').empty? %>
-	  <% this_ans = Answer.find(ans) %>
-	  <li><%= this_ans.description %>
-	    <% if question.category == 'scale' %>
-	    <% if this_ans.value < 3 %>
-	       <%= " - hacia la izquierda" %>
-	       <% elsif this_ans.value > 3 %>
-	    <%= " -  hacia la derecha" %>
-	    <% end %>
-	    <% end %>
-	  </li> 
-	</ul>
-	<% end %>  
+	<%= list_for_answers a %>
       </td>
     </tr>
-    <% i += 1 %>
     <% end %>
   </table>
 </div>

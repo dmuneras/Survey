@@ -26,7 +26,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :chart
   map.resources :user_sessions
   map.resources :company_sessions
-  map.resources :survey_records
+  map.resources :survey_records, :member => {:compare => :get}
   map.login "login", :controller => "user_sessions", :action => "new"
   map.logout "logout", :controller => "user_sessions", :action => "destroy"
   map.admin_company "admin_company", :controller => "company_sessions", :action => "new"

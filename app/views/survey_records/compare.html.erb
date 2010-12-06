@@ -7,44 +7,18 @@
     <th>Penúltima respuesta</th>
     <th>Última respuesta</th>
   </tr>
-  <% i = 0 %>
-  <% for question in @questions do %>
+  <% @questions.zip(@last_answers[0], @last_answers[1]) do |q, a1, a2| %>
   <tr> 
-    <td><%= (i+1) %></td>
-    <td><%= question.description %>
-      <% if question.category == 'nested' %>
-      <ul>
-	<% for subquestion in question.subquestions do %>
-	<li><%= subquestion.description %></li>
-	<% end %>
-      </ul>
-      <% elsif question.category == 'scale' %>
-      <% scale = question.question_scale %>
-      <dl>
-	<dt>Izquierda: </dt><dd><%= scale.lower %></dd>
-	<dt>Derecha: </dt><dd><%= scale.higher %></dd>
-      </dl>
-      <% end %>
+    <td><%= q.number %></td>
+    <td><%= q.description %>
+      <%= question_additional_info q %>
     </td>
-    <% for answers in @last_answers do %>
     <td>
-      <% for ans in answers[i] do %>
-      <ul>
-	<% break if ans.gsub(' ', '').empty? %>
-	<% this_ans = Answer.find(ans) %>
-	<li>
-	  <%= this_ans.description %>
-	  <% if this_ans.description.to_i < 0 %>
-	     <%= " - hacia la izquierda" %>
-	     <% elsif this.ans.description.to_i > 0 %>
-	  <%= " - hacia la derecha" %>
-	     <% end %>
-	</li>
-      </ul>
-      <% end %>
+      <%= list_for_answers a1 %>
     </td>
-    <% end %>
-    <% i += 1 %>
+    <td>
+      <%= list_for_answers a2 %>
+    </td>
   </tr>
   <% end %>
 </table>

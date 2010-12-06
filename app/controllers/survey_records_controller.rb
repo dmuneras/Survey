@@ -1,4 +1,6 @@
+# -*- coding: utf-8 -*-
 class SurveyRecordsController < ApplicationController
+  
   def index
     @survey_records = SurveyRecord.all
   end
@@ -6,14 +8,15 @@ class SurveyRecordsController < ApplicationController
   def show
     @survey_record = SurveyRecord.find(params[:id])
     @answers = @survey_record.answers.split(';').map{|ans| ans.split(',')}
+    @questions = Question.all(:order => 'number')
   end
 
   def compare
     @user = User.find(params[:id])
     @last_surveys = @user.last_surveys 2
     @last_answers = []
-    @last_answers << @last_surveys.last.answers.split(';').map{|ans| ans.split(',')}
-    @last_answers << @last_surveys.first.answers.split(';').map{|ans| ans.split(',')}
+    @last_answers << @last_surveys[0].answers.split(';').map{|ans| ans.split(',')}
+    @last_answers << @last_surveys[1].answers.split(';').map{|ans| ans.split(',')} if @last_surveys[1]
     @questions = Question.all(:order => 'number')
   end
   
@@ -22,6 +25,11 @@ class SurveyRecordsController < ApplicationController
   end
   
   def create
+    if session[:answers].empty?
+      flash[:notice] = "No ha llenado la encuesta"
+      redirect_to surveys_path
+      return
+    end
     aspect_avg = []
     ans_to_save = []
     for answer in session[:answers] do
@@ -54,10 +62,10 @@ class SurveyRecordsController < ApplicationController
     end
 
     avg_to_save = []
-    1.upto(aspect_avg.size) do |i|
-      aspect_id = Aspect.find_by_number(i).id
-      avg = aspect_avg[i-1] / Question.count(:conditions => {:aspect_id => aspect_id}).to_f
-      avg_to_save << "#{aspect_id},#{avg}"
+    aspects = Aspect.all(:order => 'number')
+    for aspect in aspects do
+      avg = aspect_avg[aspect.number-1] / Question.count(:conditions => {:aspect_id => aspect.id}).to_f
+      avg_to_save << "#{aspect.id},#{avg}"
     end
     
     avg_to_save = avg_to_save.join(';')
@@ -73,7 +81,7 @@ class SurveyRecordsController < ApplicationController
     else
       flash[:notice] = 'Error al almacenar los resultados'      
     end    
-    redirect_to :action => :index
+    redirect_to :controller => :chart, :action => :index, :id => "user_#{current_user.id}" 
   end
   
   def edit
@@ -96,4 +104,5 @@ class SurveyRecordsController < ApplicationController
     flash[:notice] = "Successfully destroyed survey record."
     redirect_to survey_records_url
   end
+
 end
