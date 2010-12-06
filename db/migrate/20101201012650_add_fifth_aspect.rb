@@ -26,6 +26,7 @@ class AddFifthAspect < ActiveRecord::Migration
                     :value => vals[i-1])
       i += 1
     end
+
   end
 
   def self.down
