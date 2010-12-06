@@ -1,10 +1,18 @@
 <% company = local_assigns[:company] %>
 
-<p><%= link_to "Gráfico comparativo con la mejor empresa del subsector", {:action => :show, :id => "company_subbest_#{company.id}"}, {:method => :get} %></p>
+<% if company.averages %>
 
-<p><%= link_to "Gráfico comparativo con la peor empresa del subsector", {:action => :show, :id => "company_subworst_#{company.id}"}, {:method => :get} %></p>
+<p><%= link_to "Gráfico comparativo con la empresa de mejor rendimiento del subsector", {:action => :show, :id => "company_subbest_#{company.id}"}, {:method => :get} %></p>
+
+<p><%= link_to "Gráfico comparativo con empresa de más bajo rendimiento del subsector", {:action => :show, :id => "company_subworst_#{company.id}"}, {:method => :get} %></p>
 
 
-<p><%= link_to "Gráfico comparativo con la mejor empresa del sector", {:action => :show, :id => "company_best_#{company.id}"}, {:method => :get} %></p>
+<p><%= link_to "Gráfico comparativo con la empresa de mejor rendimiento del sector", {:action => :show, :id => "company_best_#{company.id}"}, {:method => :get} %></p>
 
-<p><%= link_to "Gráfico comparativo con la peor empresa del sector", {:action => :show, :id => "company_worst_#{company.id}"}, {:method => :get} %></p>
+<p><%= link_to "Gráfico comparativo con empresa de más bajo rendimiento del sector", {:action => :show, :id => "company_worst_#{company.id}"}, {:method => :get} %></p>
+
+<% else %>
+
+<em>Ningún usuario de la compañía ha realizado la encuesta. No hay resultados para mostrar.</em>
+
+<% end %>

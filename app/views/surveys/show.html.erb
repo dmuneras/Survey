@@ -1,5 +1,5 @@
 <% title "Encuesta" %>
-<div id= "all-aspect">
+<div id="all-aspect">
   <% for aspect in @aspects do %>
      <div title =  "<%= "#{aspect.name}" %>" class="aspect" <%= 'id="current-aspect"' if aspect == @question.aspect %>>
        <abbr  title = "<%= "#{aspect.name}" %>" ><%= aspect.number %></abbr>

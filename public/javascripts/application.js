@@ -1,6 +1,4 @@
 
-
-
 $(document).ready(function(){
     $("#login").overlay({
     	top: '10%',
@@ -13,6 +11,12 @@ $(document).ready(function(){
     	closeOnClick: false,
 	closeOnEsc: false,
     	load: true
+    });
+
+    $("dfn").hover(function(){
+	$(this).addClass("highlight-dfn");
+    }, function(){
+	$(this).removeClass("highlight-dfn");
     });
 
     // $(".aspect").hover(function() {

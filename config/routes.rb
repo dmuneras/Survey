@@ -18,6 +18,7 @@ ActionController::Routing::Routes.draw do |map|
   #   r.resources :subsectors, :as => 'subsectores'
   #   r.resources :chart,      :as => 'resultados'
   # end
+  map.resources :base
   map.resources :questions
   map.resources :answers
   map.resources :companies ,:has_many => :users, :shallow => true

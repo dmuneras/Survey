@@ -257,6 +257,10 @@ div.result h1 {
     text-align:center;
 }
 
+.highlight-dfn {
+    font-weight: bold;
+}
+
 /*ASPECT*/
 
 div#all-aspect{
