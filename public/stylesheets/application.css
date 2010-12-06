@@ -143,7 +143,7 @@ div#index{
     text-align:center;
     height:250px;
     width:200px;
-    float:left;
+    float: left;
     padding:10px;
 }
 div#index  a {
@@ -156,14 +156,27 @@ div#index a:hover {
     font-weight: bold;
 }
 
-
 /*CONTENT*/
+
+div#introduction {
+    margin: 2em 8em 2em 2em;
+}
+
+div#introduction p {
+    text-align: justify;
+}
+
 div#content{
     padding:15px;
     width:75%;
     min-height:400px;
     float: right;
 }
+
+div#content h1 {
+    margin-left: 1em;
+}
+
 div#content a {
     color:#333333 !important;
     font-size:15px; 
@@ -263,11 +276,126 @@ div.result h1 {
 
 /*ASPECT*/
 
-div#all-aspect{
-    margin-bottom:100px;
-    margin-left:20%;
+table#all-aspect {
+    float: right;
+    margin-bottom: 2em;
 }
-div#all-aspect div {float:left;width:100px;text-align:center;}
 
-div#current-aspect{background-color: rgba(250,0,0,0.4);}
+table#all-aspect td {
+    width:100px;
+    text-align:center;
+}
 
+td#current-aspect {
+    background-color: #69AFD0;
+    font-weight: bold;
+}
+
+/*USER*/
+
+div#user-show {
+    margin-left: 2em;
+    text-align: left;
+}
+
+div#user-info {
+    margin-right: 10%;
+    float: left;
+}
+
+div#welcome-user {    
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+div#welcome-user p {
+    text-align: justify;
+}
+
+/*SURVEY*/
+
+div#survey-index {
+    margin: 0 10em 2em 2em;
+}
+
+div#survey-index p {
+    text-align: justify;
+}
+
+div#survey-index input {
+    float: right;
+}
+
+div#survey-question {
+    margin: 1em 8em 2em 1em;
+}
+
+div#survey-question li {
+    padding-bottom: 0.4em;
+    text-align: justify;
+    
+}
+
+div#survey-question p {
+    text-align: justify;
+}
+
+span#next {
+    margin-left: 40%;
+}
+
+dfn {
+    border-bottom: dotted 1px;
+}
+
+/*REGISTER*/
+
+fieldset {
+    margin-left: 2em;
+    margin-bottom: 2em;
+    width: 36em;
+}
+
+form dl {
+    margin-top: 5%;
+}
+
+form dt {
+    width: 30%;
+    float: left;
+    text-align: right;
+    margin-right: 1em;
+}
+
+form dd {
+    margin-bottom: 1em;
+}
+
+form select {
+    width: 60%;
+}
+
+form span#send {
+    float: left;
+    width: 90%;
+}
+
+form span#send input {
+    float: right;
+}
+
+/*COMPANY*/
+
+table#users-table {
+    width: 80%;
+}
+
+table#users-table td {
+    text-align: center;
+}
+
+span#new-user {
+    float: right;
+    margin-right: 20%;
+    margin-top: 1em;
+}

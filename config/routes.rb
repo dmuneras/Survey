@@ -21,7 +21,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :base
   map.resources :questions
   map.resources :answers
-  map.resources :companies ,:has_many => :users, :shallow => true
+  map.resources :companies ,:has_many => :users, :shallow => true, :member => {:show_users => :get}
   map.resources :subsectors
   map.resources :surveys, :member => {:next_question => :get}
   map.resources :chart

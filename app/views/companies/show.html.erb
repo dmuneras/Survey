@@ -1,7 +1,7 @@
 
-<div class= center>
-<h1><%= @company.name %></h1>
-<div class= "information">
+<div class="center">
+  <h1><%= @company.name %></h1>
+  <div class= "information">
     <h3>Información general</h3>
     <p>
       <strong>Nit:</strong>
@@ -15,12 +15,13 @@
       <strong>Telephone:</strong>
       <%=h @company.telephone %>
     </p>
-</div>
-<div class= "users_list">
+  </div>
+  <div class= "users_list">
     <h3>Lista de usuarios</h3>
     <% for user in @company.users do %>
-       <h3><%= link_to  user.name, user %></h3>
+    <h3><%= link_to  user.name, user %></h3>
     <% end %>
-</div>
+    <%= link_to "Ver usuarios", show_users_company_path(@company) %>
+  </div>
 </div>
 

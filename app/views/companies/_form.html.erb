@@ -1,29 +1,35 @@
+<% edit = local_assigns[:edit] || false %>
+
+<% field_set_tag "Información" do %>
 <% form_for @company do |f| %>
   <%= f.error_messages %>
-  <p><%= f.label :nit, "NIT de la empresa" %><br />
-    <%= f.text_field :nit %></p>
+  <dl>
+    <dt><%= f.label :nit, "NIT de la empresa" %></dt>
+    <dd><%= f.text_field :nit %></dd>
 
-  <p><%= f.label :name, "Nombre" %><br />
-    <%= f.text_field :name %></p>
+    <dt><%= f.label :name, "Nombre" %></dt>
+    <dd><%= f.text_field :name %></dd>
 
-  <p> <%= f.label :email, "Correo electronico" %><br />
-    <%= f.text_field :email %></p>
+    <dt><%= f.label :email, "Correo electronico" %></dt>
+    <dd><%= f.text_field :email %></dd>
 
-  <p><%= f.label :telephone, "Telefono" %><br />
-    <%= f.text_field :telephone %></p>
+    <dt><%= f.label :telephone, "Telefono" %></dt>
+    <dd><%= f.text_field :telephone %></dd>
   
-    <p><%= f.label :login, "Login" %><br />
-    <%= f.text_field :login %></p>
+    <dt><%= f.label :login, "Login" %></dt>
+    <dd><%= f.text_field :login %></dd>
 
-   <p><%= f.label :password, "Contraseña" %><br />
-    <%= f.password_field :password %>
-  </p>
-  <p>
-    <%= f.label :password_confirmation, "Ingrese de nuevo su contraseña" %><br />
-    <%= f.password_field :password_confirmation %>
-  </p>
-  <p> Subsector:<br /> 
-    <%= f.select (:subsector_id, options_from_collection_for_select(Subsector.all, "id", "name"))%>
-  </p>
-  <p><%= f.submit "Registrar" %></p>
+    <dt><%= f.label :password, "Contraseña" %><dt>
+    <dd><%= f.password_field :password %></dd>
+  
+  
+    <dt><%= f.label :password_confirmation, "Confirmar contraseña" %></dt>
+    <dd><%= f.password_field :password_confirmation %></dd>
+    
+    <dt><%= f.label :subsector_id, "Subsector:" %></dt>
+     <dd><%= f.select :subsector_id, options_from_collection_for_select(Subsector.all, "id", "name"), :selected => @company.subsector_id  %></dd>
+    
+  </dl>
+  <span id="send"><%= f.submit "Registrar" %></span>
+<% end %>
 <% end %>

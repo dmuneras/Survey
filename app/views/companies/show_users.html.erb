@@ -1,0 +1,23 @@
+<% title "Lista de usuarios de #{@company.name}" %>
+
+<br />
+<table id="users-table">
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Teléfono</th>
+    <th>Fecha de última encuesta</th>
+  </tr>
+  <% for user in @users do %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.last_name %></td>
+      <td><%= user.phone %></td>
+      <td><%= user.survey_records.last.date if user.survey_records.last %></td>
+    </tr>
+  <% end %>
+</table>
+
+<span id="new-user">
+  <%= link_to "Agregar usuario", new_company_user_path(@company) %>
+</span>

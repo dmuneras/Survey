@@ -3,7 +3,12 @@ class CompaniesController < ApplicationController
   def index
     @companies = Company.all
   end
-  
+ 
+  def show_users
+    @company = Company.find(params[:id])
+    @users = @company.users
+  end
+ 
   def show
     @company = Company.find(params[:id])
   end

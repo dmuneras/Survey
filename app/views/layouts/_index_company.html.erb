@@ -3,8 +3,8 @@
   <h3>Empresa</h3>
   <% if current_company %>
   <p><%= link_to "Ver resultados", :controller => :chart, :action => :index, :id => "company_#{current_company.id}" %></p>
-  <p><%= link_to "Editar empresa", edit_company_path(current_company)%></p>
-  <p><%= link_to "Agregar usuario", new_company_user_path(current_company) %></p>
+  <p><%= link_to "Editar información", edit_company_path(current_company)%></p>
+  <p><%= link_to "Gestión de usuarios", show_users_company_path(current_company) %></p>
   <p><%= link_to "Eliminar",  current_company, :confirm => 'Esta seguro?', :method => :delete %></p>
   <p><%= link_to "Salir de la empresa", logout_company_path %></p>
   <% else %>

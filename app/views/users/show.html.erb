@@ -1,27 +1,33 @@
-<% title "#{@user.full_name} " %>
-<div id="user-info">
-  <p>
-    <strong>Login:</strong>
-    <%=h @user.username %>
-  </p>
-  <p>
-    <strong>Nombre:</strong>
-    <%=h @user.name %>
-  </p>
-  <p>
-    <strong>Apellido:</strong>
-    <%=h @user.last_name %>
-  </p>
-  <p>
-    <strong>Telefono:</strong>
-    <%=h @user.phone %>
-  </p>
-  <p>
-    <strong>Correo electronico:</strong>
-    <%=h @user.email %>
-  </p>
+<% title "#{@user.full_name}" %>
+<div id="user-show">
+  <div id="user-info">
+    <p>
+      <strong>Login:</strong>
+      <%=h @user.username %>
+    </p>
+    <p>
+      <strong>Nombre:</strong>
+      <%=h @user.name %>
+    </p>
+    <p>
+      <strong>Apellido:</strong>
+      <%=h @user.last_name %>
+    </p>
+    <p>
+      <strong>Telefono:</strong>
+      <%=h @user.phone %>
+    </p>
+    <p>
+      <strong>Correo electronico:</strong>
+      <%=h @user.email %>
+    </p>
 </div>
-
-
-
+  
+  <div id="welcome-user">
+    <p>
+      Bienvenido. Para comenzar la encuesta, ingrese a la opción <em>Realizar encuesta</em> del menú. Si ya ha realizado encuestas y desea ver los resultados, puede ingresar a <em>Ver resultados</em>.
+    </p>
+  </div>
+</div>
+  
 

@@ -1,21 +1,3 @@
-<% title "Edita Empresa" %>
-<div class= "auxiliar" >
-<div class= "form">
-<%= render :partial => 'edit_form' %>
-<p>
-</p>
-</div>
-
-<div class= "users_list">
-<% unless @company.users.nil? %>
-    <h2>Editar usuarios</h2>
-<% end %>
-<% for user in @company.users do %>
-    <% unless user.nil? %>
-        <p><%= link_to user.name, edit_user_path(user) %> |
-	<%= link_to "Eliminar",user,:confirm => 'Esta seguro?', :method => :delete%></p>
-    <% end %>
-<% end %>
-<p><%= link_to " Nuevo usuario", new_company_user_path(@company) %></p>
-</div>
-</div>
+<% title "Editar datos de la empresa" %>
+<%= render :partial => 'form',
+:locals => { :edit => true } %>

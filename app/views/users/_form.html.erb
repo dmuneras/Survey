@@ -1,34 +1,35 @@
-
+<% field_set_tag "Nuevo usuario" do %>
 <% form_for [@company,@user]  do |f| %>
 
   <%= f.error_messages %>
-  <p>
-    <%= f.label :username, "Login" %><br />
-    <%= f.text_field :username %>
-  </p>
-  <p>
-    <%= f.label :name, "Nombre" %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :last_name, "Apellido" %><br />
-    <%= f.text_field :last_name %>
-  </p>
-  <p>
-    <%= f.label :phone, "Telefono"%><br />
-    <%= f.text_field :phone %>
-  </p>
-  <p>
-    <%= f.label :email, "Correo electronico" %><br />
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :password, "Contraseña" %><br />
-    <%= f.password_field :password %>
-  </p>
-  <p>
-    <%= f.label :password_confirmation, "Ingrese de nuevo su contraseña" %><br />
-    <%= f.password_field :password_confirmation %>
-  </p>
-  <p><%= f.submit "Enviar" %></p>
+  <dl>
+  
+    <dt><%= f.label :username, "Login" %></dt>
+    <dd><%= f.text_field :username %></dd>
+  
+  
+    <dt><%= f.label :name, "Nombre" %></dt>
+    <dd><%= f.text_field :name %></dd>
+  
+  
+    <dt><%= f.label :last_name, "Apellido" %></dt>
+    <dd><%= f.text_field :last_name %></dd>
+  
+  
+    <dt><%= f.label :phone, "Teléfono"%></dt>
+    <dd><%= f.text_field :phone %></dd>
+    
+    
+    <dt><%= f.label :email, "Correo electrónico" %></dt>
+    <dd><%= f.text_field :email %></dd>
+    
+    
+    <dt><%= f.label :password, "Contraseña" %></dt>
+    <dd><%= f.password_field :password %></dd>
+    
+    <dt><%= f.label :password_confirmation, "Confirmar contraseña" %></dt>
+    <dd><%= f.password_field :password_confirmation %></dt>
+</dl>
+<span id="send"><%= f.submit "Crear" %></span>
+<% end %>
 <% end %>

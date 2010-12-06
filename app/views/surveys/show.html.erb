@@ -1,19 +1,18 @@
 <% title "Encuesta" %>
-<div id="all-aspect">
-  <% for aspect in @aspects do %>
-     <div title =  "<%= "#{aspect.name}" %>" class="aspect" <%= 'id="current-aspect"' if aspect == @question.aspect %>>
-       <abbr  title = "<%= "#{aspect.name}" %>" ><%= aspect.number %></abbr>
-     </div>
+
+<%= fill_aspects(@question.aspect) %>
+
+<div id="survey-question">
+  <p><strong><%= @question.number %>. </strong>
+    <%= @question.description %></p>
+  
+  <% form_tag do %>
+  
+  <%= render :partial => @question.category %>
+  <%= hidden_field_tag 'question', @question.id %>
+  
+  <span id="next">
+    <%= submit_tag "Siguiente" %>
+  </span> 
   <% end %>
 </div>
-
-<strong><%= @question.number %>. </strong>
-<em><%= @question.description %></em>
-
-<% form_tag do %>
-
-<%= render :partial => @question.category %>
-<%= hidden_field_tag 'question', @question.id %>
-
-<%= submit_tag "Siguiente" %> 
-<% end %>
