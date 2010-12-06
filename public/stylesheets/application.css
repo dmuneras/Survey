@@ -28,8 +28,10 @@ a { color: #0000FF;}
 }
 
 #flash_notice {
-  background-color: #999;
+  background-color: rgba(192,192,192,0.6);
   border: solid 1px #E6E6FA;
+  font-size:14px;
+  text-align:center;
 }
 
 #flash_error {
