@@ -2,6 +2,7 @@
   <% if current_user.nil? %>
   <h3>Empresa</h3>
   <% if current_company %>
+  <p><%= link_to "Ver empresa", current_company%></p>
   <p><%= link_to "Ver resultados", :controller => :chart, :action => :index, :id => "company_#{current_company.id}" %></p>
   <p><%= link_to "Editar información", edit_company_path(current_company)%></p>
   <p><%= link_to "Gestión de usuarios", show_users_company_path(current_company) %></p>

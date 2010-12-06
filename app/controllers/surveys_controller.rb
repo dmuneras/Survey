@@ -57,7 +57,6 @@ class SurveysController < ApplicationController
       render :action => 'edit'
     end
   end
-  
   def destroy
     @survey = Survey.find(params[:id])
     @survey.destroy

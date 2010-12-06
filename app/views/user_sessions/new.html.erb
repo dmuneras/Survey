@@ -1,5 +1,6 @@
 <div class= "contentWrap" id= "login">
 <div class="all-login">
+  <div class= "cancel"><%= link_to (image_tag "close.png"), root_url %></div>
   <div class ="login-content">
     <h1>Ingreso Usuario</h1>
     <% form_for @user_session do |f| %>
@@ -12,10 +13,10 @@
       <%= f.label :password, "Ingrese contraseña" %><br />
       <%= f.password_field :password %>
     </p>
-    <div class= "options">
-      <div class="submit"><%= f.submit "Ingresar" %> </div>
-      <% end %>
-      <div class="cancel"><%= button_to "Cancelar", root_url %></div>
+    <p>
+       <%= f.submit "Ingresar" %> 
+    </p>
+    <% end %>
     </div>
   </div>
 </div>
