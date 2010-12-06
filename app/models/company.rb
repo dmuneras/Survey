@@ -6,7 +6,9 @@ class Company < ActiveRecord::Base
   acts_as_authentic  
   has_many :users , :dependent => :destroy
   belongs_to :subsector
-
+  validates_presence_of :nit, :name, :email, :telephone, :login
+ # validates_uniqueness_of :nit, :name, :email, :telephone, :login
+  
   # TODO no modifica cuando no está logueado CORREGIR
   def calculate_company_averages
     #company_session = CompanySession.new(self)
