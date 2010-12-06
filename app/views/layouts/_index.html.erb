@@ -1,6 +1,6 @@
 <div id="all-index">
     <div id= "index">
-      <p><%= link_to "Pagina principal", root_url%></p>
+      <p><%= link_to "Página principal", root_url%></p>
       <% if admin_company?(current_company) or admin_company_user?(current_user) %>
       <%= render :partial => 'layouts/index_admin' %>
     <% else %>

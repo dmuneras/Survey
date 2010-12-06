@@ -1,7 +1,8 @@
+# -*- coding: utf-8 -*-
 class UsersController < ApplicationController
 
   def show
-    if not (current_user.nil?)
+    if current_user
       @user = current_user
     else
       @user = User.find(params[:id])
@@ -10,7 +11,12 @@ class UsersController < ApplicationController
   
   def new
     @company = Company.find(params[:company_id])
-    @user = @company.users.build
+    if @company.users.count >= 5
+      flash[:notice] = "No puede crear más de 5 usuarios. Para registrar un nuevo usuario debe eliminar alguno de los existentes."
+      redirect_to show_users_company_path(@company)
+    else
+      @user = @company.users.build
+    end
   end
 
   def create
@@ -19,7 +25,7 @@ class UsersController < ApplicationController
     @user.nit_company = @company.nit
     if @user.save_without_session_maintenance
       flash[:notice] = "Se ha creado un nuevo usuario llamado #{@user.full_name}."
-      redirect_to root_url 
+      redirect_to show_users_company_path(@company) 
     else
       render :action => 'new'
     end

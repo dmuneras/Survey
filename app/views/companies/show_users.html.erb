@@ -14,7 +14,11 @@
       <td><%= user.last_name %></td>
       <td><%= user.phone %></td>
       <td><%= user.survey_records.last.date if user.survey_records.last %></td>
-    </tr>
+      <td class="no-cell">
+	<%= link_to "Editar", edit_user_path(user) %></td>
+      <td class="no-cell">
+	<%= link_to "Eliminar", user, :confirm => "¿Está seguro que desea eliminar este usuario?", :method => :delete %></td>
+    </tr>    
   <% end %>
 </table>
 

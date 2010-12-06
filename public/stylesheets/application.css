@@ -402,6 +402,10 @@ table#users-table {
     width: 80%;
 }
 
+table#users-table td.no-cell {
+    border: none;;
+}
+
 table#users-table td {
     text-align: center;
 }

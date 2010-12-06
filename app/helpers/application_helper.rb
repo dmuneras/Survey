@@ -1,6 +1,10 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
 
+  def is_admin?
+    admin_company?(current_company) || admin_company_user?(current_user)
+  end
+
   def admin_company_user?(user)
     unless user.nil?
       if user.company.login == 'eafit'
@@ -44,4 +48,5 @@ module ApplicationHelper
     end
     return h
   end
+
 end

@@ -44,7 +44,7 @@ class ChartController < ApplicationController
       end      
       to_compare = []
       to_compare << this_company
-      to_compare << that_company
+      to_compare << that_company if this_company != that_company
       generate_radar_chart title, to_compare
     elsif type == 'user'
       this_user = User.find(id)
@@ -111,31 +111,30 @@ class ChartController < ApplicationController
   def generate_radar_chart(the_title, companies)
     respond_to do |wants|
       wants.html {
-        @graph = open_flash_chart_object(400,400,url_for(:action => 'show', :format => :json))
+        @graph = open_flash_chart_object(600,600,url_for(:action => 'show', :format => :json))
       }
       wants.json {
         title = Title.new(the_title)
         chart = OpenFlashChart.new(title) do |c|
           c.set_bg_colour('#FFFFFF')
           colours = ['#FF0000', '#0000FF', '#FFFF00', '#00FF00', '#00FFFF']
-          i = 0
-          for company in companies do
+          companies.zip(colours) do |company, colour|
             values = string_to_hash company.averages
             dot_values = []
             values.each do |asp, avg|
-              tip = "#{Aspect.find(asp).name}<br>#{company.name}"
-              dot_values << DotValue.new(avg, colours[i],
+              company_name = company.name if company == current_company || is_admin?
+              tip = "#{Aspect.find(asp).name}<br>#{company_name}"
+              dot_values << DotValue.new(avg, colour,
                                          :tip => tip)
             end
             c << AreaBase.new(:width => 3,
-                              :colour => colours[i],
+                              :colour => colour,
                               :values => dot_values,
                               :fill_alpha => 0.35,
                               :dot_style => SolidDot.new(nil, :dot_size => 4),
                               :text => company.name,
                               :on_show => LineOnShow.new('explode', 0.5, 0.5),
                               :loop => true)
-            i += 1
                               
           end
           spoke_labels = RadarSpokeLabels.new(Array.new(['1','2','3','4','5']))
@@ -157,6 +156,7 @@ class ChartController < ApplicationController
     worst = nil
     min = 101
     for company in companies do
+      next unless company.averages
       averages = string_to_hash company.averages
       total_avg = 0
       averages.each do |asp, avg|
@@ -175,6 +175,7 @@ class ChartController < ApplicationController
     best = nil
     max = -1
     for company in companies do
+      next unless company.averages
       averages = string_to_hash company.averages
       total_avg = 0
       averages.each do |asp, avg|
