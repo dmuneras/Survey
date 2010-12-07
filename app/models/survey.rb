@@ -5,5 +5,13 @@ class Survey < ActiveRecord::Base
   def self.main_survey
     Survey.find_by_name('Principal')
   end
+  
+  def is_main_survey?
+    if self  == Survey.find_by_name('Principal')
+      return true
+    else
+      return false
+    end
+  end
 
 end
