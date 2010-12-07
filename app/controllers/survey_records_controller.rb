@@ -19,7 +19,7 @@ class SurveyRecordsController < ApplicationController
     @last_answers = @last_surveys.inject([]) do |ans, sur|
       ans << string_to_arrays(sur.answers)
     end
-    @questions = Question.all(:order => 'number')
+    @questions = Question.all(:conditions => {:survey_id => 1}, :order => 'number')
   end
   
   def new
