@@ -29,64 +29,79 @@ class SurveyRecordsController < ApplicationController
   end
   
   def create
-    if session[:answers].empty?
-      flash[:notice] = "No ha llenado la encuesta"
-      redirect_to root_url
-      return
-    end
-    aspect_avg = []
-    ans_to_save = []
-    for answer in session[:answers] do
-      if answer.class == Array
-        ans = Answer.find(answer.first)
-        aspect = ans.question.aspect
-        aspect_avg[aspect.number-1] ||= 0
-        aspect_avg[aspect.number-1] += answer.size * 5 / Answer.count(:conditions => {:question_id => ans.question_id})
-        ans_to_save << answer.join(',')
-      elsif answer.class == HashWithIndifferentAccess
-        aspect = Answer.find(answer.first.second).question.aspect
-        aspect_avg[aspect.number-1] ||= 0
-        ans = []
-        sub_avg = 0
-        answer.each do |sub,a|
-          sub_avg += Answer.find(a).value
-          ans << a
+    if (Survey.find(params[:survey])).name == 'Principal'
+      if session[:answers].empty?
+        flash[:notice] = "No ha llenado la encuesta"
+        redirect_to root_url
+        return
+      end
+      aspect_avg = []
+      ans_to_save = []
+      for answer in session[:answers] do
+        if answer.class == Array
+          ans = Answer.find(answer.first)
+          aspect = ans.question.aspect
+          aspect_avg[aspect.number-1] ||= 0
+          aspect_avg[aspect.number-1] += answer.size * 5 / Answer.count(:conditions => {:question_id => ans.question_id})
+          ans_to_save << answer.join(',')
+        elsif answer.class == HashWithIndifferentAccess
+          aspect = Answer.find(answer.first.second).question.aspect
+          aspect_avg[aspect.number-1] ||= 0
+          ans = []
+          sub_avg = 0
+          answer.each do |sub,a|
+            sub_avg += Answer.find(a).value
+            ans << a
         end
-        sub_avg /= ans.size
-        aspect_avg[aspect.number-1] += sub_avg
-        ans_to_save << ans.join(',')
-      elsif answer
-        ans = Answer.find(answer)
-        aspect_avg[ans.question.aspect.number-1] ||= 0
-        aspect_avg[ans.question.aspect.number-1] += ans.value
-        ans_to_save << answer
-      else 
-        ans_to_save << ''
+          sub_avg /= ans.size
+          aspect_avg[aspect.number-1] += sub_avg
+          ans_to_save << ans.join(',')
+        elsif answer
+          ans = Answer.find(answer)
+          aspect_avg[ans.question.aspect.number-1] ||= 0
+          aspect_avg[ans.question.aspect.number-1] += ans.value
+          ans_to_save << answer
+        else 
+          ans_to_save << ''
+        end
+      end
+      
+      avg_to_save = []
+      aspects = Aspect.all(:order => 'number')
+      for aspect in aspects do
+        avg = aspect_avg[aspect.number-1] / Question.count(:conditions => {:aspect_id => aspect.id}).to_f
+        avg_to_save << "#{aspect.id},#{avg}"
+      end
+      
+      avg_to_save = avg_to_save.join(';')
+      ans_to_save = ans_to_save.join(';')
+      
+      @survey_record = SurveyRecord.new(:user_id => current_user.id,
+                                        :answers => ans_to_save,
+                                        :averages => avg_to_save,
+                                        :comment => params[:comment],
+                                        :survey_id => params[:survey])
+      if @survey_record.save
+        current_user.company.calculate_company_averages
+        session[:answers] = []
+      else
+        flash[:notice] = 'Error al almacenar los resultados'      
+      end    
+      redirect_to :controller => :chart, :action => :index, :id => "user_#{current_user.id}"
+    else
+      ans = ""
+      for answer in session[:answers] do
+         ans << "#{answer};"
+       end
+      @survey_record = SurveyRecord.new(:user_id => current_user.id,:answers => ans, 
+                                        :survey_id => params[:survey], :comment => params[:comment] )
+      if @survey_record.save
+        redirect_to root_url
+        flash[:notice] = "Gracias por ayudarnos a mejorar"
+      else
+        redirect_to :back
       end
     end
-
-    avg_to_save = []
-    aspects = Aspect.all(:order => 'number')
-    for aspect in aspects do
-      avg = aspect_avg[aspect.number-1] / Question.count(:conditions => {:aspect_id => aspect.id}).to_f
-      avg_to_save << "#{aspect.id},#{avg}"
-    end
-    
-    avg_to_save = avg_to_save.join(';')
-    ans_to_save = ans_to_save.join(';')
-
-    @survey_record = SurveyRecord.new(:user_id => current_user.id,
-                                      :answers => ans_to_save,
-                                      :averages => avg_to_save,
-                                      :comment => params[:comment],
-                                      :survey_id => params[:survey])
-    if @survey_record.save
-      current_user.company.calculate_company_averages
-      session[:answers] = []
-    else
-      flash[:notice] = 'Error al almacenar los resultados'      
-    end    
-    redirect_to :controller => :chart, :action => :index, :id => "user_#{current_user.id}" 
   end
   
   def edit

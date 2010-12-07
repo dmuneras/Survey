@@ -37,7 +37,7 @@ class AddEvaluationSurvey < ActiveRecord::Migration
   end
 
   def self.down
-    for question in Survey.last.question do
+    for question in Survey.last.questions do
       question.destroy
     end
     Survey.last.destroy
