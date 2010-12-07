@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 class SurveyRecordsController < ApplicationController
 
-  before_filter :is_logged?
+  before_filter :is_logged?, :except => :index
+  before_filter :admin_logged?, :only => :index
   
   def index
     @survey_records = SurveyRecord.all
