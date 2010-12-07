@@ -12,19 +12,24 @@ class User < ActiveRecord::Base
   end
 
   def last_surveys (number)
-    SurveyRecord.find_all_by_user_id(id, :order => 'created_at DESC', :limit => number)
+    SurveyRecord.find_all_by_user_id(id, :conditions => {:survey_id => Survey.main_survey.id} , :order => 'created_at DESC', :limit => number)
+  end
+
+  def main_survey_records
+    survey = Survey.main_survey
+    SurveyRecord.all(:conditions => {:survey_id => survey.id, :user_id => self.id})
   end
 
   def total_average
     vals = {}
-    for record in survey_records do
+    for record in self.main_survey_records do
       averages = string_to_hash record.averages
       averages.each do |asp, avg|
         vals[asp] ||= 0
         vals[asp] += avg
       end
     end
-    vals.each{|asp, avg| vals[asp] = avg / survey_records.size}
+    vals.each{|asp, avg| vals[asp] = avg / self.main_survey_records.size}
     return vals 
   end
 

@@ -11,7 +11,7 @@ class SurveyRecordsController < ApplicationController
   def show
     @survey_record = SurveyRecord.find(params[:id])
     @answers = string_to_arrays @survey_record.answers
-    @questions = Question.all(:order => 'number')
+    @questions = Question.all(:conditions => {:survey_id => 1}, :order => 'number')
   end
 
   def compare
@@ -24,13 +24,14 @@ class SurveyRecordsController < ApplicationController
   end
   
   def new
+    @survey = Survey.find(params[:id])
     @survey_record = SurveyRecord.new
   end
   
   def create
     if session[:answers].empty?
       flash[:notice] = "No ha llenado la encuesta"
-      redirect_to surveys_path
+      redirect_to root_url
       return
     end
     aspect_avg = []
@@ -77,7 +78,8 @@ class SurveyRecordsController < ApplicationController
     @survey_record = SurveyRecord.new(:user_id => current_user.id,
                                       :answers => ans_to_save,
                                       :averages => avg_to_save,
-                                      :comment => params[:comment])
+                                      :comment => params[:comment],
+                                      :survey_id => params[:survey])
     if @survey_record.save
       current_user.company.calculate_company_averages
       session[:answers] = []

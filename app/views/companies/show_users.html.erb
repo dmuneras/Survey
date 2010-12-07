@@ -1,6 +1,7 @@
 <% title "Lista de usuarios de #{@company.name}" %>
 
 <br />
+<% if @users.size > 0 %>
 <table id="users-table">
   <tr>
     <th>Nombre</th>
@@ -18,10 +19,12 @@
 	<%= link_to "Editar", edit_user_path(user) %></td>
       <td class="no-cell">
 	<%= link_to "Eliminar", user, :confirm => "¿Está seguro que desea eliminar este usuario?", :method => :delete %></td>
-    </tr>    
-  <% end %>
+    </tr>
+    <span id="new-user">
+      <%= link_to "Agregar usuario", new_company_user_path(@company) %>
+    </span>    
+<% end %>
 </table>
-
-<span id="new-user">
-  <%= link_to "Agregar usuario", new_company_user_path(@company) %>
-</span>
+<% else %>
+<p>La empresa no tiene usuarios en el momento. Para ingresar un usuario haga clic en <%= link_to "agregar usuario", new_company_user_path(@company) %></p>
+<% end %>

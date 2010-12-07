@@ -8,4 +8,11 @@ class Question < ActiveRecord::Base
   belongs_to :aspect
   belongs_to :survey
   attr_accessible :number, :description, :aspect_id, :category, :survey_id
+
+
+  def self.main_questions
+    survey = Survey.main_survey
+    Question.find_all_by_survey_id(survey.id)
+  end
+
 end

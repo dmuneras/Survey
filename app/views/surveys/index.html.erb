@@ -9,6 +9,6 @@
   
   <p>Una vez finalizada la encuesta usted encontrara varios tipos de resultados: como usuario y como empresa, y además resultados comparativos según el subsector al que pertenece y según el sector manufactura, las comparaciones podrá verse según la empresa de mejor y menor rendimiento</p>
   
-  <%= button_to "Continuar", {:action => :show}, {:method => :get} %>
+  <%= button_to "Continuar", begin_survey_path(@survey), :method => :get %>
   
 </div>

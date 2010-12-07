@@ -1,0 +1,6 @@
+<ul>
+<% for  answer in @answers do %>
+<li><%= check_box_tag 'answer[]', answer.id %><%= answer.description %></li>
+<% end %>
+</ul>
+<br />

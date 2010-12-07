@@ -1,12 +1,23 @@
-<% title "Aspecto #{@question.aspect.name}" %>
-<br/>
-<p>
-  <h1><%= "#{@question.number}."%></h1>
+<% title "Encuesta" %>
 
-  <div class = "question-description"><%=h @question.description %>
-    <% for answer in @question.answers do %>
-      <br/><%= radio_button_tag "answers", answer.id %><%= answer.description%>
-    <% end %>	
+<% if @question.aspect %>
+<p><strong>Aspecto: </strong><%= @question.aspect.name %></p>
+
+<%= fill_aspects(@question.aspect) %>
+<% end %>
+
+<div id="survey-question">
+  <p><strong><%= @question.number %>. </strong>
+    <%= @question.description %></p>
+  
+  <% form_tag (url_for(:action => :next)) do %>
+  
+  <%= render :partial => @question.category %>
+  
+  <%= hidden_field_tag 'question', @question.id %>
+  
+  <span id="next">
+    <%= submit_tag "Siguiente" %>
+  </span> 
+  <% end %>
 </div>
-</p>
-

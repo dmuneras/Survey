@@ -1,4 +1,0 @@
-class SurveyRecord < ActiveRecord::Base
-  attr_accessible :answers
-  has_many :questions
-end

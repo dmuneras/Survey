@@ -9,12 +9,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101206155745) do
+ActiveRecord::Schema.define(:version => 20101207165426) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
     t.integer  "number"
-    t.text     "description"
+    t.string   "description"
     t.integer  "value"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(:version => 20101206155745) do
 
   create_table "questions", :force => true do |t|
     t.integer  "number"
-    t.text     "description"
+    t.string   "description"
     t.integer  "aspect_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -105,6 +105,7 @@ ActiveRecord::Schema.define(:version => 20101206155745) do
     t.datetime "updated_at"
     t.string   "comment"
     t.string   "averages"
+    t.integer  "survey_id"
   end
 
   create_table "surveys", :force => true do |t|

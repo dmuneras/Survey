@@ -2,6 +2,8 @@
  
 <%= text_area_tag :comment, nil, {:cols => 40, :rows => 20} %><br />
 
+<%= hidden_field_tag 'survey', @survey.id %>
+
 <%= submit_tag "Enviar" %>
 
 <% end %>

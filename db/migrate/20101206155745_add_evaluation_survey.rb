@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class AddEvaluationSurvey < ActiveRecord::Migration
   def self.up
 
@@ -36,6 +37,9 @@ class AddEvaluationSurvey < ActiveRecord::Migration
   end
 
   def self.down
+    for question in Survey.last.question do
+      question.destroy
+    end
     Survey.last.destroy
   end
 end

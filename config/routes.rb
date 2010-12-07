@@ -2,12 +2,12 @@
 ActionController::Routing::Routes.draw do |map|
 
   map.resources :base
-  map.resources :questions
+  map.resources :questions, :member => {:next => :post}
   map.resources :answers
   map.resources :companies ,:has_many => :users, :shallow => true
   map.resources :companies, :member => {:show_users => :get}
   map.resources :subsectors
-  map.resources :surveys, :member => {:next_question => :get}
+  map.resources :surveys, :member => {:begin => :get}
   map.resources :chart
   map.resources :user_sessions
   map.resources :company_sessions
