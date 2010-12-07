@@ -10,7 +10,7 @@ class SurveyRecordsController < ApplicationController
   def show
     @survey_record = SurveyRecord.find(params[:id])
     @answers = string_to_arrays @survey_record.answers
-    @questions = Question.all(:order => 'number')
+    @questions = Question.all(:conditions => {:survey_id => 1},:order => 'number')
   end
 
   def compare
