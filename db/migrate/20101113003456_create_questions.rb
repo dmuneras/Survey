@@ -2,7 +2,7 @@ class CreateQuestions < ActiveRecord::Migration
   def self.up
     create_table :questions do |t|
       t.integer :number
-      t.string :description
+      t.text :description
       t.integer :aspect_id
       t.timestamps
     end
