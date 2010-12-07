@@ -11,7 +11,11 @@ class SurveyRecordsController < ApplicationController
   def show
     @survey_record = SurveyRecord.find(params[:id])
     @answers = string_to_arrays @survey_record.answers
-    @questions = Question.all(:conditions => {:survey_id => Survey.main_survey.id}, :order => 'number')
+<<<<<<< HEAD
+    @questions = Question.all(:conditions => {:survey_id => 1}, :order => 'number')
+=======
+    @questions = Question.all(:conditions => {:survey_id => 1},:order => 'number')
+>>>>>>> 30af36d5706ea7b228ef948699c37ecca0a4b285
   end
 
   def compare
@@ -20,7 +24,7 @@ class SurveyRecordsController < ApplicationController
     @last_answers = @last_surveys.inject([]) do |ans, sur|
       ans << string_to_arrays(sur.answers)
     end
-    @questions = Question.all(:conditions => {:survey_id => Survey.main_survey.id}, :order => 'number')
+    @questions = Question.all(:conditions => {:survey_id => 1}, :order => 'number')
   end
   
   def new
