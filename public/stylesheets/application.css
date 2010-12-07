@@ -102,6 +102,7 @@ div#logohdw img{
 
 /*TABLE*/
 table {
+    margin-bottom: 1em;
     width: 100%;
 }
 td {
@@ -282,6 +283,18 @@ div.result h1 {
     text-align:center;
 }
 
+div#nested-question td {
+    text-align: center;
+}
+
+div#scale-question td {
+    text-align: center;
+}
+
+th.scale-header {
+    width: 12em;
+}
+
 .highlight-dfn {
     font-weight: bold;
 }
@@ -289,12 +302,11 @@ div.result h1 {
 /*ASPECT*/
 
 table#all-aspect {
-    float: right;
+    width: 90%;
     margin-bottom: 2em;
 }
 
 table#all-aspect td {
-    width:100px;
     text-align:center;
 }
 

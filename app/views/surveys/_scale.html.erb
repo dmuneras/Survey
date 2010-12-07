@@ -1,20 +1,22 @@
-<table>
-  <tr>
-    <th></th>
-    <% for answer in @answers do %>
-    <th><%= answer.description.gsub('-','') %></th>
-    <% end %>
-    <th></th>
-  </tr>
-  <tr>
-    <th><%= @scale.lower %></th>
-    <% for answer in @answers do %>
-    <% if answer.description == '0' %>
-    <td><%= radio_button_tag 'answer', answer.id, {:checked => true} %></td>
-    <% else %>
-    <td><%= radio_button_tag 'answer', answer.id %></td>
-    <% end %>
-    <% end %>
-    <th><%= @scale.higher %></th>
-  </tr>
-</table>
+<div id="scale-question">
+  <table>
+    <tr>
+      <td></td>
+      <% for answer in @answers do %>
+      <th><%= answer.description.gsub('-','') %></th>
+      <% end %>
+      <td></td>
+    </tr>
+    <tr>
+      <th class="scale-header"><%= @scale.lower %></th>
+      <% for answer in @answers do %>
+      <% if answer.description == '0' %>
+      <td><%= radio_button_tag 'answer', answer.id, {:checked => true} %></td>
+      <% else %>
+      <td><%= radio_button_tag 'answer', answer.id %></td>
+      <% end %>
+      <% end %>
+      <th class="scale-header"><%= @scale.higher %></th>
+    </tr>
+  </table>
+</div>
