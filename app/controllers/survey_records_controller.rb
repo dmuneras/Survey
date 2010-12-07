@@ -29,7 +29,8 @@ class SurveyRecordsController < ApplicationController
   end
   
   def create
-    if (Survey.find(params[:survey])).name == 'Principal'
+    current_survey = Survey.find(params[:survey])
+    if Survey.is_main_survey current_survey
       if session[:answers].empty?
         flash[:notice] = "No ha llenado la encuesta"
         redirect_to root_url
@@ -97,7 +98,7 @@ class SurveyRecordsController < ApplicationController
                                         :survey_id => params[:survey], :comment => params[:comment] )
       if @survey_record.save
         redirect_to root_url
-        flash[:notice] = "Gracias por ayudarnos a mejorar"
+        flash[:notice] = "Gracias por ayudarnos a mejorar."
       else
         redirect_to :back
       end
