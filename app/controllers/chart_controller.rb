@@ -2,6 +2,7 @@
 class ChartController < ApplicationController
 
   before_filter :is_logged?
+  before_filter :get_aspects, :only => [:generate_bar_chart, :generate_radar_chart]
   
   # TODO validaciones para admin
   def index
@@ -50,8 +51,14 @@ class ChartController < ApplicationController
       this_user = User.find(id)
       if  chart_type == 'time'
         title = 'Resultados a través del tiempo'
-        data = this_user.last_surveys 3
-        generate_bar_chart title, data.reverse
+        surveys = this_user.last_surveys 3
+        data = []
+        dates = []
+        for survey in surveys do
+          data << survey.averages.split(';').map{|avg| avg.to_f}
+          dates << survey.date
+        end
+        generate_bar_chart title, data.reverse, dates.reverse, true
       elsif chart_type == 'average'
         title = 'Resultados promedio'
         generate_bar_chart title, (this_user.total_average)
@@ -60,7 +67,7 @@ class ChartController < ApplicationController
   end
   
   private
-  def generate_bar_chart(the_title, survey_data)
+  def generate_bar_chart(the_title, survey_data, dates=nil, multiple=false)
     respond_to do |wants|
       wants.html {
         @graph = open_flash_chart_object(800,400,url_for(:action => 'show', :format => :json))
@@ -69,27 +76,25 @@ class ChartController < ApplicationController
         title = Title.new(the_title)
         chart = OpenFlashChart.new(title) do |c|
           colours = ['#FF0000', '#FFFF00', '#0000FF', '#00FF00', '#00FFFF']
-          if survey_data.class == Hash            
+          unless multiple            
             bar_values = []
-            survey_data.zip(colours) do |res, colour|
-              break unless res
-              bar_values << BarValue.new(res.last, nil,
+            survey_data.zip(@aspects, colours) do |avg, aspect, colour|
+              bar_values << BarValue.new(avg, nil,
                                          :colour => colour,
-                                         :tip => Aspect.find(res.first).name)
+                                         :tip => aspect.name)
             end
             c << BarGlass.new(:values => bar_values,
                               :on_show => BarOnShow.new('grow-up', 0.5, 0.5))
           else
-            survey_data.zip(colours) do |survey, colour|
+            survey_data.zip(dates, colours) do |survey_avgs, date, colour|
               bar_values = []
-              averages = string_to_hash survey.averages
-              averages.each do |asp, avg|
-                tip = "#{Aspect.find(asp).name}<br>#{survey.date}"
+              @aspects.zip(survey_avgs) do |asp, avg|
+                tip = "#{asp.name}<br>#{date}"
                 bar_values << BarValue.new(avg, nil,
                                             :tip => tip)
               end
               c << BarGlass.new(:values => bar_values,
-                                :text => survey.date,
+                                :text => date,
                                 :colour => colour,
                                 :on_show => BarOnShow.new('grow-up', 0.5, 0.5))
             end
@@ -119,11 +124,11 @@ class ChartController < ApplicationController
           c.set_bg_colour('#FFFFFF')
           colours = ['#FF0000', '#0000FF', '#FFFF00', '#00FF00', '#00FFFF']
           companies.zip(colours) do |company, colour|
-            values = string_to_hash company.averages
+            values = company.averages.split(';')
             dot_values = []
-            values.each do |asp, avg|
+            @aspects.zip(values) do |asp, avg|
               company_name = company.name if company == current_company || is_admin?
-              tip = "#{Aspect.find(asp).name}<br>#{company_name}"
+              tip = "#{asp.name}<br>#{company_name}"
               dot_values << DotValue.new(avg, colour,
                                          :tip => tip)
             end
@@ -188,6 +193,10 @@ class ChartController < ApplicationController
       end
     end
     return best
+  end
+
+  def get_aspects
+    @aspects = Aspect.all(:order => 'number')
   end
 
 end

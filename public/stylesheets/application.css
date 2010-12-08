@@ -1,5 +1,5 @@
 body {
-  background-color: #fff;
+  background-color: #FFF;
   font-family: "Lucida Grande","Lucida Sans Unicode",Arial,Verdana,sans-serif;
   margin: 0px;
   min-width: 950px;
@@ -20,7 +20,6 @@ a { color: #0000FF;}
   height: 0;
   overflow: hidden;
 }
-
 
 #flash_notice, #flash_error {
   padding: 5px 8px;
@@ -124,6 +123,10 @@ th {
 }
 /*INDEX*/
 
+div#user_nav {
+    margin-left: 4%;
+}
+
 div#all-index{
     margin-top:12px;
     margin-left:12px;
@@ -171,7 +174,8 @@ div#introduction p {
 
 div#content{
     padding:15px;
-    width:75%;
+    width:60%;
+    margin-right: 10%;
     min-height:400px;
     float: right;
 }
@@ -323,12 +327,17 @@ div#user-show {
 }
 
 div#user-info {
+    width: 30%;
     margin-right: 10%;
     float: left;
 }
 
+div#user-info p {
+    font-size: 1.2em;
+}
+
 div#welcome-user {    
-    margin: 2em 20% 0;
+    margin: 2em 15% 0;
 }
 
 div#welcome-user p {
@@ -372,11 +381,21 @@ dfn {
 }
 
 /*REGISTER*/
-
-fieldset {
+fieldset {    
+    border: groove 4px #BFA816;
     margin-left: 2em;
     margin-bottom: 2em;
-    width: 36em;
+    width: 36em;    
+    background-color: #5593E3;
+}
+
+legend {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+fieldset form {    
+    height: 100%;
 }
 
 form dl {
@@ -386,6 +405,8 @@ form dl {
 form dt {
     width: 30%;
     float: left;
+    font-size: 1.1em;
+    font-weight: bold;
     text-align: right;
     margin-right: 1em;
 }
@@ -414,10 +435,14 @@ div#company-show {
 }
 
 div#company-info {
-    width: 20%;
+    width: 40%;
     float: left;
     margin-left: 1em;
     margin-right: 3em;
+}
+
+div#company-info p {
+    font-size: 1.2em;
 }
 
 div#welcome-company {

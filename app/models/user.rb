@@ -4,8 +4,6 @@ class User < ActiveRecord::Base
   belongs_to :company
   has_many :survey_records, :dependent => :destroy
   acts_as_authentic  
-  # validates_presence_of :username, :name, :last_name, :phone
-  # validates_uniqueness_of :username
 
   def full_name 
     [name,last_name].join(" ") 
@@ -21,16 +19,15 @@ class User < ActiveRecord::Base
   end
 
   def total_average
-    vals = {}
+    vals = []
     for record in self.main_survey_records do
-      averages = string_to_hash record.averages
-      averages.each do |asp, avg|
+      averages = record.averages.split(';')
+      (0...Aspect.count).zip(averages) do |asp, avg|
         vals[asp] ||= 0
-        vals[asp] += avg
+        vals[asp] += avg.to_f
       end
     end
-    vals.each{|asp, avg| vals[asp] = avg / self.main_survey_records.size}
-    return vals 
+    vals.map{|avg| avg /= self.main_survey_records.size} 
   end
 
 end

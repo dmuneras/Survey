@@ -6,34 +6,27 @@ class Company < ActiveRecord::Base
   acts_as_authentic  
   has_many :users , :dependent => :destroy
   belongs_to :subsector
-  validates_presence_of :nit, :name, :email, :telephone, :login
- # validates_uniqueness_of :nit, :name, :email, :telephone, :login
   
-  # TODO no modifica cuando no está logueado CORREGIR
-  def calculate_company_averages
-    #company_session = CompanySession.new(self)
-    #company_session.save
-    
-    company_avgs = {}
+  def calculate_company_averages   
+    company_avgs = []
     total_users = 0
     for user in self.users do
       latest_survey = user.survey_records.last
       next unless latest_survey
-      user_avgs = string_to_hash latest_survey.averages
-      user_avgs.each do |asp, avg|
+      user_avgs = latest_survey.averages.split(';')
+      (0...Aspect.count).zip(user_avgs) do |asp, avg|
         company_avgs[asp] ||= 0
-        company_avgs[asp] += avg
+        company_avgs[asp] += avg.to_f
       end
       total_users += 1
     end
-    company_avgs.each {|a,b| company_avgs[a] = b / total_users.to_f}
-    company_avgs = hash_to_string company_avgs
+    company_avgs = company_avgs.map {|avg| avg /= total_users.to_f}
+    company_avgs = company_avgs.join(';')
     if update_attributes(:averages => company_avgs)
       logger.info("Success!")
     else
       logger.info("Fail :'(")
     end    
-    # company_session.destroy
   end
   
   
@@ -41,10 +34,10 @@ class Company < ActiveRecord::Base
     worst = nil
     min = 101
     for company in companies do
-      averages = string_to_hash company.averages
+      averages = company.averages.split(';')
       total_avg = 0
-      averages.each do |asp, avg|
-        total_avg += avg
+      for average in averages do
+        total_avg += average
       end
       total_avg /= averages.size
       if total_avg < min
@@ -59,10 +52,10 @@ class Company < ActiveRecord::Base
     best = nil
     max = -1
     for company in companies do
-      averages = string_to_hash company.averages
+      averages = company.averages.split(';')
       total_avg = 0
-      averages.each do |asp, avg|
-        total_avg += avg
+      for average in averages do 
+        total_avg += average
       end
       total_avg /= averages.size
       if total_avg > max

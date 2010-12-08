@@ -16,7 +16,7 @@ class SurveyRecordsController < ApplicationController
 
   def compare
     @user = User.find(params[:id])
-    @last_surveys = @user.last_surveys 2
+    @last_surveys = @user.last_surveys(2).reverse
     @last_answers = @last_surveys.inject([]) do |ans, sur|
       ans << string_to_arrays(sur.answers)
     end
@@ -53,7 +53,7 @@ class SurveyRecordsController < ApplicationController
           answer.each do |sub,a|
             sub_avg += Answer.find(a).value
             ans << a
-        end
+          end
           sub_avg /= ans.size
           aspect_avg[aspect.number-1] += sub_avg
           ans_to_save << ans.join(',')
@@ -71,7 +71,7 @@ class SurveyRecordsController < ApplicationController
       aspects = Aspect.all(:order => 'number')
       for aspect in aspects do
         avg = aspect_avg[aspect.number-1] / Question.count(:conditions => {:aspect_id => aspect.id}).to_f
-        avg_to_save << "#{aspect.id},#{avg}"
+        avg_to_save << avg
       end
       
       avg_to_save = avg_to_save.join(';')
