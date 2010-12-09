@@ -29,7 +29,6 @@ a { color: #0000FF;}
 #flash_notice {
   background-color: rgba(192,192,192,0.6);
   backgorund-color: rgb(192,192,192);
-  opacity: 0.5;
   border: solid 1px #E6E6FA;
   font-size:14px;
   text-align:center;
@@ -134,7 +133,8 @@ div#all-index{
     margin-left:12px;
     background-color:rgba(255,200,0,0.6);
     background-color: rgb(255,200,0);
-    opacity: 0.6;
+    filter:alpha(opacity=90);
+    opacity: 0.9;
     border-radius: 15px;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
@@ -148,7 +148,6 @@ div#index{
     margin-left:15px;
     background-color: rgba(192,192,192,0.9);
     background-color: rgb (192,192,192);
-    opacity: 0.9;
     border-radius: 30px 80px 30px 80px;
     -webkit-border-radius: 30px 80px 30px 80px;
     -moz-border-radius: 30px 80px 30px 80px;
@@ -241,7 +240,6 @@ div.company{
 div.login-content{
      background-color: rgba(192,192,192,0.9);
      backgorund-color: rgb(192,192,192);
-     opacity: 0.9;
      border-radius: 30px 80px 30px 80px;
      -moz-border-radius:  30px 80px 30px 80px;
      -webkit-border-radius: 30px 80px 30px 80px;
@@ -256,7 +254,8 @@ div.all-login{
     margin-left:12px;
     background-color:rgba(255,200,0,0.6);
     background-color : rgb(255,200,0);
-    opacity: 0.6;
+    filter:alpha(opacity=90);
+    opacity: 0.91;
     border-radius: 30px 80px 30px 80px;
     -webkit-border-radius: 30px 80px 30px 80px;
     -moz-border-radius: 30px 80px 30px 80px;
