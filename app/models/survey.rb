@@ -1,14 +1,10 @@
 class Survey < ActiveRecord::Base
-  has_many :questions
+  has_many :questions, :order => 'number'
+  has_many :survey_records
   attr_accessible :name
 
-  def self.is_main_survey(s)
-   main = Survey.find_by_name('Principal')
-   if main == s
-     return true
-   else
-     return false
-   end
+  def is_main_survey
+    self == Survey.main_survey
   end
 
   def self.main_survey

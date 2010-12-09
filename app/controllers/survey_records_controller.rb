@@ -30,7 +30,7 @@ class SurveyRecordsController < ApplicationController
   
   def create
     current_survey = Survey.find(params[:survey])
-    if Survey.is_main_survey current_survey
+    if current_survey.is_main_survey
       if session[:answers].empty?
         flash[:notice] = "No ha llenado la encuesta"
         redirect_to root_url
@@ -38,41 +38,31 @@ class SurveyRecordsController < ApplicationController
       end
       aspect_avg = []
       ans_to_save = []
-      for answer in session[:answers] do
-        if answer.class == Array
-          ans = Answer.find(answer.first)
-          aspect = ans.question.aspect
-          aspect_avg[aspect.number-1] ||= 0
-          aspect_avg[aspect.number-1] += answer.size * 5 / Answer.count(:conditions => {:question_id => ans.question_id})
-          ans_to_save << answer.join(',')
-        elsif answer.class == HashWithIndifferentAccess
-          aspect = Answer.find(answer.first.second).question.aspect
-          aspect_avg[aspect.number-1] ||= 0
-          ans = []
-          sub_avg = 0
-          answer.each do |sub,a|
-            sub_avg += Answer.find(a).value
-            ans << a
-          end
-          sub_avg /= ans.size
-          aspect_avg[aspect.number-1] += sub_avg
-          ans_to_save << ans.join(',')
-        elsif answer
-          ans = Answer.find(answer)
-          aspect_avg[ans.question.aspect.number-1] ||= 0
-          aspect_avg[ans.question.aspect.number-1] += ans.value
+      @questions = Question.main_questions
+      @answers = session[:answers]
+      @answers.zip(@questions) do |answer, question|
+        aspect_number = question.aspect.number
+        aspect_avg[aspect_number-1] ||= 0
+        if question.category == 'unique' || question.category == 'scale'
+          aspect_avg[aspect_number-1] += Answer.find(answer).value.to_f
           ans_to_save << answer
-        else 
-          ans_to_save << ''
-        end
+        elsif question.category == 'multiple'
+          if answer
+            aspect_avg[aspect_number] += answer.count * 5 / question.answers.count            
+            ans_to_save << answer.join(',')
+          else
+            ans_to_save << ''
+          end
+        elsif question.category == 'nested'
+          avg = 0
+          answer.values.each {|sub_answer| avg += Answer.find(sub_answer).value.to_f}
+          aspect_avg[aspect_number-1] = avg / question.subquestions.count
+          ans_to_save << answer.values.join(',')
+        end 
       end
-      
-      avg_to_save = []
       aspects = Aspect.all(:order => 'number')
-      for aspect in aspects do
-        avg = aspect_avg[aspect.number-1] / Question.count(:conditions => {:aspect_id => aspect.id}).to_f
-        avg_to_save << avg
-      end
+      avg_to_save = aspects.inject([]) {|averages, aspect| averages << aspect_avg[aspect.number-1] / aspect.questions.count}
+      
       
       avg_to_save = avg_to_save.join(';')
       ans_to_save = ans_to_save.join(';')
@@ -104,6 +94,7 @@ class SurveyRecordsController < ApplicationController
       end
     end
   end
+
   
   def edit
     @survey_record = SurveyRecord.find(params[:id])
@@ -124,6 +115,37 @@ class SurveyRecordsController < ApplicationController
     @survey_record.destroy
     flash[:notice] = "Successfully destroyed survey record."
     redirect_to survey_records_url
+  end
+
+  def grabage
+    
+        # for answer in session[:answers] do
+      #   if answer.class == Array
+      #     ans = Answer.find(answer.first)
+      #     aspect = ans.question.aspect
+      #     aspect_avg[aspect.number-1] ||= 0
+      #     aspect_avg[aspect.number-1] += answer.size * 5 / Answer.count(:conditions => {:question_id => ans.question_id})
+      #     ans_to_save << answer.join(',')
+      #   elsif answer.class == HashWithIndifferentAccess
+      #     aspect = Answer.find(answer.first.second).question.aspect
+      #     aspect_avg[aspect.number-1] ||= 0
+      #     ans = []
+      #     sub_avg = 0
+      #     answer.each do |sub,a|
+      #       sub_avg += Answer.find(a).value
+      #       ans << a
+      #     end
+      #     sub_avg /= ans.size
+      #     aspect_avg[aspect.number-1] += sub_avg
+      #     ans_to_save << ans.join(',')
+      #   elsif answer
+      #     ans = Answer.find(answer)
+      #     aspect_avg[ans.question.aspect.number-1] ||= 0
+      #     aspect_avg[ans.question.aspect.number-1] += ans.value
+      #     ans_to_save << answer
+      #   else 
+      #     ans_to_save << ''
+      #   end
   end
 
 end

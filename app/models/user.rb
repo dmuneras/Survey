@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   include ApplicationHelper
   validates_associated :company
   belongs_to :company
-  has_many :survey_records, :dependent => :destroy
+  has_many :survey_records, :order => 'created_at DESC', :dependent => :destroy
   acts_as_authentic  
 
   def full_name 
@@ -10,12 +10,11 @@ class User < ActiveRecord::Base
   end
 
   def last_surveys (number)
-    SurveyRecord.find_all_by_user_id(id, :conditions => {:survey_id => Survey.main_survey.id} , :order => 'created_at DESC', :limit => number)
+    self.main_survey_records(:limit => number)
   end
 
-  def main_survey_records
-    survey = Survey.main_survey
-    SurveyRecord.all(:conditions => {:survey_id => survey.id, :user_id => self.id})
+  def main_survey_records(conditions={})
+    self.survey_records.find_all_by_survey_id(Survey.main_survey.id, conditions)
   end
 
   def total_average

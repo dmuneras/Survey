@@ -1,7 +1,7 @@
 class Question < ActiveRecord::Base
   
   #DATABASE RELATIONS
-  has_many :answers, :dependent => :destroy
+  has_many :answers, :order => 'number', :dependent => :destroy
   has_many :subquestions, :dependent => :destroy
   has_one :question_scale, :dependent => :destroy
   accepts_nested_attributes_for :answers, :reject_if => lambda { |a| a[:description].blank? }, :allow_destroy => true
@@ -11,8 +11,7 @@ class Question < ActiveRecord::Base
 
 
   def self.main_questions
-    survey = Survey.main_survey
-    Question.find_all_by_survey_id(survey.id)
+    Survey.main_survey.questions
   end
 
 end
