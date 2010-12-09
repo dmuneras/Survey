@@ -48,8 +48,8 @@ class SurveyRecordsController < ApplicationController
           ans_to_save << answer
         elsif question.category == 'multiple'
           if answer
-            aspect_avg[aspect_number] += answer.count * 5 / question.answers.count            
-            ans_to_save << answer.join(',')
+            aspect_avg[aspect_number -1] += answer.count * 5 / question.answers.count            
+             ans_to_save << answer.join(',')
           else
             ans_to_save << ''
           end
