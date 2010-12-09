@@ -2,14 +2,14 @@
 
 <% if company.averages %>
 
-<p><%= link_to "Gráfico comparativo con la empresa de mejor rendimiento del subsector", {:action => :show, :id => "company_subbest_#{company.id}"}, {:method => :get} %></p>
+<p><%= link_to "Empresa del subsector con mayor rendimiento", {:action => :show, :id => "company_subbest_#{company.id}"}, {:method => :get} %></p>
 
-<p><%= link_to "Gráfico comparativo con empresa de más bajo rendimiento del subsector", {:action => :show, :id => "company_subworst_#{company.id}"}, {:method => :get} %></p>
+<p><%= link_to "Empresa del subsector de más bajo rendimiento", {:action => :show, :id => "company_subworst_#{company.id}"}, {:method => :get} %></p>
 
 
-<p><%= link_to "Gráfico comparativo con la empresa de mejor rendimiento del sector", {:action => :show, :id => "company_best_#{company.id}"}, {:method => :get} %></p>
+<p><%= link_to "Empresa del sector con mayor rendimiento", {:action => :show, :id => "company_best_#{company.id}"}, {:method => :get} %></p>
 
-<p><%= link_to "Gráfico comparativo con empresa de más bajo rendimiento del sector", {:action => :show, :id => "company_worst_#{company.id}"}, {:method => :get} %></p>
+<p><%= link_to "Empresa del sector con  más bajo rendimiento", {:action => :show, :id => "company_worst_#{company.id}"}, {:method => :get} %></p>
 
 <% else %>
 
