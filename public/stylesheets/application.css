@@ -98,6 +98,7 @@ div.auxiliar{
 div#logohdw img{
     width:180px;
     float:left;
+    margin-top:5px;
 }
 
 /*TABLE*/
@@ -131,8 +132,7 @@ div#user_nav {
 div#all-index{
     margin-top:12px;
     margin-left:12px;
-    background-color:rgba(255,200,0,0.6);
-    background-color: rgb (192,192,192);
+    background-color:rgb(255,200,0);
     border-radius: 15px;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
@@ -144,7 +144,7 @@ div#all-index{
 div#index{
     margin-top:15px;
     margin-left:15px;
-    background-color: rgba(192,192,192,0.9);
+    background-color: rgb(192,192,192);
     border-radius: 30px 80px 30px 80px;
     -webkit-border-radius: 30px 80px 30px 80px;
     -moz-border-radius: 30px 80px 30px 80px;
@@ -176,7 +176,7 @@ div#introduction p {
 
 div#content{
     padding:15px;
-    width:60%;
+    width:64%;
     margin-right: 10%;
     min-height:400px;
     float: right;
