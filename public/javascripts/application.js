@@ -19,6 +19,11 @@ $(document).ready(function(){
 	$(this).removeClass("highlight-dfn");
     });
 
+    $('dfn').qtip({style: {
+	name: 'blue', 
+	tip: true	  
+    }});
+
     // $(".aspect").hover(function() {
     // 	ab = $(this).children().first();
     // 	ab.replaceWith(ab[title]);
