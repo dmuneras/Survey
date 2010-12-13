@@ -126,7 +126,8 @@ th {
 
 dfn {
     font-size: 14px;
-    font-weight:bold;
+    font-weight: bold;
+    cursor: help;
 }
 /*INDEX*/
 
@@ -480,3 +481,4 @@ span#new-user {
     margin-right: 20%;
     margin-top: 1em;
 }
+
