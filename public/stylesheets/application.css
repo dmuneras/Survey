@@ -482,3 +482,11 @@ span#new-user {
     margin-top: 1em;
 }
 
+/*CHARTS*/
+a.next-chart {
+    float: right;
+}
+
+a.prev-chart {
+
+}
