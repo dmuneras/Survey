@@ -17,6 +17,13 @@ class QuestionsController < ApplicationController
 
   def next
     question = Question.find(params[:question])
+    unless question.category == 'multiple'
+      unless params[:answer]
+        flash[:notice] = "Debe seleccionar alguna respuesta."
+        redirect_to question_path(question)
+        return 
+      end
+    end
     assign_answer_to question
     next_question = next_question_of question
     if next_question
