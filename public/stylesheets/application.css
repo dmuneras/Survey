@@ -359,6 +359,7 @@ div#welcome-user p {
 /*SURVEY*/
 
 div#survey-index {
+    height: 14em;
     margin: 0 10em 2em 2em;
 }
 
@@ -366,8 +367,9 @@ div#survey-index p {
     text-align: justify;
 }
 
-div#survey-index input {
+input.begin-survey {
     float: right;
+    margin-right: 15%;
 }
 
 div#survey-question {
