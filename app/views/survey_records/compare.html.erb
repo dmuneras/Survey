@@ -4,8 +4,8 @@
     <tr>
       <th>#</th>
       <th>Pregunta</th>
-      <th>Penúltima respuesta</th>
-      <th>Última respuesta</th>
+      <th><%= "Penúltima respuesta #{@last_surveys[0].date}"%></th>
+      <th><%= "Última respuesta #{@last_surveys[1].date}" %></th>
     </tr>
     <% @questions.zip(@last_answers[0], @last_answers[1]) do |q, a1, a2| %>
     <tr> 

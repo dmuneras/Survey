@@ -480,3 +480,9 @@ span#new-user {
     margin-right: 20%;
     margin-top: 1em;
 }
+
+span#big_link a {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration:underline;
+}

@@ -26,5 +26,8 @@
   <%= link_to "Agregar usuario", new_company_user_path(@company) %>
 </span>
 <% else %>
-<p>La empresa no tiene usuarios en el momento. Para ingresar un usuario haga clic en <%= link_to "agregar usuario", new_company_user_path(@company) %></p>
+  <p>
+    La empresa no tiene usuarios en el momento. Para ingresar un usuario haga clic en 
+    <span id= "big_link"><%= link_to "Agregar usuario", new_company_user_path(@company) %></span>
+  </p>
 <% end %>

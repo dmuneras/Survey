@@ -1,11 +1,9 @@
 <% title "Encuesta" %>
-
 <% if @question.aspect %>
 <h3><%= @question.aspect.name %></h3>
-
 <%= fill_aspects(@question.aspect) %>
 <% end %>
-
+<h4>Nota: Las palabras en negrilla muestran su significado al tocarlas con el mouse</h4>
 <div id="survey-question">
   <p><strong><%= @question.number %>. </strong>
     <%= @question.description %></p>

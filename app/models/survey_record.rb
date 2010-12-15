@@ -4,7 +4,7 @@ class SurveyRecord < ActiveRecord::Base
   has_many :questions
   
   def date
-    self.created_at.strftime("%d/%m/%Y")
+    self.created_at.strftime("%d/%m/%Y %H:%M:%S")
   end
 
   
