@@ -126,8 +126,7 @@ th {
 
 dfn {
     font-size: 14px;
-    font-weight: bold;
-    cursor: help;
+    font-weight:bold;
 }
 /*INDEX*/
 
@@ -143,7 +142,7 @@ div#all-index{
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
     width:210px;
-    height:250px;
+    height:280px;
     float:left;
     z-index:999;
 }
@@ -155,7 +154,7 @@ div#index{
     -webkit-border-radius: 30px 80px 30px 80px;
     -moz-border-radius: 30px 80px 30px 80px;
     text-align:center;
-    height:260px;
+    height:280px;
     width:200px;
     float: left;
     padding:10px;
@@ -184,7 +183,7 @@ div#content{
     padding:15px;
     width:60%;
     margin-right: 10%;
-    min-height:600px;
+    min-height:400px;
     float: right;
 }
 
@@ -359,7 +358,6 @@ div#welcome-user p {
 /*SURVEY*/
 
 div#survey-index {
-    height: 14em;
     margin: 0 10em 2em 2em;
 }
 
@@ -367,9 +365,8 @@ div#survey-index p {
     text-align: justify;
 }
 
-input.begin-survey {
+div#survey-index input {
     float: right;
-    margin-right: 15%;
 }
 
 div#survey-question {
@@ -482,13 +479,4 @@ span#new-user {
     float: right;
     margin-right: 20%;
     margin-top: 1em;
-}
-
-/*CHARTS*/
-a.next-chart {
-    float: right;
-}
-
-a.prev-chart {
-
 }
