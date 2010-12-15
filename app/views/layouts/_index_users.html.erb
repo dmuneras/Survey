@@ -1,6 +1,6 @@
 <div class= "index-users">
   <% if current_company.nil? %>
-  <h3>Usuario</h3>
+  <h3>Opciones Usuario</h3>
     <% if current_user %>    
       <p><%= link_to "Inicio", current_user %></p>
       <p><%= link_to "Realizar encuesta", survey_path(Survey.find_by_name('Principal')) %></p>
