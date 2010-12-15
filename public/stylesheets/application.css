@@ -126,7 +126,8 @@ th {
 
 dfn {
     font-size: 14px;
-    font-weight:bold;
+    font-weight: bold;
+    cursor: help;
 }
 /*INDEX*/
 
@@ -183,7 +184,7 @@ div#content{
     padding:15px;
     width:60%;
     margin-right: 10%;
-    min-height:400px;
+    min-height:600px;
     float: right;
 }
 
@@ -358,6 +359,7 @@ div#welcome-user p {
 /*SURVEY*/
 
 div#survey-index {
+    height: 14em;
     margin: 0 10em 2em 2em;
 }
 
@@ -365,8 +367,9 @@ div#survey-index p {
     text-align: justify;
 }
 
-div#survey-index input {
+input.begin-survey {
     float: right;
+    margin-right: 15%;
 }
 
 div#survey-question {
@@ -479,4 +482,13 @@ span#new-user {
     float: right;
     margin-right: 20%;
     margin-top: 1em;
+}
+
+/*CHARTS*/
+a.next-chart {
+    float: right;
+}
+
+a.prev-chart {
+
 }

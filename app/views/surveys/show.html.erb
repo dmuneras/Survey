@@ -2,13 +2,23 @@
 
 <br />
 <div id="survey-index">
+  <% if @survey.is_main_survey %>
   <h2>Cómo funciona esta encuesta</h2>
   
   <p>Esta encuesta está estructurada en 5 aspectos, es necesario contestar todas las preguntas de cada aspecto antes de continuar con el siguiente, una vez contestados los 5 aspectos la herramienta presenta un informe de resultados. Éste da una puntuación global sobre cual es la situación de la Gestión del Diseño y el proceso de diseño y desarrollo de nuevos productos.</p>
     <h2>Interpretación de resultados</h2>
   
-  <p>Una vez finalizada la encuesta usted encontrara varios tipos de resultados: como usuario y como empresa, y además resultados comparativos según el subsector al que pertenece y según el sector manufactura, las comparaciones podrá verse según la empresa de mejor y menor rendimiento</p>
+  <p>Una vez finalizada la encuesta, usted encontrará varios tipos de resultados, como usuario y como empresa, y además resultados comparativos según el subsector al que pertenece y al sector manufactura. Las comparaciones podrán verse según la empresa de mejor y menor rendimiento.</p>
   
-  <%= button_to "Continuar", begin_survey_path(@survey), :method => :get %>
+  <% else %>
+
+  <h2>Evaluación de la herramienta</h2>
+
+  <p>La siguiente encuesta es de evaluación a la Herramienta de Diagnóstico Web (HDW). Luego de utilizarla, nos gustaría conocer cómo fue su experiencia en su utilización. Para nosotros es muy importante contar con su opinión acerca de la misma.</p>
+
+  <% end %>
+  
   
 </div>
+
+<%= button_to "Continuar", begin_survey_path(@survey), :method => :get, :class => 'begin-survey' %>

@@ -32,16 +32,22 @@ class ChartController < ApplicationController
       this_company = Company.find(id)
       if chart_type == 'subbest'
         that_company = find_best_company_in this_company.subsector.companies
-        title = 'Compañía de más alto rendimiento en el subsector'
+        title = 'Empresa del subsector con más alto rendimiento'
+        @next_chart = "company_subworst_#{id}"
       elsif chart_type == 'subworst'
         that_company = find_worst_company_in this_company.subsector.companies
-        title = 'Compañía de más bajo rendimiento en el subsector'
+        title = 'Empresa del subsector con más bajo rendimiento'
+        @next_chart = "company_best_#{id}"
+        @prev_chart = "company_subbest_#{id}"
       elsif chart_type == 'best'
         that_company = find_best_company_in Company.all
-        title = 'Compañía de más alto rendimiento en el sector'
+        title = 'Empresa del sector con mayor rendimiento'
+        @next_chart = "company_worst_#{id}"
+        @prev_chart = "company_subworst_#{id}"
       elsif chart_type == 'worst'
         that_company = find_worst_company_in Company.all
-        title = 'Compañía de más bajo rendimiento en el sector'
+        title = 'Empresa del sector con más bajo rendimiento'
+        @prev_chart = "company_best_#{id}"
       end      
       to_compare = []
       to_compare << this_company
@@ -50,7 +56,7 @@ class ChartController < ApplicationController
     elsif type == 'user'
       this_user = User.find(id)
       if  chart_type == 'time'
-        title = 'Resultados a través del tiempo'
+        title = 'Resultados comparativos por Aspecto'
         surveys = this_user.last_surveys 3
         data = []
         dates = []
@@ -59,9 +65,11 @@ class ChartController < ApplicationController
           dates << survey.date
         end
         generate_bar_chart title, data.reverse, dates.reverse, true
+        @next_chart = "user_average_#{id}"
       elsif chart_type == 'average'
-        title = 'Resultados promedio'
+        title = 'Resultados individuales totales'
         generate_bar_chart title, (this_user.total_average)
+        @prev_chart = "user_time_#{id}"
       end
     end
   end
@@ -73,9 +81,10 @@ class ChartController < ApplicationController
         @graph = open_flash_chart_object(800,400,url_for(:action => 'show', :format => :json))
       }
       wants.json {
-        title = Title.new(the_title)
+        title = Title.new(the_title, 
+                          :style => "{font-size: 12px; font-weight: bold;}")
         chart = OpenFlashChart.new(title) do |c|
-          colours = ['#FF0000', '#FFFF00', '#0000FF', '#00FF00', '#00FFFF']
+          colours = ['#660099', '#B22400', '#FFB200', '#00B366', '#1C416F']
           unless multiple            
             bar_values = []
             survey_data.zip(@aspects, colours) do |avg, aspect, colour|
@@ -119,7 +128,8 @@ class ChartController < ApplicationController
         @graph = open_flash_chart_object(800,400,url_for(:action => 'show', :format => :json))
       }
       wants.json {
-        title = Title.new(the_title)
+        title = Title.new(the_title, 
+                          :style => "{font-size: 12px; font-weight: bold;}")
         chart = OpenFlashChart.new(title) do |c|
           c.set_bg_colour('#FFFFFF')
           colours = ['#FF0000', '#0000FF', '#FFFF00', '#00FF00', '#00FFFF']

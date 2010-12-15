@@ -1,14 +1,14 @@
 <% user = local_assigns[:user]%>
 
 <% if user.main_survey_records.last %>
-<p><%= link_to "Resultados comparativos por Aspecto", :action => :show, :id => "user_time_#{user.id}" %></p>
+<p><%= link_to "Gráfico comparativo: Resultados comparativos por Aspecto", :action => :show, :id => "user_time_#{user.id}" %></p>
  
-<p><%= link_to "Resultados individuales totales", {:action => :show, :id => "user_average_#{user.id}"}%></p>
+<p><%= link_to "Gráfico comparativo: Resultados individuales totales", {:action => :show, :id => "user_average_#{user.id}"}%></p>
  
-<p><%= link_to "Resultado comparativo total", survey_record_path(user.main_survey_records.last)%></p>
+<p><%= link_to "Tabla: Resultado comparativo total", survey_record_path(user.main_survey_records.last)%></p>
 
 <% if user.main_survey_records.count >= 2 %>
-<p><%= link_to "Resultados individuales por Aspecto", compare_survey_record_path(user)  %></p>
+<p><%= link_to "Tabla: Resultados individuales por Aspecto", compare_survey_record_path(user)  %></p>
 <% else %>
 <br />
 <em>* Para ver la tabla comparativa, debe realizar por lo menos 2 encuestas</em>

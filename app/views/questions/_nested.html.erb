@@ -7,14 +7,8 @@
     <% for subquestion in @subquestions do %>
     <tr>
       <td><%= @question.number %>.<%= subquestion.number %>. <%= subquestion.description %></td>
-      <% first = true %>
       <% for answer in @answers do %>
-      <% if first %>
-      <td><%= radio_button_tag "answer[#{subquestion.id}]", answer.id, {:checked => true} %></td>
-      <% first = false %>
-      <% else %>
       <td><%= radio_button_tag "answer[#{subquestion.id}]", answer.id %></td>
-      <% end %>
       <% end %>
     </tr>
     <% end %>  

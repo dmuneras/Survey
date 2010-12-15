@@ -13,16 +13,10 @@ $(document).ready(function(){
     	load: true
     });
 
-    $("dfn").hover(function(){
-	$(this).addClass("highlight-dfn");
-    }, function(){
-	$(this).removeClass("highlight-dfn");
-    });
-
-    // $(".aspect").hover(function() {
-    // 	ab = $(this).children().first();
-    // 	ab.replaceWith(ab[title]);
-    // });
+    $('dfn').qtip({style: {
+	name: 'blue', 
+	tip: true	  
+    }});
 
     // $(".modalDialog").overlay({
     // 	top:'1%',

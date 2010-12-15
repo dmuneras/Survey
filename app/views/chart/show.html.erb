@@ -15,3 +15,10 @@
 </ol>
 
 <br />
+
+<% if @next_chart %>
+<%= link_to "Siguiente resultado", {:action => :show, :id => @next_chart}, :class => 'next-chart' %>
+<% end %>
+<% if @prev_chart %>
+<%= link_to "Anterior resultado", {:action => :show, :id => @prev_chart}, :class => 'prev-chart' %>
+<% end %>
