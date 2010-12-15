@@ -35,7 +35,7 @@ a { color: #0000FF;}
 }
 
 #flash_error {
-  background-color: rgba(192,192,192,0.4);
+  background-color: rgba(255,0,0,0.4);
   border: solid 1px #C66;
 }
 

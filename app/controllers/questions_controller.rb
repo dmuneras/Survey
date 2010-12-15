@@ -19,7 +19,7 @@ class QuestionsController < ApplicationController
     question = Question.find(params[:question])
     unless question.category == 'multiple'
       unless params[:answer]
-        flash[:notice] = "Debe seleccionar alguna respuesta."
+        flash[:error] = "Debe seleccionar alguna respuesta."
         redirect_to question_path(question)
         return 
       end
