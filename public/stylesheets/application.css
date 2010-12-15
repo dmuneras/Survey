@@ -127,6 +127,7 @@ th {
 dfn {
     font-size: 14px;
     font-weight:bold;
+    cursor: help;
 }
 /*INDEX*/
 
@@ -358,6 +359,7 @@ div#welcome-user p {
 /*SURVEY*/
 
 div#survey-index {
+    height: 16em;
     margin: 0 10em 2em 2em;
 }
 
@@ -365,7 +367,8 @@ div#survey-index p {
     text-align: justify;
 }
 
-div#survey-index input {
+input.begin-survey {
+    margin-right: 15%;
     float: right;
 }
 
@@ -485,4 +488,12 @@ span#big_link a {
     font-size: 20px;
     font-weight: bold;
     text-decoration:underline;
+}
+
+/*CHARTS*/
+a.next-chart {
+    float: right;
+}
+
+a.prev-chart {
 }
