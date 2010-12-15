@@ -22,4 +22,12 @@
     </tr>
     <% end %>
   </table>
+  
 </div>
+  
+<p class="survey-date">
+  <strong>Fecha de penúltima encuesta: </strong><%= @last_surveys.first.date%>
+</p>
+<p class="survey-date">
+  <strong>Fecha de última encuesta: </strong><%= @last_surveys.last.date %>
+</p>
