@@ -13,6 +13,7 @@ GEM
     activesupport (2.3.5)
     authlogic (2.1.6)
       activesupport
+    mysql (2.8.1)
     rack (1.0.1)
     rails (2.3.5)
       actionmailer (= 2.3.5)
@@ -29,5 +30,6 @@ PLATFORMS
 
 DEPENDENCIES
   authlogic
+  mysql
   rails (= 2.3.5)
   sqlite3-ruby

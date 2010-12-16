@@ -17,12 +17,18 @@ class QuestionsController < ApplicationController
 
   def next
     question = Question.find(params[:question])
-    unless question.category == 'multiple'
+    if question.category == 'unique' or question.category == 'scale'
       unless params[:answer]
         flash[:error] = "Debe seleccionar alguna respuesta."
         redirect_to question_path(question)
         return 
       end
+    end
+    if question.category = 'nested'
+      unless params[:answers].count == quesion.subquestions.count
+        flash[:error] = "Debe contestar todas las preguntas."
+        redirect to question_path(question)
+        return 
     end
     assign_answer_to question
     next_question = next_question_of question

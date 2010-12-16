@@ -8,27 +8,7 @@ class SurveysController < ApplicationController
   end
   
   def show    
-    @survey = Survey.find(params[:id])
-    # @aspects = Aspect.all
-    # if params[:question]
-    #   current_question = Question.find(params[:question])
-    #   assign_answer_to current_question
-    #   @question = next_question_of current_question
-    # else
-    #   @question = Question.find_by_number(1)
-    # end
-    # if @question
-    #   if @question.category == 'nested'
-    #     @subquestions = @question.subquestions
-    #   end
-    #   if @question.category == 'scale'
-    #     @scale = @question.question_scale
-    #   end
-    #   @answers = @question.answers.sort{|a,b| a.number <=> b.number}
-    # else
-    #   redirect_to new_survey_record_path
-    # end 
-    
+    @survey = Survey.find(params[:id])    
   end
 
   def begin
