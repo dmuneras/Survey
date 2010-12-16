@@ -6,8 +6,9 @@
   <p><%= link_to "Salir de administración", logout_company_path %></p>
 <% else %>
   <% if admin_company_user?(current_user) %>
+    <p><%= link_to "Editar perfil", edit_user_path(current_user)%></p>
     <p><%= link_to "Gestión de empresas", companies_path %></p>
-    <p><%= link_to "Editar", edit_user_path(current_user)%></p>
+    <p><%= link_to "Resultados encuestas de evaluación", survey_records_path %></p>
     <p><%= link_to "Salir de administración ", logout_path %></p>
   <% end %>
 <% end %>
