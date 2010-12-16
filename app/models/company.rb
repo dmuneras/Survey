@@ -11,7 +11,7 @@ class Company < ActiveRecord::Base
     company_avgs = []
     total_users = 0
     for user in self.users do
-      latest_survey = user.survey_records.last
+      latest_survey = SurveyRecord.find(:all, :conditions => {:user_id => user.id, :survey_id => 1}).last
       next unless latest_survey
       user_avgs = latest_survey.averages.split(';')
       (0...Aspect.count).zip(user_avgs) do |asp, avg|
