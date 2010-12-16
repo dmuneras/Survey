@@ -65,5 +65,9 @@ class Company < ActiveRecord::Base
     end
     return best
   end
+
+  def to_param
+    "#{self.id}-#{self.login}"
+  end
  
 end
