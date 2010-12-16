@@ -24,12 +24,12 @@ class QuestionsController < ApplicationController
         return 
       end
     end
-    if question.category = 'nested'
-      unless params[:answers].count == quesion.subquestions.count
+    if question.category == 'nested'
+      unless params[:answer] and params[:answer].count == question.subquestions.count
         flash[:error] = "Debe contestar todas las preguntas."
-        redirect to question_path(question)
+        redirect_to question_path(question)
         return
-      end
+      end 
     end
     assign_answer_to question
     next_question = next_question_of question
