@@ -19,6 +19,6 @@ production:
   adapter: mysql
   database: hdwdb
   user: root
-  password: ****** # password for mysql
+  password: ******
   pool: 5
   timeout: 5000
