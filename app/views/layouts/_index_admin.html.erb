@@ -1,6 +1,7 @@
 <% if admin_company?(current_company) %>
   <p><%= link_to "Agregar usuario", new_company_user_path(current_company) %></p>
   <p><%= link_to "Gestión de empresas", companies_path %></p>
+  <p><%= link_to "Resultados encuestas de evaluación", survey_records_path %></p>
   <p><%= link_to "Eliminar",  current_company, :confirm => '¿Esta eguro?', :method => :delete %></p>
   <p><%= link_to "Salir de administración", logout_company_path %></p>
 <% else %>

@@ -12,11 +12,11 @@ class SurveyRecordsController < ApplicationController
   def show
     @survey_record = SurveyRecord.find(params[:id])
     @answers = string_to_arrays @survey_record.answers
-    # if @survey_record.survey == Survey.main_survey
+    if @survey_record.survey == Survey.main_survey
       @questions = Question.all(:conditions => {:survey_id => Survey.main_survey.id}, :order => 'number')
-   # else
-   #   @questions = Question.all(:conditions => {:survey_id => @survey_record.survey.id}, :order => 'number')
-   # end
+    else
+      @questions = Question.all(:conditions => {:survey_id => @survey_record.survey.id}, :order => 'number')
+    end
   end
 
   def compare
