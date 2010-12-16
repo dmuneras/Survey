@@ -5,13 +5,18 @@ class SurveyRecordsController < ApplicationController
   before_filter :admin_logged?, :only => :index
   
   def index
-    @survey_records = SurveyRecord.all
+    @survey_records = SurveyRecord.evaluation
   end
-  
+ 
+
   def show
     @survey_record = SurveyRecord.find(params[:id])
     @answers = string_to_arrays @survey_record.answers
-    @questions = Question.all(:conditions => {:survey_id => Survey.main_survey.id}, :order => 'number')
+    # if @survey_record.survey == Survey.main_survey
+      @questions = Question.all(:conditions => {:survey_id => Survey.main_survey.id}, :order => 'number')
+   # else
+   #   @questions = Question.all(:conditions => {:survey_id => @survey_record.survey.id}, :order => 'number')
+   # end
   end
 
   def compare

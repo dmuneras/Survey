@@ -1,23 +1,13 @@
-<% title "Survey Records" %>
-
+<% title "Encuestas de evaluación" %>
 <table>
-  <tr>
-    <th>User</th>
-    <th>Answers</th>
-    <th>Averages</th>
-    <th>Comment</th>
-  </tr>
-  <% for survey_record in @survey_records %>
-    <tr>
-      <td><%=h survey_record.user_id %></td>
-      <td><%=h survey_record.answers %></td>
-      <td><%=h survey_record.averages %></td>
-      <td><%=h survey_record.comment %></td>
-      <td><%= link_to "Show", survey_record %></td>
-      <td><%= link_to "Edit", edit_survey_record_path(survey_record) %></td>
-      <td><%= link_to "Destroy", survey_record, :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
-  <% end %>
-</table>
+<th>Usuario</th>
+<th>Comentario</th>
 
-<p><%= link_to "New Survey Record", new_survey_record_path %></p>
+<% for survey_rec in @survey_records do %>
+  <tr>
+  <td><%= survey_rec.user.username%></td>
+  <td><%= survey_rec.comment%></td>
+  <td><%= link_to "Ver detalle", survey_rec %></td>
+  </tr>
+<% end %>
+</table>
