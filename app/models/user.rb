@@ -29,4 +29,8 @@ class User < ActiveRecord::Base
     vals.map{|avg| avg /= self.main_survey_records.size} 
   end
 
+  def to_param
+    "#{self.id}-#{self.username}"
+  end
+
 end

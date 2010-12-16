@@ -10,5 +10,9 @@ class Survey < ActiveRecord::Base
   def self.main_survey
     Survey.find_by_name('Principal')
   end
+
+  def to_param
+    "#{self.id}-#{self.name}"
+  end
   
 end

@@ -9,7 +9,6 @@ class Question < ActiveRecord::Base
   belongs_to :survey
   attr_accessible :number, :description, :aspect_id, :category, :survey_id
 
-
   def self.main_questions
     Survey.main_survey.questions
   end
