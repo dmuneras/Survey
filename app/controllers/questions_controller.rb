@@ -28,7 +28,8 @@ class QuestionsController < ApplicationController
       unless params[:answers].count == quesion.subquestions.count
         flash[:error] = "Debe contestar todas las preguntas."
         redirect to question_path(question)
-        return 
+        return
+      end
     end
     assign_answer_to question
     next_question = next_question_of question
