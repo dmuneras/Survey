@@ -6,13 +6,10 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user || User.find(params[:id])
-    # if current_user
-    #   @user = current_user
-    # else
-    #   @user = User.find(params[:id])
-    # end
   end
   
+  # Genera una vista para crear un nuevo usuario.
+  # Verifica la restricción de máximo 5 usuarios por empresa.
   def new
     @company = Company.find(params[:company_id])
     if @company.users.count >= 5

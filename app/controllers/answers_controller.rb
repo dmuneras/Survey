@@ -1,3 +1,5 @@
+# -*- coding: undecided -*-
+# Controlador para las respuestas a preguntas. Puede crear, modificar o ver respuestas desde aquí.
 class AnswersController < ApplicationController
   def index
     @answers = Answer.all

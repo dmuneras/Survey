@@ -8,7 +8,7 @@ class SurveyRecordsController < ApplicationController
     @survey_records = SurveyRecord.evaluation
   end
  
-
+  # Recopila datos de la última encuesta para generar una tabla en la vista.
   def show
     @survey_record = SurveyRecord.find(params[:id])
     @answers = string_to_arrays @survey_record.answers
@@ -19,6 +19,7 @@ class SurveyRecordsController < ApplicationController
     end
   end
 
+  # Recopila datos de las últimas 2 encuestas para generar una tabla comparativa en la vista.
   def compare
     @user = User.find(params[:id])
     @last_surveys = @user.last_surveys(2).reverse
@@ -33,6 +34,9 @@ class SurveyRecordsController < ApplicationController
     @survey_record = SurveyRecord.new
   end
   
+  # Crea un nuevo registro de SurveyRecord para el usuario que acaba de realizar la encuesta.
+  # Las respuestas se encuentran en la variable de sesión session[:answers]
+  # Si se crea el registro con éxito, se calculan los nuevos promedios generales para la compañía.
   def create
     current_survey = Survey.find(params[:survey])
     if current_survey.is_main_survey

@@ -1,4 +1,4 @@
-# -*- coding: undecided -*-
+# -*- coding: utf-8 -*-
 class CompaniesController < ApplicationController
   
   before_filter :company_logged?, :except => [:index, :new, :create]
@@ -7,7 +7,9 @@ class CompaniesController < ApplicationController
   def index
     @companies = Company.all
   end
- 
+
+  # Recopila información de los usuarios de la empresa para
+  # generar una tabla en la vista.
   def show_users
     @company = Company.find(params[:id])
     @users = @company.users

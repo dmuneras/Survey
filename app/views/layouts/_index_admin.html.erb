@@ -1,3 +1,4 @@
+<h3>Administrador</h3>
 <% if admin_company?(current_company) %>
   <p><%= link_to "Agregar usuario", new_company_user_path(current_company) %></p>
   <p><%= link_to "Gestión de empresas", companies_path %></p>

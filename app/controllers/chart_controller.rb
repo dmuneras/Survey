@@ -1,16 +1,19 @@
 # -*- coding: utf-8 -*-
+# Controlador para la generación de gŕaficos de resultados para usuarios y compañías.
 class ChartController < ApplicationController
 
   before_filter :is_logged?
   before_filter :get_aspects, :only => [:generate_bar_chart, :generate_radar_chart]
   
-  # TODO validaciones para admin
+  # Índice se gráficos o resultados que se pueden mostrar. Se genera de acuerdo al parámetro <em>id</em> enviado.
+  # * Resultados para un usuario de id=x: <em>user_x</em>
+  # * Resultados para una compañía de id=x: <em>company_x</em>
   def index
     split_params = params[:id].split('_')
     type = split_params.first
     id = split_params.last
     if type == 'company' 
-      if current_company.id == id.to_i
+      if (current_company and current_company.id == id.to_i) or is_admin?
         @company = Company.find(id)
       end
     elsif type == 'user' 
@@ -18,10 +21,23 @@ class ChartController < ApplicationController
         @user = User.find(id)        
       elsif current_company and User.find(id).company_id == current_company.id        
         @user = User.find(id)
+      elsif is_admin?
+        @user = User.find(id)
       end
     end
   end
-
+  
+  # Genera un gráfico de acuerdo al parámetro <em>id</em>.
+  #
+  # Gráficos de compañía con id = x:
+  # * Empresa del subsector con más alto rendmiento: <em>company_subbest_x</em>
+  # * Empresa del subsector con más bajo rendimiento: <em>company_subworst_x</em>
+  # * Empresa del sector con más alto rendimiento: <em>company_best_x</em>
+  # * Empresa del sector con más bajo rendimiento: <em>company_worst_x</em>
+  # Gráficos de usuario con id = x:
+  # * Resultados comparativos por aspecto: <em>user_time_x</em>
+  # * Resultados individuales totales: <em>user_average_x</em>
+  # El gráfico resultante es generado en @graph.
   def show    
     @aspects = Aspect.all
     split_params = params[:id].split('_')
@@ -75,7 +91,12 @@ class ChartController < ApplicationController
   end
   
   private
-  def generate_bar_chart(the_title, survey_data, dates=nil, multiple=false)
+  # Genera un gráfico de barras para un usuario.
+  # [+the_title+] Título para el gráfico.
+  # [+survey_data+] Arreglo de datos a graficar (pueden ser varios, ver <em>multiple</em>)
+  # [+dates+] Fechas de los datos graficados.
+  # [+multiple+] Especifica si se graficarán varios series de datos o una sola
+  def generate_bar_chart(the_title, survey_data, dates=nil, multiple=false) #:doc:
     respond_to do |wants|
       wants.html {
         @graph = open_flash_chart_object(800,400,url_for(:action => 'show', :format => :json))
@@ -122,7 +143,10 @@ class ChartController < ApplicationController
     end
   end
 
-  def generate_radar_chart(the_title, companies)
+  # Genera un gráfico de radar para la compañía.
+  # [+the_title+] Título del gráfico.
+  # [+companies+] Compañías que se compararán en el gráfico de acuerdo a sus promedios por aspecto.
+  def generate_radar_chart(the_title, companies) #:doc:
     respond_to do |wants|
       wants.html {
         @graph = open_flash_chart_object(800,400,url_for(:action => 'show', :format => :json))

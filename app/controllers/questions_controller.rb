@@ -1,9 +1,12 @@
-# -*- coding: undecided -*-
+# -*- coding: utf-8 -*-
+# Controlador para las preguntas de una encuesta.
 class QuestionsController < ApplicationController
   def index
     @questions = Question.all
   end
   
+  # Recopila datos de la pregunta solicitada.
+  # Se genera en la vista con base en su tipo ('category')
   def show
     @question = Question.find(params[:id])
     @answers = @question.answers.sort{|a,b| a.number <=> b.number}
@@ -15,6 +18,9 @@ class QuestionsController < ApplicationController
     end
   end
 
+  # Verifica que se haya dado una repuesta correcta a la pregunta actual para almacenar la respuesta en la variable de sesión session[:answers] 
+  # Si es así, busca la siguiente pregunta y redirecciona a la acción 'show' de la misma.
+  # De lo contrario, redirecciona nuevamente a la pregunta actual.
   def next
     question = Question.find(params[:question])
     if question.category == 'unique' or question.category == 'scale'

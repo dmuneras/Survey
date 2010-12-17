@@ -14,7 +14,16 @@
       <%=h @company.telephone %>
     </p>
   </div>
+  <% unless is_admin? %>
   <div id="welcome-company">
     <p>Bienvenido al módulo de gestión de empresa. Para ver los resultados comparativos de las encuestas realizadas por los usuarios, diríjase a la opción <em>Ver resultados</em> del menú. Si desea ver la información de los usuarios registrados en la empresa, así como editar información de los mismos, puede ir a la opción <em>Gestión de usuarios</em>.</p>
   </div>
+  <% else %>
+  <h3>Usuarios:</h3>
+  <% for user in @company.users do %>
+  <%= link_to user.full_name, user_path(user) %><br />
+  <% end %>
+  <br />
+  <%= link_to "Ver resultados", :controller => :chart, :action => :index, :id => "company_#{@company.id}"%>
+  <% end %>
 </div>
