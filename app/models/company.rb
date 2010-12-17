@@ -37,7 +37,7 @@ class Company < ActiveRecord::Base
       averages = company.averages.split(';')
       total_avg = 0
       for average in averages do
-        total_avg += average
+        total_avg += average.to_f
       end
       total_avg /= averages.size
       if total_avg < min
@@ -55,7 +55,7 @@ class Company < ActiveRecord::Base
       averages = company.averages.split(';')
       total_avg = 0
       for average in averages do 
-        total_avg += average
+        total_avg += average.to_f
       end
       total_avg /= averages.size
       if total_avg > max

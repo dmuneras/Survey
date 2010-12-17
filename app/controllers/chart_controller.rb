@@ -31,21 +31,21 @@ class ChartController < ApplicationController
     if type == 'company'
       this_company = Company.find(id)
       if chart_type == 'subbest'
-        that_company = find_best_company_in this_company.subsector.companies
+        that_company = Company.find_best_company_in this_company.subsector.companies
         title = 'Empresa del subsector con más alto rendimiento'
         @next_chart = "company_subworst_#{id}"
       elsif chart_type == 'subworst'
-        that_company = find_worst_company_in this_company.subsector.companies
+        that_company = Company.find_worst_company_in this_company.subsector.companies
         title = 'Empresa del subsector con más bajo rendimiento'
         @next_chart = "company_best_#{id}"
         @prev_chart = "company_subbest_#{id}"
       elsif chart_type == 'best'
-        that_company = find_best_company_in Company.all
+        that_company = Company.find_best_company_in Company.all
         title = 'Empresa del sector con mayor rendimiento'
         @next_chart = "company_worst_#{id}"
         @prev_chart = "company_subworst_#{id}"
       elsif chart_type == 'worst'
-        that_company = find_worst_company_in Company.all
+        that_company = Company.find_worst_company_in Company.all
         title = 'Empresa del sector con más bajo rendimiento'
         @prev_chart = "company_best_#{id}"
       end      
@@ -136,8 +136,8 @@ class ChartController < ApplicationController
           companies.zip(colours) do |company, colour|
             values = company.averages.split(';')
             dot_values = []
-            @aspects.zip(values) do |asp, avg|
-              company_name = company.name if company == current_company || is_admin?
+            company_name = (company == current_company or is_admin?) ? company.name : 'Otra'
+            @aspects.zip(values) do |asp, avg|              
               tip = "#{asp.name}<br>#{company_name}"
               dot_values << DotValue.new(avg, colour,
                                          :tip => tip)
@@ -147,7 +147,7 @@ class ChartController < ApplicationController
                               :values => dot_values,
                               :fill_alpha => 0.35,
                               :dot_style => SolidDot.new(nil, :dot_size => 4),
-                              :text => company.name,
+                              :text => company_name,
                               :on_show => LineOnShow.new('explode', 0.5, 0.5),
                               :loop => true)
                               
@@ -164,45 +164,6 @@ class ChartController < ApplicationController
         render :text => chart, :layout => false        
       }
     end
-  end
-  
-  
-  def find_worst_company_in (companies)
-    worst = nil
-    min = 101
-    for company in companies do
-      next unless company.averages
-      averages = string_to_hash company.averages
-      total_avg = 0
-      averages.each do |asp, avg|
-        total_avg += avg
-      end
-      total_avg /= averages.size
-      if total_avg < min
-        min = total_avg
-        worst = company
-      end
-    end
-    return worst
-  end
-
-  def find_best_company_in (companies)
-    best = nil
-    max = -1
-    for company in companies do
-      next unless company.averages
-      averages = string_to_hash company.averages
-      total_avg = 0
-      averages.each do |asp, avg|
-        total_avg += avg
-      end
-      total_avg /= averages.size
-      if total_avg > max
-        max = total_avg
-        best = company
-      end
-    end
-    return best
   end
 
   def get_aspects
